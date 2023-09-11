@@ -140,4 +140,18 @@ body {
 
 .dark {
     @include mat.all-component-themes($beatkhor-dark-theme);
+
+    overflow: none;
+    @apply bg-neutral-900 overscroll-contain;
+    
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+    }
+
+    input:-webkit-autofill {
+        -webkit-text-fill-color: white !important;
+    }
 }

@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
 module.exports = {
   content: ["./apps/**/*.{html,ts}"],
   darkMode: 'class',
@@ -52,6 +53,7 @@ module.exports = {
         '900': '#82211a',
         '950': '#470c08',
       },
+      neutral: colors.neutral,
     },
     extend: {},
   },
