@@ -1,8 +1,10 @@
-/** All the color palettes must be the same as the tailwind configuration **/
+/** All the color palettes must be the same as the tailwind configuration *******/
+@use '@angular/material' as mat;
 
 @tailwind base;
 @tailwind utilities;
 
+/** Define angular material color palettes and create the theme  *****************/
 $primary-palette: (
     50 : #ffffea,
     100 : #fffbc5,
@@ -101,3 +103,41 @@ $red-palette: (
         A700 : #000000,
     )
 );
+
+@include mat.core();
+$beatkhor-primary: mat.define-palette($primary-palette);
+$beatkhor-accent: mat.define-palette($accent-palette, A200, A100, A400);
+$beatkhor-warn: mat.define-palette($red-palette);
+
+$beatkhor-dark-typography: mat.define-typography-config(
+    $font-family: 'Fira Sans',
+);
+$beatkhor-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $beatkhor-primary,
+    accent: $beatkhor-accent,
+    warn: $beatkhor-warn,
+  ),
+  typography: $beatkhor-dark-typography,
+));
+
+/** Global necessary styles ************************************************/
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    line-height: 1.5;
+}
+
+body {
+    margin: 0;
+    overflow: none;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.dark {
+    @include mat.all-component-themes($beatkhor-dark-theme);
+}
