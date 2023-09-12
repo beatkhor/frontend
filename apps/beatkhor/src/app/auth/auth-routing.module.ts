@@ -4,6 +4,8 @@ import {NgModule} from '@angular/core'
 import {SignInComponent} from './auth-sign-in.component'
 import {SignUpComponent} from './auth-sign-up.component'
 import {AuthGuard} from '../core/guards/auth.guard'
+import {ResetRequestComponent} from './auth-reset-request.component'
+import {ResetComponent} from './auth-reset.component'
 
 const routes: Routes = [
   {
@@ -20,6 +22,14 @@ const routes: Routes = [
     path: 'signup',
     canActivate: [AuthGuard],
     component: SignUpComponent,
+  },
+  {
+    path: 'reset-password/request',
+    component: ResetRequestComponent,
+  },
+  {
+    path: 'reset-password/reset',
+    component: ResetComponent,
   },
 ]
 

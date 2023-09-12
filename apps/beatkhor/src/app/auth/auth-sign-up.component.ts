@@ -84,7 +84,7 @@ import {AuthService} from '../core/services/auth.service'
 
         <p class="my-2">
           <span>Have an account and forgotten your password? you can easily </span>
-          <a class="text-primary-500" routerLink="/authentication/forgot">
+          <a class="text-primary-500" routerLink="/authentication/reset-password/request">
             <span>recover your password here</span>
           </a>
           <span>.</span>
