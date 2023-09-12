@@ -1,9 +1,9 @@
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 import {Component} from '@angular/core'
+import {lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '../core/services/error-handler.service'
 import {AuthService} from '../core/services/auth.service'
-import {lastValueFrom} from 'rxjs'
 
 @Component({
   selector: 'bk-reset-request',
