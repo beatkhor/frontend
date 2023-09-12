@@ -56,16 +56,15 @@ import { AuthService } from "../core/services/auth.service";
         <span *ngIf="!isLoading">Sign In</span>
       </button>
 
-      <button mat-stroked-button color="primary" type="submit">
-        <mat-icon>arrow_back</mat-icon>
-        <span>Home Page</span>
-      </button>
+      <a mat-stroked-button color="primary" type="button" routerLink="/">
+        <span>Go Back</span>
+      </a>
     </form>
   </div>`,
 })
 export class SignInComponent {
-  form!: FormGroup;
   isLoading = false;
+  form!: FormGroup;
 
   constructor(
     private router: Router,
