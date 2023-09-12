@@ -12,7 +12,7 @@ import {AuthService} from '../core/services/auth.service'
     <form [formGroup]="form" (submit)="onSubmit()" class="flex flex-col w-96 py-4 mx-6">
       <h1 class="text-2xl font-semibold my-2">Sign In</h1>
 
-      <p class="text-base my-3">
+      <p class="text-base py-3 mb-2">
         <span>Welcome back! </span>
         <span>Please provide your email and password to sign into your account.</span>
       </p>
@@ -47,6 +47,24 @@ import {AuthService} from '../core/services/auth.service'
       <a mat-stroked-button color="primary" type="button" routerLink="/">
         <span>Go Back</span>
       </a>
+
+      <div class="my-5 text-sm text-neutral-300">
+        <p class="my-2">
+          <span>Don't have a account yet? </span>
+          <a class="text-primary-500" routerLink="/authentication/signup">
+            <span>sign up now!</span>
+          </a>
+          <span>.</span>
+        </p>
+
+        <p class="my-2">
+          <span>If you have forgotten your password, you can easily </span>
+          <a class="text-primary-500" routerLink="/authentication/forgot">
+            <span>recover your password here</span>
+          </a>
+          <span>.</span>
+        </p>
+      </div>
     </form>
   </div>`,
 })
