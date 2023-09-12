@@ -2,7 +2,7 @@
   "name": "beatkhor",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "beatkhor",
+  "prefix": "bk",
   "sourceRoot": "apps/beatkhor/src",
   "tags": [],
   "targets": {
@@ -21,6 +21,12 @@
       },
       "configurations": {
         "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/beatkhor/src/environments/environment.ts",
+              "with": "apps/beatkhor/src/environments/environment.production.ts"
+            }
+          ],
           "budgets": [
             {
               "type": "initial",
