@@ -1,11 +1,11 @@
 import {RouterModule, Routes} from '@angular/router'
 import {NgModule} from '@angular/core'
 
+import {ResetRequestComponent} from './auth-reset-request.component'
 import {SignInComponent} from './auth-sign-in.component'
 import {SignUpComponent} from './auth-sign-up.component'
-import {AuthGuard} from '../core/guards/auth.guard'
-import {ResetRequestComponent} from './auth-reset-request.component'
 import {ResetComponent} from './auth-reset.component'
+import {AuthGuard} from '../core/guards/auth.guard'
 
 const routes: Routes = [
   {
