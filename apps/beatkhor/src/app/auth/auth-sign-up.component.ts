@@ -1,24 +1,15 @@
-import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  Validators,
-} from "@angular/forms";
-import { Component } from "@angular/core";
-import { lastValueFrom } from "rxjs";
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms'
+import {Component} from '@angular/core'
+import {lastValueFrom} from 'rxjs'
 
-import { CustomErrorHandler } from "../core/services/error-handler.service";
-import { SnackbarService } from "../core/services/snackbar.service";
-import { AuthService } from "../core/services/auth.service";
+import {CustomErrorHandler} from '../core/services/error-handler.service'
+import {SnackbarService} from '../core/services/snackbar.service'
+import {AuthService} from '../core/services/auth.service'
 
 @Component({
-  selector: "bk-sign-up",
+  selector: 'bk-sign-up',
   template: `<div class="min-h-screen flex items-center justify-center">
-    <form
-      [formGroup]="form"
-      (submit)="onSubmit()"
-      class="flex flex-col w-96 py-4 mx-6"
-    >
+    <form [formGroup]="form" (submit)="onSubmit()" class="flex flex-col w-96 py-4 mx-6">
       <h1 class="text-2xl font-semibold my-2">Sign Up</h1>
 
       <p class="text-base my-3">
@@ -42,12 +33,7 @@ import { AuthService } from "../core/services/auth.service";
 
       <mat-form-field class="my-3" appearance="fill">
         <mat-label>Password</mat-label>
-        <input
-          matInput
-          type="password"
-          name="password"
-          formControlName="password"
-        />
+        <input matInput type="password" name="password" formControlName="password" />
         <mat-icon matSuffix>lock</mat-icon>
         <mat-hint>A password should include at least 6 characters.</mat-hint>
         <mat-error>Please enter at least 6 characters!</mat-error>
@@ -63,15 +49,12 @@ import { AuthService } from "../core/services/auth.service";
         />
         <mat-icon matSuffix>lock</mat-icon>
         <mat-hint>Please type your password again to confirm</mat-hint>
-        <mat-error
-          *ngIf="
-            form.value.password &&
-            form.value.password !== form.value.confirmPassword
-          "
-        >
+
+        <mat-error *ngIf="form.controls['password']?.hasError('mismatch')">
           <span>The passwords do not match together</span>
         </mat-error>
-        <mat-error *ngIf="!form.value.password">
+
+        <mat-error *ngIf="form.controls['password']?.hasError('required')">
           <span>Please enter your password</span>
         </mat-error>
       </mat-form-field>
@@ -89,9 +72,9 @@ import { AuthService } from "../core/services/auth.service";
   </div>`,
 })
 export class SignUpComponent {
-  isLoading = false;
-  form!: FormGroup;
-  done = false;
+  isLoading = false
+  form!: FormGroup
+  done = false
 
   constructor(
     private fb: FormBuilder,
@@ -99,60 +82,53 @@ export class SignUpComponent {
     private snackbar: SnackbarService,
     private errHandler: CustomErrorHandler
   ) {
-    this.createForm();
+    this.createForm()
   }
 
   private createForm(): void {
     this.form = this.fb.group({
-      email: ["", Validators.required],
-      password: ["", [Validators.required, Validators.minLength(6)]],
+      email: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: [
-        "",
+        '',
         [Validators.required, Validators.minLength(6), confirmValidator],
       ],
-    });
+    })
   }
 
   async onSubmit(): Promise<void> {
     if (this.form.invalid) {
-      return this.snackbar.error(
-        "Please fill the form with valid information!"
-      );
+      return this.snackbar.error('Please fill the form with valid information!')
     }
 
     try {
-      this.form.disable();
-      this.isLoading = true;
+      this.form.disable()
+      this.isLoading = true
       const request$ = this.authService.register(
         this.form.value.email,
         this.form.value.password
-      );
-      await lastValueFrom(request$);
-      this.isLoading = false;
-      this.form.enable();
-      this.done = true;
+      )
+      await lastValueFrom(request$)
+      this.isLoading = false
+      this.form.enable()
+      this.done = true
     } catch (error: any) {
-      this.form.enable();
-      this.isLoading = false;
-      if ((error as any)?.error?.message === "duplicated_entry") {
-        return this.snackbar.error(
-          "This email is already used by an account!",
-          "OK"
-        );
+      this.form.enable()
+      this.isLoading = false
+      if ((error as any)?.error?.message === 'duplicated_entry') {
+        return this.snackbar.error('This email is already used by an account!', 'OK')
       }
-      this.errHandler.handle(error);
+      this.errHandler.handle(error)
     }
   }
 }
 
-function confirmValidator(
-  control: AbstractControl
-): { [key: string]: boolean } | null {
-  const value = String(control.value || "");
-  const original = String(control.parent?.value.password || "");
+function confirmValidator(control: AbstractControl): {[key: string]: boolean} | null {
+  const value = String(control.value || '')
+  const original = String(control.parent?.value.password || '')
   if (value === original) {
-    return null;
+    return null
   }
 
-  return { passwordMatch: true };
+  return {mismatch: true}
 }
