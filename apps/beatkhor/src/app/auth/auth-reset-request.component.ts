@@ -43,7 +43,7 @@ import {AuthService} from '../core/services/auth.service'
           </mat-error>
         </mat-form-field>
 
-        <button mat-flat-button class="my-3" color="primary" type="submit">
+        <button mat-flat-button class="my-3 mt-5" color="primary" type="submit">
           <span *ngIf="isLoading">Please wait...</span>
           <span *ngIf="!isLoading">Recover My Password</span>
         </button>
