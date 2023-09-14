@@ -34,11 +34,11 @@ import {AuthService} from '../core/services/auth.service'
           <mat-icon matSuffix>mail</mat-icon>
           <mat-hint>Enter your email to receive the instructions</mat-hint>
 
-          <mat-error *ngIf="form.controls['email'].hasError('required')">
+          <mat-error *ngIf="form.get('email')?.hasError('required')">
             <span>Please enter your email!</span>
           </mat-error>
 
-          <mat-error *ngIf="form.controls['email'].hasError('email')">
+          <mat-error *ngIf="form.get('email')?.hasError('email')">
             <span>Please enter a valid email!</span>
           </mat-error>
         </mat-form-field>

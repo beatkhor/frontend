@@ -55,11 +55,11 @@ import {AuthService} from '../core/services/auth.service'
         <mat-icon matSuffix>lock</mat-icon>
         <mat-hint>Please type your password again to confirm</mat-hint>
 
-        <mat-error *ngIf="form.controls['confirmPassword']?.hasError('mismatch')">
+        <mat-error *ngIf="form.get('confirmPassword')?.hasError('mismatch')">
           <span>The passwords do not match together</span>
         </mat-error>
 
-        <mat-error *ngIf="form.controls['confirmPassword']?.hasError('required')">
+        <mat-error *ngIf="form.get('confirmPassword')?.hasError('required')">
           <span>Please re-enter your password</span>
         </mat-error>
       </mat-form-field>
