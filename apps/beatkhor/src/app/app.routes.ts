@@ -1,5 +1,6 @@
 import {Route} from '@angular/router'
 
+import {WrapperComponent} from './core/components/wrapper.component'
 import {CallbackGuard} from './core/guards/callback.guard'
 
 export const appRoutes: Route[] = [
@@ -11,5 +12,10 @@ export const appRoutes: Route[] = [
   {
     path: 'authentication',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+  },
+  {
+    path: '',
+    component: WrapperComponent,
+    children: [],
   },
 ]

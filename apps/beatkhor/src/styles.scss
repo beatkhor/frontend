@@ -2,6 +2,7 @@
 @use '@angular/material' as mat;
 
 @tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 /** Define angular material color palettes and create the theme  *****************/
