@@ -60,13 +60,35 @@ import {AuthService} from '../core/services/auth.service'
         <span>Home page</span>
       </a>
     </form>
+
+    <div *ngIf="done" class="flex flex-col w-96 py-4 mx-6">
+      <h1 class="text-2xl font-semibold my-2">Your password is changed</h1>
+
+      <p class="py-4">
+        Perfect! We changed your password. Go ahead and sign in using your new password.
+      </p>
+
+      <a
+        class="my-3"
+        mat-flat-button
+        color="primary"
+        type="button"
+        routerLink="/authentication/signin"
+      >
+        <span>Sign In</span>
+      </a>
+
+      <a mat-stroked-button color="primary" type="button" routerLink="/">
+        <span>Go to home page</span>
+      </a>
+    </div>
   </div>`,
 })
 export class ResetComponent implements OnInit {
   token!: string | null
   isLoading = false
   form!: FormGroup
-  done = false
+  done = true
 
   constructor(
     private router: Router,
