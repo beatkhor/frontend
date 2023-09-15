@@ -1,10 +1,11 @@
 {
   "name": "@beatkhor/source",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "build": "nx run-many -t build",
+    "beatkhor:build:prod": "nx run beatkhor:build:production",
+    "beatkhor:build:dev": "nx run beatkhor:build:development",
     "test": "nx run-many -t test"
   },
   "private": true,
