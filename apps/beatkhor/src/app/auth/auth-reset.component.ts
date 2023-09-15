@@ -88,7 +88,7 @@ export class ResetComponent implements OnInit {
   token!: string | null
   isLoading = false
   form!: FormGroup
-  done = true
+  done = false
 
   constructor(
     private router: Router,
