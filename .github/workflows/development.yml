@@ -58,3 +58,27 @@ jobs:
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.info.outputs.version }}-dev
           build-args: |
             build_script=build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: package.json info
+        id: info
+        uses: jaywcjlove/github-action-package@main
+      - name: Run commands on remote server
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          username: ${{ secrets.DEVELOPMENT_USERNAME }}
+          host: ${{ secrets.DEVELOPMENT_HOST }}
+          key: ${{secrets.DEVELOPMENT_KEY}}
+          script: |
+            docker login -u ${{secrets.CI_ACCESS_USER}} -p ${{secrets.CI_ACCESS_TOKEN}} ghcr.io
+            docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.info.outputs.version }}-dev
+            docker stop ${{github.event.repository.name}} || true
+            docker rm ${{github.event.repository.name}} || true
+            docker run --restart=always -d -p ${{secrets.DEPLOYMENT_PORT}}:80 --name=${{github.event.repository.name}} ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.info.outputs.version }}-dev
