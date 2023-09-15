@@ -15,7 +15,7 @@ import {AuthService} from '../core/services/auth.service'
         (submit)="onSubmit()"
         class="flex flex-col w-96 py-4 mx-6"
       >
-        <h1 class="text-2xl font-semibold my-2">Password Recovery</h1>
+        <h1 class="text-2xl font-semibold my-2">Password recovery</h1>
 
         <p class="py-4">
           No worries! Just enter your email to reset your account password. We will send
@@ -23,7 +23,7 @@ import {AuthService} from '../core/services/auth.service'
         </p>
 
         <mat-form-field class="my-3" appearance="fill">
-          <mat-label>Your Email</mat-label>
+          <mat-label>Your email</mat-label>
           <input
             matInput
             type="text"
@@ -45,7 +45,7 @@ import {AuthService} from '../core/services/auth.service'
 
         <button mat-flat-button class="my-3 mt-5" color="primary" type="submit">
           <span *ngIf="isLoading">Please wait...</span>
-          <span *ngIf="!isLoading">Recover My Password</span>
+          <span *ngIf="!isLoading">Recover my password</span>
         </button>
 
         <a
@@ -54,7 +54,7 @@ import {AuthService} from '../core/services/auth.service'
           type="button"
           routerLink="/authentication/signin"
         >
-          <span>Sign In</span>
+          <span>Sign in</span>
         </a>
       </form>
 
@@ -91,7 +91,7 @@ import {AuthService} from '../core/services/auth.service'
 export class ResetRequestComponent {
   isLoading = false
   form!: FormGroup
-  done = true
+  done = false
 
   constructor(
     private fb: FormBuilder,

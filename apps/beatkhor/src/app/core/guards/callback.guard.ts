@@ -1,6 +1,8 @@
 import {ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router'
 import {Injectable} from '@angular/core'
 
+import {CallbackEvents} from '../models/callback-events'
+
 @Injectable({
   providedIn: 'root',
 })
@@ -11,18 +13,29 @@ export class CallbackGuard {
     if (route.url.toString() === 'callback') {
       const event = route.queryParamMap.get('event')
 
+      const params = {...route.queryParams}
+      delete params['event']
+
       switch (event) {
-        case 'account-activation-failed':
+        case CallbackEvents.AccountActivationFailed:
+          console.warn(CallbackEvents.AccountActivationFailed, 'not implemented')
+          this.router.navigate(['/'])
           break
 
-        case 'account-activation-success':
+        case CallbackEvents.AccountActivationSuccess:
+          console.warn(CallbackEvents.AccountActivationSuccess, 'not implemented')
+          this.router.navigate(['/'])
           break
 
-        case 'reset-password':
-          this.router.navigate(['authentication', 'reset-password', 'reset'])
+        case CallbackEvents.ResetPassword:
+          this.router.navigate(['authentication', 'reset-password', 'reset'], {
+            queryParams: params,
+          })
           break
 
-        case 'reset-password-verification-failed':
+        case CallbackEvents.ResetPasswordVerificationFailed:
+          console.warn(CallbackEvents.ResetPasswordVerificationFailed, 'not implemented')
+          this.router.navigate(['/'])
           break
 
         default:

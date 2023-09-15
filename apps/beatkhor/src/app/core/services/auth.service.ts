@@ -111,6 +111,19 @@ export class AuthService {
   }
 
   /**
+   * Sets the new password for user's account
+   * @param password New password entered by user
+   * @param token A token received from the backend
+   * @returns http reset password request as observable
+   */
+  resetPassword(password: string, token: string): Observable<CustomResponse<void>> {
+    return this.http.post<CustomResponse<void>>(
+      `${environment.authServiceURL}/auth/reset-password/reset`,
+      {password, token}
+    )
+  }
+
+  /**
    * Get all the current user's profile information
    */
   getMe(): Observable<CustomResponse<MyUser>> {

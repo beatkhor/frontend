@@ -1,8 +1,9 @@
-import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms'
+import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 import {Component} from '@angular/core'
 import {lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '../core/services/error-handler.service'
+import {CustomValidators} from '../core/services/validators.service'
 import {SnackbarService} from '../core/services/snackbar.service'
 import {AuthService} from '../core/services/auth.service'
 
@@ -15,7 +16,7 @@ import {AuthService} from '../core/services/auth.service'
       (submit)="onSubmit()"
       class="flex flex-col w-96 py-4 mx-6"
     >
-      <h1 class="text-2xl font-semibold my-2">Sign Up</h1>
+      <h1 class="text-2xl font-semibold my-2">Sign up</h1>
 
       <p class="text-base py-3 mb-2">
         <span>Welcome to Beatkhor. </span>
@@ -45,7 +46,7 @@ import {AuthService} from '../core/services/auth.service'
       </mat-form-field>
 
       <mat-form-field class="my-3" appearance="fill">
-        <mat-label>Confirm Password</mat-label>
+        <mat-label>Confirm password</mat-label>
         <input
           matInput
           type="password"
@@ -66,11 +67,11 @@ import {AuthService} from '../core/services/auth.service'
 
       <button mat-flat-button class="my-3 mt-5" color="primary" type="submit">
         <span *ngIf="isLoading">Please wait...</span>
-        <span *ngIf="!isLoading">Sign Up</span>
+        <span *ngIf="!isLoading">Sign up</span>
       </button>
 
       <a mat-stroked-button color="primary" type="button" routerLink="/">
-        <span>Go Back</span>
+        <span>Go back</span>
       </a>
 
       <div class="my-5 text-sm text-neutral-300">
@@ -124,7 +125,7 @@ export class SignUpComponent {
     this.form = this.fb.group({
       email: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required, confirmValidator]],
+      confirmPassword: ['', [Validators.required, CustomValidators.confirmPassword]],
     })
   }
 
@@ -153,14 +154,4 @@ export class SignUpComponent {
       this.errHandler.handle(error)
     }
   }
-}
-
-function confirmValidator(control: AbstractControl): {[key: string]: boolean} | null {
-  const value = String(control.value ?? '')
-  const original = String(control.parent?.value.password ?? '')
-  if (value === original) {
-    return null
-  }
-
-  return {mismatch: true}
 }

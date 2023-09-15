@@ -10,7 +10,7 @@ import {AuthService} from '../core/services/auth.service'
   selector: 'bk-sign-in',
   template: `<div class="min-h-screen flex items-center justify-center">
     <form [formGroup]="form" (submit)="onSubmit()" class="flex flex-col w-96 py-4 mx-6">
-      <h1 class="text-2xl font-semibold my-2">Sign In</h1>
+      <h1 class="text-2xl font-semibold my-2">Sign in</h1>
 
       <p class="text-base py-3 mb-2">
         <span>Welcome back! </span>
@@ -41,11 +41,11 @@ import {AuthService} from '../core/services/auth.service'
 
       <button mat-flat-button class="my-3 mt-5" color="primary" type="submit">
         <span *ngIf="isLoading">Please wait...</span>
-        <span *ngIf="!isLoading">Sign In</span>
+        <span *ngIf="!isLoading">Sign in</span>
       </button>
 
       <a mat-stroked-button color="primary" type="button" routerLink="/">
-        <span>Go Back</span>
+        <span>Go back</span>
       </a>
 
       <div class="my-5 text-sm text-neutral-300">
