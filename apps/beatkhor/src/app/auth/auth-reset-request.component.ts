@@ -73,12 +73,16 @@ import {AuthService} from '../core/services/auth.service'
 
         <a
           class="my-3"
-          mat-stroked-button
+          mat-flat-button
           color="primary"
           type="button"
           routerLink="/authentication/signin"
         >
-          <span>Let's go back</span>
+          <span>Sign In</span>
+        </a>
+
+        <a mat-stroked-button color="primary" type="button" routerLink="/">
+          <span>Go to home page</span>
         </a>
       </div>
     </div>
@@ -87,7 +91,7 @@ import {AuthService} from '../core/services/auth.service'
 export class ResetRequestComponent {
   isLoading = false
   form!: FormGroup
-  done = false
+  done = true
 
   constructor(
     private fb: FormBuilder,
