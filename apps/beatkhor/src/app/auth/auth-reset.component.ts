@@ -79,7 +79,7 @@ import {AuthService} from '../core/services/auth.service'
       </a>
 
       <a mat-stroked-button color="primary" type="button" routerLink="/">
-        <span>Go to home page</span>
+        <span>Back to home page</span>
       </a>
     </div>
   </div>`,
