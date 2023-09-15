@@ -71,7 +71,13 @@ import {AuthService} from '../core/services/auth.service'
           this email
         </p>
 
-        <a class="my-3" mat-stroked-button color="primary" type="button" routerLink="/">
+        <a
+          class="my-3"
+          mat-stroked-button
+          color="primary"
+          type="button"
+          routerLink="/authentication/signin"
+        >
           <span>Let's go back</span>
         </a>
       </div>
