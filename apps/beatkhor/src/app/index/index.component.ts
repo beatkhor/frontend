@@ -1,5 +1,5 @@
+import {ActivatedRoute, NavigationExtras, Router} from '@angular/router'
 import {Component, OnInit} from '@angular/core'
-import {ActivatedRoute} from '@angular/router'
 
 import {CallbackEvents} from '../core/models/callback-events'
 
@@ -38,7 +38,7 @@ export class IndexComponent implements OnInit {
   readonly callbackEvents = CallbackEvents
   notice!: string | null
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.notice = this.route.snapshot.queryParamMap.get('notice')
@@ -46,5 +46,10 @@ export class IndexComponent implements OnInit {
 
   onCloseNotice() {
     this.notice = null
+    const navigationExtras: NavigationExtras = {
+      queryParams: {...this.route.snapshot.queryParams, notice: null},
+      queryParamsHandling: 'merge',
+    }
+    this.router.navigate([], navigationExtras)
   }
 }
