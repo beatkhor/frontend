@@ -8,7 +8,7 @@ import {AuthService} from '../services/auth.service'
 @Component({
   selector: 'bk-navbar',
   template: `
-    <div class="fixed left-0 right-0 top-0 h-14 border-b-2 border-neutral-800">
+    <div class="fixed left-0 right-0 top-0 h-14 border-b border-neutral-800">
       <div class="container mx-auto h-full flex items-stretch justify-between px-5">
         <div class="flex items-center text-neutral-300">
           <div class="flex">
@@ -57,7 +57,10 @@ import {AuthService} from '../services/auth.service'
 
         <ng-template #userActions>
           <div class="flex">
-            <button class="px-4 py-4" [matMenuTriggerFor]="userActionsMenu">
+            <button
+              class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
+              [matMenuTriggerFor]="userActionsMenu"
+            >
               <mat-icon>person</mat-icon>
               <mat-icon>arrow_drop_down</mat-icon>
             </button>

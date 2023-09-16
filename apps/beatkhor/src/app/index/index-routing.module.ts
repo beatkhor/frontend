@@ -6,7 +6,6 @@ import {IndexComponent} from './index.component'
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
     component: IndexComponent,
   },
 ]
@@ -15,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AuthRoutingModule {}
+export class IndexRoutingModule {}

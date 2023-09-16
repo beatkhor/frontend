@@ -4,10 +4,11 @@ import {NgModule} from '@angular/core'
 
 import {ConfirmDialogComponent} from './dialogs/confirm-dialog'
 import {MaterialModule} from './material/material.module'
+import {NoticeComponent} from './notice/notice.component'
 
 @NgModule({
-  declarations: [ConfirmDialogComponent],
+  declarations: [ConfirmDialogComponent, NoticeComponent],
   imports: [CommonModule, MaterialModule, FormsModule, ReactiveFormsModule],
-  exports: [FormsModule, ReactiveFormsModule, MaterialModule],
+  exports: [FormsModule, ReactiveFormsModule, MaterialModule, NoticeComponent],
 })
 export class SharedModule {}

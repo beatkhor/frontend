@@ -17,7 +17,7 @@ import {Component} from '@angular/core'
         </mat-nav-list>
       </mat-sidenav>
 
-      <mat-sidenav-content>
+      <mat-sidenav-content class="pt-14">
         <bk-navbar (menu)="toggle()"></bk-navbar>
         <router-outlet></router-outlet>
       </mat-sidenav-content>
