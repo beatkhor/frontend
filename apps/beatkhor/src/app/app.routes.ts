@@ -16,6 +16,12 @@ export const appRoutes: Route[] = [
   {
     path: '',
     component: WrapperComponent,
-    children: [],
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        loadChildren: () => import('./index/index.module').then(m => m.IndexModule),
+      },
+    ],
   },
 ]

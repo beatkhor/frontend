@@ -12,7 +12,7 @@ import {AuthService} from '../services/auth.service'
       <div class="container mx-auto h-full flex items-stretch justify-between px-5">
         <div class="flex items-center text-neutral-300">
           <div class="flex">
-            <div class="block md:hidden mr-2">
+            <div class="block lg:hidden mr-2">
               <button mat-icon-button (click)="onMenu()">
                 <mat-icon>menu</mat-icon>
               </button>
@@ -23,7 +23,7 @@ import {AuthService} from '../services/auth.service'
               <strong class="font-semibold">Beatkhor</strong>
             </a>
 
-            <div class="hidden items-center h-full mx-12 md:flex mr-2">
+            <div class="hidden items-center h-full mx-12 lg:flex mr-2">
               <a
                 class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
                 routerLink="/browse"
