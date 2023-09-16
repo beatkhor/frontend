@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common'
 import {NgModule} from '@angular/core'
 
 import {ConfirmDialogComponent} from './confirm-dialog.component'
-import {MaterialModule} from './material/material.module'
+import {MaterialModule} from './material.module'
 import {NoticeComponent} from './notice.component'
 
 @NgModule({
