@@ -18,24 +18,19 @@ export class CallbackGuard {
 
       switch (event) {
         case CallbackEvents.AccountActivationFailed:
-          console.warn(CallbackEvents.AccountActivationFailed, 'not implemented')
-          this.router.navigate(['/'])
-          break
-
         case CallbackEvents.AccountActivationSuccess:
-          console.warn(CallbackEvents.AccountActivationSuccess, 'not implemented')
-          this.router.navigate(['/'])
+        case CallbackEvents.ResetPasswordVerificationFailed:
+          this.router.navigate(['/'], {
+            queryParams: {
+              notice: event,
+            },
+          })
           break
 
         case CallbackEvents.ResetPassword:
           this.router.navigate(['authentication', 'reset-password', 'reset'], {
             queryParams: params,
           })
-          break
-
-        case CallbackEvents.ResetPasswordVerificationFailed:
-          console.warn(CallbackEvents.ResetPasswordVerificationFailed, 'not implemented')
-          this.router.navigate(['/'])
           break
 
         default:
