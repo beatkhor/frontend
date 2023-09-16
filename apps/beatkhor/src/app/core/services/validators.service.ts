@@ -14,4 +14,14 @@ export class CustomValidators {
 
     return {mismatch: true}
   }
+
+  static username(control: AbstractControl): {[key: string]: boolean} | null {
+    const usernameRegex = /^[a-z0-9_]+$/
+    const value = String(control.value || '').toLowerCase()
+    if (value !== undefined && usernameRegex.test(value)) {
+      return null
+    }
+
+    return {usernameValid: true}
+  }
 }

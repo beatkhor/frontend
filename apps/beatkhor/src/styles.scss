@@ -108,7 +108,7 @@ $red-palette: (
 @include mat.core();
 $beatkhor-primary: mat.define-palette($primary-palette);
 $beatkhor-accent: mat.define-palette($accent-palette, A200, A100, A400);
-$beatkhor-warn: mat.define-palette($red-palette);
+$beatkhor-warn: mat.define-palette($red-palette, 400);
 
 $beatkhor-dark-typography: mat.define-typography-config(
     $font-family: 'Fira Sans',

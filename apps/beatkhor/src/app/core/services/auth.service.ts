@@ -114,7 +114,7 @@ export class AuthService {
    * Sets the new password for user's account
    * @param password New password entered by user
    * @param token A token received from the backend
-   * @returns http reset password request as observable
+   * @returns reset password http request as observable
    */
   resetPassword(password: string, token: string): Observable<CustomResponse<void>> {
     return this.http.post<CustomResponse<void>>(
@@ -124,10 +124,35 @@ export class AuthService {
   }
 
   /**
+   * Check if a username exists
+   * @param username Chosen username by the user
+   * @returns check username http request as observable
+   */
+  checkUsernameAvailability(username: string) {
+    return this.http.get<CustomResponse<any>>(
+      `${environment.authServiceURL}/users/check/username/` + username
+    )
+  }
+
+  /**
    * Get all the current user's profile information
    */
   getMe(): Observable<CustomResponse<MyUser>> {
     return this.http.get<CustomResponse<any>>(`${environment.authServiceURL}/users/me`)
+  }
+
+  /**
+   * Update my account details
+   */
+  updateMe(
+    first_name: string,
+    last_name: string,
+    username: string
+  ): Observable<CustomResponse<any>> {
+    return this.http.patch<CustomResponse<any>>(
+      `${environment.authServiceURL}/users/me`,
+      {username, first_name, last_name}
+    )
   }
 
   /**

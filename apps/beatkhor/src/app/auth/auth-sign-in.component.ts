@@ -108,7 +108,7 @@ export class SignInComponent {
       this.form.enable()
 
       if (!response.result.user.profile_completed) {
-        this.router.navigate(['routine', 'complete-profile'])
+        this.router.navigate(['authentication', 'complete-profile'])
         return
       }
 
