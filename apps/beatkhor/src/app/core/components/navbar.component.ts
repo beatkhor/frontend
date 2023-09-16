@@ -23,7 +23,7 @@ import {AuthService} from '../services/auth.service'
               <strong class="font-semibold">Beatkhor</strong>
             </a>
 
-            <div class="hidden items-center h-full mx-12 lg:flex mr-2">
+            <div class="hidden lg:flex items-center h-full mx-12 mr-2">
               <a
                 class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
                 routerLink="/browse"
@@ -40,7 +40,10 @@ import {AuthService} from '../services/auth.service'
           </div>
         </div>
 
-        <div *ngIf="!isLoggedIn; else userActions" class="flex text-neutral-300">
+        <div
+          *ngIf="!isLoggedIn; else userActions"
+          class="hidden sm:flex text-neutral-300"
+        >
           <a
             class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
             routerLink="/authentication"
