@@ -22,6 +22,10 @@ export const appRoutes: Route[] = [
         pathMatch: 'full',
         loadChildren: () => import('./index/index.module').then(m => m.IndexModule),
       },
+      {
+        path: 'upload',
+        loadChildren: () => import('./upload/upload.module').then(m => m.UploadModule),
+      },
     ],
   },
 ]
