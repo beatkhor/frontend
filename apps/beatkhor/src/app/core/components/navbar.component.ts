@@ -10,7 +10,7 @@ import {AuthService} from '../services/auth.service'
   template: `
     <div class="fixed left-0 right-0 top-0 h-14 border-b border-neutral-800">
       <div class="container mx-auto h-full flex items-stretch justify-between px-5">
-        <div class="flex items-center text-neutral-300">
+        <div class="flex items-center text-neutral-200">
           <div class="flex">
             <div class="block lg:hidden mr-2">
               <button mat-icon-button (click)="onMenu()">
