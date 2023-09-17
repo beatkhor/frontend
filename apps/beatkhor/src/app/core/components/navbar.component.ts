@@ -20,7 +20,7 @@ import {AuthService} from '../services/auth.service'
 
             <a routerLink="/" class="flex items-center">
               <img class="w-6 mr-4" src="assets/images/logo-dark.svg" alt="Beatkhor" />
-              <strong class="font-semibold">Beatkhor</strong>
+              <strong class="text-lg">Beatkhor</strong>
             </a>
 
             <div class="hidden lg:flex items-center h-full mx-12 mr-2">
