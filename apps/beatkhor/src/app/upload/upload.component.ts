@@ -2,6 +2,6 @@ import {Component} from '@angular/core'
 
 @Component({
   selector: 'bk-upload',
-  template: `<div class="container mx-auto px-5">Hello</div>`,
+  templateUrl: './upload.component.html',
 })
 export class UploadComponent {}
