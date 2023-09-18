@@ -91,10 +91,10 @@
   </div>
 
   <div
-    *ngIf="!sending"
+    *ngIf="!uploading && !finalizing"
     class="flex flex-col sm:flex-row-reverse items-stretch sm:items-center"
   >
-    <button mat-flat-button color="primary">
+    <button mat-flat-button color="primary" (click)="onSubmit()">
       <mat-icon>upload</mat-icon>
       <span>Upload Now</span>
     </button>
@@ -102,10 +102,13 @@
     <div class="grow bg-neutral-700 h-[1px] hidden sm:block"></div>
   </div>
 
-  <div *ngIf="sending" class="flex flex-col">
+  <div *ngIf="uploading || finalizing" class="flex flex-col">
     <p>Uploading...</p>
     <div class="flex flex-col items-stretch sm:items-center sm:flex-row">
-      <mat-progress-bar></mat-progress-bar>
+      <mat-progress-bar
+        [mode]="finalizing ? 'indeterminate' : 'determinate'"
+        [value]="this.audioMediaUpload?.progress | async"
+      ></mat-progress-bar>
       <a class="mx-0 sm:mx-4 my-4 sm:my-0" mat-stroked-button>Cancel</a>
     </div>
   </div>

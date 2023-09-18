@@ -7,7 +7,7 @@ export class TusdUpload {
   upload: any
   file: File
   inProgress = new BehaviorSubject<any>({})
-  progress = new BehaviorSubject<any>({})
+  progress = new BehaviorSubject<number>(0)
   code: string
   parent: string
 
@@ -43,4 +43,6 @@ export class TusdUpload {
     })
     this.upload.start()
   }
+
+  stop() {}
 }
