@@ -12,10 +12,11 @@
       </mat-form-field>
 
       <mat-form-field
-        [floatLabel]="!selectedGenres.length ? 'auto' : 'always'"
+        [floatLabel]="'always'"
         class="grow mx-0 lg:mx-4 my-4 lg:my-0 cursor-pointer"
         (click)="onGenre()"
       >
+        <mat-label *ngIf="selectedGenres.length">Select Genres</mat-label>
         <input
           readonly
           required
@@ -33,6 +34,7 @@
         class="grow cursor-pointer"
         (click)="onTag()"
       >
+        <mat-label *ngIf="selectedTags.length">Select Tags</mat-label>
         <input
           readonly
           matInput
