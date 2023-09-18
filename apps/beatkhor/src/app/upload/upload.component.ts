@@ -4,6 +4,7 @@ import {Component, OnInit} from '@angular/core'
 import {forkJoin, lastValueFrom} from 'rxjs'
 
 import {GenreSelectorDialogComponent} from '../shared/genre-selector-dialog.component'
+import {TagSelectorDialogComponent} from '../shared/tag-selector-dialog.component'
 import {CustomErrorHandler} from '../core/services/error-handler.service'
 import {CategoryService} from '../core/services/category.service'
 import {PostReviewStatus, PostStatus} from '../core/models/post'
@@ -99,7 +100,22 @@ export class UploadComponent implements OnInit {
     return UtilsService.abbrTitlesText(this.selectedGenres, count)
   }
 
-  onTag(): void {}
+  onTag(): void {
+    const ref = this.dialog.open(TagSelectorDialogComponent, {
+      width: '400px',
+      data: {
+        tags: this.tags,
+        selectedTags: this.selectedTags,
+      },
+      autoFocus: false,
+    })
+
+    ref.afterClosed().subscribe(res => {
+      if (res?.submit) {
+        this.selectedTags = res.result || []
+      }
+    })
+  }
 
   selectedTagsText(count: number): string {
     return UtilsService.abbrTitlesText(this.selectedTags, count)
