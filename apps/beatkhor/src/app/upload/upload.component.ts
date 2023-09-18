@@ -1,6 +1,14 @@
-import {Component} from '@angular/core'
+import {FormBuilder, FormGroup, Validators} from '@angular/forms'
+import {Component, OnInit} from '@angular/core'
+import {forkJoin, lastValueFrom} from 'rxjs'
 
+import {CustomErrorHandler} from '../core/services/error-handler.service'
+import {CategoryService} from '../core/services/category.service'
+import {PostReviewStatus, PostStatus} from '../core/models/post'
+import {GenresService} from '../core/services/genres.service'
 import {UtilsService} from '../core/services/utils.service'
+import {TagsService} from '../core/services/tags.service'
+import {Category} from '../core/models/category'
 import {Genre} from '../core/models/genres'
 import {Tag} from '../core/models/tags'
 
@@ -8,14 +16,64 @@ import {Tag} from '../core/models/tags'
   selector: 'bk-upload',
   templateUrl: './upload.component.html',
 })
-export class UploadComponent {
+export class UploadComponent implements OnInit {
+  finalizing = false
+  hasError = false
+  form!: FormGroup
   loading = false
+  sending = false
 
   selectedGenres: Genre[] = []
-  genres: Genre[] = []
-
+  categories: Category[] = []
   selectedTags: Tag[] = []
+  genres: Genre[] = []
   tags: Tag[] = []
+
+  constructor(
+    private fb: FormBuilder,
+    private tagService: TagsService,
+    private genreService: GenresService,
+    private errorHandler: CustomErrorHandler,
+    private categoryService: CategoryService
+  ) {
+    this.createForm()
+  }
+
+  ngOnInit(): void {
+    this.getData()
+  }
+
+  private createForm() {
+    this.form = this.fb.group({
+      title: ['', Validators.required],
+      code: [UtilsService.generatePostCode(), Validators.required],
+      price: [0],
+      description: [''],
+      status: [PostStatus.Draft],
+      review_status: [PostReviewStatus.None],
+    })
+  }
+
+  private async getData(): Promise<void> {
+    try {
+      this.hasError = false
+      this.loading = true
+      const request$ = forkJoin([
+        this.categoryService.getCategories(),
+        this.genreService.getGenres(),
+        this.tagService.getTags(),
+      ])
+      const [categoryResult, genreResult, tagResult] = await lastValueFrom(request$)
+      this.categories = categoryResult.result
+      this.genres = genreResult.result
+      this.tags = tagResult.result
+      this.loading = false
+      this.hasError = false
+    } catch (error: any) {
+      this.hasError = true
+      this.errorHandler.handle(error)
+    }
+  }
 
   onGenre(): void {}
 
