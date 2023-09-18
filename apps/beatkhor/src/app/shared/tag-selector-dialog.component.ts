@@ -17,7 +17,7 @@ import {Tag} from '../core/models/tags'
       </mat-form-field>
     </div>
 
-    <div mat-dialog-content *ngIf="filteredTags.length">
+    <div class="!py-0" mat-dialog-content *ngIf="filteredTags.length">
       <mat-selection-list>
         <mat-divider></mat-divider>
         <ng-container *ngFor="let category of filteredTags">
