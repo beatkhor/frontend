@@ -1,7 +1,9 @@
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
+import {MatDialog} from '@angular/material/dialog'
 import {Component, OnInit} from '@angular/core'
 import {forkJoin, lastValueFrom} from 'rxjs'
 
+import {GenreSelectorDialogComponent} from '../shared/genre-selector-dialog.component'
 import {CustomErrorHandler} from '../core/services/error-handler.service'
 import {CategoryService} from '../core/services/category.service'
 import {PostReviewStatus, PostStatus} from '../core/models/post'
@@ -31,6 +33,7 @@ export class UploadComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private dialog: MatDialog,
     private tagService: TagsService,
     private genreService: GenresService,
     private errorHandler: CustomErrorHandler,
@@ -75,7 +78,22 @@ export class UploadComponent implements OnInit {
     }
   }
 
-  onGenre(): void {}
+  onGenre(): void {
+    const ref = this.dialog.open(GenreSelectorDialogComponent, {
+      width: '400px',
+      data: {
+        genres: this.genres,
+        selectedGenres: this.selectedGenres,
+      },
+      autoFocus: false,
+    })
+
+    ref.afterClosed().subscribe((res: any) => {
+      if (res?.submit) {
+        this.selectedGenres = res.result || []
+      }
+    })
+  }
 
   selectedGenresText(count: number): string {
     return UtilsService.abbrTitlesText(this.selectedGenres, count)
