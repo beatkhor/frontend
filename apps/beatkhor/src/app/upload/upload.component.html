@@ -65,10 +65,30 @@
     style="display: none"
     (change)="onAudioFileInputChange($event)"
   />
-  <button class="my-7" mat-stroked-button color="primary" (click)="audioInput.click()">
+  <button
+    *ngIf="!audioMediaUpload"
+    class="my-7"
+    mat-stroked-button
+    color="primary"
+    (click)="audioInput.click()"
+  >
     <mat-icon>add</mat-icon>
     Add Audio File
   </button>
+
+  <div *ngIf="audioMediaUpload" class="inline-block my-7">
+    <div class="flex items-center bg-neutral-700 rounded px-3">
+      <span>{{ audioMediaUpload.file.name }}</span>
+      <button
+        class="ml-3"
+        mat-button
+        color="warn"
+        (click)="onRemoveAudioFile(audioInput)"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
 
   <div
     *ngIf="!sending"

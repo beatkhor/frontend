@@ -27,7 +27,7 @@ export class UploadComponent implements OnInit {
   loading = false
   sending = false
 
-  audioMediaUploads: TusdUpload[] = []
+  audioMediaUpload: TusdUpload | undefined
   selectedGenres: Genre[] = []
   categories: Category[] = []
   selectedTags: Tag[] = []
@@ -127,7 +127,12 @@ export class UploadComponent implements OnInit {
     if (event?.target?.files?.length) {
       const file = event?.target?.files[0]
       const upload = new TusdUpload(file, UtilsService.generatePostCode())
-      this.audioMediaUploads.push(upload)
+      this.audioMediaUpload = upload
     }
+  }
+
+  onRemoveAudioFile(inputEl: HTMLInputElement) {
+    inputEl.value = ''
+    this.audioMediaUpload = undefined
   }
 }
