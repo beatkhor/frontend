@@ -1,1 +1,88 @@
-<div class="container mx-auto px-5">Hello</div>
+<div class="container mx-auto px-5 py-10 text-neutral-200">
+  <h1 class="text-2xl">Upload your track</h1>
+  <p class="text-neutral-400">Provide these information to upload your beat.</p>
+
+  <div class="py-6 mb-4">
+    <div class="flex py-3 flex-col lg:flex-row">
+      <mat-form-field class="grow">
+        <mat-label>Title</mat-label>
+        <input required formControlName="title" matInput />
+        <mat-error>Please provide a title for your track</mat-error>
+        <mat-hint>People might search your track with this name.</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field
+        [floatLabel]="!selectedGenres.length ? 'auto' : 'always'"
+        class="grow mx-0 lg:mx-4 my-4 lg:my-0 cursor-pointer"
+        (click)="onGenre()"
+      >
+        <input
+          readonly
+          required
+          matInput
+          class="cursor-pointer"
+          placeholder="Select Genres*"
+          [value]="selectedGenresText(2)"
+        />
+        <mat-hint>Click on the field to select genres</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field
+        [floatLabel]="!selectedTags.length ? 'auto' : 'always'"
+        class="grow cursor-pointer"
+        (click)="onTag()"
+      >
+        <input
+          readonly
+          matInput
+          class="cursor-pointer"
+          placeholder="Select Tags"
+          [value]="selectedTagsText(2)"
+        />
+        <mat-hint>Helps people to find the track easier</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="flex py-3">
+      <mat-form-field class="grow">
+        <mat-label>Description</mat-label>
+        <textarea formControlName="description" matInput rows="1"></textarea>
+        <mat-hint>Any other kind of information about this track</mat-hint>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <h2 class="text-2xl">Audio file</h2>
+  <p class="text-neutral-400">Click to add an .mp3 or .wav audio file</p>
+  <input
+    type="file"
+    accept=".mp3"
+    #audioInput
+    style="display: none"
+    (change)="onAudioFileInputChange($event)"
+  />
+  <button class="my-7" mat-stroked-button color="primary" (click)="audioInput.click()">
+    <mat-icon>add</mat-icon>
+    Add Audio File
+  </button>
+
+  <div
+    *ngIf="!loading"
+    class="flex flex-col sm:flex-row-reverse items-stretch sm:items-center"
+  >
+    <button mat-flat-button color="primary">
+      <mat-icon>upload</mat-icon>
+      <span>Upload Now</span>
+    </button>
+    <a routerLink="/" class="mx-0 sm:mx-4 my-3 sm:my-0" mat-stroked-button>Go Back</a>
+    <div class="grow bg-neutral-700 h-[1px] hidden sm:block"></div>
+  </div>
+
+  <div *ngIf="loading" class="flex flex-col">
+    <p>Uploading...</p>
+    <div class="flex flex-col items-stretch sm:items-center sm:flex-row">
+      <mat-progress-bar></mat-progress-bar>
+      <a class="mx-0 sm:mx-4 my-4 sm:my-0" mat-stroked-button>Cancel</a>
+    </div>
+  </div>
+</div>

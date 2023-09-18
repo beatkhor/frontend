@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core'
 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import {MatProgressBarModule} from '@angular/material/progress-bar'
 import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatSnackBarModule} from '@angular/material/snack-bar'
 import {MatCheckboxModule} from '@angular/material/checkbox'
@@ -15,6 +16,7 @@ import {MatMenuModule} from '@angular/material/menu'
 
 const modules = [
   MatProgressSpinnerModule,
+  MatProgressBarModule,
   MatFormFieldModule,
   MatSnackBarModule,
   MatCheckboxModule,
