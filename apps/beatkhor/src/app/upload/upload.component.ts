@@ -12,6 +12,7 @@ import {GenresService} from '../core/services/genres.service'
 import {UtilsService} from '../core/services/utils.service'
 import {TagsService} from '../core/services/tags.service'
 import {Category} from '../core/models/category'
+import {TusdUpload} from '../core/models/tusd'
 import {Genre} from '../core/models/genres'
 import {Tag} from '../core/models/tags'
 
@@ -26,6 +27,7 @@ export class UploadComponent implements OnInit {
   loading = false
   sending = false
 
+  audioMediaUploads: TusdUpload[] = []
   selectedGenres: Genre[] = []
   categories: Category[] = []
   selectedTags: Tag[] = []
@@ -121,5 +123,11 @@ export class UploadComponent implements OnInit {
     return UtilsService.abbrTitlesText(this.selectedTags, count)
   }
 
-  onAudioFileInputChange(event: any): void {}
+  onAudioFileInputChange(event: any): void {
+    if (event?.target?.files?.length) {
+      const file = event?.target?.files[0]
+      const upload = new TusdUpload(file, UtilsService.generatePostCode())
+      this.audioMediaUploads.push(upload)
+    }
+  }
 }
