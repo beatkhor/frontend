@@ -216,7 +216,7 @@ export class UploadComponent implements OnInit {
         },
       ],
       link: UtilsService.sanitizeForLink(
-        `${this.form.value.code} ${this.form.value.title}`
+        `${this.form.value.code}-${this.form.value.title}`
       ),
       pictures: [],
       categories: [selectedCategories],
