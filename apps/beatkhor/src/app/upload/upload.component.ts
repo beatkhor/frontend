@@ -2,6 +2,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 import {MatDialog} from '@angular/material/dialog'
 import {Component, OnInit} from '@angular/core'
 import {forkJoin, lastValueFrom} from 'rxjs'
+import {Router} from '@angular/router'
 
 import {GenreSelectorDialogComponent} from '../shared/genre-selector-dialog.component'
 import {TagSelectorDialogComponent} from '../shared/tag-selector-dialog.component'
@@ -18,7 +19,6 @@ import {Category} from '../core/models/category'
 import {TusdUpload} from '../core/models/tusd'
 import {Genre} from '../core/models/genres'
 import {Tag} from '../core/models/tags'
-import {Router} from '@angular/router'
 
 @Component({
   selector: 'bk-upload',
