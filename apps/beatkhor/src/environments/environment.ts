@@ -7,6 +7,7 @@ export const environment = {
   authServiceURL: 'https://next.beatkhor.com/api/auth',
   contentServiceURL: 'https://next.beatkhor.com/api/content',
   storageServiceURL: 'https://next.beatkhor.com/api/storage',
+  uploaderServiceURL: 'https://next.beatkhor.com/api/tusd/files/',
   messages,
   seo: {
     siteName: 'Beatkhor',
