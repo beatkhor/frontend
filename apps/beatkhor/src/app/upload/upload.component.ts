@@ -215,6 +215,9 @@ export class UploadComponent implements OnInit {
           original: audioMedia.uuid,
         },
       ],
+      link: UtilsService.sanitizeForLink(
+        `${this.form.value.code} ${this.form.value.title}`
+      ),
       pictures: [],
       categories: [selectedCategories],
       genres: this.selectedGenres,

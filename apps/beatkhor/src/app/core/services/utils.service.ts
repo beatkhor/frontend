@@ -76,4 +76,15 @@ export class UtilsService {
     const ms = (+date).toString()
     return `BK${date.getUTCMonth() + 1}T${ms.slice(8)}`
   }
+
+  static sanitizeForLink(input: string) {
+    // Replace non-alphanumeric characters with an empty string
+    const sanitizedString = input.replace(/[^a-zA-Z0-9آ-ی]/g, '')
+
+    // Optionally, replace spaces with hyphens
+    const cleanString = sanitizedString.replace(/\s+/g, '-')
+
+    // Optionally, convert to lowercase
+    return cleanString.toLowerCase()
+  }
 }
