@@ -32,6 +32,7 @@ import {CallbackEvents} from '../core/models/callback-events'
         (close)="onCloseNotice()"
       ></bk-notice>
     </ng-container>
+    <bk-header></bk-header>
   </div>`,
 })
 export class IndexComponent implements OnInit {
