@@ -8,9 +8,9 @@ import {AuthService} from '../services/auth.service'
 @Component({
   selector: 'bk-navbar',
   template: `
-    <div class="fixed left-0 right-0 top-0 h-14 border-b border-neutral-800">
+    <div class="fixed inset-x-0 top-0 h-14 border-b border-neutral-800 bg-neutral-900">
       <div class="container mx-auto h-full flex items-stretch justify-between px-5">
-        <div class="flex items-center text-neutral-300">
+        <div class="flex items-center text-neutral-200">
           <div class="flex">
             <div class="block lg:hidden mr-2">
               <button mat-icon-button (click)="onMenu()">
@@ -20,7 +20,7 @@ import {AuthService} from '../services/auth.service'
 
             <a routerLink="/" class="flex items-center">
               <img class="w-6 mr-4" src="assets/images/logo-dark.svg" alt="Beatkhor" />
-              <strong class="font-semibold">Beatkhor</strong>
+              <strong class="text-lg">Beatkhor</strong>
             </a>
 
             <div class="hidden lg:flex items-center h-full mx-12 mr-2">
@@ -77,7 +77,7 @@ import {AuthService} from '../services/auth.service'
         <mat-icon>person</mat-icon>
         <span>Profile</span>
       </a>
-      <a mat-menu-item disabled routerLink="/upload/track">
+      <a mat-menu-item routerLink="/upload">
         <mat-icon>upload</mat-icon>
         <span>Upload</span>
       </a>
