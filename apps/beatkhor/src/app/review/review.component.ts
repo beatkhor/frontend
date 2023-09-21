@@ -19,7 +19,9 @@ import {Review} from '../core/models/review'
       </div>
     </bk-gird-header>
 
-    <ng-container *ngFor="let post of posts">
+    <ng-container
+      *ngFor="let post of posts | paginate : {itemsPerPage: 10, currentPage: p}"
+    >
       <bk-review-post-item
         [post]="post"
         [myReviews]="myReviews"
@@ -27,12 +29,16 @@ import {Review} from '../core/models/review'
       ></bk-review-post-item>
       <mat-divider></mat-divider>
     </ng-container>
+    <div class="flex justify-center py-4">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
   </div>`,
 })
 export class ReviewComponent implements OnInit {
   myReviews: Review[] = []
   posts: Post[] = []
   loading = false
+  p: number = 1
 
   constructor(
     private reviewService: ReviewService,

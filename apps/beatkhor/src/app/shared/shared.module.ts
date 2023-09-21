@@ -15,6 +15,7 @@ import {MaterialModule} from './material.module'
 import {PostLinkPipe} from './post-link.pipe'
 import {DownloadLinkPipe} from './download-link.pipe'
 import {UserNamePipe} from './user-name.pipe'
+import {NgxPaginationModule} from 'ngx-pagination'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,13 @@ import {UserNamePipe} from './user-name.pipe'
     DownloadLinkPipe,
     UserNamePipe,
   ],
-  imports: [CommonModule, MaterialModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
+  ],
   exports: [
     FormsModule,
     ReactiveFormsModule,
@@ -42,6 +49,7 @@ import {UserNamePipe} from './user-name.pipe'
     PostLinkPipe,
     DownloadLinkPipe,
     UserNamePipe,
+    NgxPaginationModule,
   ],
 })
 export class SharedModule {}
