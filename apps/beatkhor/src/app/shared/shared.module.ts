@@ -12,6 +12,9 @@ import {
   GridHeaderActionsDirective,
 } from './grid-header.component'
 import {MaterialModule} from './material.module'
+import {PostLinkPipe} from './post-link.pipe'
+import {DownloadLinkPipe} from './download-link.pipe'
+import {UserNamePipe} from './user-name.pipe'
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import {MaterialModule} from './material.module'
     GenreSelectorDialogComponent,
     TagSelectorDialogComponent,
     NoticeComponent,
+    PostLinkPipe,
+    DownloadLinkPipe,
+    UserNamePipe,
   ],
   imports: [CommonModule, MaterialModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -33,6 +39,9 @@ import {MaterialModule} from './material.module'
     GridHeaderComponent,
     GridHeaderActionsDirective,
     GridHeaderTitleDirective,
+    PostLinkPipe,
+    DownloadLinkPipe,
+    UserNamePipe,
   ],
 })
 export class SharedModule {}
