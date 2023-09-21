@@ -32,6 +32,7 @@ export class UploadComponent implements OnInit {
   uploading = false
 
   audioMediaUpload: TusdUpload | undefined
+  imageMediaUpload: TusdUpload | undefined
   selectedGenres: Genre[] = []
   categories: Category[] = []
   selectedTags: Tag[] = []
@@ -139,9 +140,23 @@ export class UploadComponent implements OnInit {
     }
   }
 
+  onImageFileInputChange(event: any): void {
+    if (event?.target?.files?.length) {
+      const file = event?.target?.files[0]
+      const upload = new TusdUpload(file, UtilsService.generatePostCode())
+      this.imageMediaUpload = upload
+      this.imageMediaUpload.start()
+    }
+  }
+
   onRemoveAudioFile(inputEl: HTMLInputElement) {
     inputEl.value = ''
     this.audioMediaUpload = undefined
+  }
+
+  onRemoveImageFile(inputEl: HTMLInputElement) {
+    inputEl.value = ''
+    this.imageMediaUpload = undefined
   }
 
   async onSubmit(): Promise<void> {
@@ -160,8 +175,13 @@ export class UploadComponent implements OnInit {
       return this.snackbar.error('Please add an audio for your track.')
     }
 
+    if (!this.imageMediaUpload) {
+      return this.snackbar.error('Please add an image for your track.')
+    }
+
     this.uploading = true
     this.audioMediaUpload.start()
+
     const progressSubscription = this.audioMediaUpload.progress.subscribe(progress => {
       if (progress === 100) {
         this.uploading = false
@@ -184,6 +204,24 @@ export class UploadComponent implements OnInit {
         )
       )
       audioMedia = response.result
+    } catch (error: any) {
+      this.form.enable()
+      this.errorHandler.handle(error)
+      this.finalizing = false
+      this.loading = false
+      return
+    }
+
+    let imageMedia: any
+
+    try {
+      const response = await lastValueFrom(
+        this.mediaService.uploadByURL(
+          this.imageMediaUpload?.upload.url,
+          this.imageMediaUpload?.file.name ?? ''
+        )
+      )
+      imageMedia = response.result
     } catch (error: any) {
       this.form.enable()
       this.errorHandler.handle(error)
@@ -218,7 +256,13 @@ export class UploadComponent implements OnInit {
       link: UtilsService.sanitizeForLink(
         `${this.form.value.code}-${this.form.value.title}`
       ),
-      pictures: [],
+      pictures: [
+        {
+          original: imageMedia.uuid,
+          thumbnail: imageMedia.uuid,
+          default: imageMedia.uuid,
+        },
+      ],
       categories: [selectedCategories],
       genres: this.selectedGenres,
       tags: this.selectedTags,
