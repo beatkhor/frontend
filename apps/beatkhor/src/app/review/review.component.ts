@@ -19,19 +19,25 @@ import {Review} from '../core/models/review'
       </div>
     </bk-gird-header>
 
-    <ng-container
-      *ngFor="let post of posts | paginate : {itemsPerPage: 10, currentPage: p}"
-    >
-      <bk-review-post-item
-        [post]="post"
-        [myReviews]="myReviews"
-        (voteChange)="getReviews()"
-      ></bk-review-post-item>
-      <mat-divider></mat-divider>
-    </ng-container>
-    <div class="flex justify-center py-4">
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <div *ngIf="loading" class="flex justify-center py-4">
+      <mat-spinner [diameter]="45" ]></mat-spinner>
     </div>
+
+    <ng-container *ngIf="!loading">
+      <ng-container
+        *ngFor="let post of posts | paginate : {itemsPerPage: 10, currentPage: p}"
+      >
+        <bk-review-post-item
+          [post]="post"
+          [myReviews]="myReviews"
+          (voteChange)="getReviews()"
+        ></bk-review-post-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+      <div class="flex justify-center py-4">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </ng-container>
   </div>`,
 })
 export class ReviewComponent implements OnInit {

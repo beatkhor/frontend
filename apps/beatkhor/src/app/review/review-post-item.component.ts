@@ -17,6 +17,14 @@ import {CustomErrorHandler} from '../core/services/error-handler.service'
 @Component({
   selector: 'bk-review-post-item',
   template: ` <div class="flex items-center py-6">
+    <div>
+      <img
+        *ngIf="post.pictures.length"
+        class="w-32 rounded me-5"
+        [src]="post.pictures[0].default | downloadLink"
+        alt="Pic"
+      />
+    </div>
     <div class="flex flex-grow flex-col items-stretch">
       <div class="flex justify-between items-end mb-4">
         <div class="flex flex-col">
