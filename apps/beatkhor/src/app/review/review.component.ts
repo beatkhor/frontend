@@ -20,7 +20,7 @@ import {Review} from '../core/models/review'
     </bk-gird-header>
 
     <div *ngIf="loading" class="flex justify-center py-4">
-      <mat-spinner [diameter]="45" ]></mat-spinner>
+      <mat-spinner [diameter]="45"></mat-spinner>
     </div>
 
     <ng-container *ngIf="!loading">
