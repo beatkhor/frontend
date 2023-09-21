@@ -79,10 +79,6 @@ import {AuthService} from '../services/auth.service'
     </div>
 
     <mat-menu #userActionsMenu="matMenu">
-      <a mat-menu-item disabled [routerLink]="'/u/' + user.username">
-        <mat-icon>person</mat-icon>
-        <span>Profile</span>
-      </a>
       <a mat-menu-item routerLink="/upload">
         <mat-icon>upload</mat-icon>
         <span>Upload</span>
