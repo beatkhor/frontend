@@ -56,73 +56,25 @@
     </div>
   </div>
 
-  <h2 class="text-2xl">Audio file</h2>
-  <p class="text-neutral-400">Click to add an .mp3 or .wav audio file</p>
-  <input
-    type="file"
-    accept=".mp3"
-    #audioInput
-    style="display: none"
-    (change)="onAudioFileInputChange($event)"
-  />
-  <button
-    *ngIf="!audioMediaUpload"
-    class="my-7"
-    mat-stroked-button
-    color="primary"
-    (click)="audioInput.click()"
-  >
-    <mat-icon>add</mat-icon>
-    Add Audio File
-  </button>
-
-  <div *ngIf="audioMediaUpload" class="inline-block my-7">
-    <div class="flex items-center bg-neutral-700 rounded px-3">
-      <span>{{ audioMediaUpload.file.name }}</span>
-      <button
-        class="ml-3"
-        mat-button
-        color="warn"
-        (click)="onRemoveAudioFile(audioInput)"
-      >
-        Delete
-      </button>
+  <section class="flex flex-col md:flex-row">
+    <div class="flex-grow">
+      <bk-upload-file-picker
+        title="Audio file"
+        accept=".mp3,.wav"
+        subtitle="Click to add an .mp3 or .wav audio file"
+        (fileChange)="audioMediaUpload = $event"
+      ></bk-upload-file-picker>
     </div>
-  </div>
 
-  <h2 class="text-2xl">Cover Art file</h2>
-  <p class="text-neutral-400">Click to add an .jpg or .jpeg image file</p>
-  <input
-    type="file"
-    accept=".jpeg,.jpg"
-    #imageInput
-    style="display: none"
-    (change)="onImageFileInputChange($event)"
-  />
-  <button
-    *ngIf="!imageMediaUpload"
-    class="my-7"
-    mat-stroked-button
-    color="primary"
-    (click)="imageInput.click()"
-  >
-    <mat-icon>add</mat-icon>
-    Add Image File
-  </button>
-
-  <div *ngIf="imageMediaUpload" class="inline-block my-7">
-    <div class="flex items-center bg-neutral-700 rounded px-3">
-      <span>{{ imageMediaUpload.file.name }}</span>
-      <button
-        class="ml-3"
-        mat-button
-        color="warn"
-        (click)="onRemoveImageFile(imageInput)"
-      >
-        Delete
-      </button>
+    <div class="flex-grow">
+      <bk-upload-file-picker
+        title="Cover art file"
+        accept=".jpeg,.jpg"
+        subtitle="Click to add an .jpg or .jpeg image file"
+        (fileChange)="imageMediaUpload = $event"
+      ></bk-upload-file-picker>
     </div>
-  </div>
+  </section>
 
   <div
     *ngIf="!uploading && !finalizing"
