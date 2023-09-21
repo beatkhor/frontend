@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core'
-import {lastValueFrom} from 'rxjs'
+import {forkJoin, lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '../core/services/error-handler.service'
 import {ReviewService} from '../core/services/review.service'
 import {Post} from '../core/models/post'
+import {Review} from '../core/models/review'
 
 @Component({
   selector: 'bk-review',
@@ -19,12 +20,17 @@ import {Post} from '../core/models/post'
     </bk-gird-header>
 
     <ng-container *ngFor="let post of posts">
-      <bk-review-post-item [post]="post"></bk-review-post-item>
+      <bk-review-post-item
+        [post]="post"
+        [myReviews]="myReviews"
+        (voteChange)="getReviews()"
+      ></bk-review-post-item>
       <mat-divider></mat-divider>
     </ng-container>
   </div>`,
 })
 export class ReviewComponent implements OnInit {
+  myReviews: Review[] = []
   posts: Post[] = []
   loading = false
 
@@ -40,9 +46,27 @@ export class ReviewComponent implements OnInit {
   async getData(): Promise<void> {
     try {
       this.loading = true
-      const result = await lastValueFrom(this.reviewService.getReviewPosts())
-      this.posts = result.result
+      const result = await lastValueFrom(
+        forkJoin([this.reviewService.getReviewPosts(), this.reviewService.getMyReviews()])
+      )
+
+      if (result[0]) {
+        this.posts = result[0].result
+      }
+
+      if (result[1]) {
+        this.myReviews = result[1].result
+      }
       this.loading = false
+    } catch (error: any) {
+      this.errHandler.handle(error)
+    }
+  }
+
+  async getReviews(): Promise<void> {
+    try {
+      const result = await lastValueFrom(this.reviewService.getMyReviews())
+      this.myReviews = result.result
     } catch (error: any) {
       this.loading = false
       this.errHandler.handle(error)
