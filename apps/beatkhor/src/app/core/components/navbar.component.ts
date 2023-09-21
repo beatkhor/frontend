@@ -32,6 +32,12 @@ import {AuthService} from '../services/auth.service'
               </a>
               <a
                 class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
+                routerLink="/review"
+              >
+                <span>Review</span>
+              </a>
+              <a
+                class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
                 routerLink="/about"
               >
                 <span>About</span>

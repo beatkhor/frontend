@@ -28,6 +28,11 @@ export const appRoutes: Route[] = [
         canActivate: [AuthGuard],
         loadChildren: () => import('./upload/upload.module').then(m => m.UploadModule),
       },
+      {
+        path: 'review',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./review/review.module').then(m => m.ReviewModule),
+      },
     ],
   },
 ]
