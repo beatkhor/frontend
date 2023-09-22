@@ -3,7 +3,7 @@ import {Component} from '@angular/core'
 @Component({
   selector: 'bk-header',
   template: `
-    <div class="m-0 lg:mt-10 lg:mb-0 lg:mx-0">
+    <div class="m-0 lg:mt-12 lg:mb-0 lg:mx-0">
       <div
         class="py-8 px-0 rounded-[3px] flex justify-center
          lg:border lg:border-solid"
@@ -58,6 +58,18 @@ import {Component} from '@angular/core'
       </div>
     </div>
   `,
-  styleUrls: ['./header.component.scss'],
+  styles: [
+    `
+      .link {
+        @apply mr-4 mb-4 no-underline text-[0.87rem];
+      }
+
+      @media (min-width: 1024px) {
+        .description {
+          text-align: unset;
+        }
+      }
+    `,
+  ],
 })
 export class HeaderComponent {}
