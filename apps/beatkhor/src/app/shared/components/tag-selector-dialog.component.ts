@@ -2,45 +2,45 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog'
 import {Component, Inject, OnInit, Optional} from '@angular/core'
 import {Subject} from 'rxjs'
 
-import {Genre} from '../core/models/genres'
+import {Tag} from '../../core/models/tags'
 
 @Component({
-  selector: 'bk-genre-selector-dialog',
+  selector: 'bk-tag-selector-dialog',
   template: `
-    <h1 mat-dialog-title>Select Genres</h1>
+    <h1 mat-dialog-title>Select Tags</h1>
 
     <div class="flex flex-col items-stretch">
-      <p class="mx-6 mb-3">Click on each genre to select it:</p>
+      <p class="mx-6 mb-3">Click on each tag to select it:</p>
       <mat-form-field class="mx-6">
         <mat-label>Search</mat-label>
         <input matInput [(ngModel)]="query" (ngModelChange)="queryChange()" />
       </mat-form-field>
     </div>
 
-    <div class="!py-0" mat-dialog-content *ngIf="filteredGenres.length">
+    <div class="!py-0" mat-dialog-content *ngIf="filteredTags.length">
       <mat-selection-list>
         <mat-divider></mat-divider>
-        <ng-container *ngFor="let genre of filteredGenres">
+        <ng-container *ngFor="let category of filteredTags">
           <mat-list-option
-            (selectedChange)="selectionChange(genre, $event)"
-            [selected]="genre._selected"
+            (selectedChange)="selectionChange(category, $event)"
+            [selected]="category._selected"
             [checkboxPosition]="'before'"
-            [value]="genre"
+            [value]="category"
           >
-            <span class="title">{{ genre.title }}</span>
+            <span class="title">{{ category.title }}</span>
           </mat-list-option>
           <mat-divider></mat-divider>
         </ng-container>
       </mat-selection-list>
     </div>
 
-    <div class="!py-2 !mb-3" mat-dialog-content *ngIf="!filteredGenres.length || !genres">
-      <p>No genre found!</p>
+    <div class="!py-2 !mb-3" mat-dialog-content *ngIf="!filteredTags.length || !tags">
+      <p>No tags found!</p>
     </div>
 
     <div mat-dialog-actions>
       <div class="px-4 mb-4">
-        <button mat-flat-button color="primary" (click)="close(true, selectedGenres)">
+        <button mat-flat-button color="primary" (click)="close(true, selectedTags)">
           Submit
         </button>
         <button mat-button (click)="close(false)">Cancel</button>
@@ -48,43 +48,45 @@ import {Genre} from '../core/models/genres'
     </div>
   `,
 })
-export class GenreSelectorDialogComponent implements OnInit {
+export class TagSelectorDialogComponent implements OnInit {
   queryChanges: Subject<string> = new Subject<string>()
-  filteredGenres: Genre[] = []
-  selectedGenres: Genre[] = []
-  genres: Genre[] = []
+  filteredTags: Tag[] = []
+  selectedTags: Tag[] = []
+  tags: Tag[] = []
   loading = false
   query = ''
 
   constructor(
-    public dialogRef: MatDialogRef<GenreSelectorDialogComponent>,
+    public dialogRef: MatDialogRef<TagSelectorDialogComponent>,
     @Optional()
     @Inject(MAT_DIALOG_DATA)
     public initializedData: {
-      selectedGenres: Genre[]
-      genres: Genre[]
+      selectedTags: Tag[]
+      tags: Tag[]
     }
   ) {}
 
   ngOnInit(): void {
-    this.selectedGenres = JSON.parse(JSON.stringify(this.initializedData.selectedGenres))
+    this.selectedTags = JSON.parse(JSON.stringify(this.initializedData.selectedTags))
+    console.log(this.selectedTags)
     this.getData()
     this.queryChanges.subscribe(() => {
       let temp = []
       if (!this.query) {
-        temp = this.genres.slice(0, 10)
+        temp = this.tags.slice(0, 10)
       } else {
         const q = this.query.toLowerCase()
-        temp = this.genres
+        temp = this.tags
           .filter(c => {
-            return (c?.title || '').toLowerCase().includes(q)
+            return (c?.title ?? '').toLowerCase().includes(q)
           })
           .slice(0, 10)
       }
 
       for (const tempC of temp) {
-        tempC._selected = false
-        for (const selectedC of this.selectedGenres) {
+        for (const selectedC of this.selectedTags) {
+          tempC._selected = false
+          console.log(tempC)
           if (tempC.id === selectedC.id) {
             tempC._selected = true
             break
@@ -92,16 +94,16 @@ export class GenreSelectorDialogComponent implements OnInit {
         }
       }
 
-      this.filteredGenres = temp
+      this.filteredTags = temp
     })
   }
 
   async getData() {
-    this.genres = this.initializedData.genres
-    this.filteredGenres = this.genres.slice(0, 10)
-    for (const tempC of this.filteredGenres) {
+    this.tags = this.initializedData.tags
+    this.filteredTags = this.tags.slice(0, 10)
+    for (const tempC of this.filteredTags) {
       tempC._selected = false
-      for (const selectedC of this.selectedGenres) {
+      for (const selectedC of this.selectedTags) {
         if (tempC.id === selectedC.id) {
           tempC._selected = true
           break
@@ -114,14 +116,14 @@ export class GenreSelectorDialogComponent implements OnInit {
     this.queryChanges.next(this.query)
   }
 
-  selectionChange(genre: Genre, value: boolean) {
+  selectionChange(tag: Tag, value: boolean) {
     if (value) {
-      const filtered = this.selectedGenres.filter(c => c.id === genre.id)
+      const filtered = this.selectedTags.filter(c => c.id === tag.id)
       if (!filtered.length) {
-        this.selectedGenres.push(genre)
+        this.selectedTags.push(tag)
       }
     } else {
-      this.selectedGenres = this.selectedGenres.filter(c => c.id !== genre.id)
+      this.selectedTags = this.selectedTags.filter(c => c.id !== tag.id)
     }
   }
 

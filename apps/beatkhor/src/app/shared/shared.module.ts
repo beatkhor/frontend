@@ -1,21 +1,21 @@
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import {NgxPaginationModule} from 'ngx-pagination'
 import {CommonModule} from '@angular/common'
 import {NgModule} from '@angular/core'
 
-import {GenreSelectorDialogComponent} from './genre-selector-dialog.component'
-import {TagSelectorDialogComponent} from './tag-selector-dialog.component'
-import {ConfirmDialogComponent} from './confirm-dialog.component'
-import {NoticeComponent} from './notice.component'
+import {GenreSelectorDialogComponent} from './components/genre-selector-dialog.component'
+import {TagSelectorDialogComponent} from './components/tag-selector-dialog.component'
+import {ConfirmDialogComponent} from './components/confirm-dialog.component'
+import {NoticeComponent} from './components/notice.component'
 import {
   GridHeaderComponent,
   GridHeaderTitleDirective,
   GridHeaderActionsDirective,
-} from './grid-header.component'
+} from './components/grid-header.component'
 import {MaterialModule} from './material.module'
-import {PostLinkPipe} from './post-link.pipe'
-import {DownloadLinkPipe} from './download-link.pipe'
-import {UserNamePipe} from './user-name.pipe'
-import {NgxPaginationModule} from 'ngx-pagination'
+import {PostLinkPipe} from './pipes/post-link.pipe'
+import {UserNamePipe} from './pipes/user-name.pipe'
+import {DownloadLinkPipe} from './pipes/download-link.pipe'
 
 @NgModule({
   declarations: [
