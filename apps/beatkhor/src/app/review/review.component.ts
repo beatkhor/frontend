@@ -3,8 +3,8 @@ import {forkJoin, lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '../core/services/error-handler.service'
 import {ReviewService} from '../core/services/review.service'
-import {Post} from '../core/models/post'
 import {Review} from '../core/models/review'
+import {Post} from '../core/models/post'
 
 @Component({
   selector: 'bk-review',
@@ -29,8 +29,8 @@ import {Review} from '../core/models/review'
       >
         <bk-review-post-item
           [post]="post"
-          [myReviews]="myReviews"
-          (voteChange)="getReviews()"
+          [vote]="getPostReview(post)"
+          (voteChange)="onVoteChange($event)"
         ></bk-review-post-item>
         <mat-divider></mat-divider>
       </ng-container>
@@ -41,7 +41,8 @@ import {Review} from '../core/models/review'
   </div>`,
 })
 export class ReviewComponent implements OnInit {
-  myReviews: Review[] = []
+  postReviews = new Map<number, number | undefined>()
+  reviews: Review[] = []
   posts: Post[] = []
   loading = false
   p: number = 1
@@ -55,33 +56,32 @@ export class ReviewComponent implements OnInit {
     this.getData()
   }
 
+  getPostReview(post: Post): number | undefined {
+    return this.postReviews.get(post.id ?? 0)
+  }
+
   async getData(): Promise<void> {
     try {
       this.loading = true
-      const result = await lastValueFrom(
-        forkJoin([this.reviewService.getReviewPosts(), this.reviewService.getMyReviews()])
-      )
+      const result = await lastValueFrom(this.reviewService.getReviewPosts())
 
-      if (result[0]) {
-        this.posts = result[0].result
+      this.posts = result.result.posts
+      this.reviews = result.result.user_reviews
+
+      for (const post of this.posts) {
+        const found = this.reviews.filter(r => r.post_id === post.id)
+        if (found.length) {
+          this.postReviews.set(post.id ?? 0, found[0].vote)
+        }
       }
 
-      if (result[1]) {
-        this.myReviews = result[1].result
-      }
       this.loading = false
     } catch (error: any) {
       this.errHandler.handle(error)
     }
   }
 
-  async getReviews(): Promise<void> {
-    try {
-      const result = await lastValueFrom(this.reviewService.getMyReviews())
-      this.myReviews = result.result
-    } catch (error: any) {
-      this.loading = false
-      this.errHandler.handle(error)
-    }
+  onVoteChange(event: any) {
+    this.postReviews.set(event.post_id, event.vote)
   }
 }

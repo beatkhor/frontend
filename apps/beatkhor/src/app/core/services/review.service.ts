@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core'
 import {Observable} from 'rxjs'
 
 import {CustomResponse} from '../models/response'
-import {Review} from '../models/review'
+import {PostReviewDTO, Review} from '../models/review'
 import {Post} from '../models/post'
 
 @Injectable({
@@ -19,8 +19,8 @@ export class ReviewService {
     )
   }
 
-  getReviewPosts(): Observable<CustomResponse<Post[]>> {
-    return this.http.get<CustomResponse<Post[]>>(
+  getReviewPosts(): Observable<CustomResponse<PostReviewDTO>> {
+    return this.http.get<CustomResponse<PostReviewDTO>>(
       environment.contentServiceURL + '/review/posts'
     )
   }

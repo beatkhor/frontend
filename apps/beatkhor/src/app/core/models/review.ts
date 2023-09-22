@@ -1,3 +1,5 @@
+import {Post} from './post'
+
 export interface Review {
   id?: number
   created_at?: number
@@ -8,4 +10,9 @@ export interface Review {
   content?: string
   parent?: number
   vote_count?: number
+}
+
+export interface PostReviewDTO {
+  posts: Post[]
+  user_reviews: Review[]
 }
