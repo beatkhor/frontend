@@ -132,33 +132,6 @@ export class UploadComponent implements OnInit {
     return UtilsService.abbrTitlesText(this.selectedTags, count)
   }
 
-  onAudioFileInputChange(event: any): void {
-    if (event?.target?.files?.length) {
-      const file = event?.target?.files[0]
-      const upload = new TusdUpload(file, UtilsService.generatePostCode())
-      this.audioMediaUpload = upload
-    }
-  }
-
-  onImageFileInputChange(event: any): void {
-    if (event?.target?.files?.length) {
-      const file = event?.target?.files[0]
-      const upload = new TusdUpload(file, UtilsService.generatePostCode())
-      this.imageMediaUpload = upload
-      this.imageMediaUpload.start()
-    }
-  }
-
-  onRemoveAudioFile(inputEl: HTMLInputElement) {
-    inputEl.value = ''
-    this.audioMediaUpload = undefined
-  }
-
-  onRemoveImageFile(inputEl: HTMLInputElement) {
-    inputEl.value = ''
-    this.imageMediaUpload = undefined
-  }
-
   async onSubmit(): Promise<void> {
     if (this.form.invalid) {
       this.form.markAllAsTouched()
@@ -191,7 +164,17 @@ export class UploadComponent implements OnInit {
     })
   }
 
-  private async createPost() {
+  private async createPost(): Promise<void> {
+    let imageProgress = 0
+    this.imageMediaUpload?.progress.subscribe(v => (imageProgress = v)).unsubscribe()
+    if (imageProgress != 100) {
+      this.finalizing = false
+      this.loading = false
+      return this.snackbar.error(
+        'Something went wrong while uploading the picture! Try again later.'
+      )
+    }
+
     this.finalizing = true
     this.form.disable()
     let audioMedia: any
