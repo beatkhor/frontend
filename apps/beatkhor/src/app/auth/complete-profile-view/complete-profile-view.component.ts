@@ -8,10 +8,10 @@ import {CustomValidators} from '../../core/services/validators.service'
 import {AuthService} from '../../core/services/auth.service'
 
 @Component({
-  selector: 'bk-complete-profile',
-  templateUrl: './auth-complete-profile.component.html',
+  selector: 'bk-complete-profile-view',
+  templateUrl: './complete-profile-view.component.html',
 })
-export class CompleteProfileComponent implements OnDestroy {
+export class CompleteProfileViewComponent implements OnDestroy {
   private destroy$ = new Subject<void>()
   isUsernameAvailable = false
   usernameLoading = false

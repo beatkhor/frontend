@@ -1,8 +1,8 @@
 import {RouterModule, Routes} from '@angular/router'
 import {NgModule} from '@angular/core'
 
-import {CompleteProfileComponent} from './auth-complete-profile/auth-complete-profile.component'
-import {ResetRequestComponent} from './auth-reset-request.component'
+import {CompleteProfileViewComponent} from './complete-profile-view'
+import {ResetRequestViewComponent} from './reset-request-view'
 import {SignInComponent} from './auth-sign-in.component'
 import {SignUpComponent} from './auth-sign-up.component'
 import {ResetComponent} from './auth-reset.component'
@@ -27,11 +27,11 @@ const routes: Routes = [
   {
     path: 'complete-profile',
     canActivate: [AuthGuard],
-    component: CompleteProfileComponent,
+    component: CompleteProfileViewComponent,
   },
   {
     path: 'reset-password/request',
-    component: ResetRequestComponent,
+    component: ResetRequestViewComponent,
   },
   {
     path: 'reset-password/reset',
