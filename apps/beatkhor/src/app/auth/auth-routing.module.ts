@@ -3,9 +3,9 @@ import {NgModule} from '@angular/core'
 
 import {CompleteProfileViewComponent} from './complete-profile-view'
 import {ResetRequestViewComponent} from './reset-request-view'
-import {SignInViewComponent} from './sign-in-view/sign-in-view.component'
-import {SignUpComponent} from './auth-sign-up.component'
+import {SignInViewComponent} from './sign-in-view'
 import {ResetViewComponent} from './reset-view'
+import {SignUpComponent} from './sign-up-view'
 
 import {AuthGuard} from '../core/guards/auth.guard'
 
