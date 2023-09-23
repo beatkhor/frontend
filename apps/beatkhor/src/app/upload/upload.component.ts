@@ -4,6 +4,11 @@ import {Component, OnInit} from '@angular/core'
 import {forkJoin, lastValueFrom} from 'rxjs'
 import {Router} from '@angular/router'
 
+import {
+  MultiSelectorOption,
+  MultiSelectorDialogComponent,
+} from '../shared/dialogs/multi-selector-dialog'
+
 import {CustomErrorHandler} from '../core/services/error-handler.service'
 import {Post, PostReviewStatus, PostStatus} from '../core/models/post'
 import {SnackbarService} from '../core/services/snackbar.service'
@@ -17,10 +22,6 @@ import {Category} from '../core/models/category'
 import {TusdUpload} from '../core/models/tusd'
 import {Genre} from '../core/models/genres'
 import {Tag} from '../core/models/tags'
-import {
-  MultiSelectorOption,
-  MultiSelectorDialogComponent,
-} from '../shared/multi-selector-dialog'
 
 @Component({
   selector: 'bk-upload',
