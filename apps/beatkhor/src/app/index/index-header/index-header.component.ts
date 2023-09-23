@@ -2,7 +2,7 @@ import {Component} from '@angular/core'
 
 @Component({
   selector: 'bk-header',
-  template: ``,
+  templateUrl: './index-header.component.html',
   styles: [
     `
       .link {
