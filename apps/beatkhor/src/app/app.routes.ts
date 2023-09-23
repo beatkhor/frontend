@@ -1,6 +1,6 @@
 import {Route} from '@angular/router'
 
-import {WrapperComponent} from './core/components/wrapper.component'
+import {WrapperComponent} from './core/components/wrapper/wrapper.component'
 import {CallbackGuard} from './core/guards/callback.guard'
 import {AuthGuard} from './core/guards/auth.guard'
 

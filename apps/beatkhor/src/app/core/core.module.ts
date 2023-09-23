@@ -3,9 +3,11 @@ import {RouterModule} from '@angular/router'
 import {CommonModule} from '@angular/common'
 import {NgModule} from '@angular/core'
 
+import {WrapperComponent} from './components/wrapper'
+import {NavbarComponent} from './components/navbar'
+
 import {TokenInterceptor} from './interceptors/token-interceptor'
-import {WrapperComponent} from './components/wrapper.component'
-import {NavbarComponent} from './components/navbar.component'
+
 import {SharedModule} from '../shared/shared.module'
 
 @NgModule({
