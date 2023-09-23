@@ -3,9 +3,10 @@ import {NgxPaginationModule} from 'ngx-pagination'
 import {CommonModule} from '@angular/common'
 import {NgModule} from '@angular/core'
 
+import {ConfirmDialogComponent} from './confirm-dialog'
+
 import {GenreSelectorDialogComponent} from './components/genre-selector-dialog.component'
 import {TagSelectorDialogComponent} from './components/tag-selector-dialog.component'
-import {ConfirmDialogComponent} from './components/confirm-dialog.component'
 import {NoticeComponent} from './components/notice.component'
 import {
   GridHeaderComponent,
