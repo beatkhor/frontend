@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core'
 
 import {CompleteProfileViewComponent} from './complete-profile-view'
 import {ResetRequestViewComponent} from './reset-request-view'
-import {SignInComponent} from './auth-sign-in.component'
+import {SignInViewComponent} from './sign-in-view/sign-in-view.component'
 import {SignUpComponent} from './auth-sign-up.component'
 import {ResetViewComponent} from './reset-view'
 
@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: 'signin',
     canActivate: [AuthGuard],
-    component: SignInComponent,
+    component: SignInViewComponent,
   },
   {
     path: 'signup',

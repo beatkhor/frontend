@@ -3,17 +3,18 @@ import {NgModule} from '@angular/core'
 
 import {CompleteProfileViewComponent} from './complete-profile-view'
 import {ResetRequestViewComponent} from './reset-request-view'
-import {SignInComponent} from './auth-sign-in.component'
 import {SignUpComponent} from './auth-sign-up.component'
-import {AuthRoutingModule} from './auth-routing.module'
+import {SignInViewComponent} from './sign-in-view'
 import {ResetViewComponent} from './reset-view'
+
+import {AuthRoutingModule} from './auth-routing.module'
 import {SharedModule} from '../shared/shared.module'
 
 @NgModule({
   declarations: [
-    ResetViewComponent,
-    SignInComponent,
     SignUpComponent,
+    ResetViewComponent,
+    SignInViewComponent,
     ResetRequestViewComponent,
     CompleteProfileViewComponent,
   ],
