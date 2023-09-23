@@ -1,12 +1,12 @@
 import {RouterModule, Routes} from '@angular/router'
 import {NgModule} from '@angular/core'
 
-import {TrackComponent} from './track.component'
+import {TrackViewComponent} from './track-view'
 
 const routes: Routes = [
   {
     path: 'track/:link',
-    component: TrackComponent,
+    component: TrackViewComponent,
   },
 ]
 
