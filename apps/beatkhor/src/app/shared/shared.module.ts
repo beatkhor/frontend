@@ -5,50 +5,40 @@ import {NgModule} from '@angular/core'
 
 import {ConfirmDialogComponent} from './confirm-dialog'
 
-import {NoticeComponent} from './components/notice.component'
-import {
-  GridHeaderComponent,
-  GridHeaderTitleDirective,
-  GridHeaderActionsDirective,
-} from './components/grid-header.component'
-import {MaterialModule} from './material.module'
+import {MultiSelectorDialogModule} from './multi-selector-dialog'
+import {DownloadLinkPipe} from './pipes/download-link.pipe'
 import {PostLinkPipe} from './pipes/post-link.pipe'
 import {UserNamePipe} from './pipes/user-name.pipe'
-import {DownloadLinkPipe} from './pipes/download-link.pipe'
-import {MultiSelectorDialogComponent} from './multi-selector-dialog'
+import {MaterialModule} from './material.module'
+import {GridHeaderModule} from './grid-header'
+import {NoticeComponent} from './notice'
 
 @NgModule({
   declarations: [
-    NoticeComponent,
-    GridHeaderComponent,
-    GridHeaderActionsDirective,
-    GridHeaderTitleDirective,
-
     PostLinkPipe,
     UserNamePipe,
+    NoticeComponent,
     DownloadLinkPipe,
-
     ConfirmDialogComponent,
-    MultiSelectorDialogComponent,
   ],
   imports: [
+    FormsModule,
     CommonModule,
     MaterialModule,
-    FormsModule,
+    GridHeaderModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    MultiSelectorDialogModule,
   ],
   exports: [
     FormsModule,
-    ReactiveFormsModule,
+    PostLinkPipe,
+    UserNamePipe,
     MaterialModule,
     NoticeComponent,
-    GridHeaderComponent,
-    GridHeaderActionsDirective,
-    GridHeaderTitleDirective,
-    PostLinkPipe,
     DownloadLinkPipe,
-    UserNamePipe,
+    GridHeaderModule,
+    ReactiveFormsModule,
     NgxPaginationModule,
   ],
 })

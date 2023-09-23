@@ -1,4 +1,4 @@
-import {Component, Directive, HostBinding, ViewEncapsulation} from '@angular/core'
+import {Component, Directive, ViewEncapsulation} from '@angular/core'
 
 @Component({
   selector: 'bk-gird-header',
