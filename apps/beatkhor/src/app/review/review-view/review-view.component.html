@@ -1,0 +1,31 @@
+<div class="container mx-auto px-5 py-6">
+  <bk-gird-header>
+    <div bk-section-divider-title>
+      <h2>Review Tracks</h2>
+    </div>
+
+    <div bk-section-divider-actions (click)="getData()">
+      <button mat-stroked-button>Refresh</button>
+    </div>
+  </bk-gird-header>
+
+  <div *ngIf="loading" class="flex justify-center py-4">
+    <mat-spinner [diameter]="45"></mat-spinner>
+  </div>
+
+  <ng-container *ngIf="!loading">
+    <ng-container
+      *ngFor="let post of posts | paginate : {itemsPerPage: 10, currentPage: p}"
+    >
+      <bk-review-post-item
+        [post]="post"
+        [vote]="getPostReview(post)"
+        (voteChange)="onVoteChange($event)"
+      ></bk-review-post-item>
+      <mat-divider></mat-divider>
+    </ng-container>
+    <div class="flex justify-center py-4">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </ng-container>
+</div>

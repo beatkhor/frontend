@@ -1,7 +1,7 @@
 import {RouterModule, Routes} from '@angular/router'
 import {NgModule} from '@angular/core'
 
-import {ReviewComponent} from './review.component'
+import {ReviewComponent} from './review-view/review-view.component'
 
 const routes: Routes = [
   {

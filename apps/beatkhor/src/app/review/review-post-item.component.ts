@@ -1,11 +1,11 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core'
-import {Post} from '../core/models/post'
 import {lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '../core/services/error-handler.service'
 import {ReviewService} from '../core/services/review.service'
 import {UtilsService} from '../core/services/utils.service'
 import {Review} from '../core/models/review'
+import {Post} from '../core/models/post'
 
 @Component({
   selector: 'bk-review-post-item',
