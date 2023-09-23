@@ -3,11 +3,12 @@ import {NgModule} from '@angular/core'
 
 import {IndexRoutingModule} from './index-routing.module'
 import {SharedModule} from '../shared/shared.module'
+
 import {HeaderComponent} from './header.component'
-import {IndexComponent} from './index.component'
+import {IndexViewComponent} from './index-view'
 
 @NgModule({
-  declarations: [IndexComponent, HeaderComponent],
+  declarations: [IndexViewComponent, HeaderComponent],
   imports: [CommonModule, SharedModule, IndexRoutingModule],
 })
 export class IndexModule {}

@@ -1,12 +1,12 @@
 import {RouterModule, Routes} from '@angular/router'
 import {NgModule} from '@angular/core'
 
-import {IndexComponent} from './index.component'
+import {IndexViewComponent} from './index-view/index-view.component'
 
 const routes: Routes = [
   {
     path: '',
-    component: IndexComponent,
+    component: IndexViewComponent,
   },
 ]
 

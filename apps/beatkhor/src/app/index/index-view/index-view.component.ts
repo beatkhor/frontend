@@ -1,13 +1,13 @@
 import {ActivatedRoute, NavigationExtras, Router} from '@angular/router'
 import {Component, OnInit} from '@angular/core'
 
-import {CallbackEvents} from '../core/models/callback-events'
+import {CallbackEvents} from '../../core/models/callback-events'
 
 @Component({
-  selector: 'bk-index',
-  templateUrl: './index.component.html',
+  selector: 'bk-index-view',
+  templateUrl: './index-view.component.html',
 })
-export class IndexComponent implements OnInit {
+export class IndexViewComponent implements OnInit {
   readonly callbackEvents = CallbackEvents
   notice!: string | null
 
