@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+
+<div class="flex flex-col items-stretch">
+  <p class="mx-6 mb-3">Click on each option to select it:</p>
+  <mat-form-field class="mx-6">
+    <mat-label>Search</mat-label>
+    <input matInput [(ngModel)]="query" (ngModelChange)="onQueryChange()" />
+  </mat-form-field>
+</div>
+
+<div class="!py-0" mat-dialog-content *ngIf="filteredOptions.length">
+  <mat-selection-list>
+    <mat-divider></mat-divider>
+    <ng-container *ngFor="let option of filteredOptions">
+      <mat-list-option
+        (selectedChange)="onSelectionChange(option, $event)"
+        [selected]="option.selected"
+        [checkboxPosition]="'before'"
+        [value]="option"
+      >
+        <span class="title">{{ option.title }}</span>
+      </mat-list-option>
+      <mat-divider></mat-divider>
+    </ng-container>
+  </mat-selection-list>
+</div>
+
+<div class="!py-2 !mb-3" mat-dialog-content *ngIf="!filteredOptions.length || !options">
+  <p>No option found!</p>
+</div>
+
+<div mat-dialog-actions>
+  <div class="px-4 mb-4">
+    <button mat-flat-button color="primary" [mat-dialog-close]="options">
+      Submit
+    </button>
+    <button mat-button mat-dialog-close>Cancel</button>
+  </div>
+</div>

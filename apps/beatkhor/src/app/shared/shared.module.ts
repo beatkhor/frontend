@@ -5,8 +5,6 @@ import {NgModule} from '@angular/core'
 
 import {ConfirmDialogComponent} from './confirm-dialog'
 
-import {GenreSelectorDialogComponent} from './components/genre-selector-dialog.component'
-import {TagSelectorDialogComponent} from './components/tag-selector-dialog.component'
 import {NoticeComponent} from './components/notice.component'
 import {
   GridHeaderComponent,
@@ -17,20 +15,21 @@ import {MaterialModule} from './material.module'
 import {PostLinkPipe} from './pipes/post-link.pipe'
 import {UserNamePipe} from './pipes/user-name.pipe'
 import {DownloadLinkPipe} from './pipes/download-link.pipe'
+import {MultiSelectorDialogComponent} from './multi-selector-dialog'
 
 @NgModule({
   declarations: [
-    ConfirmDialogComponent,
     NoticeComponent,
     GridHeaderComponent,
     GridHeaderActionsDirective,
     GridHeaderTitleDirective,
-    GenreSelectorDialogComponent,
-    TagSelectorDialogComponent,
-    NoticeComponent,
+
     PostLinkPipe,
-    DownloadLinkPipe,
     UserNamePipe,
+    DownloadLinkPipe,
+
+    ConfirmDialogComponent,
+    MultiSelectorDialogComponent,
   ],
   imports: [
     CommonModule,

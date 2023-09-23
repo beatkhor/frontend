@@ -4,8 +4,6 @@ import {Component, OnInit} from '@angular/core'
 import {forkJoin, lastValueFrom} from 'rxjs'
 import {Router} from '@angular/router'
 
-import {GenreSelectorDialogComponent} from '../shared/components/genre-selector-dialog.component'
-import {TagSelectorDialogComponent} from '../shared/components/tag-selector-dialog.component'
 import {CustomErrorHandler} from '../core/services/error-handler.service'
 import {Post, PostReviewStatus, PostStatus} from '../core/models/post'
 import {SnackbarService} from '../core/services/snackbar.service'
@@ -19,6 +17,10 @@ import {Category} from '../core/models/category'
 import {TusdUpload} from '../core/models/tusd'
 import {Genre} from '../core/models/genres'
 import {Tag} from '../core/models/tags'
+import {
+  MultiSelectorOption,
+  MultiSelectorDialogComponent,
+} from '../shared/multi-selector-dialog'
 
 @Component({
   selector: 'bk-upload',
@@ -33,11 +35,13 @@ export class UploadComponent implements OnInit {
 
   audioMediaUpload: TusdUpload | undefined
   imageMediaUpload: TusdUpload | undefined
-  selectedGenres: Genre[] = []
   categories: Category[] = []
-  selectedTags: Tag[] = []
-  genres: Genre[] = []
-  tags: Tag[] = []
+
+  private genres: MultiSelectorOption<Genre>[] = []
+  selectedGenres = ''
+
+  private tags: MultiSelectorOption<Tag>[] = []
+  selectedTags = ''
 
   constructor(
     private router: Router,
@@ -80,8 +84,16 @@ export class UploadComponent implements OnInit {
       ])
       const [categoryResult, genreResult, tagResult] = await lastValueFrom(request$)
       this.categories = categoryResult.result
-      this.genres = genreResult.result
-      this.tags = tagResult.result
+
+      const mapper = (o: any) => ({
+        title: o.title ?? '',
+        key: o.id ?? 0,
+        value: o,
+      })
+
+      this.genres = genreResult.result.map(mapper)
+      this.tags = tagResult.result.map(mapper)
+
       this.loading = false
       this.hasError = false
     } catch (error: any) {
@@ -91,45 +103,41 @@ export class UploadComponent implements OnInit {
   }
 
   onGenre(): void {
-    const ref = this.dialog.open(GenreSelectorDialogComponent, {
+    const ref = this.dialog.open(MultiSelectorDialogComponent, {
       width: '400px',
       data: {
-        genres: this.genres,
-        selectedGenres: this.selectedGenres,
+        title: 'Select genres:',
+        options: this.genres,
       },
       autoFocus: false,
     })
 
-    ref.afterClosed().subscribe((res: any) => {
-      if (res?.submit) {
-        this.selectedGenres = res.result || []
+    ref.afterClosed().subscribe((result: any) => {
+      if (result) {
+        this.genres = result
+        const selectedGenres = this.genres.filter(g => g.selected).map(g => g.value)
+        this.selectedGenres = UtilsService.abbrTitlesText(selectedGenres, 2)
       }
     })
-  }
-
-  selectedGenresText(count: number): string {
-    return UtilsService.abbrTitlesText(this.selectedGenres, count)
   }
 
   onTag(): void {
-    const ref = this.dialog.open(TagSelectorDialogComponent, {
+    const ref = this.dialog.open(MultiSelectorDialogComponent, {
       width: '400px',
       data: {
-        tags: this.tags,
-        selectedTags: this.selectedTags,
+        title: 'Select tags:',
+        options: this.tags,
       },
       autoFocus: false,
     })
 
-    ref.afterClosed().subscribe(res => {
-      if (res?.submit) {
-        this.selectedTags = res.result || []
+    ref.afterClosed().subscribe(result => {
+      if (result) {
+        this.tags = result
+        const selectedTags = this.tags.filter(t => t.selected).map(t => t.value)
+        this.selectedTags = UtilsService.abbrTitlesText(selectedTags, 2)
       }
     })
-  }
-
-  selectedTagsText(count: number): string {
-    return UtilsService.abbrTitlesText(this.selectedTags, count)
   }
 
   async onSubmit(): Promise<void> {
@@ -247,8 +255,8 @@ export class UploadComponent implements OnInit {
         },
       ],
       categories: [selectedCategories],
-      genres: this.selectedGenres,
-      tags: this.selectedTags,
+      genres: this.genres.filter(g => g.selected).map(g => g.value),
+      tags: this.tags.filter(t => t.selected).map(t => t.value),
     }
 
     try {
