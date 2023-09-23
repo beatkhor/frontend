@@ -6,12 +6,12 @@ import {ResetRequestViewComponent} from './reset-request-view'
 import {SignInComponent} from './auth-sign-in.component'
 import {SignUpComponent} from './auth-sign-up.component'
 import {AuthRoutingModule} from './auth-routing.module'
-import {ResetComponent} from './auth-reset.component'
+import {ResetViewComponent} from './reset-view'
 import {SharedModule} from '../shared/shared.module'
 
 @NgModule({
   declarations: [
-    ResetComponent,
+    ResetViewComponent,
     SignInComponent,
     SignUpComponent,
     ResetRequestViewComponent,

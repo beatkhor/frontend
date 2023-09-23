@@ -5,7 +5,8 @@ import {CompleteProfileViewComponent} from './complete-profile-view'
 import {ResetRequestViewComponent} from './reset-request-view'
 import {SignInComponent} from './auth-sign-in.component'
 import {SignUpComponent} from './auth-sign-up.component'
-import {ResetComponent} from './auth-reset.component'
+import {ResetViewComponent} from './reset-view'
+
 import {AuthGuard} from '../core/guards/auth.guard'
 
 const routes: Routes = [
@@ -35,7 +36,7 @@ const routes: Routes = [
   },
   {
     path: 'reset-password/reset',
-    component: ResetComponent,
+    component: ResetViewComponent,
   },
 ]
 
