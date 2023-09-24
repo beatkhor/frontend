@@ -38,6 +38,12 @@ export class PostService {
     )
   }
 
+  getPostByLink(link: string): Observable<CustomResponse<Post>> {
+    return this.http.get<CustomResponse<Post>>(
+      environment.contentServiceURL + '/posts/' + encodeURI(link)
+    )
+  }
+
   deletePost(postId: number): Observable<CustomResponse<any>> {
     return this.http.delete<CustomResponse<any>>(
       environment.contentServiceURL + '/posts/' + postId
@@ -52,9 +58,7 @@ export class PostService {
     }
     return this.http.get<PaginatedResponse<Post[]>>(
       environment.contentServiceURL + '/posts',
-      {
-        params,
-      }
+      {params}
     )
   }
 
