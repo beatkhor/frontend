@@ -18,9 +18,16 @@ export class PostService {
       return 'N/A'
     }
 
-    let title = p?.user?.first_name || ''
+    if (p.post_meta.overridden_artist_name) {
+      return (
+        p.post_meta.overridden_artist_name + ' - ' + p?.post_meta.title + ' cover art'
+      )
+    }
+
+    let title = p?.user?.first_name ?? ''
     title += ' ' + p?.user?.last_name || ''
     title += ' - ' + p?.post_meta.title || ''
+    title += ' cover art'
     return title
   }
 
