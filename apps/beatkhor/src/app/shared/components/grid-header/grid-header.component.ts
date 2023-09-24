@@ -1,7 +1,7 @@
 import {Component, Directive, ViewEncapsulation} from '@angular/core'
 
 @Component({
-  selector: 'bk-gird-header',
+  selector: 'bk-grid-header',
   template: ` <div class="post-grid-header flex items-center mb-6 lg:min-h-[36px]">
     <ng-content select="[bk-section-divider-title]"></ng-content>
     <div class="flex grow-[10] h-[.02rem] bg-neutral-700"></div>
