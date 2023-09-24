@@ -22,12 +22,6 @@
           </a>
           <a
             class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
-            routerLink="/review"
-          >
-            <span>Review</span>
-          </a>
-          <a
-            class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
             routerLink="/about"
           >
             <span>About</span>
@@ -36,10 +30,7 @@
       </div>
     </div>
 
-    <div
-      *ngIf="!isLoggedIn; else userActions"
-      class="hidden sm:flex text-neutral-300"
-    >
+    <div *ngIf="!isLoggedIn; else userActions" class="hidden sm:flex text-neutral-300">
       <a
         class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
         routerLink="/authentication"
@@ -60,8 +51,8 @@
           class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
           [matMenuTriggerFor]="userActionsMenu"
         >
-          <mat-icon>person</mat-icon>
-          <mat-icon>arrow_drop_down</mat-icon>
+          <mat-icon class="text-neutral-200">person</mat-icon>
+          <mat-icon class="text-neutral-200">arrow_drop_down</mat-icon>
         </button>
       </div>
     </ng-template>
@@ -72,6 +63,10 @@
   <a mat-menu-item routerLink="/upload">
     <mat-icon>upload</mat-icon>
     <span>Upload</span>
+  </a>
+  <a mat-menu-item routerLink="/review">
+    <mat-icon>thumb_up</mat-icon>
+    <span>Review</span>
   </a>
   <button mat-menu-item (click)="onLogout()">
     <mat-icon>logout</mat-icon>
