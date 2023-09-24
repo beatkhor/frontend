@@ -9,16 +9,16 @@ import {Post} from '../core/models/post'
 
 @Component({
   selector: 'bk-review-post-item',
-  template: ` <div class="flex items-center py-6">
-    <div>
+  template: ` <div class="flex items-end py-6">
+    <div class="mr-7">
       <img
         *ngIf="post.pictures.length"
-        class="w-32 rounded me-5"
+        class="w-36 rounded"
         [src]="post.pictures[0].default | downloadLink"
         alt="Pic"
       />
     </div>
-    <div class="flex flex-grow flex-col items-stretch">
+    <div class="flex flex-grow flex-col items-stretch py-1">
       <div class="flex justify-between items-end mb-4">
         <div class="flex flex-col">
           <div>{{ post.post_meta.title }}</div>

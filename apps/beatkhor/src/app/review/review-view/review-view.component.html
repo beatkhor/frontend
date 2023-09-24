@@ -1,13 +1,6 @@
-<div class="container mx-auto px-5 py-6">
-  <bk-gird-header>
-    <div bk-section-divider-title>
-      <h2>Review Tracks</h2>
-    </div>
-
-    <div bk-section-divider-actions (click)="getData()">
-      <button mat-stroked-button>Refresh</button>
-    </div>
-  </bk-gird-header>
+<main class="container mx-auto px-5 py-12">
+  <h1 class="text-2xl text-neutral-200">Review Tracks</h1>
+  <p class="text-neutral-400">You can decide which beats have the chance to get published</p>
 
   <div *ngIf="loading" class="flex justify-center py-4">
     <mat-spinner [diameter]="45"></mat-spinner>
@@ -28,4 +21,4 @@
       <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
   </ng-container>
-</div>
+</main>
