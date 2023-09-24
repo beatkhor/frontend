@@ -6,6 +6,7 @@ import {NgModule} from '@angular/core'
 import {MultiSelectorDialogModule} from './dialogs/multi-selector-dialog'
 import {ConfirmDialogModule} from './dialogs/confirm-dialog'
 
+import {AudioPlayerModule} from './components/audio-player'
 import {GridHeaderModule} from './components/grid-header'
 import {NoticeModule} from './components/notice'
 
@@ -20,6 +21,7 @@ import {PipesModule} from './pipes/pipes.module'
     CommonModule,
     MaterialModule,
     GridHeaderModule,
+    AudioPlayerModule,
     ConfirmDialogModule,
     ReactiveFormsModule,
     NgxPaginationModule,
@@ -31,6 +33,7 @@ import {PipesModule} from './pipes/pipes.module'
     NoticeModule,
     MaterialModule,
     GridHeaderModule,
+    AudioPlayerModule,
     ReactiveFormsModule,
     NgxPaginationModule,
   ],
