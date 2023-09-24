@@ -1,0 +1,10 @@
+<div class="flex items-center">
+  <button mat-fab color="primary" (click)="onToggle()">
+    <mat-icon *ngIf="!playing">play_arrow</mat-icon>
+    <mat-icon *ngIf="playing">pause</mat-icon>
+  </button>
+
+  <mat-slider class="flex-grow" [min]="0" [step]="1" [max]="100">
+    <input matSliderThumb [(ngModel)]="progress" #slider />
+  </mat-slider>
+</div>
