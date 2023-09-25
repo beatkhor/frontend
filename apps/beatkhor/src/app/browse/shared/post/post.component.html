@@ -1,26 +1,17 @@
 <div class="flex items-stretch">
-  <div class="relative">
+  <div class="relative flex-grow-[0.5]">
     <svg width="100%" viewBox="0 0 1 1" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="1" height="1" />
     </svg>
 
-    <div *ngIf="picture?.default" class="absolute inset-y-0 inset-x-0 p-7">
-      <img
-        [alt]="alt"
-        width="100%"
-        class="transition-all ease-out opacity-40 blur-md"
-        [src]="picture?.default | downloadLink"
-      />
-    </div>
-
-    <div *ngIf="picture?.default" class="absolute inset-y-0 inset-x-0 p-6">
+    <div *ngIf="picture?.default" class="absolute inset-y-0 inset-x-0 p-4">
       <img
         width="100%"
         [alt]="alt"
-        class="rounded"
+        class="rounded opacity-90"
         [src]="picture?.default | downloadLink"
       />
     </div>
   </div>
-  <div class="flex-grow py-6">Content</div>
+  <div class="flex-grow-[10] py-4">Content</div>
 </div>
