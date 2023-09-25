@@ -40,6 +40,25 @@ export class UtilsService {
     return text
   }
 
+  static getArtistName(post: Post) {
+    if (post.post_meta.overridden_artist_name) {
+      return post.post_meta.overridden_artist_name
+    }
+
+    return post.user?.first_name + ' ' + post.user?.last_name
+  }
+
+  static secondsToMinutesAndSeconds(seconds: number) {
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = seconds % 60
+
+    const formattedMinutes = minutes < 10 ? '0' + minutes : minutes
+    const formattedSeconds =
+      remainingSeconds < 10 ? '0' + remainingSeconds : remainingSeconds
+
+    return `${formattedMinutes}:${formattedSeconds}`
+  }
+
   getPostDisplayName(post: Post): string {
     if (post.post_meta.overridden_artist_name) {
       return post.post_meta.overridden_artist_name
