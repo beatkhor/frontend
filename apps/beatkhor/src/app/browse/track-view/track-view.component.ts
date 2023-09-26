@@ -12,8 +12,13 @@ import {Post} from '../../core/models/post'
 })
 export class TrackViewComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>()
+  latestRelatedPost: Post[] = []
+  loadingRelatedPosts = false
   loading = false
   post!: Post
+
+  pageSize = 10
+  demoArr = Array(5)
 
   constructor(
     private route: ActivatedRoute,
@@ -33,10 +38,33 @@ export class TrackViewComponent implements OnInit, OnDestroy {
       const req = this.postService.getPostByLink(postLink)
       const result = await lastValueFrom(req)
       this.post = result.result
+
+      if (this.post.genres.length) {
+        this.getRelatedPosts(this.post.genres[0].slug)
+      } else {
+        this.getRelatedPosts()
+      }
+
       this.loading = false
     } catch (error: any) {
       console.log(error)
       this.errHandler.handle(error)
+    }
+  }
+
+  private async getRelatedPosts(genreSlug?: string) {
+    const relatedPostReq$ = this.postService.search({
+      pageSize: this.pageSize,
+      genres: [{slug: genreSlug}],
+    })
+
+    try {
+      this.loadingRelatedPosts = true
+      const relatedPostResponse = await lastValueFrom(relatedPostReq$)
+      this.latestRelatedPost = relatedPostResponse.result
+      this.loadingRelatedPosts = false
+    } catch (error) {
+      this.loadingRelatedPosts = false
     }
   }
 

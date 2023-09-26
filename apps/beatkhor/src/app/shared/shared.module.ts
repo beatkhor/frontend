@@ -12,9 +12,11 @@ import {NoticeModule} from './components/notice'
 
 import {MaterialModule} from './material/material.module'
 import {PipesModule} from './pipes/pipes.module'
+import {PostModule} from './components/post/post.module'
 
 @NgModule({
   imports: [
+    PostModule,
     FormsModule,
     PipesModule,
     NoticeModule,
@@ -28,6 +30,7 @@ import {PipesModule} from './pipes/pipes.module'
     MultiSelectorDialogModule,
   ],
   exports: [
+    PostModule,
     PipesModule,
     FormsModule,
     NoticeModule,

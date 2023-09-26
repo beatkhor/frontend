@@ -1,13 +1,24 @@
 <main>
-  <div class="container mx-auto px-6 py-8 sm:py-12">
-    <bk-post *ngIf="!loading" [post]="post"></bk-post>
+  <div *ngIf="!loading" class="container mx-auto px-6 py-8 sm:py-12">
+    <bk-post [post]="post"></bk-post>
   </div>
 
-  <section class="container mx-auto px-6 py-8">
+  <section *ngIf="!loading" class="container mx-auto px-6 py-8">
     <bk-grid-header>
       <div bk-section-divider-title>
         <h2 class="text-neutral-300">Recent related tracks</h2>
       </div>
     </bk-grid-header>
+
+    <bk-post-grid>
+      <ng-container *ngFor="let p of latestRelatedPost">
+        <a *ngIf="!loadingRelatedPosts" [routerLink]="p | postLink">
+          <bk-post-tile [post]="p"></bk-post-tile>
+        </a>
+      </ng-container>
+      <ng-container *ngIf="loadingRelatedPosts">
+        <bk-post-tile *ngFor="let d of demoArr"></bk-post-tile>
+      </ng-container>
+    </bk-post-grid>
   </section>
 </main>
