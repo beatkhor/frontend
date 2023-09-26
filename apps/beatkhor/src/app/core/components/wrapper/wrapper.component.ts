@@ -17,9 +17,14 @@ import {Component} from '@angular/core'
         </mat-nav-list>
       </mat-sidenav>
 
-      <mat-sidenav-content class="pt-14">
-        <bk-navbar (menu)="toggle()"></bk-navbar>
-        <router-outlet></router-outlet>
+      <mat-sidenav-content>
+        <div class="pt-14 min-h-screen flex flex-col">
+          <bk-navbar (menu)="toggle()"></bk-navbar>
+          <div class="flex-grow">
+            <router-outlet></router-outlet>
+          </div>
+          <bk-footer></bk-footer>
+        </div>
       </mat-sidenav-content>
     </mat-sidenav-container>
   `,
