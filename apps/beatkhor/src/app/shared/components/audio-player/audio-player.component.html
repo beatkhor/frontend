@@ -3,8 +3,21 @@
     <mat-icon *ngIf="!playing">play_arrow</mat-icon>
     <mat-icon *ngIf="playing">pause</mat-icon>
   </button>
+  <button mat-icon-button class="mr-4" (click)="onStop()">
+    <mat-icon>stop</mat-icon>
+  </button>
 
-  <mat-slider class="flex-grow" [min]="0" [step]="1" [max]="100">
-    <input matSliderThumb [(ngModel)]="progress" #slider />
+  <mat-slider
+    [min]="0"
+    [step]="step"
+    [disabled]="!ready"
+    [max]="sliderMax"
+    class="white-slider flex-grow"
+  >
+    <input matSliderThumb (dragEnd)="onDragEnd($event)" [(ngModel)]="progress" #slider />
   </mat-slider>
+
+  <span class="text-neutral-300 ml-3 w-14 text-center">{{ timeStamp }}</span>
+
+  <audio #player class="hidden" preload="none" [src]="src"></audio>
 </div>

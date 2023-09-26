@@ -18,9 +18,16 @@ export class PostService {
       return 'N/A'
     }
 
-    let title = p?.user?.first_name || ''
+    if (p.post_meta.overridden_artist_name) {
+      return (
+        p.post_meta.overridden_artist_name + ' - ' + p?.post_meta.title + ' cover art'
+      )
+    }
+
+    let title = p?.user?.first_name ?? ''
     title += ' ' + p?.user?.last_name || ''
     title += ' - ' + p?.post_meta.title || ''
+    title += ' cover art'
     return title
   }
 
@@ -38,6 +45,12 @@ export class PostService {
     )
   }
 
+  getPostByLink(link: string): Observable<CustomResponse<Post>> {
+    return this.http.get<CustomResponse<Post>>(
+      environment.contentServiceURL + '/posts/' + encodeURI(link)
+    )
+  }
+
   deletePost(postId: number): Observable<CustomResponse<any>> {
     return this.http.delete<CustomResponse<any>>(
       environment.contentServiceURL + '/posts/' + postId
@@ -52,9 +65,7 @@ export class PostService {
     }
     return this.http.get<PaginatedResponse<Post[]>>(
       environment.contentServiceURL + '/posts',
-      {
-        params,
-      }
+      {params}
     )
   }
 

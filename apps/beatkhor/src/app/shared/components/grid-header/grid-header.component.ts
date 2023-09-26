@@ -4,7 +4,7 @@ import {Component, Directive, ViewEncapsulation} from '@angular/core'
   selector: 'bk-grid-header',
   template: ` <div class="post-grid-header flex items-center mb-6 lg:min-h-[36px]">
     <ng-content select="[bk-section-divider-title]"></ng-content>
-    <div class="flex grow-[10] h-[.02rem] bg-neutral-700"></div>
+    <div class="flex grow-[10] h-[.02rem] bg-neutral-800"></div>
     <div
       class="[&_a]:hidden md:[&_a]:flex md:[&_a]:no-underline md:[&_a]:items-center md:[&_a]:justify-center md:[&_a]:text-[.87rem]"
     >

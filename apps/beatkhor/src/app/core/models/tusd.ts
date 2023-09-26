@@ -5,6 +5,7 @@ declare var tus: any
 
 export class TusdUpload {
   upload: any
+  uploaded = false
   file: File
   inProgress = new BehaviorSubject<any>({})
   progress = new BehaviorSubject<number>(0)
@@ -35,6 +36,10 @@ export class TusdUpload {
         const percentage = (bytesUploaded / bytesTotal) * 100
         const uploadProgress = Math.round(percentage)
         this.progress.next(uploadProgress)
+
+        if (uploadProgress === 100) {
+          this.uploaded = true
+        }
       },
       onSuccess: () => {
         this.progress.next(100)
