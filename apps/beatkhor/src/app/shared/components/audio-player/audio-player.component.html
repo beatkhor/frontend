@@ -7,7 +7,13 @@
     <mat-icon>stop</mat-icon>
   </button>
 
-  <mat-slider class="white-slider flex-grow" [min]="0" [step]="step" [max]="sliderMax">
+  <mat-slider
+    [min]="0"
+    [step]="step"
+    [disabled]="!ready"
+    [max]="sliderMax"
+    class="white-slider flex-grow"
+  >
     <input matSliderThumb (dragEnd)="onDragEnd($event)" [(ngModel)]="progress" #slider />
   </mat-slider>
 

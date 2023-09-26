@@ -23,6 +23,7 @@ export class AudioPlayerComponent implements AfterViewInit, OnDestroy {
 
   sliderMax = 100
   playing = false
+  ready = false
   progress = 0
   step = 0.001
 
@@ -48,7 +49,7 @@ export class AudioPlayerComponent implements AfterViewInit, OnDestroy {
   }
 
   private onAudioReady(): void {
-    console.log(this.player.nativeElement.duration)
+    this.ready = true
   }
 
   private onCurrentTimeChange(): void {
@@ -57,12 +58,15 @@ export class AudioPlayerComponent implements AfterViewInit, OnDestroy {
   }
 
   onDragEnd(event: any): void {
-    this.player.nativeElement.currentTime =
-      this.player.nativeElement.duration * (event.value / 100)
+    const time = this.player.nativeElement.duration * (event.value / 100)
+    this.player.nativeElement.currentTime = time
+
+    this.timeStamp = UtilsService.secondsToMinutesAndSeconds(Math.floor(time))
   }
 
   onStop() {
     this.playing = false
+    this.timeStamp = '00:00'
     this.player.nativeElement.pause()
     this.player.nativeElement.currentTime = 0
     this.subscription.unsubscribe()
