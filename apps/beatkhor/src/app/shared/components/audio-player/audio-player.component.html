@@ -1,5 +1,5 @@
-<div class="flex items-center px-2 py-2 rounded-xl">
-  <button mat-icon-button (click)="onToggle()">
+<div class="flex items-center">
+  <button mat-fab color="primary" (click)="onToggle()">
     <mat-icon *ngIf="!playing">play_arrow</mat-icon>
     <mat-icon *ngIf="playing">pause</mat-icon>
   </button>
