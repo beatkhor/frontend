@@ -1,10 +1,10 @@
 import {
-  AfterViewInit,
-  Component,
-  ElementRef,
   Input,
+  Component,
   OnDestroy,
   ViewChild,
+  ElementRef,
+  AfterViewInit,
 } from '@angular/core'
 import {Subscription, interval} from 'rxjs'
 
@@ -60,7 +60,6 @@ export class AudioPlayerComponent implements AfterViewInit, OnDestroy {
   onDragEnd(event: any): void {
     const time = this.player.nativeElement.duration * (event.value / 100)
     this.player.nativeElement.currentTime = time
-
     this.timeStamp = UtilsService.secondsToMinutesAndSeconds(Math.floor(time))
   }
 

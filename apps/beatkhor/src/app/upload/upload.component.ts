@@ -1,7 +1,7 @@
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
+import {Subscription, forkJoin, lastValueFrom} from 'rxjs'
+import {Component, OnDestroy, OnInit} from '@angular/core'
 import {MatDialog} from '@angular/material/dialog'
-import {Component, OnInit} from '@angular/core'
-import {forkJoin, lastValueFrom} from 'rxjs'
 import {Router} from '@angular/router'
 
 import {
@@ -27,7 +27,8 @@ import {Tag} from '../core/models/tags'
   selector: 'bk-upload',
   templateUrl: './upload.component.html',
 })
-export class UploadComponent implements OnInit {
+export class UploadComponent implements OnInit, OnDestroy {
+  progressSubscription = new Subscription()
   finalizing = false
   hasError = false
   form!: FormGroup
@@ -141,6 +142,11 @@ export class UploadComponent implements OnInit {
     })
   }
 
+  onImageSelected(upload?: TusdUpload) {
+    this.imageMediaUpload = upload
+    this.imageMediaUpload?.start()
+  }
+
   async onSubmit(): Promise<void> {
     if (this.form.invalid) {
       this.form.markAllAsTouched()
@@ -164,19 +170,17 @@ export class UploadComponent implements OnInit {
     this.uploading = true
     this.audioMediaUpload.start()
 
-    const progressSubscription = this.audioMediaUpload.progress.subscribe(progress => {
+    this.progressSubscription = this.audioMediaUpload.progress.subscribe(progress => {
       if (progress === 100) {
         this.uploading = false
         this.createPost()
-        progressSubscription.unsubscribe()
+        this.progressSubscription.unsubscribe()
       }
     })
   }
 
   private async createPost(): Promise<void> {
-    let imageProgress = 0
-    this.imageMediaUpload?.progress.subscribe(v => (imageProgress = v)).unsubscribe()
-    if (imageProgress != 100) {
+    if (!this.imageMediaUpload?.uploaded) {
       this.finalizing = false
       this.loading = false
       return this.snackbar.error(
@@ -272,5 +276,11 @@ export class UploadComponent implements OnInit {
 
     this.snackbar.info('Your track submitted successfully!')
     this.router.navigate(['/'])
+  }
+
+  ngOnDestroy(): void {
+    if (!this.progressSubscription.closed) {
+      this.progressSubscription.unsubscribe()
+    }
   }
 }

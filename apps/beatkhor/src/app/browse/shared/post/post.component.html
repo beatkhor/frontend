@@ -23,7 +23,7 @@
       <bk-audio-player [src]="audio?.original | downloadLink"></bk-audio-player>
     </div>
 
-    <div class="information-desktop">
+    <div class="flex items-center">
       <div *ngIf="post?.genres?.length" class="genres">
         <span class="info-title"
           >Genre<span *ngIf="(post?.genres?.length || 0) > 1">s</span>:
