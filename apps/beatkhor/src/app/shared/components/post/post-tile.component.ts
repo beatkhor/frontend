@@ -23,7 +23,7 @@ import {Post} from '../../../core/models/post'
 
         <div *ngIf="picture" class="absolute inset-y-0 inset-x-0">
           <img
-            class="rounded opacity-90"
+            class="rounded opacity-80"
             width="100%"
             [alt]="alt"
             [src]="picture.default | downloadLink"
