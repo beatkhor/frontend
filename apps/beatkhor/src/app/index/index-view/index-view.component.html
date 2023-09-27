@@ -27,8 +27,8 @@
   <bk-header></bk-header>
 </div>
 
-<main class="container mx-auto mt-5 px-5">
-  <section class="py-6 px-0">
+<main class="container mx-auto pb-8 mt-5 px-5">
+  <section class="py-3 px-0">
     <bk-grid-header>
       <div bk-grid-header-title>
         <h2 class="text-neutral-300">Recommended Tracks</h2>
@@ -45,5 +45,76 @@
         </a>
       </div>
     </bk-grid-header>
+
+    <bk-post-grid>
+      <ng-container *ngFor="let p of latestRecommendedPost">
+        <a [routerLink]="p | postLink">
+          <bk-post-tile [post]="p"></bk-post-tile>
+        </a>
+      </ng-container>
+      <ng-container *ngIf="loading">
+        <bk-post-tile *ngFor="let d of demoArr"></bk-post-tile>
+      </ng-container>
+    </bk-post-grid>
+  </section>
+
+  <section class="py-3 px-0">
+    <bk-grid-header>
+      <div bk-grid-header-title>
+        <h2 class="text-neutral-300">Recent Drill Tracks</h2>
+      </div>
+
+      <div bk-grid-header-actions>
+        <a
+          routerLink="browse"
+          mat-stroked-button
+          class="text-neutral-300"
+          [queryParams]="{genres: 'drill'}"
+        >
+          View More
+        </a>
+      </div>
+    </bk-grid-header>
+
+    <bk-post-grid>
+      <ng-container *ngFor="let p of latestDrillPost">
+        <a [routerLink]="p | postLink">
+          <bk-post-tile [post]="p"></bk-post-tile>
+        </a>
+      </ng-container>
+      <ng-container *ngIf="loading">
+        <bk-post-tile *ngFor="let d of demoArr"></bk-post-tile>
+      </ng-container>
+    </bk-post-grid>
+  </section>
+
+  <section class="py-3 px-0">
+    <bk-grid-header>
+      <div bk-grid-header-title>
+        <h2 class="text-neutral-300">Recent Trap Tracks</h2>
+      </div>
+
+      <div bk-grid-header-actions>
+        <a
+          routerLink="browse"
+          mat-stroked-button
+          class="text-neutral-300"
+          [queryParams]="{genres: 'trap'}"
+        >
+          View More
+        </a>
+      </div>
+    </bk-grid-header>
+
+    <bk-post-grid>
+      <ng-container *ngFor="let p of latestTrapPost">
+        <a [routerLink]="p | postLink">
+          <bk-post-tile [post]="p"></bk-post-tile>
+        </a>
+      </ng-container>
+      <ng-container *ngIf="loading">
+        <bk-post-tile *ngFor="let d of demoArr"></bk-post-tile>
+      </ng-container>
+    </bk-post-grid>
   </section>
 </main>
