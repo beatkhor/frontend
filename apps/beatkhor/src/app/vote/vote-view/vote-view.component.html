@@ -10,11 +10,11 @@
 
   <ng-container *ngIf="!loading">
     <ng-container *ngFor="let p of posts | paginate : {itemsPerPage: 10, currentPage: p}">
-      <bk-review-post-item
+      <bk-vote-post-item
         [post]="p"
         [vote]="getPostVote(p)"
         (voteChange)="onVoteChange(p.id, $event)"
-      ></bk-review-post-item>
+      ></bk-vote-post-item>
       <mat-divider></mat-divider>
     </ng-container>
 

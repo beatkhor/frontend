@@ -29,9 +29,9 @@ export const appRoutes: Route[] = [
         loadChildren: () => import('./upload/upload.module').then(m => m.UploadModule),
       },
       {
-        path: 'review',
+        path: 'vote',
         canActivate: [AuthGuard],
-        loadChildren: () => import('./review/review.module').then(m => m.ReviewModule),
+        loadChildren: () => import('./vote/vote.module').then(m => m.VoteModule),
       },
       {
         path: 'browse',

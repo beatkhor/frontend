@@ -7,10 +7,10 @@ import {Vote} from '../../core/models/review'
 import {Post} from '../../core/models/post'
 
 @Component({
-  selector: 'bk-review',
-  templateUrl: './review-view.component.html',
+  selector: 'bk-vote',
+  templateUrl: './vote-view.component.html',
 })
-export class ReviewComponent implements OnInit {
+export class VoteComponent implements OnInit {
   postVotes = new Map<number, number | undefined>()
   votes: Vote[] = []
   posts: Post[] = []

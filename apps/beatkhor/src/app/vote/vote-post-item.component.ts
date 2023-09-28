@@ -9,7 +9,7 @@ import {Audio, Picture} from '../core/models/media'
 import {Post} from '../core/models/post'
 
 @Component({
-  selector: 'bk-review-post-item',
+  selector: 'bk-vote-post-item',
   template: ` <div class="flex flex-col sm:flex-row items-stretch sm:items-end py-6">
     <div class="mr-0 sm:mr-7 mb-5 sm:mb-0">
       <img
@@ -48,7 +48,7 @@ import {Post} from '../core/models/post'
     </div>
   </div>`,
 })
-export class ReviewPostItemComponent implements OnInit {
+export class VotePostItemComponent implements OnInit {
   @Output() voteChange = new EventEmitter<number>()
   @Input() vote: number | undefined
   @Input() post!: Post

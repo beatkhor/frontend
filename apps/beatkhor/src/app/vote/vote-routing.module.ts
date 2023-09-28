@@ -1,12 +1,12 @@
 import {RouterModule, Routes} from '@angular/router'
 import {NgModule} from '@angular/core'
 
-import {ReviewComponent} from './review-view/review-view.component'
+import {VoteComponent} from './vote-view/vote-view.component'
 
 const routes: Routes = [
   {
     path: '',
-    component: ReviewComponent,
+    component: VoteComponent,
   },
 ]
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ReviewRoutingModule {}
+export class VoteRoutingModule {}
