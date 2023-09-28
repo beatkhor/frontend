@@ -1,99 +1,118 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core'
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core'
 import {lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '../core/services/error-handler.service'
-import {ReviewService} from '../core/services/review.service'
+import {VoteService} from '../core/services/review.service'
 import {UtilsService} from '../core/services/utils.service'
-import {Review} from '../core/models/review'
+import {PostService} from '../core/services/post.service'
+import {Audio, Picture} from '../core/models/media'
+import {Vote} from '../core/models/review'
 import {Post} from '../core/models/post'
 
 @Component({
   selector: 'bk-review-post-item',
-  template: ` <div class="flex items-end py-6">
-    <div class="mr-7">
+  template: ` <div class="flex flex-col sm:flex-row items-stretch sm:items-end py-6">
+    <div class="mr-0 sm:mr-7 mb-5 sm:mb-0">
       <img
         *ngIf="post.pictures.length"
-        class="w-36 rounded"
-        [src]="post.pictures[0].default | downloadLink"
-        alt="Pic"
+        class="w-full sm:w-36 rounded"
+        [src]="picture?.default | downloadLink"
+        [alt]="alt"
       />
     </div>
-    <div class="flex flex-grow flex-col items-stretch py-1">
+    <div class="flex flex-grow flex-col items-stretch py-1 pb-2">
       <div class="flex justify-between items-end mb-4">
         <div class="flex flex-col">
-          <div>{{ post.post_meta.title }}</div>
-          <div class="text-sm text-neutral-300">
-            {{ post.post_meta.overridden_artist_name || userFullName }}
+          <div class="text-neutral-200 text-lg">{{ title }}</div>
+          <div class="text-sm text-neutral-400">
+            {{ artist }}
           </div>
         </div>
 
         <div class="flex items-center">
-          <mat-spinner class="mr-4" *ngIf="loading" [diameter]="30"></mat-spinner>
-          <button mat-icon-button (click)="onVote(-1)">
-            <mat-icon [class.text-primary-500]="vote === -1">thumb_down</mat-icon>
-          </button>
-          <button mat-icon-button (click)="onVote(1)">
-            <mat-icon [class.text-primary-500]="vote === 1">thumb_up</mat-icon>
-          </button>
+          <div class="flex bg-neutral-800 rounded items-center">
+            <button mat-icon-button (click)="onDownVote()" class="!pt-2.5">
+              <mat-icon [class.text-primary-500]="isDownVote" class="text-xl">
+                thumb_down
+              </mat-icon>
+            </button>
+            <button mat-icon-button (click)="onUpVote()" class="!pt-2.5">
+              <mat-icon [class.text-primary-500]="isUpVote" class="text-xl">
+                thumb_up
+              </mat-icon>
+            </button>
+          </div>
         </div>
       </div>
 
-      <audio
-        class="w-full"
-        controls
-        preload="none"
-        [src]="post.audios[0].original | downloadLink"
-      ></audio>
+      <bk-audio-player [src]="audio?.original | downloadLink"></bk-audio-player>
     </div>
   </div>`,
 })
-export class ReviewPostItemComponent {
+export class ReviewPostItemComponent implements OnInit {
   @Output() voteChange = new EventEmitter()
   @Input() vote: number | undefined
   @Input() post!: Post
   loading = false
+  artist = ''
+  alt = ''
 
   constructor(
+    private postService: PostService,
+    private voteService: VoteService,
     private utilsService: UtilsService,
-    private reviewService: ReviewService,
     private errHandler: CustomErrorHandler
   ) {}
 
-  get userFullName() {
-    return this.utilsService.getFullName(this.post?.user)
+  ngOnInit(): void {
+    this.alt = this.postService.generateFullName(this.post)
+    this.artist = UtilsService.getArtistName(this.post)
   }
 
-  async onVote(value: number): Promise<void> {
-    this.loading = true
+  get picture(): Picture | undefined {
+    return this.post?.pictures[0]
+  }
 
-    if (this.vote) {
-      try {
-        await lastValueFrom(this.reviewService.deleteReview(this.post.id))
-      } catch (error: any) {
-        this.loading = false
-        this.errHandler.handle(error)
-        return
-      }
+  get audio(): Audio | undefined {
+    return this.post?.audios[0]
+  }
 
-      // if the value of the vote was the same as original, do nothing after deleting
-      if (value === this.vote) {
-        this.voteChange.emit({post_id: this.post.id, vote: undefined})
-        this.loading = false
-        return
-      }
-    }
+  get title(): string {
+    return this.post.post_meta.title
+  }
 
-    const review: Review = {
-      post_id: this.post.id,
-      vote: value,
+  get isUpVote() {
+    return false
+  }
+
+  get isDownVote() {
+    return false
+  }
+
+  async onUpVote(): Promise<void> {
+    if (!this.post.id) {
+      return
     }
 
     try {
-      await lastValueFrom(this.reviewService.createReview(review))
-      this.voteChange.emit({post_id: this.post.id, vote: value})
+      this.loading = true
+      await lastValueFrom(this.voteService.upVote(this.post.id))
       this.loading = false
-    } catch (error: any) {
-      this.errHandler.handle(error)
+    } catch (error) {
+      this.loading = false
+    }
+  }
+
+  async onDownVote(): Promise<void> {
+    if (!this.post.id) {
+      return
+    }
+
+    try {
+      this.loading = true
+      await lastValueFrom(this.voteService.downVote(this.post.id))
+      this.loading = false
+    } catch (error) {
       this.loading = false
     }
   }

@@ -4,48 +4,31 @@ import {Injectable} from '@angular/core'
 import {Observable} from 'rxjs'
 
 import {CustomResponse} from '../models/response'
-import {PostReviewDTO, Review} from '../models/review'
-import {Post} from '../models/post'
+import {PostReviewDTO} from '../models/review'
 
 @Injectable({
   providedIn: 'root',
 })
-export class ReviewService {
+export class VoteService {
   constructor(private http: HttpClient) {}
 
-  getMyReviews(): Observable<CustomResponse<Review[]>> {
-    return this.http.get<CustomResponse<Review[]>>(
-      environment.contentServiceURL + '/review/me'
+  upVote(postId: number) {
+    return this.http.post<CustomResponse<void>>(
+      environment.contentServiceURL + '/votes/upvote/' + postId,
+      null
     )
   }
 
-  getReviewPosts(): Observable<CustomResponse<PostReviewDTO>> {
+  downVote(postId: number) {
+    return this.http.post<CustomResponse<void>>(
+      environment.contentServiceURL + '/votes/downvote/' + postId,
+      null
+    )
+  }
+
+  getVotePosts(): Observable<CustomResponse<PostReviewDTO>> {
     return this.http.get<CustomResponse<PostReviewDTO>>(
-      environment.contentServiceURL + '/review/posts'
-    )
-  }
-
-  createReview(review: Review): Observable<CustomResponse<Review>> {
-    return this.http.post<CustomResponse<Review>>(
-      environment.contentServiceURL + '/review ',
-      review
-    )
-  }
-
-  deleteReview(postId?: number, parent?: number): Observable<CustomResponse<any>> {
-    const params: any = {}
-    if (postId) {
-      params['post_id'] = String(postId)
-    }
-    if (parent) {
-      params['parent'] = String(parent)
-    }
-
-    return this.http.delete<CustomResponse<any>>(
-      environment.contentServiceURL + '/review',
-      {
-        params,
-      }
+      environment.contentServiceURL + '/votes/posts'
     )
   }
 }

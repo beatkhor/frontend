@@ -1,6 +1,6 @@
 import {Post} from './post'
 
-export interface Review {
+export interface Vote {
   id?: number
   created_at?: number
   updated_at?: number
@@ -14,5 +14,5 @@ export interface Review {
 
 export interface PostReviewDTO {
   posts: Post[]
-  user_reviews: Review[]
+  user_votes: Vote[]
 }

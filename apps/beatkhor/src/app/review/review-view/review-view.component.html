@@ -1,22 +1,23 @@
-<main class="container mx-auto px-5 py-12">
-  <h1 class="text-2xl text-neutral-200">Review Tracks</h1>
-  <p class="text-neutral-400">You can decide which beats have the chance to get published</p>
+<main class="container mx-auto px-5 py-6 sm:py-12">
+  <h1 class="text-2xl text-neutral-200 mb-2 sm:mb-0">Review Tracks</h1>
+  <p class="text-neutral-400">
+    You can decide which tracks have the chance to get published in beatkhor
+  </p>
 
   <div *ngIf="loading" class="flex justify-center py-4">
     <mat-spinner [diameter]="45"></mat-spinner>
   </div>
 
   <ng-container *ngIf="!loading">
-    <ng-container
-      *ngFor="let post of posts | paginate : {itemsPerPage: 10, currentPage: p}"
-    >
+    <ng-container *ngFor="let p of posts | paginate : {itemsPerPage: 10, currentPage: p}">
       <bk-review-post-item
-        [post]="post"
-        [vote]="getPostReview(post)"
+        [post]="p"
+        [vote]="getPostVote(p)"
         (voteChange)="onVoteChange($event)"
       ></bk-review-post-item>
       <mat-divider></mat-divider>
     </ng-container>
+
     <div class="flex justify-center py-4">
       <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>

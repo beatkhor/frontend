@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core'
 import {lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '../../core/services/error-handler.service'
-import {ReviewService} from '../../core/services/review.service'
-import {Review} from '../../core/models/review'
+import {VoteService} from '../../core/services/review.service'
+import {Vote} from '../../core/models/review'
 import {Post} from '../../core/models/post'
 
 @Component({
@@ -11,14 +11,14 @@ import {Post} from '../../core/models/post'
   templateUrl: './review-view.component.html',
 })
 export class ReviewComponent implements OnInit {
-  postReviews = new Map<number, number | undefined>()
-  reviews: Review[] = []
+  postVotes = new Map<number, number | undefined>()
+  votes: Vote[] = []
   posts: Post[] = []
   loading = false
   p: number = 1
 
   constructor(
-    private reviewService: ReviewService,
+    private reviewService: VoteService,
     private errHandler: CustomErrorHandler
   ) {}
 
@@ -26,32 +26,33 @@ export class ReviewComponent implements OnInit {
     this.getData()
   }
 
-  getPostReview(post: Post): number | undefined {
-    return this.postReviews.get(post.id ?? 0)
+  getPostVote(post: Post): number | undefined {
+    return this.postVotes.get(post.id ?? 0)
   }
 
   async getData(): Promise<void> {
     try {
       this.loading = true
-      const result = await lastValueFrom(this.reviewService.getReviewPosts())
+      const result = await lastValueFrom(this.reviewService.getVotePosts())
 
       this.posts = result.result.posts
-      this.reviews = result.result.user_reviews
+      this.votes = result.result.user_votes
 
       for (const post of this.posts) {
-        const found = this.reviews.filter(r => r.post_id === post.id)
+        const found = this.votes.filter(r => r.post_id === post.id)
         if (found.length) {
-          this.postReviews.set(post.id ?? 0, found[0].vote)
+          this.postVotes.set(post.id ?? 0, found[0].vote)
         }
       }
 
       this.loading = false
     } catch (error: any) {
+      this.loading = false
       this.errHandler.handle(error)
     }
   }
 
   onVoteChange(event: any) {
-    this.postReviews.set(event.post_id, event.vote)
+    this.postVotes.set(event.post_id, event.vote)
   }
 }
