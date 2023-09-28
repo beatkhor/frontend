@@ -173,3 +173,7 @@ body {
   width: 3px;
   height: 3px;
 }
+
+mat-sidenav-content {
+  overflow-y: scroll !important;
+}
