@@ -1,0 +1,32 @@
+<div class="py-8">
+  <bk-grid-header>
+    <div bk-grid-header-title>
+      <h2 class="text-neutral-300">Browse Tracks</h2>
+    </div>
+  </bk-grid-header>
+
+  <div class="flex">
+    <mat-form-field class="flex-1">
+      <input matInput type="text" placeholder="Search..." name="search" id="search" />
+      <mat-icon matPrefix>search</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="mx-5">
+      <mat-label>Genres</mat-label>
+      <mat-select multiple>
+        <mat-option *ngFor="let genre of genres" [value]="genre">
+          {{ genre.title }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tags</mat-label>
+      <mat-select multiple>
+        <mat-option *ngFor="let tag of tags" [value]="tag">
+          {{ tag.title }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
