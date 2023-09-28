@@ -7,13 +7,21 @@
 
   <div class="flex">
     <mat-form-field class="flex-1">
-      <input matInput type="text" placeholder="Search..." name="search" id="search" />
+      <input
+        matInput
+        type="text"
+        id="search"
+        name="search"
+        [(ngModel)]="query"
+        placeholder="Search..."
+        [disabled]="loading"
+      />
       <mat-icon matPrefix>search</mat-icon>
     </mat-form-field>
 
     <mat-form-field class="mx-5">
       <mat-label>Genres</mat-label>
-      <mat-select multiple>
+      <mat-select [disabled]="loading" [(ngModel)]="selectedGenres" multiple>
         <mat-option *ngFor="let genre of genres" [value]="genre">
           {{ genre.title }}
         </mat-option>
@@ -22,7 +30,7 @@
 
     <mat-form-field>
       <mat-label>Tags</mat-label>
-      <mat-select multiple>
+      <mat-select [disabled]="loading" [(ngModel)]="selectedTags" multiple>
         <mat-option *ngFor="let tag of tags" [value]="tag">
           {{ tag.title }}
         </mat-option>
