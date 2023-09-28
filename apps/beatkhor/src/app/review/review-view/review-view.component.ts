@@ -52,7 +52,11 @@ export class ReviewComponent implements OnInit {
     }
   }
 
-  onVoteChange(event: any) {
-    this.postVotes.set(event.post_id, event.vote)
+  onVoteChange(postId: number | undefined, vote: number | undefined) {
+    if (!postId) {
+      return
+    }
+
+    this.postVotes.set(postId, vote)
   }
 }

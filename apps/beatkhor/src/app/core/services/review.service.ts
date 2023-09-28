@@ -31,4 +31,10 @@ export class VoteService {
       environment.contentServiceURL + '/votes/posts'
     )
   }
+
+  deleteVote(postId: number) {
+    return this.http.delete<CustomResponse<void>>(
+      environment.contentServiceURL + '/votes/' + postId
+    )
+  }
 }

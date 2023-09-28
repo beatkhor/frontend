@@ -6,7 +6,6 @@ import {VoteService} from '../core/services/review.service'
 import {UtilsService} from '../core/services/utils.service'
 import {PostService} from '../core/services/post.service'
 import {Audio, Picture} from '../core/models/media'
-import {Vote} from '../core/models/review'
 import {Post} from '../core/models/post'
 
 @Component({
@@ -50,7 +49,7 @@ import {Post} from '../core/models/post'
   </div>`,
 })
 export class ReviewPostItemComponent implements OnInit {
-  @Output() voteChange = new EventEmitter()
+  @Output() voteChange = new EventEmitter<number>()
   @Input() vote: number | undefined
   @Input() post!: Post
   loading = false
@@ -60,7 +59,6 @@ export class ReviewPostItemComponent implements OnInit {
   constructor(
     private postService: PostService,
     private voteService: VoteService,
-    private utilsService: UtilsService,
     private errHandler: CustomErrorHandler
   ) {}
 
@@ -82,11 +80,11 @@ export class ReviewPostItemComponent implements OnInit {
   }
 
   get isUpVote() {
-    return false
+    return this.vote === 1
   }
 
   get isDownVote() {
-    return false
+    return this.vote === 0
   }
 
   async onUpVote(): Promise<void> {
@@ -94,11 +92,19 @@ export class ReviewPostItemComponent implements OnInit {
       return
     }
 
+    if (this.isUpVote) {
+      await lastValueFrom(this.voteService.deleteVote(this.post.id))
+      this.voteChange.emit(undefined)
+      return
+    }
+
     try {
       this.loading = true
       await lastValueFrom(this.voteService.upVote(this.post.id))
+      this.voteChange.emit(1)
       this.loading = false
-    } catch (error) {
+    } catch (error: any) {
+      this.errHandler.handle(error)
       this.loading = false
     }
   }
@@ -108,11 +114,34 @@ export class ReviewPostItemComponent implements OnInit {
       return
     }
 
+    if (this.isDownVote) {
+      await lastValueFrom(this.voteService.deleteVote(this.post.id))
+      this.voteChange.emit(undefined)
+      return
+    }
+
     try {
       this.loading = true
+      this.voteChange.emit(0)
       await lastValueFrom(this.voteService.downVote(this.post.id))
       this.loading = false
-    } catch (error) {
+    } catch (error: any) {
+      this.errHandler.handle(error)
+      this.loading = false
+    }
+  }
+
+  async deleteVote(): Promise<void> {
+    if (!this.post.id) {
+      return
+    }
+
+    try {
+      this.loading = true
+      await lastValueFrom(this.voteService.deleteVote(this.post.id))
+      this.loading = false
+    } catch (error: any) {
+      this.errHandler.handle(error)
       this.loading = false
     }
   }
