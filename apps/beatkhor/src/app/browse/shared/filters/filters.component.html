@@ -5,36 +5,60 @@
     </div>
   </bk-grid-header>
 
-  <div class="flex">
-    <mat-form-field class="flex-1">
-      <input
-        matInput
-        type="text"
-        id="search"
-        name="search"
-        [(ngModel)]="query"
-        placeholder="Search..."
-        [disabled]="loading"
-      />
-      <mat-icon matPrefix>search</mat-icon>
-    </mat-form-field>
+  <div class="flex flex-col lg:flex-row">
+    <div class="flex justify-stretch flex-1">
+      <mat-form-field class="flex-1">
+        <input
+          matInput
+          type="text"
+          id="search"
+          name="search"
+          [(ngModel)]="query"
+          [disabled]="loading"
+          placeholder="Search..."
+          (ngModelChange)="queryChanges$.next($event)"
+        />
+        <mat-icon matPrefix>search</mat-icon>
 
-    <mat-form-field class="mx-5">
-      <mat-label>Genres</mat-label>
-      <mat-select [disabled]="loading" [(ngModel)]="selectedGenres" multiple>
-        <mat-option *ngFor="let genre of genres" [value]="genre">
-          {{ genre.title }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+        <button
+          matSuffix
+          *ngIf="query"
+          mat-icon-button
+          (click)="this.query = ''; emitChanges()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
 
-    <mat-form-field>
-      <mat-label>Tags</mat-label>
-      <mat-select [disabled]="loading" [(ngModel)]="selectedTags" multiple>
-        <mat-option *ngFor="let tag of tags" [value]="tag">
-          {{ tag.title }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div class="flex flex-col md:flex-row">
+      <mat-form-field class="flex-1 mr-0 md:mr-5 lg:mx-5">
+        <mat-label>Genres</mat-label>
+        <mat-select
+          multiple
+          [disabled]="loading"
+          [(ngModel)]="selectedGenres"
+          (ngModelChange)="emitChanges()"
+        >
+          <mat-option *ngFor="let genre of genres" [value]="genre">
+            {{ genre.title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="flex-1">
+        <mat-label>Tags</mat-label>
+        <mat-select
+          multiple
+          [disabled]="loading"
+          [(ngModel)]="selectedTags"
+          (ngModelChange)="emitChanges()"
+        >
+          <mat-option *ngFor="let tag of tags" [value]="tag">
+            {{ tag.title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </div>
 </div>
