@@ -1,5 +1,7 @@
 import {Component} from '@angular/core'
 
+import {UtilsService} from '../../services/utils.service'
+
 @Component({
   selector: 'bk-wrapper',
   template: `
@@ -17,8 +19,15 @@ import {Component} from '@angular/core'
         </mat-nav-list>
       </mat-sidenav>
 
-      <mat-sidenav-content>
-        <div class="pt-14 min-h-screen flex flex-col">
+      <mat-sidenav-content class="pt-14">
+        <div
+          infiniteScroll
+          [infiniteScrollDistance]="2"
+          [infiniteScrollThrottle]="50"
+          [scrollWindow]="false"
+          (scrolled)="onScroll()"
+          class="custom-wrapper h-full flex flex-col overflow-y-scroll"
+        >
           <bk-navbar (menu)="toggle()"></bk-navbar>
           <div class="flex-grow">
             <router-outlet></router-outlet>
@@ -34,5 +43,9 @@ export class WrapperComponent {
 
   toggle(): void {
     this.isSidenavOpen = !this.isSidenavOpen
+  }
+
+  onScroll() {
+    UtilsService.contentScrollToEnd$.next()
   }
 }

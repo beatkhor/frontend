@@ -1,0 +1,16 @@
+<main class="container mx-auto px-6 pb-6">
+  <bk-filters (filtersChange)="onFiltersChange($event)"></bk-filters>
+
+  <bk-post-grid>
+    <ng-container *ngIf="!loading">
+      <ng-container *ngFor="let p of posts">
+        <a [routerLink]="p | postLink">
+          <bk-post-tile [post]="p"></bk-post-tile>
+        </a>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <bk-post-tile *ngFor="let d of demoArr"></bk-post-tile>
+    </ng-container>
+  </bk-post-grid>
+</main>

@@ -173,3 +173,20 @@ body {
   width: 3px;
   height: 3px;
 }
+
+mat-sidenav-content {
+  overflow-y: hidden !important;
+}
+
+.mdc-notched-outline__notch {
+  border-right: none;
+}
+
+bk-browse-view
+  .mdc-text-field:not(.mdc-text-field--invalid):not(.mdc-text-field--focused):not(
+    .mdc-text-field--disabled
+  ) {
+  .mdc-notched-outline > * {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+}

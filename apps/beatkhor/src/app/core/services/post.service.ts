@@ -89,9 +89,9 @@ export class PostService {
   search(filters: SearchPostFilters): Observable<PaginatedResponse<Post[]>> {
     const genres = filters.genres?.map(g => g.slug).join(',') || ''
     const tags = filters.tags?.map(t => t.slug).join(',') || ''
-    const categories = filters.categories?.map(c => c.slug).join(',') || ''
+    const categories = filters.categories?.map(c => c.slug).join(',') ?? ''
 
-    const params: any = {genres, tags, categories, query: filters.query || ''}
+    const params: any = {genres, tags, categories, q: filters.query ?? ''}
 
     if (filters.pageSize) {
       params.page_size = filters.pageSize

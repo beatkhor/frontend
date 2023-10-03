@@ -9,7 +9,7 @@ import {Post} from '../../../core/models/post'
   selector: 'bk-post-tile',
   template: `
     <div
-      class="relative rounded flex flex-col items-stretch transition-all ease-in hover:grayscale"
+      class="relative rounded flex flex-col items-stretch transition-all duration-100 ease-in hover:bg-neutral-800 p-4"
     >
       <div>
         <svg
@@ -21,7 +21,7 @@ import {Post} from '../../../core/models/post'
           <rect width="1" height="1" />
         </svg>
 
-        <div *ngIf="picture" class="absolute inset-y-0 inset-x-0">
+        <div *ngIf="picture" class="absolute inset-y-4 inset-x-4">
           <img
             class="rounded opacity-80"
             width="100%"
@@ -31,7 +31,7 @@ import {Post} from '../../../core/models/post'
         </div>
       </div>
 
-      <div class="py-4 text-neutral-200">
+      <div class="pt-4 text-neutral-200">
         <div [class.opacity-0]="!title">{{ title || 'Loading...' }}</div>
         <div [class.opacity-0]="!artist" class="text-sm text-neutral-400">
           {{ artist || 'Loading...' }}

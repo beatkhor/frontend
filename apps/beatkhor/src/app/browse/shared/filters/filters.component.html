@@ -1,0 +1,60 @@
+<div class="pt-10">
+  <div class="flex flex-col lg:flex-row">
+    <div class="flex justify-stretch flex-1">
+      <mat-form-field appearance="outline" class="flex-1">
+        <input
+          matInput
+          type="text"
+          id="search"
+          name="search"
+          [(ngModel)]="query"
+          [disabled]="loading"
+          placeholder="Browse tracks..."
+          (ngModelChange)="queryChanges$.next($event)"
+        />
+        <mat-icon class="ml-1" matPrefix>search</mat-icon>
+
+        <button
+          matSuffix
+          *ngIf="query"
+          mat-icon-button
+          (click)="this.query = ''; emitChanges()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="flex flex-col md:flex-row">
+      <mat-form-field appearance="outline" class="flex-1 mr-0 md:mr-5 lg:mx-5">
+        <mat-label>Genres</mat-label>
+        <mat-select
+          multiple
+          [disabled]="loading"
+          placeholder="Choose a genre"
+          [(ngModel)]="selectedGenres"
+          (ngModelChange)="emitChanges()"
+        >
+          <mat-option *ngFor="let genre of genres" [value]="genre">
+            {{ genre.title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="flex-1">
+        <mat-label>Tags</mat-label>
+        <mat-select
+          multiple
+          [disabled]="loading"
+          placeholder="Choose a tag"
+          [(ngModel)]="selectedTags"
+          (ngModelChange)="emitChanges()"
+        >
+          <mat-option *ngFor="let tag of tags" [value]="tag">
+            {{ tag.title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
