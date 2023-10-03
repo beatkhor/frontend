@@ -1,6 +1,6 @@
 {
   "name": "@beatkhor/source",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
@@ -45,6 +45,7 @@
     "@nx/workspace": "16.8.1",
     "@playwright/test": "^1.36.0",
     "@schematics/angular": "~16.2.0",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/jest": "^29.4.0",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
