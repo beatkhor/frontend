@@ -10,9 +10,10 @@ import {AudioPlayerModule} from './components/audio-player'
 import {GridHeaderModule} from './components/grid-header'
 import {NoticeModule} from './components/notice'
 
+import {InfiniteScrollModule} from 'ngx-infinite-scroll'
 import {MaterialModule} from './material/material.module'
-import {PipesModule} from './pipes/pipes.module'
 import {PostModule} from './components/post/post.module'
+import {PipesModule} from './pipes/pipes.module'
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import {PostModule} from './components/post/post.module'
     ConfirmDialogModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    InfiniteScrollModule,
     MultiSelectorDialogModule,
   ],
   exports: [
@@ -39,6 +41,7 @@ import {PostModule} from './components/post/post.module'
     AudioPlayerModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    InfiniteScrollModule,
   ],
 })
 export class SharedModule {}

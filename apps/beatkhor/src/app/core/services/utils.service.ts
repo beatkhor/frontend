@@ -1,13 +1,17 @@
 import {LocalStorageService} from './local-storage.service'
 import {Injectable} from '@angular/core'
+import {Subject} from 'rxjs'
+
+import {StorageKeys} from '../models/storage-keys'
 import {Post} from '../models/post'
 import {User} from '../models/user'
-import {StorageKeys} from '../models/storage-keys'
 
 @Injectable({
   providedIn: 'root',
 })
 export class UtilsService {
+  static contentScrollToEnd$ = new Subject<void>()
+
   constructor(private localStorageService: LocalStorageService) {}
 
   static makeStringUrlSafe(str: string) {
