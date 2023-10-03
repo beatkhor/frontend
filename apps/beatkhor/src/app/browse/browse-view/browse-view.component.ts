@@ -15,7 +15,7 @@ export class BrowseViewComponent {
   loading = false
 
   page = 1
-  pageSize = 16
+  pageSize = 6 * 5
   totalPages = 0
   demoArr = Array(this.pageSize)
 
