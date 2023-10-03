@@ -36,6 +36,7 @@ export class BrowseViewComponent implements OnInit, OnDestroy {
 
   onFiltersChange(filters: PostFilters): void {
     this.filters = filters
+    this.page = 1
     this.getPosts()
   }
 
