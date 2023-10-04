@@ -5,8 +5,9 @@ import {UtilsService} from '../../services/utils.service'
 @Component({
   selector: 'bk-wrapper',
   template: `
+    <bk-navbar (menu)="toggle()"></bk-navbar>
     <mat-sidenav-container
-      class="!absolute top-14 bottom-0 left-0 right-0 overscroll-contain !bg-neutral-900"
+      class="!absolute top-0 bottom-0 left-0 right-0 overscroll-contain !bg-neutral-900"
     >
       <mat-sidenav
         class="w-56"
@@ -26,9 +27,8 @@ import {UtilsService} from '../../services/utils.service'
           [infiniteScrollThrottle]="50"
           [scrollWindow]="false"
           (scrolled)="onScroll()"
-          class="custom-wrapper h-full flex flex-col overflow-y-scroll"
+          class="custom-wrapper h-full flex flex-col overflow-y-scroll mt-14"
         >
-          <bk-navbar (menu)="toggle()"></bk-navbar>
           <div class="flex-grow">
             <router-outlet></router-outlet>
           </div>
