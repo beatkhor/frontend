@@ -178,6 +178,22 @@ mat-sidenav-content {
   overflow-y: hidden !important;
 }
 
+.wrapper-nav-list {
+  padding-top: 0 !important;
+
+  .mat-mdc-list-item {
+    height: 48px !important;
+  }
+
+  .mdc-list-item__content {
+    padding: 8px 0;
+    .mdc-list-item__primary-text {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
 .mdc-notched-outline__notch {
   border-right: none;
 }

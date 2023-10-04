@@ -10,13 +10,27 @@ import {UtilsService} from '../../services/utils.service'
       class="!absolute top-0 bottom-0 left-0 right-0 overscroll-contain !bg-neutral-900"
     >
       <mat-sidenav
-        class="w-56"
+        class="w-56 pt-14 !bg-neutral-900"
         mode="over"
         [autoFocus]="false"
         [(opened)]="isSidenavOpen"
       >
-        <mat-nav-list>
-          <a mat-list-item routerLink="/" (click)="toggle()">Beatkhor</a>
+        <mat-nav-list class="wrapper-nav-list">
+          <a mat-list-item routerLink="/" (click)="toggle()">
+            <mat-icon class="text-neutral-400 mr-4">home</mat-icon>
+            <span>Beatkhor</span>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/browse" (click)="toggle()">
+            <mat-icon class="text-neutral-400 mr-4">list</mat-icon>
+            <span>Browse</span>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/page/about" (click)="toggle()">
+            <mat-icon class="text-neutral-400 mr-4">info</mat-icon>
+            <span>About Us</span>
+          </a>
+          <mat-divider></mat-divider>
         </mat-nav-list>
       </mat-sidenav>
 
