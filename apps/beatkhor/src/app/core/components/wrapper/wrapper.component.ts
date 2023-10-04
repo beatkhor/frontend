@@ -41,7 +41,7 @@ import {UtilsService} from '../../services/utils.service'
           [infiniteScrollThrottle]="50"
           [scrollWindow]="false"
           (scrolled)="onScroll()"
-          class="custom-wrapper h-full flex flex-col overflow-y-scroll mt-14"
+          class="custom-wrapper h-full flex flex-col overflow-y-scroll pt-14"
         >
           <div class="flex-grow">
             <router-outlet></router-outlet>
