@@ -13,4 +13,13 @@
       <bk-post-tile *ngFor="let d of demoArr"></bk-post-tile>
     </ng-container>
   </bk-post-grid>
+
+  <div *ngIf="page < totalPages" class="flex items-center py-6">
+    <div class="h-[1px] bg-neutral-800 flex-grow"></div>
+    <button mat-stroked-button [disabled]="loadingMore" (click)="loadMore()">
+      <span *ngIf="!loadingMore">Load more</span>
+      <span *ngIf="loadingMore">Loading...</span>
+    </button>
+    <div class="h-[1px] bg-neutral-800 flex-grow"></div>
+  </div>
 </main>

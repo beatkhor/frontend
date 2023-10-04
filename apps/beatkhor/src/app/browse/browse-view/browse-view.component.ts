@@ -14,6 +14,7 @@ import {Post} from '../../core/models/post'
 export class BrowseViewComponent implements OnInit, OnDestroy {
   subscription!: Subscription
   filters!: PostFilters
+  loadingMore = false
   posts: Post[] = []
   loading = false
 
@@ -62,7 +63,11 @@ export class BrowseViewComponent implements OnInit, OnDestroy {
     }
   }
 
-  private async loadMore() {
+  async loadMore() {
+    if (!this.subscription || this.subscription.closed) {
+      this.handleScroll()
+    }
+
     const req$ = this.postService.search({
       page: ++this.page,
       pageSize: this.pageSize,
@@ -76,11 +81,14 @@ export class BrowseViewComponent implements OnInit, OnDestroy {
     }
 
     try {
+      this.loadingMore = true
       const response = await lastValueFrom(req$)
       this.posts.push(...response.result)
       this.page = response.page
       this.totalPages = Math.ceil(response.total / response.page_size)
+      this.loadingMore = false
     } catch (error: any) {
+      this.loadingMore = false
       this.errHandler.handle(error)
     }
   }
