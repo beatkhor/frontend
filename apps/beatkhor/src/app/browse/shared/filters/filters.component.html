@@ -1,4 +1,4 @@
-<div class="pt-10">
+<div class="pt-5 sm:pt-10">
   <div class="flex flex-col lg:flex-row">
     <div class="flex justify-stretch flex-1">
       <mat-form-field appearance="outline" class="flex-1">
@@ -27,7 +27,10 @@
 
     <div class="flex flex-col md:flex-row">
       <mat-form-field appearance="outline" class="flex-1 mr-0 md:mr-5 lg:mx-5">
-        <mat-label>Genres</mat-label>
+        <mat-label>
+          <span class="md:hidden">Choose Genres</span>
+          <span class="hidden md:inline">Genres</span>
+        </mat-label>
         <mat-select
           multiple
           [disabled]="loading"
@@ -42,7 +45,10 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="flex-1">
-        <mat-label>Tags</mat-label>
+        <mat-label>
+          <span class="md:hidden">Choose tags</span>
+          <span class="hidden md:inline">Tags</span>
+        </mat-label>
         <mat-select
           multiple
           [disabled]="loading"

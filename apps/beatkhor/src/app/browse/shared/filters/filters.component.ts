@@ -45,6 +45,7 @@ export class FiltersComponent implements OnInit, OnDestroy {
       const req$ = forkJoin([this.genreService.getGenres(), this.tagsService.getTags()])
       const result = await lastValueFrom(req$)
       this.genres = result[0].result
+      this.genres.sort((a, b) => (a.view_order ?? 1) - (b.view_order ?? 1))
       this.tags = result[1].result
       this.readParams()
       this.loading = false
