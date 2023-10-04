@@ -5,6 +5,15 @@
   "prefix": "bk",
   "sourceRoot": "apps/beatkhor/src",
   "tags": [],
+  "i18n": {
+    "sourceLocale": "en-US",
+    "locales": {
+      "fa": {
+        "translation": "apps/beatkhor/src/locale/messages.fa.xlf",
+        "baseHref": "fa"
+      }
+    }
+  },
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -67,7 +76,8 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "beatkhor:build"
+        "browserTarget": "beatkhor:build",
+        "outputPath": "apps/beatkhor/src/locale"
       }
     },
     "lint": {

@@ -1,11 +1,12 @@
 {
   "name": "@beatkhor/source",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "beatkhor:build:prod": "nx run beatkhor:build:production",
-    "beatkhor:build:dev": "nx run beatkhor:build:development",
+    "bk:build:prod": "nx run beatkhor:build:production",
+    "bk:build:dev": "nx run beatkhor:build:development",
+    "bk:messages": "nx extract-i18n beatkhor",
     "test": "nx run-many -t test"
   },
   "private": true,
@@ -16,6 +17,7 @@
     "@angular/compiler": "~16.2.0",
     "@angular/core": "~16.2.0",
     "@angular/forms": "~16.2.0",
+    "@angular/localize": "^16.2.7",
     "@angular/material": "^16.2.3",
     "@angular/platform-browser": "~16.2.0",
     "@angular/platform-browser-dynamic": "~16.2.0",
