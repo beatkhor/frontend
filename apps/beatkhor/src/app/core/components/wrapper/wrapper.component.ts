@@ -19,14 +19,14 @@ import {UtilsService} from '../../services/utils.service'
         </mat-nav-list>
       </mat-sidenav>
 
-      <mat-sidenav-content class="pt-14">
+      <mat-sidenav-content>
         <div
           infiniteScroll
           [infiniteScrollDistance]="2"
           [infiniteScrollThrottle]="50"
           [scrollWindow]="false"
           (scrolled)="onScroll()"
-          class="custom-wrapper h-full flex flex-col overflow-y-scroll"
+          class="custom-wrapper h-full flex flex-col overflow-y-scroll mt-14"
         >
           <bk-navbar (menu)="toggle()"></bk-navbar>
           <div class="flex-grow">
