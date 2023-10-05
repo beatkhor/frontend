@@ -19,9 +19,7 @@
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "localize": [
-          "fa_IR"
-        ],
+        "localize": true,
         "outputPath": "dist/apps/beatkhor",
         "index": "apps/beatkhor/src/index.html",
         "main": "apps/beatkhor/src/main.ts",
