@@ -20,14 +20,17 @@ export class PostService {
 
     if (p.post_meta.overridden_artist_name) {
       return (
-        p.post_meta.overridden_artist_name + ' - ' + p?.post_meta.title + ' cover art'
+        p.post_meta.overridden_artist_name +
+        ' - ' +
+        p?.post_meta.title +
+        $localize` cover art`
       )
     }
 
     let title = p?.user?.first_name ?? ''
     title += ' ' + p?.user?.last_name || ''
     title += ' - ' + p?.post_meta.title || ''
-    title += ' cover art'
+    title += $localize` cover art`
     return title
   }
 

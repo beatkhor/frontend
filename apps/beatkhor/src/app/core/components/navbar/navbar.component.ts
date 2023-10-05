@@ -35,8 +35,8 @@ export class NavbarComponent {
       width: '400px',
       autoFocus: false,
       data: {
-        title: 'Sign out',
-        message: 'Are you sure about signing out of your account?',
+        title: $localize`Sign out`,
+        message: $localize`Are you sure about signing out of your account?`,
       },
     })
 

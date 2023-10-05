@@ -28,7 +28,7 @@ export class CustomErrorHandler {
       }
     }
 
-    this.snackbar.error('OOps! something went wrong! Please try again later!')
+    this.snackbar.error($localize`OOps! something went wrong! Please try again later!`)
 
     if (!environment.production) {
       console.log(err)
