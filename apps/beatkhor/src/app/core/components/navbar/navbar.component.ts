@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core'
 import {MatDialog} from '@angular/material/dialog'
-import {$localize} from '@angular/localize/init'
 import {Router} from '@angular/router'
 
 import {ConfirmDialogComponent} from '../../../shared/dialogs/confirm-dialog'

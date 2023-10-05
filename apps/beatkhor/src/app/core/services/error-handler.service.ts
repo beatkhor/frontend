@@ -1,6 +1,6 @@
 import {HttpErrorResponse} from '@angular/common/http'
 import {environment} from '@environments/environment'
-import {$localize} from '@angular/localize/init'
+
 import {Injectable} from '@angular/core'
 
 import {SnackbarService} from './snackbar.service'

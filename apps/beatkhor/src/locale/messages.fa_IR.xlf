@@ -723,6 +723,7 @@
       </trans-unit>
       <trans-unit id="3163469322416203316" datatype="html">
         <source>Beatkhor</source>
+        <target>بیت‌خور</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">13</context>

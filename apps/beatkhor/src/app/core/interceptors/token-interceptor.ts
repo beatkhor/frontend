@@ -1,5 +1,5 @@
 import {HttpEvent, HttpRequest, HttpHandler, HttpInterceptor} from '@angular/common/http'
-import {$localize} from '@angular/localize/init'
+
 import {catchError} from 'rxjs/operators'
 import {Injectable} from '@angular/core'
 import {Router} from '@angular/router'

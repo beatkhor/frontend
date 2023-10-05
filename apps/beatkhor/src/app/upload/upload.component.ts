@@ -2,7 +2,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 import {Subscription, forkJoin, lastValueFrom} from 'rxjs'
 import {Component, OnDestroy, OnInit} from '@angular/core'
 import {MatDialog} from '@angular/material/dialog'
-import {$localize} from '@angular/localize/init'
+
 import {Router} from '@angular/router'
 
 import {

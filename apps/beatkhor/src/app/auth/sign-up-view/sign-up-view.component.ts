@@ -1,5 +1,5 @@
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
-import {$localize} from '@angular/localize/init'
+
 import {Component} from '@angular/core'
 import {lastValueFrom} from 'rxjs'
 

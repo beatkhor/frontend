@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
+    "bk:serve:fa": "nx serve beatkhor -c fa",
     "bk:build:prod": "nx run beatkhor:build:production",
     "bk:build:dev": "nx run beatkhor:build:development",
     "bk:messages": "nx extract-i18n beatkhor",

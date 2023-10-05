@@ -1,5 +1,3 @@
-import {$localize} from '@angular/localize/init'
-
 export const messages = {
   can_not_modify_super_user: $localize`You are not allowed to update super user!`,
   invalid_body: $localize`You are sending invalid information!`,
