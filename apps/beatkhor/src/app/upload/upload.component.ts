@@ -108,7 +108,7 @@ export class UploadComponent implements OnInit, OnDestroy {
     const ref = this.dialog.open(MultiSelectorDialogComponent, {
       width: '400px',
       data: {
-        title: 'Select genres:',
+        title: $localize`Select genres:`,
         options: this.genres,
       },
       autoFocus: false,
@@ -127,7 +127,7 @@ export class UploadComponent implements OnInit, OnDestroy {
     const ref = this.dialog.open(MultiSelectorDialogComponent, {
       width: '400px',
       data: {
-        title: 'Select tags:',
+        title: $localize`Select tags:`,
         options: this.tags,
       },
       autoFocus: false,
@@ -151,20 +151,20 @@ export class UploadComponent implements OnInit, OnDestroy {
     if (this.form.invalid) {
       this.form.markAllAsTouched()
       return this.snackbar.error(
-        'PLease review the form and enter the valid information.'
+        $localize`PLease review the form and enter the valid information.`
       )
     }
 
     if (!this.selectedGenres.length) {
-      return this.snackbar.error('Please select at least one genre!')
+      return this.snackbar.error($localize`Please select at least one genre!`)
     }
 
     if (!this.audioMediaUpload) {
-      return this.snackbar.error('Please add an audio for your track.')
+      return this.snackbar.error($localize`Please add an audio for your track.`)
     }
 
     if (!this.imageMediaUpload) {
-      return this.snackbar.error('Please add an image for your track.')
+      return this.snackbar.error($localize`Please add an image for your track.`)
     }
 
     this.uploading = true
@@ -184,7 +184,7 @@ export class UploadComponent implements OnInit, OnDestroy {
       this.finalizing = false
       this.loading = false
       return this.snackbar.error(
-        'Something went wrong while uploading the picture! Try again later.'
+        $localize`Something went wrong while uploading the picture! Try again later.`
       )
     }
 
@@ -274,7 +274,7 @@ export class UploadComponent implements OnInit, OnDestroy {
       return
     }
 
-    this.snackbar.info('Your track submitted successfully!')
+    this.snackbar.info($localize`Your track submitted successfully!`)
     this.router.navigate(['/'])
   }
 

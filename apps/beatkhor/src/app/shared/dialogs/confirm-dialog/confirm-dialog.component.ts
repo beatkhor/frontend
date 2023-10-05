@@ -11,8 +11,10 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog'
 
     <div mat-dialog-actions>
       <div class="px-4 mb-4">
-        <button mat-flat-button color="primary" [mat-dialog-close]="true">Confirm</button>
-        <button mat-flat-button [mat-dialog-close]="false">Cancel</button>
+        <button mat-flat-button color="primary" [mat-dialog-close]="true" i18n>
+          Confirm
+        </button>
+        <button mat-flat-button [mat-dialog-close]="false" i18n>Cancel</button>
       </div>
     </div>
   `,
