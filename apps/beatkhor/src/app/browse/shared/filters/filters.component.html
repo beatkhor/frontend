@@ -9,6 +9,7 @@
           name="search"
           [(ngModel)]="query"
           [disabled]="loading"
+          i18n-placeholder
           placeholder="Browse tracks..."
           (ngModelChange)="queryChanges$.next($event)"
         />
@@ -28,12 +29,13 @@
     <div class="flex flex-col md:flex-row">
       <mat-form-field appearance="outline" class="flex-1 mr-0 md:mr-5 lg:mx-5">
         <mat-label>
-          <span class="md:hidden">Choose Genres</span>
-          <span class="hidden md:inline">Genres</span>
+          <span class="md:hidden" i18n>Choose Genres</span>
+          <span class="hidden md:inline" i18n>Genres</span>
         </mat-label>
         <mat-select
           multiple
           [disabled]="loading"
+          i18n-placeholder
           placeholder="Choose a genre"
           [(ngModel)]="selectedGenres"
           (ngModelChange)="emitChanges()"
@@ -46,12 +48,13 @@
 
       <mat-form-field appearance="outline" class="flex-1">
         <mat-label>
-          <span class="md:hidden">Choose tags</span>
-          <span class="hidden md:inline">Tags</span>
+          <span class="md:hidden" i18n>Choose tags</span>
+          <span class="hidden md:inline" i18n>Tags</span>
         </mat-label>
         <mat-select
           multiple
           [disabled]="loading"
+          i18n-placeholder
           placeholder="Choose a tag"
           [(ngModel)]="selectedTags"
           (ngModelChange)="emitChanges()"
