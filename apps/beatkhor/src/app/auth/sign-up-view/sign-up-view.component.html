@@ -5,15 +5,15 @@
     (submit)="onSubmit()"
     class="flex flex-col w-96 py-4 mx-6"
   >
-    <h1 class="text-2xl font-semibold my-2">Sign up</h1>
+    <h1 class="text-2xl font-semibold my-2" i18n>Sign up</h1>
 
     <p class="text-base py-3 mb-2">
-      <span>Welcome to Beatkhor. </span>
-      <span>Please fill this form to create a shiny new account.</span>
+      <span i18n>Welcome to Beatkhor. </span>
+      <span i18n>Please fill this form to create a shiny new account.</span>
     </p>
 
     <mat-form-field class="my-3" appearance="fill">
-      <mat-label>Email</mat-label>
+      <mat-label i18n>Email</mat-label>
       <input
         matInput
         type="text"
@@ -21,21 +21,21 @@
         spellcheck="false"
         formControlName="email"
       />
-      <mat-icon matSuffix>person</mat-icon>
-      <mat-hint>We will send the activation link to this email.</mat-hint>
-      <mat-error>Please enter your email or username!</mat-error>
+      <mat-icon matSuffix i18n>person</mat-icon>
+      <mat-hint i18n>We will send the activation link to this email.</mat-hint>
+      <mat-error i18n>Please enter your email or username!</mat-error>
     </mat-form-field>
 
     <mat-form-field class="my-3" appearance="fill">
-      <mat-label>Password</mat-label>
+      <mat-label i18n>Password</mat-label>
       <input matInput type="password" name="password" formControlName="password" />
       <mat-icon matSuffix>lock</mat-icon>
-      <mat-hint>A password should include at least 6 characters.</mat-hint>
-      <mat-error>Please enter at least 6 characters!</mat-error>
+      <mat-hint i18n>A password should include at least 6 characters.</mat-hint>
+      <mat-error i18n>Please enter at least 6 characters!</mat-error>
     </mat-form-field>
 
     <mat-form-field class="my-3" appearance="fill">
-      <mat-label>Confirm password</mat-label>
+      <mat-label i18n>Confirm password</mat-label>
       <input
         matInput
         type="password"
@@ -43,39 +43,39 @@
         formControlName="confirmPassword"
       />
       <mat-icon matSuffix>lock</mat-icon>
-      <mat-hint>Please type your password again to confirm</mat-hint>
+      <mat-hint i18n>Please type your password again to confirm</mat-hint>
 
       <mat-error *ngIf="form.get('confirmPassword')?.hasError('mismatch')">
-        <span>The passwords do not match together</span>
+        <span i18n>The passwords do not match together</span>
       </mat-error>
 
       <mat-error *ngIf="form.get('confirmPassword')?.hasError('required')">
-        <span>Please re-enter your password</span>
+        <span i18n>Please re-enter your password</span>
       </mat-error>
     </mat-form-field>
 
     <button mat-flat-button class="my-3 mt-5" color="primary" type="submit">
-      <span *ngIf="isLoading">Please wait...</span>
-      <span *ngIf="!isLoading">Sign up</span>
+      <span *ngIf="isLoading" i18n>Please wait...</span>
+      <span *ngIf="!isLoading" i18n>Sign up</span>
     </button>
 
     <a mat-stroked-button color="primary" type="button" routerLink="/">
-      <span>Go back</span>
+      <span i18n>Go back</span>
     </a>
 
     <div class="my-5 text-sm text-neutral-300">
       <p class="my-2">
-        <span>Already have an account? </span>
+        <span i18n>Already have an account? </span>
         <a class="text-primary-500" routerLink="/authentication/signin">
-          <span>sign in now!</span>
+          <span i18n>sign in now!</span>
         </a>
         <span>.</span>
       </p>
 
       <p class="my-2">
-        <span>Have an account and forgotten your password? you can easily </span>
+        <span i18n>Have an account and forgotten your password? you can easily </span>
         <a class="text-primary-500" routerLink="/authentication/reset-password/request">
-          <span>recover your password here</span>
+          <span i18n>recover your password here</span>
         </a>
         <span>.</span>
       </p>
@@ -83,15 +83,15 @@
   </form>
 
   <div *ngIf="done" class="flex flex-col w-96 py-4 mx-6">
-    <h1 class="text-2xl font-semibold my-2">One More Step...</h1>
+    <h1 class="text-2xl font-semibold my-2" i18n>One More Step...</h1>
 
-    <p class="py-4">
+    <p class="py-4" i18n>
       Congrats! We just sent you an email that contains the verification link. You can
       sign in after activating your account.
     </p>
 
     <a class="my-3" mat-stroked-button color="primary" type="button" routerLink="/">
-      <span>Let's go back</span>
+      <span i18n>Let's go back</span>
     </a>
   </div>
 </div>
