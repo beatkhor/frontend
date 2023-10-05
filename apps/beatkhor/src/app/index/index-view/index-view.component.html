@@ -2,23 +2,26 @@
   <ng-container [ngSwitch]="notice">
     <bk-notice
       *ngSwitchCase="callbackEvents.AccountActivationSuccess"
-      [mode]="'success'"
-      [message]="'Awesome, your account is now activated!'"
+      mode="success"
+      i18n-message
+      message="Awesome, your account is now activated!"
       (close)="onCloseNotice()"
     ></bk-notice>
 
     <bk-notice
       *ngSwitchCase="callbackEvents.AccountActivationFailed"
-      [mode]="'error'"
-      [message]="'OOps, We could not activate your account! Please contact the support.'"
+      mode="error"
+      i18n-message
+      message="OOps, We could not activate your account! Please contact the support."
       (close)="onCloseNotice()"
     ></bk-notice>
 
     <bk-notice
       *ngSwitchCase="callbackEvents.ResetPasswordVerificationFailed"
-      [mode]="'error'"
-      [message]="
-        'OOps, We could not verify the password recovery link. Please try again or contact the support.'
+      mode="error"
+      i18n-message
+      message="
+        OOps, We could not verify the password recovery link. Please try again or contact the support.
       "
       (close)="onCloseNotice()"
     ></bk-notice>
@@ -31,7 +34,7 @@
   <section class="py-3 px-0">
     <bk-grid-header>
       <div bk-grid-header-title>
-        <h2 class="text-neutral-300">Recommended Tracks</h2>
+        <h2 class="text-neutral-300" i18n>Recommended Tracks</h2>
       </div>
 
       <div bk-grid-header-actions>
@@ -40,6 +43,7 @@
           mat-stroked-button
           class="text-neutral-300"
           [queryParams]="{tags: 'recommended'}"
+          i18n
         >
           View More
         </a>
@@ -70,6 +74,7 @@
           mat-stroked-button
           class="text-neutral-300"
           [queryParams]="{genres: 'drill'}"
+          i18n
         >
           View More
         </a>
@@ -91,7 +96,7 @@
   <section class="py-3 px-0">
     <bk-grid-header>
       <div bk-grid-header-title>
-        <h2 class="text-neutral-300">Recent Trap Tracks</h2>
+        <h2 class="text-neutral-300" i18n>Recent Trap Tracks</h2>
       </div>
 
       <div bk-grid-header-actions>
@@ -100,6 +105,7 @@
           mat-stroked-button
           class="text-neutral-300"
           [queryParams]="{genres: 'trap'}"
+          i18n
         >
           View More
         </a>
