@@ -7,8 +7,8 @@ import {TagsService} from '../../../../core/services/tags.service'
 import {Genre, Tag} from '@beatkhor/models'
 
 @Component({
-  selector: 'bk-filters',
-  templateUrl: './filters.component.html',
+  selector: 'bk-browse-filters',
+  templateUrl: './browse-filters.component.html',
 })
 export class FiltersComponent implements OnInit, OnDestroy {
   @Output() filtersChange = new EventEmitter()

@@ -37,8 +37,7 @@ export const appRoutes: Route[] = [
       },
       {
         path: 'browse',
-        loadChildren: () =>
-          import('./modules/browse/browse.module').then(m => m.BrowseModule),
+        loadChildren: () => import('./modules/browse').then(m => m.BrowseModule),
       },
       {
         path: 'page',

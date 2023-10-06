@@ -1,12 +1,12 @@
 import {CommonModule} from '@angular/common'
 import {NgModule} from '@angular/core'
 
+import {BrowseViewComponent, FiltersComponent} from './browse-view'
+
 import {BrowseRoutingModule} from './browse-routing.module'
 import {SharedModule} from '../../shared/shared.module'
-import {BrowseViewComponent} from './browse-view'
-import {FiltersComponent} from './browse-view/filters'
-import {TrackViewComponent} from './track-view'
 import {PostComponent} from './track-view/post'
+import {TrackViewComponent} from './track-view'
 
 @NgModule({
   declarations: [
