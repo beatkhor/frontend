@@ -17,17 +17,17 @@ import {UtilsService} from '../../services/utils.service'
       >
         <mat-nav-list class="wrapper-nav-list">
           <a mat-list-item routerLink="/" (click)="toggle()">
-            <mat-icon class="text-neutral-400 mr-4">home</mat-icon>
+            <mat-icon class="text-neutral-400 mx-4">home</mat-icon>
             <span i18n>Beatkhor</span>
           </a>
           <mat-divider></mat-divider>
           <a mat-list-item routerLink="/browse" (click)="toggle()">
-            <mat-icon class="text-neutral-400 mr-4">list</mat-icon>
+            <mat-icon class="text-neutral-400 mx-4">list</mat-icon>
             <span i18n>Browse</span>
           </a>
           <mat-divider></mat-divider>
           <a mat-list-item routerLink="/page/about" (click)="toggle()">
-            <mat-icon class="text-neutral-400 mr-4">info</mat-icon>
+            <mat-icon class="text-neutral-400 mx-4">info</mat-icon>
             <span i18n>About Us</span>
           </a>
           <mat-divider></mat-divider>
@@ -43,7 +43,7 @@ import {UtilsService} from '../../services/utils.service'
           (scrolled)="onScroll()"
           class="custom-wrapper h-full flex flex-col overflow-y-scroll pt-14"
         >
-          <div class="flex-grow">
+          <div class="flex-grow custom-inner-wrapper">
             <router-outlet></router-outlet>
           </div>
           <bk-footer></bk-footer>

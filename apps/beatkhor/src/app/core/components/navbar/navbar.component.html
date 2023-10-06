@@ -8,12 +8,12 @@
           </button>
         </div>
 
-        <a routerLink="/" class="flex items-center">
-          <img class="w-6 mr-4" src="assets/images/logo-dark.svg" alt="Beatkhor" />
+        <a routerLink="/" class="flex items-center brand">
+          <img class="w-6 mr-4 logo" src="assets/images/logo-dark.svg" alt="Beatkhor" />
           <strong class="text-lg" i18n>Beatkhor</strong>
         </a>
 
-        <div class="hidden lg:flex items-center h-full mx-12 mr-2">
+        <div class="hidden lg:flex items-center h-full ml-12 nav-menu">
           <a
             class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
             routerLink="/browse"
@@ -32,14 +32,14 @@
 
     <div *ngIf="!isLoggedIn; else userActions" class="hidden sm:flex text-neutral-300">
       <a
-        class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
         routerLink="/authentication"
+        class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
       >
         <span i18n>Sign In</span>
       </a>
       <a
-        class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
         routerLink="/authentication/signup"
+        class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
       >
         <span i18n>Get Started</span>
       </a>

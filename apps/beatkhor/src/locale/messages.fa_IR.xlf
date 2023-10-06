@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="2547756348530497105" datatype="html">
         <source>ltr</source>
-        <target>ltr</target>
+        <target>rtl</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/app.component.ts</context>
           <context context-type="linenumber">5</context>
@@ -837,6 +837,7 @@
       </trans-unit>
       <trans-unit id="5773429938510968558" datatype="html">
         <source>Recent related tracks</source>
+        <target>بیت‌های مرتبط جدید</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/browse/track-view/track-view.component.html</context>
@@ -877,7 +878,7 @@
       </trans-unit>
       <trans-unit id="787163983066183218" datatype="html">
         <source>Browse</source>
-        <target>بیت‌ها</target>
+        <target>جستجوی بیت</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
@@ -985,6 +986,7 @@
       </trans-unit>
       <trans-unit id="5736481176444461852" datatype="html">
         <source>About Us</source>
+        <target>درباره ما</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/core/components/wrapper/wrapper.component.ts</context>
@@ -1020,6 +1022,7 @@
       </trans-unit>
       <trans-unit id="911819719547605345" datatype="html">
         <source>We promote</source>
+        <target>سکوی پرتاب</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/index/index-header/index-header.component.html</context>
@@ -1039,7 +1042,7 @@
       </trans-unit>
       <trans-unit id="1552496844207602705" datatype="html">
         <source>Browse Tracks</source>
-        <target>جستجوی بیت‌ها</target>
+        <target>جستجوی بیت</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/index/index-header/index-header.component.html</context>
