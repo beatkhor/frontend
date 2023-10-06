@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core'
+import {Component, EventEmitter, Inject, LOCALE_ID, Output} from '@angular/core'
 import {MatDialog} from '@angular/material/dialog'
 import {Router} from '@angular/router'
 
@@ -15,7 +15,8 @@ export class NavbarComponent {
   constructor(
     private router: Router,
     private dialog: MatDialog,
-    private authService: AuthService
+    private authService: AuthService,
+    @Inject(LOCALE_ID) public localeId: string
   ) {}
 
   get isLoggedIn(): boolean {

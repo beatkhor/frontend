@@ -43,6 +43,14 @@
       >
         <span i18n>Get Started</span>
       </a>
+
+      <a
+        *ngIf="localeId === 'fa'"
+        href="https://www.beatkhor.com"
+        class="px-2 py-4 hover:bg-neutral-700 ease-in duration-100"
+      >
+        <mat-icon class="text-neutral-400 text-xl relative top-[-2px]">language</mat-icon>
+      </a>
     </div>
 
     <ng-template #userActions>
