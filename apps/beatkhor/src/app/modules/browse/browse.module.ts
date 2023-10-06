@@ -3,10 +3,10 @@ import {NgModule} from '@angular/core'
 
 import {BrowseRoutingModule} from './browse-routing.module'
 import {SharedModule} from '../../shared/shared.module'
-import {FiltersComponent} from './shared/filters'
 import {BrowseViewComponent} from './browse-view'
+import {FiltersComponent} from './browse-view/filters'
 import {TrackViewComponent} from './track-view'
-import {PostComponent} from './shared/post'
+import {PostComponent} from './track-view/post'
 
 @NgModule({
   declarations: [

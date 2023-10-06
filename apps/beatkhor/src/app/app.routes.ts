@@ -12,7 +12,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'authentication',
-    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule),
+    loadChildren: () => import('./modules/authentication').then(m => m.AuthModule),
   },
   {
     path: '',
