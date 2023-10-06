@@ -9,7 +9,7 @@ import {NavbarComponent} from './components/navbar'
 
 import {TokenInterceptor} from './interceptors/token-interceptor'
 
-import {SharedModule} from '../shared/shared.module'
+import {SharedModule} from '@shared/shared.module'
 
 @NgModule({
   declarations: [NavbarComponent, WrapperComponent, FooterComponent],

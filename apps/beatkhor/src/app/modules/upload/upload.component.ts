@@ -8,7 +8,7 @@ import {Router} from '@angular/router'
 import {
   MultiSelectorOption,
   MultiSelectorDialogComponent,
-} from '../../shared/dialogs/multi-selector-dialog'
+} from '@shared/dialogs/multi-selector-dialog'
 
 import {CustomErrorHandler} from '../../core/services/error-handler.service'
 import {SnackbarService} from '../../core/services/snackbar.service'

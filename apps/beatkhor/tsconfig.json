@@ -14,6 +14,9 @@
       ],
       "@beatkhor/models": [
         "libs/models/src/index.ts"
+      ],
+      "@shared/*": [
+        "apps/beatkhor/src/app/shared/*"
       ]
     }
   },

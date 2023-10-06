@@ -2,7 +2,7 @@ import {Component, EventEmitter, Inject, LOCALE_ID, Output} from '@angular/core'
 import {MatDialog} from '@angular/material/dialog'
 import {Router} from '@angular/router'
 
-import {ConfirmDialogComponent} from '../../../shared/dialogs/confirm-dialog'
+import {ConfirmDialogComponent} from '@shared/dialogs/confirm-dialog'
 import {AuthService} from '../../services/auth.service'
 
 @Component({

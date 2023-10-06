@@ -8,7 +8,7 @@ import {ResetViewComponent} from './reset-view'
 import {SignUpComponent} from './sign-up-view'
 
 import {AuthRoutingModule} from './auth-routing.module'
-import {SharedModule} from '../../shared/shared.module'
+import {SharedModule} from '@shared/shared.module'
 
 @NgModule({
   declarations: [

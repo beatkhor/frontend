@@ -5,8 +5,8 @@ import {PostService} from '../../../../core/services/post.service'
 import {Picture, Post, Audio} from '@beatkhor/models'
 
 @Component({
-  selector: 'bk-post',
-  templateUrl: './post.component.html',
+  selector: 'bk-track-post',
+  templateUrl: './track-post.component.html',
 })
 export class PostComponent implements OnInit {
   @Input() post!: Post
