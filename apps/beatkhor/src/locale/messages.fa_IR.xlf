@@ -1026,7 +1026,12 @@
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/index/index-header/index-header.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-header/index-header.component.html</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4940134130714874690" datatype="html">
