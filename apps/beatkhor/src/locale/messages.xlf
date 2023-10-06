@@ -94,7 +94,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-view/reset-view.component.html</context>
-          <context context-type="linenumber">72</context>
+          <context context-type="linenumber">74</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-in-view/sign-in-view.component.html</context>
@@ -250,7 +250,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-view/reset-view.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">49</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-in-view/sign-in-view.component.html</context>
@@ -258,7 +258,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="continue" datatype="html">
@@ -306,6 +306,10 @@
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="emailInvalidError" datatype="html">
         <source>Please enter a valid email!</source>
@@ -349,16 +353,20 @@
           <context context-type="linenumber">81</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-view/reset-view.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">48</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">70</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">109</context>
+          <context context-type="linenumber">103</context>
         </context-group>
       </trans-unit>
       <trans-unit id="resetPassword" datatype="html">
@@ -366,10 +374,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">8</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-view/reset-view.component.html</context>
-          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="resetPasswordPrompt" datatype="html">
@@ -408,7 +412,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="confirmPasswordHint" datatype="html">
@@ -419,49 +423,57 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">51,53</context>
+          <context context-type="linenumber">49,51</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="confirmPasswordInvalid" datatype="html">
+      <trans-unit id="confirmPasswordMismatchError" datatype="html">
         <source> The passwords do not match together </source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-view/reset-view.component.html</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">38,40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="linenumber">54,56</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="confirmPasswordRequired" datatype="html">
+      <trans-unit id="confirmPasswordRequiredError" datatype="html">
         <source>Please re-enter your password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-view/reset-view.component.html</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="resetPasswordCTA" datatype="html">
+        <source>Reset password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-view/reset-view.component.html</context>
+          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="homePage" datatype="html">
         <source>Home page</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-view/reset-view.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="passwordChanged" datatype="html">
+      <trans-unit id="resetDoneTitle" datatype="html">
         <source> Your password is changed </source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-view/reset-view.component.html</context>
-          <context context-type="linenumber">57,59</context>
+          <context context-type="linenumber">59,61</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="passwordChangedPrompt" datatype="html">
+      <trans-unit id="resetDonePrompt" datatype="html">
         <source> Perfect! We changed your password. Go ahead and sign in using your new password. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-view/reset-view.component.html</context>
-          <context context-type="linenumber">61,63</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="goToHomePage" datatype="html">
-        <source>Back to home page</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-view/reset-view.component.html</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">63,65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="signInTitle" datatype="html">
@@ -492,7 +504,7 @@
           <context context-type="linenumber">22,24</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="emailOrUsernameRequired" datatype="html">
+      <trans-unit id="emailOrUsernameRequiredError" datatype="html">
         <source> Please enter your email or username! </source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-in-view/sign-in-view.component.html</context>
@@ -507,7 +519,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="passwordHint" datatype="html">
@@ -518,10 +530,10 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">36,38</context>
+          <context context-type="linenumber">34,36</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="passwordInvalidError" datatype="html">
+      <trans-unit id="passwordRequiredError" datatype="html">
         <source> Please enter at least 6 characters! </source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-in-view/sign-in-view.component.html</context>
@@ -556,15 +568,11 @@
           <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="signUp" datatype="html">
+      <trans-unit id="signUpTitle" datatype="html">
         <source>Sign up</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">8</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="signUpPrompt" datatype="html">
@@ -581,74 +589,60 @@
           <context context-type="linenumber">24,26</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="signUpEmailRequired" datatype="html">
-        <source> Please enter your email or username! </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">27,29</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="passwordInvalid" datatype="html">
         <source>Please enter at least 6 characters!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="confirmPasswordMismatchError" datatype="html">
-        <source> The passwords do not match together </source>
+      <trans-unit id="signUp" datatype="html">
+        <source>Sign up</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">58,60</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="confirmPasswordRequiredError" datatype="html">
-        <source> Please re-enter your password </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">65,67</context>
+          <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="signInHelper" datatype="html">
         <source>Already have an account? </source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">81</context>
+          <context context-type="linenumber">75</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="signInNow" datatype="html">
+      <trans-unit id="signInNowCTA" datatype="html">
         <source>sign in now!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="passwordRecoveryHelper" datatype="html">
         <source> Have an account and forgotten your password? you can easily </source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">89,91</context>
+          <context context-type="linenumber">83,85</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="recoverPasswordNow" datatype="html">
+      <trans-unit id="recoverPasswordNowCTA" datatype="html">
         <source>recover your password here</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">93</context>
+          <context context-type="linenumber">87</context>
         </context-group>
       </trans-unit>
       <trans-unit id="signUpDoneTitle" datatype="html">
         <source>One More Step...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">101</context>
+          <context context-type="linenumber">95</context>
         </context-group>
       </trans-unit>
       <trans-unit id="signUpDonePrompt" datatype="html">
         <source> Congrats! We just sent you an email that contains the verification link. You can sign in after activating your account. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
-          <context context-type="linenumber">103,106</context>
+          <context context-type="linenumber">97,100</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4389626388547740681" datatype="html">

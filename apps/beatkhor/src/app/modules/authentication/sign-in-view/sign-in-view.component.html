@@ -1,6 +1,6 @@
 <div class="min-h-screen flex items-center justify-center">
   <form [formGroup]="form" (submit)="onSubmit()" class="flex flex-col w-96 py-4 mx-6">
-    <h1 class="text-2xl font-semibold my-2" i18n="@@signIn">Sign in</h1>
+    <h1 i18n="@@signIn" class="text-2xl font-semibold my-2">Sign in</h1>
 
     <p class="text-base py-3 mb-2">
       <span i18n="@@signInTitle">Welcome back! </span>
@@ -22,7 +22,7 @@
       <mat-hint i18n="@@emailOrUsernameHint">
         You can use your username or email to sign in
       </mat-hint>
-      <mat-error i18n="@@emailOrUsernameRequired">
+      <mat-error i18n="@@emailOrUsernameRequiredError">
         Please enter your email or username!
       </mat-error>
     </mat-form-field>
@@ -34,14 +34,14 @@
       <mat-hint i18n="@@passwordHint">
         A password should include at least 6 characters.
       </mat-hint>
-      <mat-error i18n="@@passwordInvalidError">
+      <mat-error i18n="@@passwordRequiredError">
         Please enter at least 6 characters!
       </mat-error>
     </mat-form-field>
 
     <button mat-flat-button class="my-3 mt-5" color="primary" type="submit">
-      <span *ngIf="isLoading" i18n="@@pleaseWait">Please wait...</span>
-      <span *ngIf="!isLoading" i18n="@@signIn">Sign in</span>
+      <span i18n="@@pleaseWait" *ngIf="isLoading">Please wait...</span>
+      <span i18n="@@signIn" *ngIf="!isLoading">Sign in</span>
     </button>
 
     <a mat-stroked-button color="primary" type="button" routerLink="/">

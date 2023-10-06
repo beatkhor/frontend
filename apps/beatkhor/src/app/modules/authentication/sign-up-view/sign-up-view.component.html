@@ -5,9 +5,9 @@
     (submit)="onSubmit()"
     class="flex flex-col w-96 py-4 mx-6"
   >
-    <h1 class="text-2xl font-semibold my-2" i18n="@@signUp">Sign up</h1>
+    <h1 i18n="@@signUpTitle" class="text-2xl font-semibold my-2">Sign up</h1>
 
-    <p class="text-base py-3 mb-2" i18n="@@signUpPrompt">
+    <p i18n="@@signUpPrompt" class="text-base py-3 mb-2">
       Welcome to Beatkhor. Please fill this form to create a shiny new account.
     </p>
 
@@ -24,9 +24,7 @@
       <mat-hint i18n="@@signUpEmailHint">
         We will send the activation link to this email.
       </mat-hint>
-      <mat-error i18n="@@signUpEmailRequired">
-        Please enter your email or username!
-      </mat-error>
+      <mat-error i18n="@@emailRequiredError">Please enter your email!</mat-error>
     </mat-form-field>
 
     <mat-form-field class="my-3" appearance="fill">
@@ -52,24 +50,20 @@
         Please type your password again to confirm
       </mat-hint>
 
-      <mat-error
-        i18n="@@confirmPasswordMismatchError"
-        *ngIf="form.get('confirmPassword')?.hasError('mismatch')"
-      >
-        The passwords do not match together
+      <mat-error *ngIf="form.get('confirmPassword')?.hasError('mismatch')">
+        <span i18n="@@confirmPasswordMismatchError">
+          The passwords do not match together
+        </span>
       </mat-error>
 
-      <mat-error
-        i18n="@@confirmPasswordRequiredError"
-        *ngIf="form.get('confirmPassword')?.hasError('required')"
-      >
-        Please re-enter your password
+      <mat-error *ngIf="form.get('confirmPassword')?.hasError('required')">
+        <span i18n="@@confirmPasswordRequiredError">Please re-enter your password</span>
       </mat-error>
     </mat-form-field>
 
     <button mat-flat-button class="my-3 mt-5" color="primary" type="submit">
-      <span *ngIf="isLoading" i18n="@@pleaseWait">Please wait...</span>
-      <span *ngIf="!isLoading" i18n="@@signUp">Sign up</span>
+      <span i18n="@@pleaseWait" *ngIf="isLoading">Please wait...</span>
+      <span i18n="@@signUp" *ngIf="!isLoading">Sign up</span>
     </button>
 
     <a mat-stroked-button color="primary" type="button" routerLink="/">
@@ -80,7 +74,7 @@
       <p class="my-2">
         <span i18n="@@signInHelper">Already have an account? </span>
         <a class="text-primary-500" routerLink="/authentication/signin">
-          <span i18n="@@signInNow">sign in now!</span>
+          <span i18n="@@signInNowCTA">sign in now!</span>
         </a>
         <span>.</span>
       </p>
@@ -90,7 +84,7 @@
           Have an account and forgotten your password? you can easily
         </span>
         <a class="text-primary-500" routerLink="/authentication/reset-password/request">
-          <span i18n="@@recoverPasswordNow">recover your password here</span>
+          <span i18n="@@recoverPasswordNowCTA">recover your password here</span>
         </a>
         <span>.</span>
       </p>
@@ -98,9 +92,9 @@
   </form>
 
   <div *ngIf="done" class="flex flex-col w-96 py-4 mx-6">
-    <h1 class="text-2xl font-semibold my-2" i18n="@@signUpDoneTitle">One More Step...</h1>
+    <h1 i18n="@@signUpDoneTitle" class="text-2xl font-semibold my-2">One More Step...</h1>
 
-    <p class="py-4" i18n="@@signUpDonePrompt">
+    <p i18n="@@signUpDonePrompt" class="py-4">
       Congrats! We just sent you an email that contains the verification link. You can
       sign in after activating your account.
     </p>
