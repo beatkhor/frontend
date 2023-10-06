@@ -1,10 +1,11 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core'
 import {lastValueFrom} from 'rxjs'
 
-import {CustomErrorHandler} from '../../../../core/services/error-handler.service'
-import {VoteService} from '../../../../core/services/review.service'
-import {UtilsService} from '../../../../core/services/utils.service'
-import {PostService} from '../../../../core/services/post.service'
+import {CustomErrorHandler} from '@services/error-handler.service'
+import {VoteService} from '@services/review.service'
+import {UtilsService} from '@services/utils.service'
+import {PostService} from '@services/post.service'
+
 import {Post, Picture, Audio} from '@workspace/models'
 
 @Component({

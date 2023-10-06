@@ -1,7 +1,8 @@
 import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core'
 
-import {UtilsService} from '../../../../core/services/utils.service'
-import {PostService} from '../../../../core/services/post.service'
+import {UtilsService} from '@services/utils.service'
+import {PostService} from '@services/post.service'
+
 import {Picture, Post, Audio} from '@workspace/models'
 
 @Component({

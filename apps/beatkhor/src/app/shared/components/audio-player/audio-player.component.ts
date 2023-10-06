@@ -10,7 +10,7 @@ import {
 } from '@angular/core'
 import {Subscription, interval} from 'rxjs'
 
-import {UtilsService} from '../../../core/services/utils.service'
+import {UtilsService} from '@services/utils.service'
 
 @Component({
   selector: 'bk-audio-player',

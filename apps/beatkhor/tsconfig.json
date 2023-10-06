@@ -12,12 +12,15 @@
       "@environments/*": [
         "apps/beatkhor/src/environments/*"
       ],
+      "@shared/*": [
+        "apps/beatkhor/src/app/shared/*"
+      ],
+      "@services/*": [
+        "apps/beatkhor/src/app/core/services/*"
+      ],
       "@workspace/models": [
         "libs/models/src/index.ts"
       ],
-      "@shared/*": [
-        "apps/beatkhor/src/app/shared/*"
-      ]
     }
   },
   "files": [],

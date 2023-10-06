@@ -2,8 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core'
 import {Subject, lastValueFrom, takeUntil} from 'rxjs'
 import {ActivatedRoute} from '@angular/router'
 
-import {CustomErrorHandler} from '../../../core/services/error-handler.service'
-import {PostService} from '../../../core/services/post.service'
+import {CustomErrorHandler} from '@services/error-handler.service'
+import {PostService} from '@services/post.service'
 import {Post} from '@workspace/models'
 
 @Component({

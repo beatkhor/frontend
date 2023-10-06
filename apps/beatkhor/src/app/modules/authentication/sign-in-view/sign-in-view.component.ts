@@ -3,8 +3,8 @@ import {Component} from '@angular/core'
 import {Router} from '@angular/router'
 import {lastValueFrom} from 'rxjs'
 
-import {CustomErrorHandler} from '../../../core/services/error-handler.service'
-import {AuthService} from '../../../core/services/auth.service'
+import {CustomErrorHandler} from '@services/error-handler.service'
+import {AuthService} from '@services/auth.service'
 
 @Component({
   selector: 'bk-sign-in-view',

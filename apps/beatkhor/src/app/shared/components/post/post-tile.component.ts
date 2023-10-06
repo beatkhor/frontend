@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core'
 
-import {PostService} from '../../../core/services/post.service'
-import {UtilsService} from '../../../core/services/utils.service'
+import {PostService} from '@services/post.service'
+import {UtilsService} from '@services/utils.service'
 import {Picture, Post} from '@workspace/models'
 
 @Component({
