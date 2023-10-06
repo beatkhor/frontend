@@ -265,7 +265,7 @@
       </trans-unit>
       <trans-unit id="4490021449024318004" datatype="html">
         <source>Check Your Email</source>
-        <taregt>ایمیل خود را چک کنید</taregt>
+        <target>ایمیل خود را چک کنید</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
@@ -275,8 +275,8 @@
       <trans-unit id="9091062966558585818" datatype="html">
         <source> Perfect! We just sent you an email that contains the instructions for choosing a
           new password. </source>
-        <taregt> عالی! ما ایمیلی حاوی لینک بازیابی رمز عبور برای شما ارسال کردیم تا رمز جدیدی برای
-          خود انتخاب کنید. </taregt>
+        <target> عالی! ما ایمیلی حاوی لینک بازیابی رمز عبور برای شما ارسال کردیم تا رمز جدیدی برای
+          خود انتخاب کنید. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
@@ -963,7 +963,7 @@
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit>
       <trans-unit id="935790816200474922" datatype="html">

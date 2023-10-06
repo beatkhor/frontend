@@ -40,8 +40,8 @@
     </mat-form-field>
 
     <button mat-flat-button class="my-3 mt-5" color="primary" type="submit">
-      <span *ngIf="isLoading">Please wait...</span>
-      <span *ngIf="!isLoading">Reset password</span>
+      <span *ngIf="isLoading" i18n>Please wait...</span>
+      <span *ngIf="!isLoading" i18n>Reset password</span>
     </button>
 
     <a mat-stroked-button color="primary" type="button" routerLink="/">

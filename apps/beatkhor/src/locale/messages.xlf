@@ -111,6 +111,10 @@
           <context context-type="linenumber">37</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
@@ -245,6 +249,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4023291698474904548" datatype="html">
@@ -632,14 +640,14 @@
         <source>Tag</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/browse/shared/post/post.component.html</context>
-          <context context-type="linenumber">50</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3099741642167775297" datatype="html">
         <source>Download</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/browse/shared/post/post.component.html</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5773429938510968558" datatype="html">
@@ -736,28 +744,28 @@
         <source>Upload</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit>
       <trans-unit id="935790816200474922" datatype="html">
         <source>Sign Out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
-          <context context-type="linenumber">69</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2949848596707725099" datatype="html">
         <source>Sign out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6854161831863966537" datatype="html">
         <source>Are you sure about signing out of your account?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.ts</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5736481176444461852" datatype="html">
