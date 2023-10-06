@@ -2,9 +2,8 @@ import {ActivatedRoute, NavigationExtras, Router} from '@angular/router'
 import {Component, OnInit} from '@angular/core'
 import {forkJoin, lastValueFrom} from 'rxjs'
 
-import {CallbackEvents} from '../../../core/models/callback-events'
 import {PostService} from '../../../core/services/post.service'
-import {Post} from '../../../core/models/post'
+import {CallbackEvents, Post} from '@beatkhor/models'
 
 @Component({
   selector: 'bk-index-view',

@@ -2,8 +2,7 @@ import {Component, Input, OnInit} from '@angular/core'
 
 import {PostService} from '../../../core/services/post.service'
 import {UtilsService} from '../../../core/services/utils.service'
-import {Picture} from '../../../core/models/media'
-import {Post} from '../../../core/models/post'
+import {Picture, Post} from '@beatkhor/models'
 
 @Component({
   selector: 'bk-post-tile',

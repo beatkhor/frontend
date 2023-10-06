@@ -3,8 +3,7 @@ import {lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '../../../core/services/error-handler.service'
 import {VoteService} from '../../../core/services/review.service'
-import {Vote} from '../../../core/models/review'
-import {Post} from '../../../core/models/post'
+import {Vote, Post} from '@beatkhor/models'
 
 @Component({
   selector: 'bk-vote',
@@ -15,7 +14,7 @@ export class VoteComponent implements OnInit {
   votes: Vote[] = []
   posts: Post[] = []
   loading = false
-  p: number = 1
+  p = 1
 
   constructor(
     private reviewService: VoteService,

@@ -8,9 +8,13 @@ import {
 import {environment} from '@environments/environment'
 import {Injectable} from '@angular/core'
 import {Observable} from 'rxjs'
-
-import {CustomResponse, PaginatedResponse} from '../models/response'
-import {ID3Tags, Media, UpdateMediaPayload} from '../models/media'
+import {
+  PaginatedResponse,
+  Media,
+  CustomResponse,
+  ID3Tags,
+  UpdateMediaPayload,
+} from '@beatkhor/models'
 
 @Injectable({
   providedIn: 'root',

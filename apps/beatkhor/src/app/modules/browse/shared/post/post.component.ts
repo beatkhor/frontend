@@ -2,8 +2,7 @@ import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core'
 
 import {UtilsService} from '../../../../core/services/utils.service'
 import {PostService} from '../../../../core/services/post.service'
-import {Audio, Picture} from '../../../../core/models/media'
-import {Post} from '../../../../core/models/post'
+import {Picture, Post, Audio} from '@beatkhor/models'
 
 @Component({
   selector: 'bk-post',

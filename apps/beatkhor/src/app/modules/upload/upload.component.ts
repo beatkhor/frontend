@@ -11,7 +11,6 @@ import {
 } from '../../shared/dialogs/multi-selector-dialog'
 
 import {CustomErrorHandler} from '../../core/services/error-handler.service'
-import {Post, PostReviewStatus, PostStatus} from '../../core/models/post'
 import {SnackbarService} from '../../core/services/snackbar.service'
 import {CategoryService} from '../../core/services/category.service'
 import {GenresService} from '../../core/services/genres.service'
@@ -19,10 +18,8 @@ import {UtilsService} from '../../core/services/utils.service'
 import {MediaService} from '../../core/services/media.service'
 import {PostService} from '../../core/services/post.service'
 import {TagsService} from '../../core/services/tags.service'
-import {Category} from '../../core/models/category'
 import {TusdUpload} from '../../core/models/tusd'
-import {Genre} from '../../core/models/genres'
-import {Tag} from '../../core/models/tags'
+import {Category, Genre, Tag, PostStatus, PostReviewStatus, Post} from '@beatkhor/models'
 
 @Component({
   selector: 'bk-upload',

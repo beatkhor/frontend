@@ -3,10 +3,12 @@ import {environment} from '@environments/environment'
 import {HttpClient} from '@angular/common/http'
 import {Injectable} from '@angular/core'
 import {Observable} from 'rxjs'
-
-import {CustomResponse, PaginatedResponse} from '../models/response'
-import {SearchPostFilters} from '../models/search-filter'
-import {Post} from '../models/post'
+import {
+  CustomResponse,
+  PaginatedResponse,
+  Post,
+  SearchPostFilters,
+} from '@beatkhor/models'
 
 @Injectable({
   providedIn: 'root',

@@ -5,8 +5,7 @@ import {CustomErrorHandler} from '../../../../core/services/error-handler.servic
 import {VoteService} from '../../../../core/services/review.service'
 import {UtilsService} from '../../../../core/services/utils.service'
 import {PostService} from '../../../../core/services/post.service'
-import {Audio, Picture} from '../../../../core/models/media'
-import {Post} from '../../../../core/models/post'
+import {Post, Picture, Audio} from '@beatkhor/models'
 
 @Component({
   selector: 'bk-vote-post-item',

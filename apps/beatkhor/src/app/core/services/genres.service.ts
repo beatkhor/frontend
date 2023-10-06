@@ -2,9 +2,7 @@ import {environment} from '@environments/environment'
 import {HttpClient} from '@angular/common/http'
 import {Injectable} from '@angular/core'
 import {Observable} from 'rxjs'
-
-import {CustomResponse} from '../models/response'
-import {Genre} from '../models/genres'
+import {CustomResponse, Genre} from '@beatkhor/models'
 
 @Injectable({
   providedIn: 'root',

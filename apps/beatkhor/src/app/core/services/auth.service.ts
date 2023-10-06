@@ -4,10 +4,8 @@ import {Injectable} from '@angular/core'
 import {Observable} from 'rxjs'
 
 import {LocalStorageService} from './local-storage.service'
-import {LoginResponseDTO} from '../models/authentication'
-import {StorageKeys} from '../models/storage-keys'
-import {CustomResponse} from '../models/response'
-import {MyUser, User} from '../models/user'
+
+import {CustomResponse, LoginResponseDTO, StorageKeys, User} from '@beatkhor/models'
 
 @Injectable({
   providedIn: 'root',
@@ -137,8 +135,8 @@ export class AuthService {
   /**
    * Get all the current user's profile information
    */
-  getMe(): Observable<CustomResponse<MyUser>> {
-    return this.http.get<CustomResponse<any>>(`${environment.authServiceURL}/users/me`)
+  getMe(): Observable<CustomResponse<User>> {
+    return this.http.get<CustomResponse<User>>(`${environment.authServiceURL}/users/me`)
   }
 
   /**
@@ -148,8 +146,8 @@ export class AuthService {
     first_name: string,
     last_name: string,
     username: string
-  ): Observable<CustomResponse<any>> {
-    return this.http.patch<CustomResponse<any>>(
+  ): Observable<CustomResponse<void>> {
+    return this.http.patch<CustomResponse<void>>(
       `${environment.authServiceURL}/users/me`,
       {username, first_name, last_name}
     )
