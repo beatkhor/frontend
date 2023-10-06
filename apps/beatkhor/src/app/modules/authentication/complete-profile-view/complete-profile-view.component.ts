@@ -4,7 +4,7 @@ import {Component, OnDestroy} from '@angular/core'
 import {Router} from '@angular/router'
 
 import {CustomValidators} from '@workspace/services/validators.service'
-import {CustomErrorHandler} from '@services/error-handler.service'
+import {CustomErrorHandler} from '@workspace/services/error-handler.service'
 import {AuthService} from '@workspace/services/auth.service'
 
 @Component({

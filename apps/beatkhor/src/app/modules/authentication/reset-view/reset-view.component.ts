@@ -4,7 +4,7 @@ import {Component, OnInit} from '@angular/core'
 import {lastValueFrom} from 'rxjs'
 
 import {CustomValidators} from '@workspace/services/validators.service'
-import {CustomErrorHandler} from '@services/error-handler.service'
+import {CustomErrorHandler} from '@workspace/services/error-handler.service'
 import {AuthService} from '@workspace/services/auth.service'
 import {CallbackEvents} from '@workspace/models'
 

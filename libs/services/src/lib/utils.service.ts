@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core'
 import {Subject} from 'rxjs'
 
-import {AuthService} from '@workspace/services/auth.service'
+import {AuthService} from './auth.service'
 import {Post, User} from '@workspace/models'
 
 @Injectable({

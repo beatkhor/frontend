@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core'
 
-import {PostService} from '@services/post.service'
-import {UtilsService} from '@services/utils.service'
+import {PostService} from '@workspace/services/post.service'
+import {UtilsService} from '@workspace/services/utils.service'
 import {Picture, Post} from '@workspace/models'
 
 @Component({
@@ -48,7 +48,7 @@ export class PostTileComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.post) {
-      this.alt = this.postService.generateFullName(this.post)
+      this.alt = 'alt'
       this.artist = UtilsService.getArtistName(this.post)
     }
   }

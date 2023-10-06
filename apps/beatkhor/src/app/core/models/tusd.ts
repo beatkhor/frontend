@@ -1,7 +1,7 @@
 import {environment} from '@environments/environment'
 import {BehaviorSubject} from 'rxjs'
 
-declare var tus: any
+declare const tus: any
 
 export class TusdUpload {
   upload: any
@@ -22,7 +22,7 @@ export class TusdUpload {
     this.inProgress.next(true)
     this.upload = new tus.Upload(this.file, {
       chunkSize: 2000_000,
-      endpoint: environment.uploaderServiceURL,
+      endpoint: environment.uploaderServiceUrl,
       retryDelays: [0],
       metadata: {
         filename: this.file.name,
@@ -48,6 +48,4 @@ export class TusdUpload {
     })
     this.upload.start()
   }
-
-  stop() {}
 }

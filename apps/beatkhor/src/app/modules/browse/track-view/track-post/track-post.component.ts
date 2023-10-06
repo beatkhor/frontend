@@ -1,7 +1,7 @@
 import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core'
 
-import {UtilsService} from '@services/utils.service'
-import {PostService} from '@services/post.service'
+import {UtilsService} from '@workspace/services/utils.service'
+import {PostService} from '@workspace/services/post.service'
 
 import {Picture, Post, Audio} from '@workspace/models'
 
@@ -20,7 +20,7 @@ export class PostComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.alt = this.postService.generateFullName(this.post)
+    this.alt = 'alt'
     this.artist = UtilsService.getArtistName(this.post)
   }
 

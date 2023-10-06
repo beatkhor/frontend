@@ -10,15 +10,16 @@ import {
   MultiSelectorDialogComponent,
 } from '@shared/dialogs/multi-selector-dialog'
 
-import {CustomErrorHandler} from '../../core/services/error-handler.service'
-import {SnackbarService} from '../../core/services/snackbar.service'
-import {CategoryService} from '../../core/services/category.service'
-import {GenresService} from '../../core/services/genres.service'
-import {UtilsService} from '../../core/services/utils.service'
-import {MediaService} from '../../core/services/media.service'
-import {PostService} from '../../core/services/post.service'
-import {TagsService} from '../../core/services/tags.service'
+import {CustomErrorHandler} from '@workspace/services/error-handler.service'
+import {SnackbarService} from '@workspace/services/snackbar.service'
+import {CategoryService} from '@workspace/services/category.service'
+import {GenresService} from '@workspace/services/genres.service'
+import {UtilsService} from '@workspace/services/utils.service'
+import {MediaService} from '@workspace/services/media.service'
+import {PostService} from '@workspace/services/post.service'
+import {TagsService} from '@workspace/services/tags.service'
 import {TusdUpload} from '../../core/models/tusd'
+
 import {Category, Genre, Tag, PostStatus, PostReviewStatus, Post} from '@workspace/models'
 
 @Component({

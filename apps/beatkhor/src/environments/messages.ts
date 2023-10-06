@@ -12,4 +12,5 @@ export const messages = {
   email_must_be_verified: $localize`Please verify your email first! If you don't have the email try resetting your password`,
   duplicated_entry: $localize`You can not create duplicated entry!`,
   protected_entry: $localize`This entry is protected!`,
+  other: $localize`OOps! something went wrong! Please try again later!`,
 }

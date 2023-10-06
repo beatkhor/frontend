@@ -1,27 +1,12 @@
+import {EnvironmentConfig} from '@workspace/models'
 import {messages} from './messages'
 
-export const environment = {
+export const environment: EnvironmentConfig = {
   production: false,
   storageKeyPrefix: 'bk',
-  siteURL: 'https://next.beatkhor.com',
-  authServiceURL: 'https://next.beatkhor.com/api/auth',
-  contentServiceURL: 'https://next.beatkhor.com/api/content',
-  storageServiceURL: 'https://next.beatkhor.com/api/storage',
-  uploaderServiceURL: 'https://next.beatkhor.com/api/tusd/files/',
+  authServiceUrl: 'https://next.beatkhor.com/api/auth',
+  contentServiceUrl: 'https://next.beatkhor.com/api/content',
+  storageServiceUrl: 'https://next.beatkhor.com/api/storage',
+  uploaderServiceUrl: 'https://next.beatkhor.com/api/tusd/files/',
   messages,
-  seo: {
-    siteName: 'Beatkhor',
-    siteTitle: 'Discover and publish beats!',
-    siteDescription:
-      'Beatkhor is a community based platform to discover, publish and download beats. Start browsing or upload your beat right now!',
-    keywords: ['beat', 'download', 'free beat', 'publish beat', 'discover beat'],
-    openGraph: {
-      image: {
-        image: '/assets/seo/logo-1200x1200.png',
-        width: 1200,
-        height: 1200,
-        type: 'image/png',
-      },
-    },
-  },
 }

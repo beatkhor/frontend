@@ -3,8 +3,8 @@ import {Component, OnInit} from '@angular/core'
 import {ActivatedRoute} from '@angular/router'
 import {lastValueFrom} from 'rxjs'
 
-import {CustomErrorHandler} from '@services/error-handler.service'
-import {PageService} from '@services/page.service'
+import {CustomErrorHandler} from '@workspace/services/error-handler.service'
+import {PageService} from '@workspace/services/page.service'
 
 @Component({
   selector: 'bk-pages-view',

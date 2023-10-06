@@ -1,7 +1,8 @@
 import {HttpErrorResponse} from '@angular/common/http'
-import {environment} from '@environments/environment'
 
-import {Injectable} from '@angular/core'
+import {Inject, Injectable} from '@angular/core'
+
+import {ENVIRONMENT_CONFIG, EnvironmentConfig} from '@workspace/models'
 
 import {SnackbarService} from './snackbar.service'
 
@@ -9,8 +10,11 @@ import {SnackbarService} from './snackbar.service'
   providedIn: 'root',
 })
 export class CustomErrorHandler {
-  messages = environment.messages as any
-  constructor(private snackbar: SnackbarService) {}
+  messages = this.config.messages
+  constructor(
+    private snackbar: SnackbarService,
+    @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
+  ) {}
 
   /**
    * Handles http error messages and opens a snackbar based on it
@@ -29,9 +33,9 @@ export class CustomErrorHandler {
       }
     }
 
-    this.snackbar.error($localize`OOps! something went wrong! Please try again later!`)
+    this.snackbar.error(this.messages['other'])
 
-    if (!environment.production) {
+    if (!this.config.production) {
       console.log(err)
     }
   }

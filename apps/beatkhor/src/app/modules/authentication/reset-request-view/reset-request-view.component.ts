@@ -2,7 +2,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 import {Component} from '@angular/core'
 import {lastValueFrom} from 'rxjs'
 
-import {CustomErrorHandler} from '@services/error-handler.service'
+import {CustomErrorHandler} from '@workspace/services/error-handler.service'
 import {AuthService} from '@workspace/services/auth.service'
 
 @Component({

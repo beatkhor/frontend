@@ -1,9 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core'
 import {Subscription, lastValueFrom} from 'rxjs'
 
-import {CustomErrorHandler} from '@services/error-handler.service'
-import {UtilsService} from '@services/utils.service'
-import {PostService} from '@services/post.service'
+import {CustomErrorHandler} from '@workspace/services/error-handler.service'
+import {UtilsService} from '@workspace/services/utils.service'
+import {PostService} from '@workspace/services/post.service'
 import {Post, PostFilters} from '@workspace/models'
 
 @Component({

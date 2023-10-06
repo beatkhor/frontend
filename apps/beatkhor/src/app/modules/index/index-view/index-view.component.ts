@@ -2,7 +2,7 @@ import {ActivatedRoute, NavigationExtras, Router} from '@angular/router'
 import {Component, OnInit} from '@angular/core'
 import {forkJoin, lastValueFrom} from 'rxjs'
 
-import {PostService} from '@services/post.service'
+import {PostService} from '@workspace/services/post.service'
 import {CallbackEvents, Post} from '@workspace/models'
 
 @Component({

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core'
 
-import {UtilsService} from '../../core/services/utils.service'
+import {UtilsService} from '@workspace/services/utils.service'
 import {TusdUpload} from '../../core/models/tusd'
 
 @Component({

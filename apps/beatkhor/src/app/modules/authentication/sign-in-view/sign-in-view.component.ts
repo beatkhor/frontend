@@ -3,7 +3,7 @@ import {Component} from '@angular/core'
 import {Router} from '@angular/router'
 import {lastValueFrom} from 'rxjs'
 
-import {CustomErrorHandler} from '@services/error-handler.service'
+import {CustomErrorHandler} from '@workspace/services/error-handler.service'
 import {AuthService} from '@workspace/services/auth.service'
 
 @Component({

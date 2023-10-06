@@ -5,8 +5,8 @@ import {
 import {TestBed} from '@angular/core/testing'
 
 import {CustomResponse, LoginResponseDTO} from '@workspace/models'
-import {AUTH_SERVICE_URL_CONFIG, AuthService} from './auth.service'
 import {LocalStorageService} from './local-storage.service'
+import {AuthService} from './auth.service'
 
 describe('AuthService', () => {
   let service: AuthService
@@ -23,10 +23,6 @@ describe('AuthService', () => {
         {
           provide: LocalStorageService,
           useValue: localStorageServiceMock,
-        },
-        {
-          provide: AUTH_SERVICE_URL_CONFIG,
-          useValue: authServiceUrl,
         },
       ],
     })
@@ -48,12 +44,12 @@ describe('AuthService', () => {
   })
 
   it('should read user data using storage service', () => {
-    service.getLoggedInUser()
+    service.getUser()
     expect(localStorageServiceMock.read).toHaveBeenCalledTimes(6)
   })
 
   it('should read user data using storage service', () => {
-    service.putLoggedInUser({})
+    service.putUser({})
     expect(localStorageServiceMock.write).toHaveBeenCalledTimes(6)
   })
 

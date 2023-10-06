@@ -1,24 +1,32 @@
-import {environment} from '@environments/environment'
+import {Inject, Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
-import {Injectable} from '@angular/core'
 import {Observable} from 'rxjs'
-import {CustomResponse, Genre} from '@workspace/models'
+
+import {
+  Genre,
+  CustomResponse,
+  EnvironmentConfig,
+  ENVIRONMENT_CONFIG,
+} from '@workspace/models'
 
 @Injectable({
   providedIn: 'root',
 })
 export class GenresService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
+  ) {}
 
   getGenres(): Observable<CustomResponse<Genre[]>> {
     return this.http.get<CustomResponse<Genre[]>>(
-      environment.contentServiceURL + '/genres'
+      this.config.contentServiceUrl + '/genres'
     )
   }
 
   createGenres(genres: Genre): Observable<CustomResponse<Genre>> {
     return this.http.post<CustomResponse<Genre>>(
-      environment.contentServiceURL + '/genres',
+      this.config.contentServiceUrl + '/genres',
       genres
     )
   }
@@ -26,14 +34,14 @@ export class GenresService {
   editGenres(id: number, genres: Genre): Observable<CustomResponse<Genre>> {
     genres.id = undefined as any
     return this.http.patch<CustomResponse<Genre>>(
-      environment.contentServiceURL + '/genres/' + id,
+      this.config.contentServiceUrl + '/genres/' + id,
       genres
     )
   }
 
   deleteGenres(id: number): Observable<CustomResponse<Genre>> {
     return this.http.delete<CustomResponse<Genre>>(
-      environment.contentServiceURL + '/genres/' + id
+      this.config.contentServiceUrl + '/genres/' + id
     )
   }
 }

@@ -15,7 +15,7 @@
       "@shared/*": [
         "apps/beatkhor/src/app/shared/*"
       ],
-      "@services/*": [
+      "@workspace/services/*": [
         "apps/beatkhor/src/app/core/services/*"
       ],
       "@workspace/models": [

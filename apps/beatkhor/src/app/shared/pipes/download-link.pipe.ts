@@ -10,6 +10,6 @@ export class DownloadLinkPipe implements PipeTransform {
       return ''
     }
 
-    return environment.storageServiceURL + '/media/download/' + value
+    return environment.storageServiceUrl + '/media/download/' + value
   }
 }

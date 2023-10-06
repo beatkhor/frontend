@@ -1,65 +1,47 @@
-import {environment} from '@environments/environment'
-
+import {Inject, Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
-import {Injectable} from '@angular/core'
 import {Observable} from 'rxjs'
 import {
-  CustomResponse,
-  PaginatedResponse,
   Post,
+  CustomResponse,
+  EnvironmentConfig,
+  PaginatedResponse,
   SearchPostFilters,
+  ENVIRONMENT_CONFIG,
 } from '@workspace/models'
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostService {
-  constructor(private http: HttpClient) {}
-
-  generateFullName(p: Post | undefined): string {
-    if (!p) {
-      return 'N/A'
-    }
-
-    if (p.post_meta.overridden_artist_name) {
-      return (
-        p.post_meta.overridden_artist_name +
-        ' - ' +
-        p?.post_meta.title +
-        $localize` cover art`
-      )
-    }
-
-    let title = p?.user?.first_name ?? ''
-    title += ' ' + p?.user?.last_name || ''
-    title += ' - ' + p?.post_meta.title || ''
-    title += $localize` cover art`
-    return title
-  }
+  constructor(
+    private http: HttpClient,
+    @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
+  ) {}
 
   createPost(post: Post): Observable<CustomResponse<Post>> {
     return this.http.post<CustomResponse<Post>>(
-      environment.contentServiceURL + '/posts',
+      this.config.contentServiceUrl + '/posts',
       post
     )
   }
 
   updatePost(post: Post): Observable<CustomResponse<Post>> {
     return this.http.patch<CustomResponse<Post>>(
-      environment.contentServiceURL + '/posts/' + post.id,
+      this.config.contentServiceUrl + '/posts/' + post.id,
       post
     )
   }
 
   getPostByLink(link: string): Observable<CustomResponse<Post>> {
     return this.http.get<CustomResponse<Post>>(
-      environment.contentServiceURL + '/posts/' + encodeURI(link)
+      this.config.contentServiceUrl + '/posts/' + encodeURI(link)
     )
   }
 
   deletePost(postId: number): Observable<CustomResponse<any>> {
     return this.http.delete<CustomResponse<any>>(
-      environment.contentServiceURL + '/posts/' + postId
+      this.config.contentServiceUrl + '/posts/' + postId
     )
   }
 
@@ -70,7 +52,7 @@ export class PostService {
       page,
     }
     return this.http.get<PaginatedResponse<Post[]>>(
-      environment.contentServiceURL + '/posts',
+      this.config.contentServiceUrl + '/posts',
       {params}
     )
   }
@@ -87,7 +69,7 @@ export class PostService {
       page,
     }
     return this.http.get<PaginatedResponse<Post[]>>(
-      environment.contentServiceURL + '/posts/@' + username,
+      this.config.contentServiceUrl + '/posts/@' + username,
       {params}
     )
   }
@@ -108,7 +90,7 @@ export class PostService {
     }
 
     return this.http.get<PaginatedResponse<Post[]>>(
-      environment.contentServiceURL + '/posts/search',
+      this.config.contentServiceUrl + '/posts/search',
       {params}
     )
   }

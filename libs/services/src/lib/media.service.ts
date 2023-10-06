@@ -5,22 +5,27 @@ import {
   HttpProgressEvent,
   HttpResponse,
 } from '@angular/common/http'
-import {environment} from '@environments/environment'
-import {Injectable} from '@angular/core'
+
+import {Inject, Injectable} from '@angular/core'
 import {Observable} from 'rxjs'
 import {
-  PaginatedResponse,
   Media,
-  CustomResponse,
   ID3Tags,
+  CustomResponse,
+  PaginatedResponse,
+  EnvironmentConfig,
   UpdateMediaPayload,
+  ENVIRONMENT_CONFIG,
 } from '@workspace/models'
 
 @Injectable({
   providedIn: 'root',
 })
 export class MediaService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
+  ) {}
 
   getMedia(pageSize = 10, page = 1, query = ''): Observable<PaginatedResponse<Media[]>> {
     const params = {
@@ -29,33 +34,33 @@ export class MediaService {
       page,
     }
     return this.http.get<PaginatedResponse<Media[]>>(
-      environment.storageServiceURL + '/media',
+      this.config.storageServiceUrl + '/media',
       {params}
     )
   }
 
   getMediaById(id: number | string): Observable<CustomResponse<Media>> {
     return this.http.get<CustomResponse<Media>>(
-      environment.storageServiceURL + '/media/' + id
+      this.config.storageServiceUrl + '/media/' + id
     )
   }
 
   getMediaTags(id: number): Observable<CustomResponse<ID3Tags>> {
     return this.http.get<CustomResponse<ID3Tags>>(
-      environment.storageServiceURL + '/media/' + id + '/id3'
+      this.config.storageServiceUrl + '/media/' + id + '/id3'
     )
   }
 
   updateMediaTags(id: number, tags: ID3Tags): Observable<CustomResponse<ID3Tags>> {
     return this.http.patch<CustomResponse<ID3Tags>>(
-      environment.storageServiceURL + '/media/' + id + '/id3',
+      this.config.storageServiceUrl + '/media/' + id + '/id3',
       tags
     )
   }
 
   getMediaCover(id: number): Observable<any> {
     return this.http.get<any>(
-      environment.storageServiceURL + '/media/' + id + '/id3/picture'
+      this.config.storageServiceUrl + '/media/' + id + '/id3/picture'
     )
   }
 
@@ -67,7 +72,7 @@ export class MediaService {
     }
     formData.append('data', JSON.stringify(meta))
 
-    return this.http.post(environment.storageServiceURL + '/media', formData, {
+    return this.http.post(this.config.storageServiceUrl + '/media', formData, {
       reportProgress: true,
       observe: 'events',
     })
@@ -92,20 +97,20 @@ export class MediaService {
     }
     formData.append('data', JSON.stringify(uploadMetaData))
     return this.http.post<CustomResponse<Media>>(
-      environment.storageServiceURL + '/media',
+      this.config.storageServiceUrl + '/media',
       formData
     )
   }
 
   deleteMedia(id: number): Observable<CustomResponse<Media>> {
     return this.http.delete<CustomResponse<Media>>(
-      environment.storageServiceURL + '/media/' + id
+      this.config.storageServiceUrl + '/media/' + id
     )
   }
 
   updateMedia(id: number, media: UpdateMediaPayload): Observable<CustomResponse<Media>> {
     return this.http.patch<CustomResponse<Media>>(
-      environment.storageServiceURL + '/media/' + id,
+      this.config.storageServiceUrl + '/media/' + id,
       media
     )
   }

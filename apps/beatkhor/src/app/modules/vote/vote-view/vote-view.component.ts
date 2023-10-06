@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core'
 import {lastValueFrom} from 'rxjs'
 
-import {CustomErrorHandler} from '@services/error-handler.service'
-import {VoteService} from '@services/review.service'
+import {CustomErrorHandler} from '@workspace/services/error-handler.service'
+import {VoteService} from '@workspace/services/review.service'
 import {Vote, Post} from '@workspace/models'
 
 @Component({

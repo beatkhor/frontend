@@ -1,22 +1,30 @@
-import {environment} from '@environments/environment'
 import {HttpClient} from '@angular/common/http'
-import {Injectable} from '@angular/core'
+import {Inject, Injectable} from '@angular/core'
 import {Observable} from 'rxjs'
-import {CustomResponse, Tag} from '@workspace/models'
+
+import {
+  Tag,
+  CustomResponse,
+  EnvironmentConfig,
+  ENVIRONMENT_CONFIG,
+} from '@workspace/models'
 
 @Injectable({
   providedIn: 'root',
 })
 export class TagsService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
+  ) {}
 
   getTags(): Observable<CustomResponse<Tag[]>> {
-    return this.http.get<CustomResponse<Tag[]>>(environment.contentServiceURL + '/tags')
+    return this.http.get<CustomResponse<Tag[]>>(this.config.contentServiceUrl + '/tags')
   }
 
   createTags(tag: Tag): Observable<CustomResponse<Tag>> {
     return this.http.post<CustomResponse<Tag>>(
-      environment.contentServiceURL + '/tags',
+      this.config.contentServiceUrl + '/tags',
       tag
     )
   }
@@ -24,14 +32,14 @@ export class TagsService {
   editTags(id: number, tag: Tag): Observable<CustomResponse<Tag>> {
     tag.id = undefined as any
     return this.http.patch<CustomResponse<Tag>>(
-      environment.contentServiceURL + '/tags/' + id,
+      this.config.contentServiceUrl + '/tags/' + id,
       tag
     )
   }
 
   deleteTags(id: number): Observable<CustomResponse<any>> {
     return this.http.delete<CustomResponse<any>>(
-      environment.contentServiceURL + '/tags/' + id
+      this.config.contentServiceUrl + '/tags/' + id
     )
   }
 }

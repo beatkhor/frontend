@@ -4,9 +4,9 @@ import {Component} from '@angular/core'
 import {lastValueFrom} from 'rxjs'
 
 import {CustomValidators} from '@workspace/services/validators.service'
-import {CustomErrorHandler} from '@services/error-handler.service'
+import {CustomErrorHandler} from '@workspace/services/error-handler.service'
 import {AuthService} from '@workspace/services/auth.service'
-import {SnackbarService} from '@services/snackbar.service'
+import {SnackbarService} from '@workspace/services/snackbar.service'
 
 @Component({
   selector: 'bk-sign-up-view',

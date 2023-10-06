@@ -1,21 +1,24 @@
-import {Inject, Injectable, InjectionToken} from '@angular/core'
+import {Inject, Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
 import {Observable} from 'rxjs'
 
-import {CustomResponse, LoginResponseDTO, StorageKeys, User} from '@workspace/models'
-
 import {LocalStorageService} from './local-storage.service'
 
-export const AUTH_SERVICE_URL_CONFIG = new InjectionToken<string>(
-  'AUTH_SERVICE_URL_CONFIG'
-)
+import {
+  User,
+  StorageKeys,
+  CustomResponse,
+  LoginResponseDTO,
+  ENVIRONMENT_CONFIG,
+  EnvironmentConfig,
+} from '@workspace/models'
 
 @Injectable()
 export class AuthService {
   constructor(
     private http: HttpClient,
     private localStorageService: LocalStorageService,
-    @Inject(AUTH_SERVICE_URL_CONFIG) private url: string
+    @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
   ) {}
 
   /**
@@ -79,10 +82,13 @@ export class AuthService {
     identifier: string,
     password: string
   ): Observable<CustomResponse<LoginResponseDTO>> {
-    return this.http.post<CustomResponse<LoginResponseDTO>>(`${this.url}/auth/login`, {
-      identifier,
-      password,
-    })
+    return this.http.post<CustomResponse<LoginResponseDTO>>(
+      `${this.config.authServiceUrl}/auth/login`,
+      {
+        identifier,
+        password,
+      }
+    )
   }
 
   /**
@@ -92,10 +98,13 @@ export class AuthService {
    * @returns http register request as observable
    */
   register(email: string, password: string): Observable<CustomResponse<void>> {
-    return this.http.post<CustomResponse<void>>(`${this.url}/auth/register`, {
-      email,
-      password,
-    })
+    return this.http.post<CustomResponse<void>>(
+      `${this.config.authServiceUrl}/auth/register`,
+      {
+        email,
+        password,
+      }
+    )
   }
 
   /**
@@ -105,7 +114,7 @@ export class AuthService {
    */
   requestResetPassword(email: string): Observable<CustomResponse<void>> {
     return this.http.post<CustomResponse<void>>(
-      `${this.url}/auth/reset-password/request`,
+      `${this.config.authServiceUrl}/auth/reset-password/request`,
       {email}
     )
   }
@@ -117,10 +126,13 @@ export class AuthService {
    * @returns reset password http request as observable
    */
   resetPassword(password: string, token: string): Observable<CustomResponse<void>> {
-    return this.http.post<CustomResponse<void>>(`${this.url}/auth/reset-password/reset`, {
-      password,
-      token,
-    })
+    return this.http.post<CustomResponse<void>>(
+      `${this.config.authServiceUrl}/auth/reset-password/reset`,
+      {
+        password,
+        token,
+      }
+    )
   }
 
   /**
@@ -130,7 +142,7 @@ export class AuthService {
    */
   checkUsernameAvailability(username: string) {
     return this.http.get<CustomResponse<any>>(
-      `${this.url}/users/check/username/` + username
+      `${this.config.authServiceUrl}/users/check/username/` + username
     )
   }
 
@@ -138,7 +150,7 @@ export class AuthService {
    * Get all the current user's profile information
    */
   getMe(): Observable<CustomResponse<User>> {
-    return this.http.get<CustomResponse<User>>(`${this.url}/users/me`)
+    return this.http.get<CustomResponse<User>>(`${this.config.authServiceUrl}/users/me`)
   }
 
   /**
@@ -149,11 +161,14 @@ export class AuthService {
     last_name: string,
     username: string
   ): Observable<CustomResponse<void>> {
-    return this.http.patch<CustomResponse<void>>(`${this.url}/users/me`, {
-      username,
-      first_name,
-      last_name,
-    })
+    return this.http.patch<CustomResponse<void>>(
+      `${this.config.authServiceUrl}/users/me`,
+      {
+        username,
+        first_name,
+        last_name,
+      }
+    )
   }
 
   /**

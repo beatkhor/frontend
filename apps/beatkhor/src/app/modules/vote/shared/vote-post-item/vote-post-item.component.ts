@@ -1,10 +1,10 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core'
 import {lastValueFrom} from 'rxjs'
 
-import {CustomErrorHandler} from '@services/error-handler.service'
-import {VoteService} from '@services/review.service'
-import {UtilsService} from '@services/utils.service'
-import {PostService} from '@services/post.service'
+import {CustomErrorHandler} from '@workspace/services/error-handler.service'
+import {VoteService} from '@workspace/services/review.service'
+import {UtilsService} from '@workspace/services/utils.service'
+import {PostService} from '@workspace/services/post.service'
 
 import {Post, Picture, Audio} from '@workspace/models'
 
@@ -27,7 +27,7 @@ export class VotePostItemComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.alt = this.postService.generateFullName(this.post)
+    this.alt = 'alt'
     this.artist = UtilsService.getArtistName(this.post)
   }
 

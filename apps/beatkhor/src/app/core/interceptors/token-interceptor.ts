@@ -4,8 +4,8 @@ import {Injectable} from '@angular/core'
 import {Router} from '@angular/router'
 import {Observable} from 'rxjs'
 
+import {SnackbarService} from '@workspace/services/snackbar.service'
 import {AuthService} from '@workspace/services/auth.service'
-import {SnackbarService} from '@services/snackbar.service'
 
 /**
  * Intercept the http requests and add the API key to all of them if it exists

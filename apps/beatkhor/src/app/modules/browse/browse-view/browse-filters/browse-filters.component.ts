@@ -2,8 +2,8 @@ import {Subject, Subscription, debounceTime, forkJoin, lastValueFrom} from 'rxjs
 import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core'
 import {ActivatedRoute, Router} from '@angular/router'
 
-import {GenresService} from '@services/genres.service'
-import {TagsService} from '@services/tags.service'
+import {GenresService} from '@workspace/services/genres.service'
+import {TagsService} from '@workspace/services/tags.service'
 
 import {Genre, Tag} from '@workspace/models'
 
