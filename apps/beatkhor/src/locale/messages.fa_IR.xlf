@@ -910,6 +910,7 @@
       </trans-unit>
       <trans-unit id="7784592803807232495" datatype="html">
         <source>- Our mission -</source>
+        <target>- هدف ما -</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
@@ -919,6 +920,8 @@
       <trans-unit id="5115946400165140559" datatype="html">
         <source> Since 2017, Beatkhor aims to promote creativity and accelerate the development of
           the music culture. All the beats are made by the beatkhor community. </source>
+        <target>از سال ۲۰۱۷، بیت‌خور به هدف ترویج خلاقیت و شتاب دادن به توسعه فرهنگ موسیقی
+          می‌پردازد. تمامی بیت‌ها توسط جامعه بیت‌خور ساخته می‌شوند.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
