@@ -1,14 +1,16 @@
 <div class="min-h-screen flex items-center justify-center">
   <form [formGroup]="form" (submit)="onSubmit()" class="flex flex-col w-96 py-4 mx-6">
-    <h1 class="text-2xl font-semibold my-2" i18n>Sign in</h1>
+    <h1 class="text-2xl font-semibold my-2" i18n="@@signIn">Sign in</h1>
 
     <p class="text-base py-3 mb-2">
-      <span i18n>Welcome back! </span>
-      <span i18n>Please provide your email and password to sign into your account.</span>
+      <span i18n="@@signInTitle">Welcome back! </span>
+      <span i18n="@@signInPrompt">
+        Please provide your email and password to sign into your account.
+      </span>
     </p>
 
     <mat-form-field class="my-3" appearance="fill">
-      <mat-label i18n>Email / Username</mat-label>
+      <mat-label i18n="@@emailOrUsername">Email / Username</mat-label>
       <input
         matInput
         type="text"
@@ -17,40 +19,50 @@
         formControlName="username"
       />
       <mat-icon matSuffix>person</mat-icon>
-      <mat-hint i18n>You can use your username or email to sign in</mat-hint>
-      <mat-error i18n>Please enter your email or username!</mat-error>
+      <mat-hint i18n="@@emailOrUsernameHint">
+        You can use your username or email to sign in
+      </mat-hint>
+      <mat-error i18n="@@emailOrUsernameRequired">
+        Please enter your email or username!
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field class="my-3" appearance="fill">
-      <mat-label i18n>Password</mat-label>
+      <mat-label i18n="@@password">Password</mat-label>
       <input matInput type="password" name="password" formControlName="password" />
       <mat-icon matSuffix>lock</mat-icon>
-      <mat-hint i18n>A password should include at least 6 characters.</mat-hint>
-      <mat-error i18n>Please enter at least 6 characters!</mat-error>
+      <mat-hint i18n="@@passwordHint">
+        A password should include at least 6 characters.
+      </mat-hint>
+      <mat-error i18n="@@passwordInvalidError">
+        Please enter at least 6 characters!
+      </mat-error>
     </mat-form-field>
 
     <button mat-flat-button class="my-3 mt-5" color="primary" type="submit">
-      <span *ngIf="isLoading" i18n>Please wait...</span>
-      <span *ngIf="!isLoading" i18n>Sign in</span>
+      <span *ngIf="isLoading" i18n="@@pleaseWait">Please wait...</span>
+      <span *ngIf="!isLoading" i18n="@@signIn">Sign in</span>
     </button>
 
     <a mat-stroked-button color="primary" type="button" routerLink="/">
-      <span i18n>Go back</span>
+      <span i18n="@@goBack">Go back</span>
     </a>
 
     <div class="my-5 text-sm text-neutral-300">
       <p class="my-2">
-        <span i18n>Don't have a account yet? </span>
+        <span i18n="@@haveAccountHelper">Don't have a account yet? </span>
         <a class="text-primary-500" routerLink="/authentication/signup">
-          <span i18n>sign up now!</span>
+          <span i18n="@@signUpNow">sign up now!</span>
         </a>
         <span>.</span>
       </p>
 
       <p class="my-2">
-        <span i18n>If you have forgotten your password, you can easily </span>
+        <span i18n="@@forgotPasswordHelper">
+          If you have forgotten your password, you can easily
+        </span>
         <a class="text-primary-500" routerLink="/authentication/reset-password/request">
-          <span i18n>recover your password here</span>
+          <span i18n="@@recoverPasswordHere">recover your password here</span>
         </a>
         <span>.</span>
       </p>
