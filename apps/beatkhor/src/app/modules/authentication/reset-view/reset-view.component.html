@@ -5,9 +5,9 @@
     (submit)="onSubmit()"
     class="flex flex-col w-96 py-4 mx-6"
   >
-    <h1 class="text-2xl font-semibold my-2" i18n="@@resetPassword">Reset password</h1>
+    <h1 i18n="@@resetPassword" class="text-2xl font-semibold my-2">Reset password</h1>
 
-    <p class="py-4" i18n="@@resetPasswordPrompt">
+    <p i18n="@@resetPasswordPrompt" class="py-4">
       Now you can choose a brand new password for your beatkhor account.
     </p>
 
@@ -35,17 +35,19 @@
       </mat-hint>
 
       <mat-error *ngIf="form.get('confirmPassword')?.hasError('mismatch')">
-        <span i18n="@@confirmPasswordInvalid"> The passwords do not match together </span>
+        <span i18n="@@confirmPasswordMismatchError">
+          The passwords do not match together
+        </span>
       </mat-error>
 
       <mat-error *ngIf="form.get('confirmPassword')?.hasError('required')">
-        <span i18n="@@confirmPasswordRequired">Please re-enter your password</span>
+        <span i18n="@@confirmPasswordRequiredError">Please re-enter your password</span>
       </mat-error>
     </mat-form-field>
 
     <button mat-flat-button class="my-3 mt-5" color="primary" type="submit">
-      <span *ngIf="isLoading" i18n="@@pleaseWait">Please wait...</span>
-      <span *ngIf="!isLoading" i18n="@@resetPassword">Reset password</span>
+      <span i18n="@@pleaseWait" *ngIf="isLoading">Please wait...</span>
+      <span i18n="@@resetPasswordCTA" *ngIf="!isLoading">Reset password</span>
     </button>
 
     <a mat-stroked-button color="primary" type="button" routerLink="/">
@@ -54,26 +56,26 @@
   </form>
 
   <div *ngIf="done" class="flex flex-col w-96 py-4 mx-6">
-    <h1 class="text-2xl font-semibold my-2" i18n="@@passwordChanged">
+    <h1 i18n="@@resetDoneTitle" class="text-2xl font-semibold my-2">
       Your password is changed
     </h1>
 
-    <p class="py-4" i18n="@@passwordChangedPrompt">
+    <p i18n="@@resetDonePrompt" class="py-4">
       Perfect! We changed your password. Go ahead and sign in using your new password.
     </p>
 
     <a
       class="my-3"
+      type="button"
       mat-flat-button
       color="primary"
-      type="button"
       routerLink="/authentication/signin"
     >
       <span i18n="@@signIn">Sign in</span>
     </a>
 
     <a mat-stroked-button color="primary" type="button" routerLink="/">
-      <span i18n="@@goToHomePage">Back to home page</span>
+      <span i18n="@@goBack">Go back</span>
     </a>
   </div>
 </div>
