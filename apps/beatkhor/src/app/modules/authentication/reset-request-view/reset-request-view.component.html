@@ -29,11 +29,11 @@
       </mat-hint>
 
       <mat-error *ngIf="form.get('email')?.hasError('required')">
-        <span i18n="@@passwordRecoveryEmailError">Please enter your email!</span>
+        <span i18n="@@emailRequiredError">Please enter your email!</span>
       </mat-error>
 
       <mat-error *ngIf="form.get('email')?.hasError('email')">
-        <span i18n="@@passwordRecoveryEmailError">Please enter a valid email!</span>
+        <span i18n="@@emailInvalidError">Please enter a valid email!</span>
       </mat-error>
     </mat-form-field>
 
