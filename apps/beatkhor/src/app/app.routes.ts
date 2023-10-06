@@ -12,7 +12,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'authentication',
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule),
   },
   {
     path: '',
@@ -21,25 +21,28 @@ export const appRoutes: Route[] = [
       {
         path: '',
         pathMatch: 'full',
-        loadChildren: () => import('./index/index.module').then(m => m.IndexModule),
+        loadChildren: () =>
+          import('./modules/index/index.module').then(m => m.IndexModule),
       },
       {
         path: 'upload',
         canActivate: [AuthGuard],
-        loadChildren: () => import('./upload/upload.module').then(m => m.UploadModule),
+        loadChildren: () =>
+          import('./modules/upload/upload.module').then(m => m.UploadModule),
       },
       {
         path: 'vote',
         canActivate: [AuthGuard],
-        loadChildren: () => import('./vote/vote.module').then(m => m.VoteModule),
+        loadChildren: () => import('./modules/vote/vote.module').then(m => m.VoteModule),
       },
       {
         path: 'browse',
-        loadChildren: () => import('./browse/browse.module').then(m => m.BrowseModule),
+        loadChildren: () =>
+          import('./modules/browse/browse.module').then(m => m.BrowseModule),
       },
       {
         path: 'page',
-        loadChildren: () => import('./page/page.module').then(m => m.PageModule),
+        loadChildren: () => import('./modules/page/page.module').then(m => m.PageModule),
       },
     ],
   },
