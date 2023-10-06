@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="2547756348530497105" datatype="html">
         <source>ltr</source>
+        <target>ltr</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/app.component.ts</context>
           <context context-type="linenumber">5</context>
@@ -11,713 +12,916 @@
       </trans-unit>
       <trans-unit id="8528259965513293198" datatype="html">
         <source>Setup your profile</source>
+        <target>پروفایل را کامل کنید</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="853378679571111247" datatype="html">
-        <source> Now it&apos;s time to setup your beatkhor profile. Please provide the details below and choose a unique username for yourself. </source>
+        <source> Now it&apos;s time to setup your beatkhor profile. Please provide the details below
+          and choose a unique username for yourself. </source>
+        <target> لطفا برای کامل کردن پروفایل خود فرم زیر را پر کنید.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">5,8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5342432350421167093" datatype="html">
         <source>First name</source>
+        <target>نام</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1969288448425439757" datatype="html">
         <source>Will be displayed on public profile</source>
+        <target>در پروفایل نمایش داده می‌شود</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="665199437400610045" datatype="html">
         <source>Please enter your first name</source>
+        <target>لطفا نام خود را وارد کنید</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3586674587150281199" datatype="html">
         <source>Last name</source>
+        <target>نام خانوادگی</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2298799255379303154" datatype="html">
         <source>Entering the last name is optional</source>
+        <target>وارد کردن نام خانوادگی اختیاری است</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4452423990243358761" datatype="html">
         <source>Please enter your last name</source>
+        <target>لطفا نام خانوادگی خود را وارد کنید</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5248717555542428023" datatype="html">
         <source>Username</source>
+        <target>نام کاربری</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3589713799039276362" datatype="html">
         <source>Username should be at least 4 characters.</source>
+        <target>نام کاربری باید حداقل دارای ۴ کاراکتر باشد</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5577152885646508350" datatype="html">
         <source>Username can only have a-z and 0-9 characters</source>
+        <target>نام کاربری باید فقط شامل اعداد و حروف انگلیسی باشد</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4577116933417605953" datatype="html">
         <source>Username can only have a-z and 0-9</source>
+        <target>نام کاربری باید فقط شامل اعداد و حروف انگلیسی باشد</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5260364531005397625" datatype="html">
         <source> Cool, this username is available!</source>
+        <target> عالی، نام کاربری در دسترس است!</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7801567776215800789" datatype="html">
         <source> This username is taken! Try something else. </source>
+        <target> این نام کاربری قبلا استفاده شده است! </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">48,50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2357645764289315007" datatype="html">
         <source>Please wait...</source>
+        <target>لطفا صبر کنید...</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">88</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">37</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6962699013778688473" datatype="html">
         <source>Continue</source>
+        <target>ادامه</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/complete-profile-view/complete-profile-view.component.html</context>
           <context context-type="linenumber">89</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1512140572668429091" datatype="html">
         <source>Password recovery</source>
+        <target>بازیابی رمز عبور</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2347798871440781617" datatype="html">
-        <source> No worries! Just enter your email to reset your account password. We will send you an email with the link to choose a new password. </source>
+        <source> No worries! Just enter your email to reset your account password. We will send you
+          an email with the link to choose a new password. </source>
+        <target> کافیست ایمیل خود را برای بازیابی رمز عبور وارد کنید. ما ایمیلی حاوی لینک بازیابی
+          رمز عبور را برای شما ارسال خواهیم کرد. </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">10,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1769661379068269645" datatype="html">
         <source>Your email</source>
+        <target>ایمیل</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2224230670992820965" datatype="html">
         <source>mail</source>
+        <target>mail</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1509134218697521757" datatype="html">
         <source>Enter your email to receive the instructions</source>
+        <target>ایمیل خود را برای دریافت لینک وارد کنید</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2602541612633302965" datatype="html">
         <source>Please enter your email!</source>
+        <target>لطفا ایمیل خود را وارد کنید!</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5358658083650090860" datatype="html">
         <source>Please enter a valid email!</source>
+        <target>لطفا یک ایمیل معتبر وارد کنید!</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1041283887496823114" datatype="html">
         <source>Recover my password</source>
+        <target>بازیابی رمز عبور</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5207635742003539443" datatype="html">
         <source>Sign in</source>
+        <target>ورود</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">47</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4490021449024318004" datatype="html">
         <source>Check Your Email</source>
+        <taregt>ایمیل خود را چک کنید</taregt>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9091062966558585818" datatype="html">
-        <source> Perfect! We just sent you an email that contains the instructions for choosing a new password. </source>
+        <source> Perfect! We just sent you an email that contains the instructions for choosing a
+          new password. </source>
+        <taregt> عالی! ما ایمیلی حاوی لینک بازیابی رمز عبور برای شما ارسال کردیم تا رمز جدیدی برای
+          خود انتخاب کنید. </taregt>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">54,57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4978023126380015933" datatype="html">
-        <source> You will not receive an email if you don&apos;t already have an account connected to this email </source>
+        <source> You will not receive an email if you don&apos;t already have an account connected
+          to this email </source>
+        <target> در صورتی که کاربری با ایمیل شما وجود نداشته باشد ایمیلی از طرف ما دریافت نخواهید
+          کرد. </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">59,62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="840692109692540367" datatype="html">
         <source>Sign In</source>
+        <target>ورود</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">71</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">66</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4020663284410482277" datatype="html">
         <source>Go to home page</source>
+        <target>برو به صفحه اول</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-request-view/reset-request-view.component.html</context>
           <context context-type="linenumber">75</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1636934520301910285" datatype="html">
         <source>Reset password</source>
+        <target>بازیابی رمز عبور</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4023291698474904548" datatype="html">
         <source> Now you can choose a brand new password for your beatkhor account. </source>
+        <target> حالا می‌توانید یک رمز عبور جدید برای حساب کاربری بیت‌خور خود انتخاب کنید. </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">10,12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3588415639242079458" datatype="html">
         <source>New password</source>
+        <target>رمز عبور جدید</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5541509037357402484" datatype="html">
         <source>A password should include at least 6 characters.</source>
+        <target>رمز عبور باید حداقل دارای ۶ کاراکتر باشد.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">28</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7534354884512049270" datatype="html">
         <source>Please enter at least 6 characters!</source>
+        <target>رمز عبور نیاز به حداقل ۶ کاراکتر دارد!</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">19</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">29</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3782563238994348625" datatype="html">
         <source>Confirm password</source>
+        <target>تکرار رمز عبور</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">23</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7205707888983359080" datatype="html">
         <source>Please type your password again to confirm</source>
+        <target>لطفا رمز عبور خود را تکرار کنید.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">31</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4303780456021394204" datatype="html">
         <source>The passwords do not match together</source>
+        <target>رمز عبور با تکرار آن همخوانی ندارد!</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">34</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3678807514259794747" datatype="html">
         <source>Please re-enter your password</source>
+        <target>لطفا رمز عبور خود را دوباره وارد کنید.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">38</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4830487269617493033" datatype="html">
         <source>Home page</source>
+        <target>صفحه نخست</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5709026472593833619" datatype="html">
         <source> Perfect! We changed your password. Go ahead and sign in using your new password. </source>
+        <target> عالی! رمز عبور شما با موفقیت تغییر کید. حالا می‌توانید با رمز عبور جدید خود وارد
+          شوید. </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">55,57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7097023383751720049" datatype="html">
         <source>Back to home page</source>
+        <target>بازگشت به خانه</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/reset-view/reset-view.component.html</context>
           <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="893159086386854122" datatype="html">
         <source>Welcome back! </source>
+        <target>خوش آمدید! </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5215235285916191005" datatype="html">
         <source>Please provide your email and password to sign into your account.</source>
+        <target>لطفا ایمیل و رمز عبور خود را وارد کنید.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2616418202175930347" datatype="html">
         <source>Email / Username</source>
+        <target>ایمیل / نام کاربری</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2336175993441118455" datatype="html">
         <source>You can use your username or email to sign in</source>
+        <target>می‌توانید نام کاربری یا ایمیل خود را برای ورود استفاده کنید.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7397679683765947600" datatype="html">
         <source>Please enter your email or username!</source>
+        <target>لطفا نام کاربری یا ایمیل خود را وارد کنید!</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">21</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1431416938026210429" datatype="html">
         <source>Password</source>
+        <target>رمز عبور</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="734934965373819800" datatype="html">
         <source>Go back</source>
+        <target>بازگشت</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">38</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2262152184753540165" datatype="html">
         <source>Don&apos;t have a account yet? </source>
+        <target>حساب کاربری ندارید؟</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2321537374036634764" datatype="html">
         <source>sign up now!</source>
+        <target> ثبت نام کنید</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3140225524950696109" datatype="html">
         <source>If you have forgotten your password, you can easily </source>
+        <target>اگر رمز عبور خود را فراموش کرده‌اید می‌توانید</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8550638398535506345" datatype="html">
         <source>recover your password here</source>
+        <target> اینجا بازیابی کنید</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-in-view/sign-in-view.component.html</context>
           <context context-type="linenumber">53</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7028204981963450021" datatype="html">
         <source>Sign up</source>
+        <target>ثبت نام</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="343102491919923824" datatype="html">
         <source>Welcome to Beatkhor. </source>
+        <target>به بیت‌خور خوش‌آمدید. </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2730544182036672924" datatype="html">
         <source>Please fill this form to create a shiny new account.</source>
+        <target>لطفا برای ساختن یک حساب بیت‌خور جدید اطلاعات زیر را وارد کنید.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4768749765465246664" datatype="html">
         <source>Email</source>
+        <target>ایمیل</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="903461527437833734" datatype="html">
         <source>person</source>
+        <target>person</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="790485993358866369" datatype="html">
         <source>We will send the activation link to this email.</source>
+        <target>لینک فعالسازی به این ایمیل ارسال می‌شود.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6207438724033771807" datatype="html">
         <source>Already have an account? </source>
+        <target>حساب کاربری دارید؟ </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">68</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7416728083374680576" datatype="html">
         <source>sign in now!</source>
+        <target>وارد شوید</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="176377248814422633" datatype="html">
         <source>Have an account and forgotten your password? you can easily </source>
+        <target>رمز عبور خود را فراموش کرده اید؟ </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6150146763564087778" datatype="html">
         <source>One More Step...</source>
+        <target>یک قدم دیگر</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">86</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7213242200119773164" datatype="html">
-        <source> Congrats! We just sent you an email that contains the verification link. You can sign in after activating your account. </source>
+        <source> Congrats! We just sent you an email that contains the verification link. You can
+          sign in after activating your account. </source>
+        <target>تبریک! ما ایمیلی حاوی لینک فعالسازی برای شما ارسال کردیم. می‌توانید بعد از فعالسازی
+          وارد حساب خود شوید.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">88,91</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1355100537886904961" datatype="html">
         <source>Let&apos;s go back</source>
+        <target>بازگشت</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">94</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4389626388547740681" datatype="html">
         <source>Please fill the form with valid information!</source>
+        <target>لطفا فرم را با اطلاعات معتبر پر کنید.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.ts</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.ts</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1397842217466606447" datatype="html">
         <source>&apos;This email is already used by an account!</source>
+        <target>این ایمیل توسط یک حساب کاربری استفاده شده است.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.ts</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.ts</context>
           <context context-type="linenumber">57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8998179362936748717" datatype="html">
         <source>OK</source>
+        <taregt>تایید</taregt>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.ts</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/auth/sign-up-view/sign-up-view.component.ts</context>
           <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="33149636091572968" datatype="html">
         <source>Load more</source>
+        <taregt>بیشتر</taregt>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/browse/browse-view/browse-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/browse/browse-view/browse-view.component.html</context>
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3894950702316166331" datatype="html">
         <source>Loading...</source>
+        <target>لطفا صبر کنید...</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/browse/browse-view/browse-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/browse/browse-view/browse-view.component.html</context>
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9166627509049147036" datatype="html">
         <source>Browse tracks...</source>
+        <target>جستجوی بیت‌ها...</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4907826037977564643" datatype="html">
         <source>Choose Genres</source>
+        <target>انتخاب ژانر</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1790640569414740156" datatype="html">
         <source>Genres</source>
+        <target>ژانر‌ها</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8275666265543256717" datatype="html">
         <source>Choose a genre</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
           <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8960888606744870422" datatype="html">
         <source>Choose tags</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
           <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7886570921510760899" datatype="html">
         <source>Tags</source>
+        <target>برجسب‌ها</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
           <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3870385559421689822" datatype="html">
         <source>Choose a tag</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
           <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7599424290971072767" datatype="html">
         <source>Genre</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/browse/shared/post/post.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/browse/shared/post/post.component.html</context>
           <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1825829511397926879" datatype="html">
         <source>Tag</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/browse/shared/post/post.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/browse/shared/post/post.component.html</context>
           <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3099741642167775297" datatype="html">
         <source>Download</source>
+        <target>دانلود</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/browse/shared/post/post.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/browse/shared/post/post.component.html</context>
           <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5773429938510968558" datatype="html">
         <source>Recent related tracks</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/browse/track-view/track-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/browse/track-view/track-view.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8959181853318051327" datatype="html">
         <source>- Social media -</source>
+        <target>- شبکه‌های اجتماعی -</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3618113761309540743" datatype="html">
         <source>Telegram</source>
+        <target>کانال تلگرام</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/index/index-header/index-header.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-header/index-header.component.html</context>
           <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6818041482403183041" datatype="html">
         <source>- Useful links -</source>
+        <target>- لینک‌های مفید -</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="787163983066183218" datatype="html">
         <source>Browse</source>
+        <target>بیت‌ها</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">20</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">21</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/wrapper/wrapper.component.ts</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/wrapper/wrapper.component.ts</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1726363342938046830" datatype="html">
         <source>About</source>
+        <target>درباره</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">23</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7784592803807232495" datatype="html">
         <source>- Our mission -</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5115946400165140559" datatype="html">
-        <source> Since 2017, Beatkhor aims to promote creativity and accelerate the development of the music culture. All the beats are made by the beatkhor community. </source>
+        <source> Since 2017, Beatkhor aims to promote creativity and accelerate the development of
+          the music culture. All the beats are made by the beatkhor community. </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">30,33</context>
         </context-group>
       </trans-unit>
@@ -725,67 +929,78 @@
         <source>Beatkhor</source>
         <target>بیت‌خور</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/wrapper/wrapper.component.ts</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/wrapper/wrapper.component.ts</context>
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2045779543869682721" datatype="html">
         <source>Get Started</source>
+        <target>ثبت نام</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6932865105766151309" datatype="html">
         <source>Upload</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="935790816200474922" datatype="html">
         <source>Sign Out</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">69</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2949848596707725099" datatype="html">
         <source>Sign out</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.ts</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/navbar/navbar.component.ts</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6854161831863966537" datatype="html">
         <source>Are you sure about signing out of your account?</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.ts</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/navbar/navbar.component.ts</context>
           <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5736481176444461852" datatype="html">
         <source>About Us</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/components/wrapper/wrapper.component.ts</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/components/wrapper/wrapper.component.ts</context>
           <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2409931446620208729" datatype="html">
         <source>You need to sign in to access this section!</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/interceptors/token-interceptor.ts</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/interceptors/token-interceptor.ts</context>
           <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="390756650938294680" datatype="html">
         <source>OOps! something went wrong! Please try again later!</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/core/services/error-handler.service.ts</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/core/services/error-handler.service.ts</context>
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
@@ -803,91 +1018,122 @@
       <trans-unit id="911819719547605345" datatype="html">
         <source>We promote</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/index/index-header/index-header.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-header/index-header.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4940134130714874690" datatype="html">
-        <source> Beatkhor is a community based platform to discover, publish and download free beats. Start browsing or upload your beat right now! </source>
+        <source> Beatkhor is a community based platform to discover, publish and download free
+          beats. Start browsing or upload your beat right now! </source>
+        <target>بیت‌خور یک رسانه بر پایه‌ی جامعه‌ی فعالان موسیقی برای یافتن، انتشار و دانلود رایگان
+          بیت است. می‌توانید از حالا شروع به جستجو کنید و یا بیت‌ خود را آپلود کنید.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/index/index-header/index-header.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-header/index-header.component.html</context>
           <context context-type="linenumber">21,24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1552496844207602705" datatype="html">
         <source>Browse Tracks</source>
+        <target>جستجوی بیت‌ها</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/index/index-header/index-header.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-header/index-header.component.html</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1188033308774201130" datatype="html">
         <source>Awesome, your account is now activated!</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4417643993158825500" datatype="html">
         <source>OOps, We could not activate your account! Please contact the support.</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4072075643754173775" datatype="html">
         <source>
-        OOps, We could not verify the password recovery link. Please try again or contact the support.
-      </source>
+          OOps, We could not verify the password recovery link. Please try again or contact the
+          support.
+        </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
           <context context-type="linenumber">23,25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1784645444850616973" datatype="html">
         <source>Recommended Tracks</source>
+        <target>بیت‌های پیشنهادی</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
           <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="765259263771088993" datatype="html">
+        <source>Recent Drill Tracks</source>
+        <target>بیت‌های دریل جدید</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
+          <context context-type="linenumber">68</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7217893330882648608" datatype="html">
         <source> View More </source>
+        <target> بیشتر </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
           <context context-type="linenumber">47,49</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
           <context context-type="linenumber">78,80</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
           <context context-type="linenumber">109,111</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5506501470543034926" datatype="html">
         <source>Recent Trap Tracks</source>
+        <target>بیت‌های ترپ جدید</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
           <context context-type="linenumber">99</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6249484391846924804" datatype="html">
         <source> Confirm </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/shared/dialogs/confirm-dialog/confirm-dialog.component.ts</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/shared/dialogs/confirm-dialog/confirm-dialog.component.ts</context>
           <context context-type="linenumber">14,16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2159130950882492111" datatype="html">
         <source>Cancel</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/shared/dialogs/confirm-dialog/confirm-dialog.component.ts</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/shared/dialogs/confirm-dialog/confirm-dialog.component.ts</context>
           <context context-type="linenumber">17</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
           <context context-type="linenumber">37</context>
         </context-group>
         <context-group purpose="location">
@@ -898,21 +1144,24 @@
       <trans-unit id="3270509626404170672" datatype="html">
         <source>Click on each option to select it:</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="746576033364520348" datatype="html">
         <source>No option found!</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
           <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4943998242904350511" datatype="html">
         <source> Submit </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
           <context context-type="linenumber">34,36</context>
         </context-group>
       </trans-unit>
@@ -1112,14 +1361,16 @@
       <trans-unit id="2156220624584804742" datatype="html">
         <source>Review Tracks</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/vote/vote-view/vote-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/vote/vote-view/vote-view.component.html</context>
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1695017097404259899" datatype="html">
         <source> You can decide which tracks have the chance to get published in beatkhor </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/vote/vote-view/vote-view.component.html</context>
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/vote/vote-view/vote-view.component.html</context>
           <context context-type="linenumber">3,5</context>
         </context-group>
       </trans-unit>
@@ -1194,7 +1445,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="932256218009633163" datatype="html">
-        <source>Please verify your email first! If you don&apos;t have the email try resetting your password</source>
+        <source>Please verify your email first! If you don&apos;t have the email try resetting your
+          password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/environments/messages.ts</context>
           <context context-type="linenumber">12</context>
