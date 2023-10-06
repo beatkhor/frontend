@@ -8,7 +8,7 @@ import {
   PaginatedResponse,
   Post,
   SearchPostFilters,
-} from '@beatkhor/models'
+} from '@workspace/models'
 
 @Injectable({
   providedIn: 'root',

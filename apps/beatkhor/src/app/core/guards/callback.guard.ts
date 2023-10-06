@@ -1,6 +1,6 @@
 import {ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router'
+import {CallbackEvents} from '@workspace/models'
 import {Injectable} from '@angular/core'
-import {CallbackEvents} from '@beatkhor/models'
 
 @Injectable({
   providedIn: 'root',

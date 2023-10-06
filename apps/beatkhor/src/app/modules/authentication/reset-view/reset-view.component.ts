@@ -6,7 +6,7 @@ import {lastValueFrom} from 'rxjs'
 import {CustomErrorHandler} from '../../../core/services/error-handler.service'
 import {CustomValidators} from '../../../core/services/validators.service'
 import {AuthService} from '../../../core/services/auth.service'
-import {CallbackEvents} from '@beatkhor/models'
+import {CallbackEvents} from '@workspace/models'
 
 @Component({
   selector: 'bk-reset-view',

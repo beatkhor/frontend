@@ -2,7 +2,7 @@ import {LocalStorageService} from './local-storage.service'
 import {Injectable} from '@angular/core'
 import {Subject} from 'rxjs'
 
-import {Post, StorageKeys, User} from '@beatkhor/models'
+import {Post, StorageKeys, User} from '@workspace/models'
 
 @Injectable({
   providedIn: 'root',

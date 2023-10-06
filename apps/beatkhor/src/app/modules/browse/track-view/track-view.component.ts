@@ -4,7 +4,7 @@ import {ActivatedRoute} from '@angular/router'
 
 import {CustomErrorHandler} from '../../../core/services/error-handler.service'
 import {PostService} from '../../../core/services/post.service'
-import {Post} from '@beatkhor/models'
+import {Post} from '@workspace/models'
 
 @Component({
   selector: 'bk-track-view',

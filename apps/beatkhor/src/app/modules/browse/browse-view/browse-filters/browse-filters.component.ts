@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router'
 
 import {GenresService} from '../../../../core/services/genres.service'
 import {TagsService} from '../../../../core/services/tags.service'
-import {Genre, Tag} from '@beatkhor/models'
+import {Genre, Tag} from '@workspace/models'
 
 @Component({
   selector: 'bk-browse-filters',

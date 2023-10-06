@@ -5,7 +5,7 @@ import {Observable} from 'rxjs'
 
 import {LocalStorageService} from './local-storage.service'
 
-import {CustomResponse, LoginResponseDTO, StorageKeys, User} from '@beatkhor/models'
+import {CustomResponse, LoginResponseDTO, StorageKeys, User} from '@workspace/models'
 
 @Injectable({
   providedIn: 'root',

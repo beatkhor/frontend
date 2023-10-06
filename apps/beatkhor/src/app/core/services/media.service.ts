@@ -14,7 +14,7 @@ import {
   CustomResponse,
   ID3Tags,
   UpdateMediaPayload,
-} from '@beatkhor/models'
+} from '@workspace/models'
 
 @Injectable({
   providedIn: 'root',

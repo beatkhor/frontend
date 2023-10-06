@@ -2,7 +2,7 @@ import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core'
 
 import {UtilsService} from '../../../../core/services/utils.service'
 import {PostService} from '../../../../core/services/post.service'
-import {Picture, Post, Audio} from '@beatkhor/models'
+import {Picture, Post, Audio} from '@workspace/models'
 
 @Component({
   selector: 'bk-track-post',

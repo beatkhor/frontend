@@ -4,7 +4,7 @@ import {Subscription, lastValueFrom} from 'rxjs'
 import {CustomErrorHandler} from '../../../core/services/error-handler.service'
 import {UtilsService} from '../../../core/services/utils.service'
 import {PostService} from '../../../core/services/post.service'
-import {Post, PostFilters} from '@beatkhor/models'
+import {Post, PostFilters} from '@workspace/models'
 
 @Component({
   selector: 'bk-browse-view',

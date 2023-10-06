@@ -19,7 +19,7 @@ import {MediaService} from '../../core/services/media.service'
 import {PostService} from '../../core/services/post.service'
 import {TagsService} from '../../core/services/tags.service'
 import {TusdUpload} from '../../core/models/tusd'
-import {Category, Genre, Tag, PostStatus, PostReviewStatus, Post} from '@beatkhor/models'
+import {Category, Genre, Tag, PostStatus, PostReviewStatus, Post} from '@workspace/models'
 
 @Component({
   selector: 'bk-upload',

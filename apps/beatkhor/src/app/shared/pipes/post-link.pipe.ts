@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core'
-import {Post} from '@beatkhor/models'
+import {Post} from '@workspace/models'
 
 @Pipe({
   name: 'postLink',

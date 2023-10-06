@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core'
-import {User} from '@beatkhor/models'
+import {User} from '@workspace/models'
 
 @Pipe({
   name: 'userName',

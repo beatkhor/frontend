@@ -3,7 +3,7 @@ import {lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '../../../core/services/error-handler.service'
 import {VoteService} from '../../../core/services/review.service'
-import {Vote, Post} from '@beatkhor/models'
+import {Vote, Post} from '@workspace/models'
 
 @Component({
   selector: 'bk-vote',
