@@ -213,7 +213,11 @@ html[dir='rtl'] body {
   font-family: 'Vazirmatn', sans-serif !important;
 
   .mdc-button,
+  .mat-mdc-select,
   .mdc-floating-label,
+  .mat-mdc-dialog-title,
+  .mat-mdc-menu-item-text,
+  .mat-mdc-dialog-content,
   .mat-mdc-form-field-hint,
   .mat-mdc-form-field-input-control,
   .mat-mdc-form-field-error,
@@ -252,6 +256,7 @@ html[dir='rtl'] body {
     top: -48%;
   }
 
+  .mdc-dialog__actions,
   bk-post-grid,
   bk-post {
     direction: ltr;
@@ -262,6 +267,13 @@ html[dir='rtl'] body {
 
     > div {
       padding-right: 0;
+    }
+  }
+
+  bk-header {
+    > div {
+      margin-top: 68px;
+      margin-bottom: 48px;
     }
   }
 }

@@ -779,6 +779,7 @@
       </trans-unit>
       <trans-unit id="8275666265543256717" datatype="html">
         <source>Choose a genre</source>
+        <target>انتخاب ژانر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
@@ -787,6 +788,7 @@
       </trans-unit>
       <trans-unit id="8960888606744870422" datatype="html">
         <source>Choose tags</source>
+        <target>انتخاب تگ‌ها</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
@@ -804,6 +806,7 @@
       </trans-unit>
       <trans-unit id="3870385559421689822" datatype="html">
         <source>Choose a tag</source>
+        <target>انتخاب برچسب</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/browse/shared/filters/filters.component.html</context>
@@ -812,6 +815,7 @@
       </trans-unit>
       <trans-unit id="7599424290971072767" datatype="html">
         <source>Genre</source>
+        <target>ژانر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/browse/shared/post/post.component.html</context>
@@ -820,6 +824,7 @@
       </trans-unit>
       <trans-unit id="1825829511397926879" datatype="html">
         <source>Tag</source>
+        <target>برچسب</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/browse/shared/post/post.component.html</context>
@@ -954,6 +959,7 @@
       </trans-unit>
       <trans-unit id="6932865105766151309" datatype="html">
         <source>Upload</source>
+        <target>آپلود</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
@@ -962,6 +968,7 @@
       </trans-unit>
       <trans-unit id="935790816200474922" datatype="html">
         <source>Sign Out</source>
+        <target>خروج</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
@@ -970,6 +977,7 @@
       </trans-unit>
       <trans-unit id="2949848596707725099" datatype="html">
         <source>Sign out</source>
+        <target>خروج</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/core/components/navbar/navbar.component.ts</context>
@@ -978,6 +986,7 @@
       </trans-unit>
       <trans-unit id="6854161831863966537" datatype="html">
         <source>Are you sure about signing out of your account?</source>
+        <target>آیا برای خروج از حساب کاربری مطمئن هستید؟</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/core/components/navbar/navbar.component.ts</context>
@@ -995,6 +1004,7 @@
       </trans-unit>
       <trans-unit id="2409931446620208729" datatype="html">
         <source>You need to sign in to access this section!</source>
+        <target>برای درستری به این بخش باید ابتدا وارد شوید!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/core/interceptors/token-interceptor.ts</context>
@@ -1003,6 +1013,7 @@
       </trans-unit>
       <trans-unit id="390756650938294680" datatype="html">
         <source>OOps! something went wrong! Please try again later!</source>
+        <target>متاسفانه مشکلی پیش آمده هست. لطفا دوباره امتحان کنید!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/core/services/error-handler.service.ts</context>
@@ -1011,6 +1022,7 @@
       </trans-unit>
       <trans-unit id="1072812314931339535" datatype="html">
         <source> cover art</source>
+        <target>تصویر جلد</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/core/services/post.service.ts</context>
           <context context-type="linenumber">27</context>
@@ -1056,6 +1068,7 @@
       </trans-unit>
       <trans-unit id="1188033308774201130" datatype="html">
         <source>Awesome, your account is now activated!</source>
+        <target>تبریک، حساب کاربری شما با موفقیت فعال شد!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
@@ -1064,6 +1077,7 @@
       </trans-unit>
       <trans-unit id="4417643993158825500" datatype="html">
         <source>OOps, We could not activate your account! Please contact the support.</source>
+        <target>متاسفانه نتوانستیم حساب کاربری شما را فعال کنیم. لطفا با پشتیبانی ارتباط بگیرید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
@@ -1075,6 +1089,8 @@
           OOps, We could not verify the password recovery link. Please try again or contact the
           support.
         </source>
+        <target>متاسفانه لینک بازیابی رمز عبور معتبر نیست. لطفا دوباره امتحان کنید و یا با پشتیبانی
+          ارتباط بگیرید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/index/index-view/index-view.component.html</context>
@@ -1129,6 +1145,7 @@
       </trans-unit>
       <trans-unit id="6249484391846924804" datatype="html">
         <source> Confirm </source>
+        <target>تایید</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/shared/dialogs/confirm-dialog/confirm-dialog.component.ts</context>
@@ -1137,6 +1154,7 @@
       </trans-unit>
       <trans-unit id="2159130950882492111" datatype="html">
         <source>Cancel</source>
+        <target>بازگشت</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/shared/dialogs/confirm-dialog/confirm-dialog.component.ts</context>
@@ -1154,6 +1172,7 @@
       </trans-unit>
       <trans-unit id="3270509626404170672" datatype="html">
         <source>Click on each option to select it:</source>
+        <target>برای انتخاب هر گزینه روی آن کلیک کنید:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
@@ -1162,6 +1181,7 @@
       </trans-unit>
       <trans-unit id="746576033364520348" datatype="html">
         <source>No option found!</source>
+        <target>گزینه ای پیدا نشد!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
@@ -1170,6 +1190,7 @@
       </trans-unit>
       <trans-unit id="4943998242904350511" datatype="html">
         <source> Submit </source>
+        <target>انتخاب</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
@@ -1178,6 +1199,7 @@
       </trans-unit>
       <trans-unit id="9115055045831178054" datatype="html">
         <source>Upload your track</source>
+        <target>آپلود بیت جدید</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">2</context>
@@ -1185,6 +1207,7 @@
       </trans-unit>
       <trans-unit id="2297425952442576711" datatype="html">
         <source>Provide these information to upload your beat.</source>
+        <target>لطفا برای آپلود بیت فرم زیر را پر کنید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">3</context>
@@ -1192,6 +1215,7 @@
       </trans-unit>
       <trans-unit id="5701618810648052610" datatype="html">
         <source>Title</source>
+        <target>عنوان</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">8</context>
@@ -1199,12 +1223,14 @@
       </trans-unit>
       <trans-unit id="3362033237036516376" datatype="html">
         <source>Please provide a title for your track</source>
+        <target>لطفا برای بیت‌ خور یک عنوان انتخاب کنید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="877546806498511768" datatype="html">
+        <target>طرفداران با این عنوان اثر شما را پیدا می‌کنند.</target>
         <source>People might search your track with this name.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
@@ -1213,6 +1239,7 @@
       </trans-unit>
       <trans-unit id="8171621457665666767" datatype="html">
         <source>Select Genres</source>
+        <target>انتخاب ژانر‌ها</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">19</context>
@@ -1220,6 +1247,7 @@
       </trans-unit>
       <trans-unit id="1021665369277736339" datatype="html">
         <source>Select Genres*</source>
+        <target>انتخاب ژانر‌ها*</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">27</context>
@@ -1227,6 +1255,7 @@
       </trans-unit>
       <trans-unit id="2898479826266335913" datatype="html">
         <source>Click on the field to select genres</source>
+        <target>برای انتخاب ژانر‌ها روی فیلد کلیک کنید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">30</context>
@@ -1234,6 +1263,7 @@
       </trans-unit>
       <trans-unit id="1679038672697994954" datatype="html">
         <source>Select Tags</source>
+        <target>انتخاب برچسب‌ها</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">38</context>
@@ -1245,6 +1275,7 @@
       </trans-unit>
       <trans-unit id="2219904681947207502" datatype="html">
         <source>Helps people to find the track easier</source>
+        <target>کمک می‌کند تا افراد راحت‌تر این اثر را پیدا کنند.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">48</context>
@@ -1252,6 +1283,7 @@
       </trans-unit>
       <trans-unit id="4902817035128594900" datatype="html">
         <source>Description</source>
+        <target>توضیحات</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">54</context>
@@ -1259,6 +1291,7 @@
       </trans-unit>
       <trans-unit id="5225274283105934409" datatype="html">
         <source>Any other kind of information about this track</source>
+        <target>هر نوع توضیحات دیگر در مورد این اثر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">56</context>
@@ -1266,6 +1299,7 @@
       </trans-unit>
       <trans-unit id="119345046233309346" datatype="html">
         <source>Audio file</source>
+        <target>فایل صوتی</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">65</context>
@@ -1273,6 +1307,7 @@
       </trans-unit>
       <trans-unit id="8375325217367390727" datatype="html">
         <source>Click to add an .mp3 or .wav audio file</source>
+        <target>برای افزودن فایل mp3 یا wav روی + کلیک کنید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">68</context>
@@ -1280,6 +1315,7 @@
       </trans-unit>
       <trans-unit id="3567058497686530659" datatype="html">
         <source>Cover art file</source>
+        <target>تصویر جلد</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">76</context>
@@ -1287,6 +1323,7 @@
       </trans-unit>
       <trans-unit id="2544825704870124461" datatype="html">
         <source>Click to add an .jpg or .jpeg image file</source>
+        <target>برای انتخاب فایل jpg یا jpeg روی + کلیک کنید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">79</context>
@@ -1294,6 +1331,7 @@
       </trans-unit>
       <trans-unit id="3008453712326136912" datatype="html">
         <source>Upload Now</source>
+        <target>ارسال بیت</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">91</context>
@@ -1301,6 +1339,7 @@
       </trans-unit>
       <trans-unit id="2960246622843217026" datatype="html">
         <source>Go Back</source>
+        <target>بازگشت</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">94</context>
@@ -1308,6 +1347,7 @@
       </trans-unit>
       <trans-unit id="1245343823699368872" datatype="html">
         <source>Uploading...</source>
+        <target>در حال آپلود...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.html</context>
           <context context-type="linenumber">100</context>
@@ -1315,6 +1355,7 @@
       </trans-unit>
       <trans-unit id="3486513568911854396" datatype="html">
         <source>Select genres:</source>
+        <target>انتخاب ژانر‌ها:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.ts</context>
           <context context-type="linenumber">112</context>
@@ -1322,6 +1363,7 @@
       </trans-unit>
       <trans-unit id="6933220883732675824" datatype="html">
         <source>Select tags:</source>
+        <target>انتخاب برچسب‌ها:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.ts</context>
           <context context-type="linenumber">131</context>
@@ -1329,6 +1371,7 @@
       </trans-unit>
       <trans-unit id="1133086422938736491" datatype="html">
         <source>PLease review the form and enter the valid information.</source>
+        <target>لطفا اطلاعات فرم را مرور کرده و اطلاعات معتبر وارد کنید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.ts</context>
           <context context-type="linenumber">155</context>
@@ -1336,6 +1379,7 @@
       </trans-unit>
       <trans-unit id="8049221022414013708" datatype="html">
         <source>Please select at least one genre!</source>
+        <target>لطفا حداقل یک ژانر انتخاب کنید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.ts</context>
           <context context-type="linenumber">160</context>
@@ -1343,6 +1387,7 @@
       </trans-unit>
       <trans-unit id="3286465255890957152" datatype="html">
         <source>Please add an audio for your track.</source>
+        <target>لطفا یک فایل صوتی برای اثر خود انتخاب کنید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.ts</context>
           <context context-type="linenumber">164</context>
@@ -1350,6 +1395,7 @@
       </trans-unit>
       <trans-unit id="9080627763788807557" datatype="html">
         <source>Please add an image for your track.</source>
+        <target>لطفا یک تصویر جلد برای اثر خود انتخاب کنید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.ts</context>
           <context context-type="linenumber">168</context>
@@ -1357,13 +1403,40 @@
       </trans-unit>
       <trans-unit id="3716312480449409498" datatype="html">
         <source>Something went wrong while uploading the picture! Try again later.</source>
+        <target>مشکلی در حین آپلود تصویر به وجود آمده است. لطفا دوباره امتحان کنید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.ts</context>
           <context context-type="linenumber">188</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="6923821346517793972" datatype="html">
+        <source> Choose file </source>
+        <target>انتخاب فایل</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/upload/file-picker.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6660925946511264619" datatype="html">
+        <source> Delete </source>
+        <target>حذف</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/upload/file-picker.component.ts</context>
+          <context context-type="linenumber">32,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4580988005648117665" datatype="html">
+        <source>Search</source>
+        <target>جستجو</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="2765327790586256954" datatype="html">
         <source>Your track submitted successfully!</source>
+        <target>اثر شما با موفقیت ثبت شد.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/upload/upload.component.ts</context>
           <context context-type="linenumber">278</context>
@@ -1371,6 +1444,7 @@
       </trans-unit>
       <trans-unit id="2156220624584804742" datatype="html">
         <source>Review Tracks</source>
+        <target>بررسی آثار</target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             apps/beatkhor/src/app/vote/vote-view/vote-view.component.html</context>

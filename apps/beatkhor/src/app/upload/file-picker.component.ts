@@ -23,13 +23,13 @@ import {TusdUpload} from '../core/models/tusd'
       (click)="filePicker.click()"
     >
       <mat-icon>add</mat-icon>
-      Choose file
+      <span i18n> Choose file </span>
     </button>
 
     <div *ngIf="selectedFile" class="inline-block my-7">
       <div class="flex items-center bg-neutral-700 rounded px-3">
         <span>{{ selectedFile.file.name }}</span>
-        <button class="ml-3" mat-button color="warn" (click)="onRemove(filePicker)">
+        <button class="ml-3" mat-button color="warn" (click)="onRemove(filePicker)" i18n>
           Delete
         </button>
       </div>

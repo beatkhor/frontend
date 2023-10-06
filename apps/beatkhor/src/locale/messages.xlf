@@ -905,6 +905,13 @@
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="4580988005648117665" datatype="html">
+        <source>Search</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="746576033364520348" datatype="html">
         <source>No option found!</source>
         <context-group purpose="location">
@@ -917,6 +924,20 @@
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/shared/dialogs/multi-selector-dialog/multi-selector-dialog.component.html</context>
           <context context-type="linenumber">34,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6923821346517793972" datatype="html">
+        <source> Choose file </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/upload/file-picker.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6660925946511264619" datatype="html">
+        <source> Delete </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/upload/file-picker.component.ts</context>
+          <context context-type="linenumber">32,34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9115055045831178054" datatype="html">
