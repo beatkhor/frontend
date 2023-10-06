@@ -21,27 +21,25 @@ export const appRoutes: Route[] = [
       {
         path: '',
         pathMatch: 'full',
-        loadChildren: () =>
-          import('./modules/index/index.module').then(m => m.IndexModule),
-      },
-      {
-        path: 'upload',
-        canActivate: [AuthGuard],
-        loadChildren: () =>
-          import('./modules/upload/upload.module').then(m => m.UploadModule),
-      },
-      {
-        path: 'vote',
-        canActivate: [AuthGuard],
-        loadChildren: () => import('./modules/vote/vote.module').then(m => m.VoteModule),
+        loadChildren: () => import('./modules/index').then(m => m.IndexModule),
       },
       {
         path: 'browse',
         loadChildren: () => import('./modules/browse').then(m => m.BrowseModule),
       },
       {
+        path: 'upload',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./modules/upload').then(m => m.UploadModule),
+      },
+      {
         path: 'page',
-        loadChildren: () => import('./modules/page/page.module').then(m => m.PageModule),
+        loadChildren: () => import('./modules/page').then(m => m.PageModule),
+      },
+      {
+        path: 'vote',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./modules/vote').then(m => m.VoteModule),
       },
     ],
   },

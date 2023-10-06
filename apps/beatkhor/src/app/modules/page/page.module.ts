@@ -2,8 +2,9 @@ import {CommonModule} from '@angular/common'
 import {NgModule} from '@angular/core'
 
 import {PageRoutingModule} from './page-routing.module'
-import {SharedModule} from '@shared/shared.module'
 import {PageViewComponent} from './page-view'
+
+import {SharedModule} from '@shared/shared.module'
 
 @NgModule({
   declarations: [PageViewComponent],
