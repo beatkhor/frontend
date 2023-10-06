@@ -276,4 +276,11 @@ html[dir='rtl'] body {
       margin-bottom: 48px;
     }
   }
+
+  .post-footer {
+    > div {
+      margin-left: 16px;
+      margin-right: 0;
+    }
+  }
 }

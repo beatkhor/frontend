@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core'
+import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core'
 
 import {UtilsService} from '../../../core/services/utils.service'
 import {PostService} from '../../../core/services/post.service'
@@ -14,7 +14,10 @@ export class PostComponent implements OnInit {
   artist = ''
   alt = ''
 
-  constructor(private postService: PostService) {}
+  constructor(
+    private postService: PostService,
+    @Inject(LOCALE_ID) public localeId: string
+  ) {}
 
   ngOnInit(): void {
     this.alt = this.postService.generateFullName(this.post)
