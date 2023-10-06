@@ -4,7 +4,7 @@ import {Router} from '@angular/router'
 import {lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '@services/error-handler.service'
-import {AuthService} from '@services/auth.service'
+import {AuthService} from '@workspace/services/auth.service'
 
 @Component({
   selector: 'bk-sign-in-view',
@@ -45,7 +45,7 @@ export class SignInViewComponent {
       const response = await lastValueFrom(request$)
 
       this.authService.setToken(response.result.token)
-      this.authService.putLoggedInUser(response.result.user)
+      this.authService.putUser(response.result.user)
       this.isLoading = false
       this.form.enable()
 

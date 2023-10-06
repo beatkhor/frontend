@@ -3,9 +3,9 @@ import {ActivatedRoute, Router} from '@angular/router'
 import {Component, OnInit} from '@angular/core'
 import {lastValueFrom} from 'rxjs'
 
+import {CustomValidators} from '@workspace/services/validators.service'
 import {CustomErrorHandler} from '@services/error-handler.service'
-import {CustomValidators} from '@services/validators.service'
-import {AuthService} from '@services/auth.service'
+import {AuthService} from '@workspace/services/auth.service'
 import {CallbackEvents} from '@workspace/models'
 
 @Component({

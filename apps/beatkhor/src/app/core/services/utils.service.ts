@@ -1,8 +1,8 @@
-import {LocalStorageService} from './local-storage.service'
 import {Injectable} from '@angular/core'
 import {Subject} from 'rxjs'
 
-import {Post, StorageKeys, User} from '@workspace/models'
+import {AuthService} from '@workspace/services/auth.service'
+import {Post, User} from '@workspace/models'
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +10,7 @@ import {Post, StorageKeys, User} from '@workspace/models'
 export class UtilsService {
   static contentScrollToEnd$ = new Subject<void>()
 
-  constructor(private localStorageService: LocalStorageService) {}
+  constructor(private authService: AuthService) {}
 
   static makeStringUrlSafe(str: string) {
     return encodeURIComponent(str)
@@ -76,17 +76,20 @@ export class UtilsService {
   getFullName(user?: User): string {
     let firstName = '',
       lastName = ''
+    const u = this.authService.getUser()
 
     if (!user) {
-      firstName = this.localStorageService.read(StorageKeys.UserFirstName) ?? ''
-      lastName = this.localStorageService.read(StorageKeys.UserLastName) ?? ''
+      if (u) {
+        firstName = u.first_name ?? ''
+        lastName = u.last_name ?? ''
+      }
     } else {
       firstName = user.first_name || ''
       lastName = user.last_name || ''
     }
 
     if (!firstName && !lastName) {
-      return this.localStorageService.read(StorageKeys.UserUsername) || 'N/A'
+      return u?.username || 'N/A'
     }
 
     return `${firstName || ''} ${lastName || ''}`

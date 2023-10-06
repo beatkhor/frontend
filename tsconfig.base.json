@@ -18,6 +18,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@workspace/services": [
+        "libs/services/src/index.ts"
+      ],
       "@workspace/models": [
         "libs/models/src/index.ts"
       ]

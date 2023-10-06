@@ -3,7 +3,7 @@ import {MatDialog} from '@angular/material/dialog'
 import {Router} from '@angular/router'
 
 import {ConfirmDialogComponent} from '@shared/dialogs/confirm-dialog'
-import {AuthService} from '../../services/auth.service'
+import {AuthService} from '@workspace/services/auth.service'
 
 @Component({
   selector: 'bk-navbar',
@@ -24,7 +24,7 @@ export class NavbarComponent {
   }
 
   get user() {
-    return this.authService.getLoggedInUser()
+    return this.authService.getUser()
   }
 
   onMenu(): void {

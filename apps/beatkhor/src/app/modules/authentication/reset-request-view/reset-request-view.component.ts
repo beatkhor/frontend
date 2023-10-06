@@ -3,7 +3,7 @@ import {Component} from '@angular/core'
 import {lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '@services/error-handler.service'
-import {AuthService} from '@services/auth.service'
+import {AuthService} from '@workspace/services/auth.service'
 
 @Component({
   selector: 'bk-reset-request-view',

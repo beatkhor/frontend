@@ -1,19 +1,21 @@
-import {environment} from '@environments/environment'
+import {Inject, Injectable, InjectionToken} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
-import {Injectable} from '@angular/core'
 import {Observable} from 'rxjs'
-
-import {LocalStorageService} from './local-storage.service'
 
 import {CustomResponse, LoginResponseDTO, StorageKeys, User} from '@workspace/models'
 
-@Injectable({
-  providedIn: 'root',
-})
+import {LocalStorageService} from './local-storage.service'
+
+export const AUTH_SERVICE_URL_CONFIG = new InjectionToken<string>(
+  'AUTH_SERVICE_URL_CONFIG'
+)
+
+@Injectable()
 export class AuthService {
   constructor(
     private http: HttpClient,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    @Inject(AUTH_SERVICE_URL_CONFIG) private url: string
   ) {}
 
   /**
@@ -21,35 +23,35 @@ export class AuthService {
    * @returns true if the user is logged in
    */
   isLoggedIn(): boolean {
-    return Boolean(this.localStorageService.read(StorageKeys.AuthToken))
+    return Boolean(this.localStorageService.read(StorageKeys.Token))
   }
 
   /**
    * Collects the current logged in user data
    * @returns the user data as `User`
    */
-  getLoggedInUser(): User {
-    return {
-      id: Number(this.localStorageService.read(StorageKeys.UserId)),
-      first_name: this.localStorageService.read(StorageKeys.UserFirstName) ?? '',
-      last_name: this.localStorageService.read(StorageKeys.UserLastName) ?? '',
-      role_id: Number(this.localStorageService.read(StorageKeys.UserRoleId) ?? 0),
-      username: this.localStorageService.read(StorageKeys.UserUsername) ?? '',
-      nickname: this.localStorageService.read(StorageKeys.UserNickname) ?? '',
+  getUser(): User | null {
+    const user = this.localStorageService.read(StorageKeys.User)
+
+    if (!user) {
+      return null
     }
+
+    try {
+      return JSON.parse(user) as User
+    } catch (error) {
+      console.warn('There was an error while parsing user data!')
+    }
+
+    return null
   }
 
   /**
    * Sets user information in local storage
    * @param user information to be stored
    */
-  putLoggedInUser(user: User): void {
-    this.localStorageService.write(StorageKeys.UserId, String(user.id))
-    this.localStorageService.write(StorageKeys.UserFirstName, user.first_name ?? '')
-    this.localStorageService.write(StorageKeys.UserLastName, user.last_name ?? '')
-    this.localStorageService.write(StorageKeys.UserRoleId, String(user.role_id))
-    this.localStorageService.write(StorageKeys.UserUsername, user.username ?? '')
-    this.localStorageService.write(StorageKeys.UserNickname, user.nickname ?? '')
+  putUser(user: User): void {
+    this.localStorageService.write('user', JSON.stringify(user))
   }
 
   /**
@@ -57,14 +59,14 @@ export class AuthService {
    * @param token received from backend
    */
   setToken(token: string): void {
-    this.localStorageService.write(StorageKeys.AuthToken, token)
+    this.localStorageService.write(StorageKeys.Token, token)
   }
 
   /**
    * Read authorization token from storage
    */
   getToken(): string | null {
-    return this.localStorageService.read(StorageKeys.AuthToken)
+    return this.localStorageService.read(StorageKeys.Token)
   }
 
   /**
@@ -77,10 +79,10 @@ export class AuthService {
     identifier: string,
     password: string
   ): Observable<CustomResponse<LoginResponseDTO>> {
-    return this.http.post<CustomResponse<LoginResponseDTO>>(
-      `${environment.authServiceURL}/auth/login`,
-      {identifier, password}
-    )
+    return this.http.post<CustomResponse<LoginResponseDTO>>(`${this.url}/auth/login`, {
+      identifier,
+      password,
+    })
   }
 
   /**
@@ -90,10 +92,10 @@ export class AuthService {
    * @returns http register request as observable
    */
   register(email: string, password: string): Observable<CustomResponse<void>> {
-    return this.http.post<CustomResponse<void>>(
-      `${environment.authServiceURL}/auth/register`,
-      {email, password}
-    )
+    return this.http.post<CustomResponse<void>>(`${this.url}/auth/register`, {
+      email,
+      password,
+    })
   }
 
   /**
@@ -103,7 +105,7 @@ export class AuthService {
    */
   requestResetPassword(email: string): Observable<CustomResponse<void>> {
     return this.http.post<CustomResponse<void>>(
-      `${environment.authServiceURL}/auth/reset-password/request`,
+      `${this.url}/auth/reset-password/request`,
       {email}
     )
   }
@@ -115,10 +117,10 @@ export class AuthService {
    * @returns reset password http request as observable
    */
   resetPassword(password: string, token: string): Observable<CustomResponse<void>> {
-    return this.http.post<CustomResponse<void>>(
-      `${environment.authServiceURL}/auth/reset-password/reset`,
-      {password, token}
-    )
+    return this.http.post<CustomResponse<void>>(`${this.url}/auth/reset-password/reset`, {
+      password,
+      token,
+    })
   }
 
   /**
@@ -128,7 +130,7 @@ export class AuthService {
    */
   checkUsernameAvailability(username: string) {
     return this.http.get<CustomResponse<any>>(
-      `${environment.authServiceURL}/users/check/username/` + username
+      `${this.url}/users/check/username/` + username
     )
   }
 
@@ -136,7 +138,7 @@ export class AuthService {
    * Get all the current user's profile information
    */
   getMe(): Observable<CustomResponse<User>> {
-    return this.http.get<CustomResponse<User>>(`${environment.authServiceURL}/users/me`)
+    return this.http.get<CustomResponse<User>>(`${this.url}/users/me`)
   }
 
   /**
@@ -147,10 +149,11 @@ export class AuthService {
     last_name: string,
     username: string
   ): Observable<CustomResponse<void>> {
-    return this.http.patch<CustomResponse<void>>(
-      `${environment.authServiceURL}/users/me`,
-      {username, first_name, last_name}
-    )
+    return this.http.patch<CustomResponse<void>>(`${this.url}/users/me`, {
+      username,
+      first_name,
+      last_name,
+    })
   }
 
   /**

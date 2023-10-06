@@ -3,9 +3,9 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 import {Component, OnDestroy} from '@angular/core'
 import {Router} from '@angular/router'
 
+import {CustomValidators} from '@workspace/services/validators.service'
 import {CustomErrorHandler} from '@services/error-handler.service'
-import {CustomValidators} from '@services/validators.service'
-import {AuthService} from '@services/auth.service'
+import {AuthService} from '@workspace/services/auth.service'
 
 @Component({
   selector: 'bk-complete-profile-view',
@@ -82,8 +82,8 @@ export class CompleteProfileViewComponent implements OnDestroy {
       )
       await lastValueFrom(request$)
 
-      const user = this.authService.getLoggedInUser()
-      this.authService.putLoggedInUser({
+      const user = this.authService.getUser()
+      this.authService.putUser({
         ...user,
         first_name: this.form.value.first_name,
         last_name: this.form.value.last_name,

@@ -1,17 +1,19 @@
-import {environment} from '@environments/environment'
-import {Injectable} from '@angular/core'
+import {Inject, Injectable, InjectionToken} from '@angular/core'
 
-@Injectable({
-  providedIn: 'root',
-})
+export const LOCAL_STORAGE_SERVICE_PREFIX_CONFIG = new InjectionToken<string>(
+  'LOCAL_STORAGE_SERVICE_PREFIX_CONFIG'
+)
+
+@Injectable()
 export class LocalStorageService {
+  constructor(@Inject(LOCAL_STORAGE_SERVICE_PREFIX_CONFIG) private prefix: string) {}
   /**
    * Adds the configured prefix to the local storage key
    * @param key Key of the local storage property
    * @returns Formatted key name
    */
   private formatKey(key: string): string {
-    return environment.storageKeyPrefix + '-' + key
+    return this.prefix + '-' + key
   }
 
   /**

@@ -1,12 +1,11 @@
 import {HttpEvent, HttpRequest, HttpHandler, HttpInterceptor} from '@angular/common/http'
-
 import {catchError} from 'rxjs/operators'
 import {Injectable} from '@angular/core'
 import {Router} from '@angular/router'
 import {Observable} from 'rxjs'
 
-import {SnackbarService} from '../services/snackbar.service'
-import {AuthService} from '../services/auth.service'
+import {AuthService} from '@workspace/services/auth.service'
+import {SnackbarService} from '@services/snackbar.service'
 
 /**
  * Intercept the http requests and add the API key to all of them if it exists
