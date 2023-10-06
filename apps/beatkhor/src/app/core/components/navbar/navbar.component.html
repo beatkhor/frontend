@@ -10,21 +10,21 @@
 
         <a routerLink="/" class="flex items-center brand">
           <img class="w-6 mr-4 logo" src="assets/images/logo-dark.svg" alt="Beatkhor" />
-          <strong class="text-lg" i18n>Beatkhor</strong>
+          <strong class="text-lg" i18n="@@beatkhor">Beatkhor</strong>
         </a>
 
         <div class="hidden lg:flex items-center h-full ml-12 nav-menu">
           <a
-            class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
             routerLink="/browse"
+            class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
           >
-            <span i18n>Browse</span>
+            <span i18n="@@browse">Browse</span>
           </a>
           <a
-            class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
             routerLink="/page/about"
+            class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
           >
-            <span i18n>About</span>
+            <span i18n="@@about">About</span>
           </a>
         </div>
       </div>
@@ -35,13 +35,13 @@
         routerLink="/authentication"
         class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
       >
-        <span i18n>Sign In</span>
+        <span i18n="@@signIn">Sign In</span>
       </a>
       <a
         routerLink="/authentication/signup"
         class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
       >
-        <span i18n>Get Started</span>
+        <span i18n="@@getStarted">Get Started</span>
       </a>
 
       <a
@@ -70,10 +70,10 @@
 <mat-menu #userActionsMenu="matMenu">
   <a mat-menu-item routerLink="/upload">
     <mat-icon>upload</mat-icon>
-    <span i18n>Upload</span>
+    <span i18n="@@upload">Upload</span>
   </a>
   <button mat-menu-item (click)="onLogout()">
     <mat-icon>logout</mat-icon>
-    <span i18n>Sign Out</span>
+    <span i18n="@@signOut">Sign Out</span>
   </button>
 </mat-menu>

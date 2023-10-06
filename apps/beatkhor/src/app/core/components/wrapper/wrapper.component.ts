@@ -18,17 +18,17 @@ import {UtilsService} from '@workspace/services/utils.service'
         <mat-nav-list class="wrapper-nav-list">
           <a mat-list-item routerLink="/" (click)="toggle()">
             <mat-icon class="text-neutral-400 mx-4">home</mat-icon>
-            <span i18n>Beatkhor</span>
+            <span i18n="@@beatkhor">Beatkhor</span>
           </a>
           <mat-divider></mat-divider>
           <a mat-list-item routerLink="/browse" (click)="toggle()">
             <mat-icon class="text-neutral-400 mx-4">list</mat-icon>
-            <span i18n>Browse</span>
+            <span i18n="@@browse">Browse</span>
           </a>
           <mat-divider></mat-divider>
           <a mat-list-item routerLink="/page/about" (click)="toggle()">
             <mat-icon class="text-neutral-400 mx-4">info</mat-icon>
-            <span i18n>About Us</span>
+            <span i18n="@@about">About</span>
           </a>
           <mat-divider></mat-divider>
         </mat-nav-list>
