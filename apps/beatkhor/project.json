@@ -8,7 +8,7 @@
     "locales": {
       "fa": {
         "translation": "apps/beatkhor/src/locale/messages.fa_IR.xlf",
-        "baseHref": ""
+        "baseHref": "/fa"
       }
     }
   },

@@ -1,9 +1,10 @@
 {
   "name": "@beatkhor/source",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
+    "start": "npm run bk:serve:en",
+    "bk:serve:en": "nx serve beatkhor -c development",
     "bk:serve:fa": "nx serve beatkhor -c fa",
     "bk:build:prod": "nx run beatkhor:build:production",
     "bk:build:dev": "nx run beatkhor:build:development",
