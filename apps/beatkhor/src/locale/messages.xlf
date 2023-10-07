@@ -666,67 +666,60 @@
           <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="9166627509049147036" datatype="html">
+      <trans-unit id="searchBoxPlaceHolder" datatype="html">
         <source>Browse tracks...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4907826037977564643" datatype="html">
+      <trans-unit id="genreFilterLabelMobile" datatype="html">
         <source>Choose Genres</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1790640569414740156" datatype="html">
+      <trans-unit id="genreFilterLabel" datatype="html">
         <source>Genres</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8275666265543256717" datatype="html">
+      <trans-unit id="genreFilterPlaceholder" datatype="html">
         <source>Choose a genre</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8960888606744870422" datatype="html">
+      <trans-unit id="tagFilterLabelMobile" datatype="html">
         <source>Choose tags</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
           <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7886570921510760899" datatype="html">
+      <trans-unit id="tagFilterLabel" datatype="html">
         <source>Tags</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
           <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3870385559421689822" datatype="html">
+      <trans-unit id="tagFilterPlaceholder" datatype="html">
         <source>Choose a tag</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
-          <context context-type="linenumber">58</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="33149636091572968" datatype="html">
+      <trans-unit id="loadMore" datatype="html">
         <source>Load more</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-view.component.html</context>
           <context context-type="linenumber">20</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3894950702316166331" datatype="html">
-        <source>Loading...</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-view.component.html</context>
-          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7599424290971072767" datatype="html">
