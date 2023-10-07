@@ -1,5 +1,5 @@
+import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core'
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser'
-import {Component, OnInit} from '@angular/core'
 import {ActivatedRoute} from '@angular/router'
 import {lastValueFrom} from 'rxjs'
 
@@ -18,12 +18,13 @@ export class PageViewComponent implements OnInit {
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
     private pageService: PageService,
-    private errHandler: CustomErrorHandler
+    private errHandler: CustomErrorHandler,
+    @Inject(LOCALE_ID) public localeId: string
   ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.loadPage(params['key'] + '-page')
+      this.loadPage(params['key'] + '-page-' + this.localeId)
     })
   }
 
