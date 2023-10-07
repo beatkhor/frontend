@@ -1,59 +1,78 @@
 <div class="container mx-auto px-5 py-10 text-neutral-200">
-  <h1 class="text-2xl" i18n>Upload your track</h1>
-  <p class="text-neutral-400" i18n>Provide these information to upload your beat.</p>
+  <h1 i18n="@@uploadPageTitle" class="text-2xl">Upload your track</h1>
+  <p i18n="@@uploadPagePrompt" class="text-neutral-400">
+    Provide these information to upload your beat.
+  </p>
 
   <div class="py-6 mb-4" [formGroup]="form">
     <div class="flex py-3 flex-col lg:flex-row">
       <mat-form-field class="grow">
-        <mat-label i18n>Title</mat-label>
+        <mat-label i18n="@@title">Title</mat-label>
         <input required formControlName="title" matInput />
-        <mat-error i18n>Please provide a title for your track</mat-error>
-        <mat-hint i18n>People might search your track with this name.</mat-hint>
+
+        <mat-error i18n="@@titleRequiredError">
+          Please provide a title for your track
+        </mat-error>
+
+        <mat-hint i18n="@@uploadPageTitleHint">
+          People might search your track with this name.
+        </mat-hint>
       </mat-form-field>
 
       <mat-form-field
+        (click)="onGenre()"
         [floatLabel]="'always'"
         class="grow mx-0 lg:mx-4 my-4 lg:my-0 cursor-pointer"
-        (click)="onGenre()"
       >
-        <mat-label *ngIf="selectedGenres.length" i18n>Select Genres</mat-label>
+        <mat-label *ngIf="selectedGenres.length">
+          <span i18n="@@genreFilterLabel">Choose genres</span>
+        </mat-label>
         <input
           readonly
           required
           matInput
           [disabled]="loading"
           class="cursor-pointer"
-          i18n-placeholder
-          placeholder="Select Genres*"
           [value]="selectedGenres"
+          placeholder="Choose a genre"
+          i18n-placeholder="@@genreFilterPlaceholder"
         />
-        <mat-hint i18n>Click on the field to select genres</mat-hint>
+        <mat-hint i18n="@@uploadPageGenresHint">
+          Click on the field to select genres
+        </mat-hint>
       </mat-form-field>
 
       <mat-form-field
-        [floatLabel]="!selectedTags.length ? 'auto' : 'always'"
-        class="grow cursor-pointer"
         (click)="onTag()"
+        class="grow cursor-pointer"
+        [floatLabel]="!selectedTags.length ? 'auto' : 'always'"
       >
-        <mat-label *ngIf="selectedTags.length" i18n>Select Tags</mat-label>
+        <mat-label *ngIf="selectedTags.length">
+          <span i18n="@@tagFilterLabel">Choose tags</span>
+        </mat-label>
         <input
           readonly
           matInput
+          i18n-placeholder
           [disabled]="loading"
           class="cursor-pointer"
-          i18n-placeholder
-          placeholder="Select Tags"
           [value]="selectedTags"
+          placeholder="Choose a tag"
+          i18n-placeholder="@@tagFilterPlaceholder"
         />
-        <mat-hint i18n>Helps people to find the track easier</mat-hint>
+        <mat-hint i18n="@@uploadPageTagsHint">
+          Helps people to find the track easier
+        </mat-hint>
       </mat-form-field>
     </div>
 
     <div class="flex py-3">
       <mat-form-field class="grow">
-        <mat-label i18n>Description</mat-label>
+        <mat-label i18n="@@description">Description</mat-label>
         <textarea formControlName="description" matInput rows="1"></textarea>
-        <mat-hint i18n>Any other kind of information about this track</mat-hint>
+        <mat-hint i18n="@@uploadPageDescriptionHint">
+          Any other kind of information about this track
+        </mat-hint>
       </mat-form-field>
     </div>
   </div>
@@ -61,23 +80,23 @@
   <section class="flex flex-col md:flex-row">
     <div class="flex-grow">
       <bk-upload-file-picker
-        i18n-title
+        i18n-title="@@audioFilePickerTitle"
         title="Audio file"
-        accept=".mp3,.wav"
-        i18n-subtitle
+        i18n-subtitle="@@audioFilePickerHint"
         subtitle="Click to add an .mp3 or .wav audio file"
         (fileChange)="audioMediaUpload = $event"
+        accept=".mp3,.wav"
       ></bk-upload-file-picker>
     </div>
 
     <div class="flex-grow">
       <bk-upload-file-picker
-        i18n-title
+        i18n-title="@@imageFilePickerTitle"
         title="Cover art file"
-        accept=".jpeg,.jpg"
-        i18n-subtitle
+        i18n-subtitle="@@imageFilePickerHint"
         subtitle="Click to add an .jpg or .jpeg image file"
         (fileChange)="onImageSelected($event)"
+        accept=".jpeg,.jpg"
       ></bk-upload-file-picker>
     </div>
   </section>
@@ -88,22 +107,23 @@
   >
     <button mat-flat-button color="primary" (click)="onSubmit()">
       <mat-icon>upload</mat-icon>
-      <span i18n>Upload Now</span>
+      <span i18n="@@uploadCTA">Upload Now</span>
     </button>
-    <a routerLink="/" class="mx-0 sm:mx-4 my-3 sm:my-0" mat-stroked-button i18n
-      >Go Back</a
-    >
+
+    <a routerLink="/" mat-stroked-button class="mx-0 sm:mx-4 my-3 sm:my-0">
+      <span i18n="@@goBack">Go back</span>
+    </a>
     <div class="grow bg-neutral-700 h-[1px] hidden sm:block"></div>
   </div>
 
   <div *ngIf="uploading || finalizing" class="flex flex-col">
-    <p i18n>Uploading...</p>
+    <p i18n="@@uploading">Uploading...</p>
     <div class="flex flex-col items-stretch sm:items-center sm:flex-row">
       <mat-progress-bar
         [mode]="finalizing ? 'indeterminate' : 'determinate'"
         [value]="this.audioMediaUpload?.progress | async"
       ></mat-progress-bar>
-      <a class="mx-0 sm:mx-4 my-4 sm:my-0" mat-stroked-button i18n>Cancel</a>
+      <a i18n="@@cancel" class="mx-0 sm:mx-4 my-4 sm:my-0" mat-stroked-button>Cancel</a>
     </div>
   </div>
 </div>

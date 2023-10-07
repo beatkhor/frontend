@@ -29,10 +29,10 @@ import {Category, Genre, Tag, PostStatus, PostReviewStatus, Post} from '@workspa
 export class UploadComponent implements OnInit, OnDestroy {
   progressSubscription = new Subscription()
   finalizing = false
+  uploading = false
   hasError = false
   form!: FormGroup
   loading = false
-  uploading = false
 
   audioMediaUpload: TusdUpload | undefined
   imageMediaUpload: TusdUpload | undefined
