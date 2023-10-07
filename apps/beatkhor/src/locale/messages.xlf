@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
@@ -124,7 +124,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="signOut" datatype="html">
-        <source>Sign Out</source>
+        <source>Sign out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">77</context>
