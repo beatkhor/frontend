@@ -248,15 +248,6 @@ html[dir='rtl'] body {
     margin-left: 24px;
   }
 
-  .header-image {
-    margin-right: 5%;
-  }
-  .header-image::after {
-    transform: unset !important;
-    right: 42% !important;
-    top: -48%;
-  }
-
   .mdc-dialog__actions,
   bk-post-grid,
   bk-track-post {
