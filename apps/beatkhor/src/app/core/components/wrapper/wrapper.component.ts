@@ -15,18 +15,18 @@ import {UtilsService} from '@workspace/services/utils.service'
         [autoFocus]="false"
         [(opened)]="isSidenavOpen"
       >
-        <mat-nav-list class="wrapper-nav-list">
-          <a mat-list-item routerLink="/" (click)="toggle()">
+        <mat-nav-list class="wrapper-nav-list" (click)="toggle()">
+          <a mat-list-item routerLink="/">
             <mat-icon class="text-neutral-400 mx-4">home</mat-icon>
             <span i18n="@@beatkhor">Beatkhor</span>
           </a>
           <mat-divider></mat-divider>
-          <a mat-list-item routerLink="/browse" (click)="toggle()">
+          <a mat-list-item routerLink="/browse">
             <mat-icon class="text-neutral-400 mx-4">list</mat-icon>
             <span i18n="@@browse">Browse</span>
           </a>
           <mat-divider></mat-divider>
-          <a mat-list-item routerLink="/page/about" (click)="toggle()">
+          <a mat-list-item routerLink="/page/about">
             <mat-icon class="text-neutral-400 mx-4">info</mat-icon>
             <span i18n="@@about">About</span>
           </a>
