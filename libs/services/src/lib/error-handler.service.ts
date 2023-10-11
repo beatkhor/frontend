@@ -34,9 +34,5 @@ export class CustomErrorHandler {
     }
 
     this.snackbar.error(this.messages['other'])
-
-    if (!this.config.production) {
-      console.log(err)
-    }
   }
 }

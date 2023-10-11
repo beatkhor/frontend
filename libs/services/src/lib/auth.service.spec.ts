@@ -4,7 +4,7 @@ import {
 } from '@angular/common/http/testing'
 import {TestBed} from '@angular/core/testing'
 
-import {CustomResponse, LoginResponseDTO} from '@workspace/models'
+import {CustomResponse, ENVIRONMENT_CONFIG, LoginResponseDTO} from '@workspace/models'
 import {LocalStorageService} from './local-storage.service'
 import {AuthService} from './auth.service'
 
@@ -20,9 +20,16 @@ describe('AuthService', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       providers: [
+        AuthService,
         {
           provide: LocalStorageService,
           useValue: localStorageServiceMock,
+        },
+        {
+          provide: ENVIRONMENT_CONFIG,
+          useValue: {
+            authServiceUrl,
+          },
         },
       ],
     })
@@ -45,12 +52,12 @@ describe('AuthService', () => {
 
   it('should read user data using storage service', () => {
     service.getUser()
-    expect(localStorageServiceMock.read).toHaveBeenCalledTimes(6)
+    expect(localStorageServiceMock.read).toHaveBeenCalledTimes(1)
   })
 
   it('should read user data using storage service', () => {
     service.putUser({})
-    expect(localStorageServiceMock.write).toHaveBeenCalledTimes(6)
+    expect(localStorageServiceMock.write).toHaveBeenCalledTimes(1)
   })
 
   it('should login using credentials', () => {
