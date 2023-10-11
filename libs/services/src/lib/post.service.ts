@@ -19,33 +19,33 @@ export class PostService {
     @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
   ) {}
 
-  createPost(post: Post): Observable<CustomResponse<Post>> {
+  create(post: Post): Observable<CustomResponse<Post>> {
     return this.http.post<CustomResponse<Post>>(
       this.config.contentServiceUrl + '/posts',
       post
     )
   }
 
-  updatePost(post: Post): Observable<CustomResponse<Post>> {
+  update(post: Post): Observable<CustomResponse<Post>> {
     return this.http.patch<CustomResponse<Post>>(
       this.config.contentServiceUrl + '/posts/' + post.id,
       post
     )
   }
 
-  getPostByLink(link: string): Observable<CustomResponse<Post>> {
+  readByLink(link: string): Observable<CustomResponse<Post>> {
     return this.http.get<CustomResponse<Post>>(
       this.config.contentServiceUrl + '/posts/' + encodeURI(link)
     )
   }
 
-  deletePost(postId: number): Observable<CustomResponse<any>> {
+  delete(postId: number): Observable<CustomResponse<any>> {
     return this.http.delete<CustomResponse<any>>(
       this.config.contentServiceUrl + '/posts/' + postId
     )
   }
 
-  getPosts(pageSize = 10, page = 1, query = ''): Observable<PaginatedResponse<Post[]>> {
+  read(pageSize = 10, page = 1, query = ''): Observable<PaginatedResponse<Post[]>> {
     const params = {
       page_size: pageSize,
       q: query,
@@ -53,23 +53,6 @@ export class PostService {
     }
     return this.http.get<PaginatedResponse<Post[]>>(
       this.config.contentServiceUrl + '/posts',
-      {params}
-    )
-  }
-
-  getUserPosts(
-    username: string,
-    pageSize = 10,
-    page = 1,
-    query = ''
-  ): Observable<PaginatedResponse<Post[]>> {
-    const params = {
-      page_size: pageSize,
-      q: query,
-      page,
-    }
-    return this.http.get<PaginatedResponse<Post[]>>(
-      this.config.contentServiceUrl + '/posts/@' + username,
       {params}
     )
   }

@@ -1,12 +1,11 @@
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
-
 import {Component} from '@angular/core'
 import {lastValueFrom} from 'rxjs'
 
-import {CustomValidators} from '@workspace/services/validators.service'
 import {CustomErrorHandler} from '@workspace/services/error-handler.service'
-import {AuthService} from '@workspace/services/auth.service'
+import {CustomValidators} from '@workspace/services/validators.service'
 import {SnackbarService} from '@workspace/services/snackbar.service'
+import {AuthService} from '@workspace/services/auth.service'
 
 @Component({
   selector: 'bk-sign-up-view',

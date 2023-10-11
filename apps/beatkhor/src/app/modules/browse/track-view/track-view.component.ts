@@ -35,7 +35,7 @@ export class TrackViewComponent implements OnInit, OnDestroy {
   private async getData(postLink: string) {
     try {
       this.loading = true
-      const req = this.postService.getPostByLink(postLink)
+      const req = this.postService.readByLink(postLink)
       const result = await lastValueFrom(req)
       this.post = result.result
 

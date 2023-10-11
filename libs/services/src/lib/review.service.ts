@@ -31,13 +31,13 @@ export class VoteService {
     )
   }
 
-  getVotePosts(): Observable<CustomResponse<PostReviewDTO>> {
+  readVotePosts(): Observable<CustomResponse<PostReviewDTO>> {
     return this.http.get<CustomResponse<PostReviewDTO>>(
       this.config.contentServiceUrl + '/votes/posts'
     )
   }
 
-  deleteVote(postId: number) {
+  delete(postId: number) {
     return this.http.delete<CustomResponse<void>>(
       this.config.contentServiceUrl + '/votes/' + postId
     )

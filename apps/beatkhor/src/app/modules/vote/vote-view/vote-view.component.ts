@@ -32,7 +32,7 @@ export class VoteComponent implements OnInit {
   async getData(): Promise<void> {
     try {
       this.loading = true
-      const result = await lastValueFrom(this.reviewService.getVotePosts())
+      const result = await lastValueFrom(this.reviewService.readVotePosts())
 
       this.posts = result.result.posts
       this.votes = result.result.user_votes

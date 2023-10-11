@@ -4,7 +4,6 @@ import {lastValueFrom} from 'rxjs'
 import {CustomErrorHandler} from '@workspace/services/error-handler.service'
 import {VoteService} from '@workspace/services/review.service'
 import {UtilsService} from '@workspace/services/utils.service'
-import {PostService} from '@workspace/services/post.service'
 
 import {Post, Picture, Audio} from '@workspace/models'
 
@@ -20,11 +19,7 @@ export class VotePostItemComponent implements OnInit {
   artist = ''
   alt = ''
 
-  constructor(
-    private postService: PostService,
-    private voteService: VoteService,
-    private errHandler: CustomErrorHandler
-  ) {}
+  constructor(private voteService: VoteService, private errHandler: CustomErrorHandler) {}
 
   ngOnInit(): void {
     this.alt = 'alt'
@@ -57,7 +52,7 @@ export class VotePostItemComponent implements OnInit {
     }
 
     if (this.isUpVote) {
-      await lastValueFrom(this.voteService.deleteVote(this.post.id))
+      await lastValueFrom(this.voteService.delete(this.post.id))
       this.voteChange.emit(undefined)
       return
     }
@@ -79,7 +74,7 @@ export class VotePostItemComponent implements OnInit {
     }
 
     if (this.isDownVote) {
-      await lastValueFrom(this.voteService.deleteVote(this.post.id))
+      await lastValueFrom(this.voteService.delete(this.post.id))
       this.voteChange.emit(undefined)
       return
     }

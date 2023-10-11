@@ -31,7 +31,7 @@ export class PageViewComponent implements OnInit {
   private async loadPage(pageKey: string) {
     try {
       this.loading = true
-      const result = await lastValueFrom(this.pageService.getContent(pageKey))
+      const result = await lastValueFrom(this.pageService.read(pageKey))
       this.loading = false
       this.content = this.sanitizer.bypassSecurityTrustHtml(result.result.value ?? '')
     } catch (error: any) {

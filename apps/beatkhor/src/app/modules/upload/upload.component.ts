@@ -2,9 +2,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 import {Subscription, forkJoin, lastValueFrom} from 'rxjs'
 import {Component, OnDestroy, OnInit} from '@angular/core'
 import {MatDialog} from '@angular/material/dialog'
-
 import {Router} from '@angular/router'
-
 import {
   MultiSelectorOption,
   MultiSelectorDialogComponent,
@@ -79,9 +77,9 @@ export class UploadComponent implements OnInit, OnDestroy {
       this.hasError = false
       this.loading = true
       const request$ = forkJoin([
-        this.categoryService.getCategories(),
-        this.genreService.getGenres(),
-        this.tagService.getTags(),
+        this.categoryService.read(),
+        this.genreService.read(),
+        this.tagService.read(),
       ])
       const [categoryResult, genreResult, tagResult] = await lastValueFrom(request$)
       this.categories = categoryResult.result
@@ -264,7 +262,7 @@ export class UploadComponent implements OnInit, OnDestroy {
     }
 
     try {
-      await lastValueFrom(this.postService.createPost(data))
+      await lastValueFrom(this.postService.create(data))
       this.finalizing = false
     } catch (error: any) {
       this.form.enable()

@@ -18,7 +18,7 @@ export class PageService {
     @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
   ) {}
 
-  getContent(key: string): Observable<CustomResponse<Content>> {
+  read(key: string): Observable<CustomResponse<Content>> {
     return this.http.get<CustomResponse<Content>>(
       this.config.contentServiceUrl + '/content/byKey/' + key
     )

@@ -43,7 +43,7 @@ export class AuthService {
     try {
       return JSON.parse(user) as User
     } catch (error) {
-      console.warn('There was an error while parsing user data!')
+      console.warn('AuthService: There was an error while parsing user data!')
     }
 
     return null

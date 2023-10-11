@@ -5,8 +5,6 @@ import {
   ViewChild,
   ElementRef,
   AfterViewInit,
-  Inject,
-  LOCALE_ID,
 } from '@angular/core'
 import {Subscription, interval} from 'rxjs'
 
@@ -28,8 +26,6 @@ export class AudioPlayerComponent implements AfterViewInit, OnDestroy {
   ready = false
   progress = 0
   step = 0.001
-
-  constructor(@Inject(LOCALE_ID) private localeId: string) {}
 
   ngAfterViewInit(): void {
     this.player.nativeElement.ontimeupdate = this.onCurrentTimeChange.bind(this)

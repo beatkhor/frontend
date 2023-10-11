@@ -18,20 +18,20 @@ export class CategoryService {
     @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
   ) {}
 
-  getCategories(): Observable<CustomResponse<Category[]>> {
+  read(): Observable<CustomResponse<Category[]>> {
     return this.http.get<CustomResponse<Category[]>>(
       this.config.contentServiceUrl + '/categories'
     )
   }
 
-  createCategory(category: Category): Observable<CustomResponse<Category>> {
+  create(category: Category): Observable<CustomResponse<Category>> {
     return this.http.post<CustomResponse<Category>>(
       this.config.contentServiceUrl + '/categories',
       category
     )
   }
 
-  editCategory(id: number, category: Category): Observable<CustomResponse<Category>> {
+  update(id: number, category: Category): Observable<CustomResponse<Category>> {
     category.id = undefined as any
     return this.http.patch<CustomResponse<Category>>(
       this.config.contentServiceUrl + '/categories/' + id,
@@ -39,7 +39,7 @@ export class CategoryService {
     )
   }
 
-  deleteCategory(id: number): Observable<CustomResponse<any>> {
+  delete(id: number): Observable<CustomResponse<any>> {
     return this.http.delete<CustomResponse<any>>(
       this.config.contentServiceUrl + '/categories/' + id
     )
