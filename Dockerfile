@@ -6,7 +6,7 @@ RUN npm install
 COPY . .
 ARG build_script
 RUN npm run $build_script
-RUN sed -i "s|/en-US/|/ |g"dist/apps/beatkhor/en-US/index.html
+RUN sed -i "s|/en-US/|/ |g" dist/apps/beatkhor/en-US/index.html
 
 
 
