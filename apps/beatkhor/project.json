@@ -57,7 +57,8 @@
           "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
-          "namedChunks": true
+          "namedChunks": true,
+          "localize": true
         },
         "fa": {
           "localize": ["fa"]
