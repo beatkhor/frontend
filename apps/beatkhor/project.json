@@ -60,6 +60,14 @@
           "namedChunks": true,
           "localize": true
         },
+        "en": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        },
         "fa": {
           "localize": ["fa"]
         }
@@ -75,8 +83,11 @@
         "development": {
           "browserTarget": "beatkhor:build:development"
         },
+        "en": {
+          "browserTarget": "beatkhor:build:en"
+        },
         "fa": {
-          "browserTarget": "beatkhor:build:development,fa"
+          "browserTarget": "beatkhor:build:en,fa"
         }
       },
       "defaultConfiguration": "development"
