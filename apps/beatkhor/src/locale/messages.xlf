@@ -113,21 +113,21 @@
         <source>Get Started</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="upload" datatype="html">
         <source>Upload</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">74</context>
         </context-group>
       </trans-unit>
       <trans-unit id="signOut" datatype="html">
         <source>Sign out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/core/components/navbar/navbar.component.html</context>
-          <context context-type="linenumber">77</context>
+          <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2949848596707725099" datatype="html">
@@ -263,6 +263,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.html</context>
           <context context-type="linenumber">65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-view.component.html</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="continue" datatype="html">
@@ -657,35 +661,35 @@
         <source>Please fill the form with valid information!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.ts</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1397842217466606447" datatype="html">
         <source>&apos;This email is already used by an account!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.ts</context>
-          <context context-type="linenumber">58</context>
+          <context context-type="linenumber">57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8998179362936748717" datatype="html">
         <source>OK</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="searchBoxPlaceHolder" datatype="html">
         <source>Browse tracks...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="genreFilterLabel" datatype="html">
         <source>Choose genres</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">31</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/upload/upload.component.html</context>
@@ -696,14 +700,14 @@
         <source>Genres</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="genreFilterPlaceholder" datatype="html">
         <source>Choose a genre</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">39</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/upload/upload.component.html</context>
@@ -714,7 +718,7 @@
         <source>Choose tags</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">50</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/upload/upload.component.html</context>
@@ -725,14 +729,14 @@
         <source>Tags</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="tagFilterPlaceholder" datatype="html">
         <source>Choose a tag</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-filters/browse-filters.component.html</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">59</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/upload/upload.component.html</context>
@@ -994,42 +998,42 @@
         <source>Select genres:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/upload/upload.component.ts</context>
-          <context context-type="linenumber">110</context>
+          <context context-type="linenumber">108</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6933220883732675824" datatype="html">
         <source>Select tags:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/upload/upload.component.ts</context>
-          <context context-type="linenumber">129</context>
+          <context context-type="linenumber">127</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1133086422938736491" datatype="html">
         <source>PLease review the form and enter the valid information.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/upload/upload.component.ts</context>
-          <context context-type="linenumber">153</context>
+          <context context-type="linenumber">151</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8049221022414013708" datatype="html">
         <source>Please select at least one genre!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/upload/upload.component.ts</context>
-          <context context-type="linenumber">158</context>
+          <context context-type="linenumber">156</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3286465255890957152" datatype="html">
         <source>Please add an audio for your track.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/upload/upload.component.ts</context>
-          <context context-type="linenumber">162</context>
+          <context context-type="linenumber">160</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9080627763788807557" datatype="html">
         <source>Please add an image for your track.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/upload/upload.component.ts</context>
-          <context context-type="linenumber">166</context>
+          <context context-type="linenumber">164</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3716312480449409498" datatype="html">
@@ -1043,7 +1047,7 @@
         <source>Your track submitted successfully!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/upload/upload.component.ts</context>
-          <context context-type="linenumber">276</context>
+          <context context-type="linenumber">274</context>
         </context-group>
       </trans-unit>
       <trans-unit id="votePageTitle" datatype="html">

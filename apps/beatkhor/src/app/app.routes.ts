@@ -3,6 +3,7 @@ import {Route} from '@angular/router'
 import {WrapperComponent} from './core/components/wrapper/wrapper.component'
 import {CallbackGuard} from './core/guards/callback.guard'
 import {AuthGuard} from './core/guards/auth.guard'
+import {RouteData} from '@workspace/models'
 
 export const appRoutes: Route[] = [
   {
@@ -26,11 +27,13 @@ export const appRoutes: Route[] = [
       {
         path: 'browse',
         loadChildren: () => import('./modules/browse').then(m => m.BrowseModule),
+        data: {title: 'Browse'} as RouteData,
       },
       {
         path: 'upload',
         canActivate: [AuthGuard],
         loadChildren: () => import('./modules/upload').then(m => m.UploadModule),
+        data: {title: 'Upload'} as RouteData,
       },
       {
         path: 'page',
@@ -40,6 +43,7 @@ export const appRoutes: Route[] = [
         path: 'vote',
         canActivate: [AuthGuard],
         loadChildren: () => import('./modules/vote').then(m => m.VoteModule),
+        data: {title: 'Review Tracks'} as RouteData,
       },
     ],
   },

@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core'
 
 import {BrowseViewComponent} from './browse-view'
 import {TrackViewComponent} from './track-view'
+import {RouteData} from '@workspace/models'
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
   {
     path: 'track/:link',
     component: TrackViewComponent,
+    data: {title: 'Track'} as RouteData,
   },
 ]
 

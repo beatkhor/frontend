@@ -22,9 +22,8 @@ export class SEOService {
     }
 
     const titleList = [this.env.seo.title, ...this.buildPageTitle(route)].reverse()
-    console.log(titleList)
     const title = titleList.join(this.env.seo.titleSeparator)
-    this.titleService.setTitle(title)
+    this.setTitle(title)
   }
 
   /**
@@ -47,10 +46,14 @@ export class SEOService {
       }
     }
 
-    if (!titles.length) {
-      console.warn('No route configuration found for title!')
-    }
-
     return titles
+  }
+
+  /**
+   * Updates the title of the page
+   * @param title title of the page
+   */
+  setTitle(title: string): void {
+    this.titleService.setTitle(title)
   }
 }
