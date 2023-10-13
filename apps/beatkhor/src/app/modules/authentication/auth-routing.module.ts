@@ -20,29 +20,29 @@ const routes: Routes = [
     path: 'signin',
     canActivate: [AuthGuard],
     component: SignInViewComponent,
-    data: {title: 'Sign In'} as RouteData,
+    data: {title: $localize`Sign in`} as RouteData,
   },
   {
     path: 'signup',
     canActivate: [AuthGuard],
     component: SignUpComponent,
-    data: {title: 'Sign Up'} as RouteData,
+    data: {title: $localize`Sign up`} as RouteData,
   },
   {
     path: 'complete-profile',
     canActivate: [AuthGuard],
     component: CompleteProfileViewComponent,
-    data: {title: 'Setup Your Profile'} as RouteData,
+    data: {title: $localize`Setup your profile`} as RouteData,
   },
   {
     path: 'reset-password/request',
     component: ResetRequestViewComponent,
-    data: {title: 'Password Recovery'} as RouteData,
+    data: {title: $localize`Password recovery`} as RouteData,
   },
   {
     path: 'reset-password/reset',
     component: ResetViewComponent,
-    data: {title: 'Reset Password'} as RouteData,
+    data: {title: $localize`Reset password`} as RouteData,
   },
 ]
 

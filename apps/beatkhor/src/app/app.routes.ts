@@ -27,13 +27,13 @@ export const appRoutes: Route[] = [
       {
         path: 'browse',
         loadChildren: () => import('./modules/browse').then(m => m.BrowseModule),
-        data: {title: 'Browse'} as RouteData,
+        data: {title: $localize`Browse`} as RouteData,
       },
       {
         path: 'upload',
         canActivate: [AuthGuard],
         loadChildren: () => import('./modules/upload').then(m => m.UploadModule),
-        data: {title: 'Upload'} as RouteData,
+        data: {title: $localize`Upload`} as RouteData,
       },
       {
         path: 'page',
@@ -43,7 +43,7 @@ export const appRoutes: Route[] = [
         path: 'vote',
         canActivate: [AuthGuard],
         loadChildren: () => import('./modules/vote').then(m => m.VoteModule),
-        data: {title: 'Review Tracks'} as RouteData,
+        data: {title: $localize`Review tracks`} as RouteData,
       },
     ],
   },

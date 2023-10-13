@@ -10,7 +10,7 @@ export const environment: EnvironmentConfig = {
   uploaderServiceUrl: 'https://next.beatkhor.com/api/tusd/files/',
   messages,
   seo: {
-    title: 'Next',
+    title: $localize`Beatkhor [Next]`,
     titleSeparator: ' | ',
   },
 }

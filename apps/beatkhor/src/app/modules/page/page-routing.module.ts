@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: ':key',
     component: PageViewComponent,
-    data: {title: 'Page'} as RouteData,
+    data: {title: $localize`Page`} as RouteData,
   },
 ]
 

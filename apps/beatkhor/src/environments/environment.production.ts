@@ -10,7 +10,7 @@ export const environment: EnvironmentConfig = {
   uploaderServiceUrl: 'https://www.beatkhor.com/api/tusd/files/',
   messages,
   seo: {
-    title: 'Beatkhor',
+    title: $localize`Beatkhor`,
     titleSeparator: ' | ',
   },
 }

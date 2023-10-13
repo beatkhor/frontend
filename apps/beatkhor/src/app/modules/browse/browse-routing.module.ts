@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: 'track/:link',
     component: TrackViewComponent,
-    data: {title: 'Track'} as RouteData,
+    data: {title: $localize`Track`} as RouteData,
   },
 ]
 
