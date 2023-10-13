@@ -3,14 +3,14 @@ import {Inject, Injectable} from '@angular/core'
 
 @Injectable()
 export class LocalStorageService {
-  constructor(@Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig) {}
+  constructor(@Inject(ENVIRONMENT_CONFIG) private env: EnvironmentConfig) {}
   /**
    * Adds the configured prefix to the local storage key
    * @param key Key of the local storage property
    * @returns Formatted key name
    */
   private formatKey(key: string): string {
-    return this.config.storageKeyPrefix + '-' + key
+    return this.env.storageKeyPrefix + '-' + key
   }
 
   /**

@@ -10,10 +10,10 @@ import {SnackbarService} from './snackbar.service'
   providedIn: 'root',
 })
 export class CustomErrorHandler {
-  messages = this.config.messages
+  messages = this.env.messages
   constructor(
     private snackbar: SnackbarService,
-    @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
+    @Inject(ENVIRONMENT_CONFIG) private env: EnvironmentConfig
   ) {}
 
   /**

@@ -14,32 +14,32 @@ import {
 export class VoteService {
   constructor(
     private http: HttpClient,
-    @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
+    @Inject(ENVIRONMENT_CONFIG) private env: EnvironmentConfig
   ) {}
 
   upVote(postId: number) {
     return this.http.post<CustomResponse<void>>(
-      this.config.contentServiceUrl + '/votes/upvote/' + postId,
+      this.env.contentServiceUrl + '/votes/upvote/' + postId,
       null
     )
   }
 
   downVote(postId: number) {
     return this.http.post<CustomResponse<void>>(
-      this.config.contentServiceUrl + '/votes/downvote/' + postId,
+      this.env.contentServiceUrl + '/votes/downvote/' + postId,
       null
     )
   }
 
   readVotePosts(): Observable<CustomResponse<PostReviewDTO>> {
     return this.http.get<CustomResponse<PostReviewDTO>>(
-      this.config.contentServiceUrl + '/votes/posts'
+      this.env.contentServiceUrl + '/votes/posts'
     )
   }
 
   delete(postId: number) {
     return this.http.delete<CustomResponse<void>>(
-      this.config.contentServiceUrl + '/votes/' + postId
+      this.env.contentServiceUrl + '/votes/' + postId
     )
   }
 }

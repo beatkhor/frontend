@@ -16,32 +16,32 @@ import {
 export class PostService {
   constructor(
     private http: HttpClient,
-    @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
+    @Inject(ENVIRONMENT_CONFIG) private env: EnvironmentConfig
   ) {}
 
   create(post: Post): Observable<CustomResponse<Post>> {
     return this.http.post<CustomResponse<Post>>(
-      this.config.contentServiceUrl + '/posts',
+      this.env.contentServiceUrl + '/posts',
       post
     )
   }
 
   update(post: Post): Observable<CustomResponse<Post>> {
     return this.http.patch<CustomResponse<Post>>(
-      this.config.contentServiceUrl + '/posts/' + post.id,
+      this.env.contentServiceUrl + '/posts/' + post.id,
       post
     )
   }
 
   readByLink(link: string): Observable<CustomResponse<Post>> {
     return this.http.get<CustomResponse<Post>>(
-      this.config.contentServiceUrl + '/posts/' + encodeURI(link)
+      this.env.contentServiceUrl + '/posts/' + encodeURI(link)
     )
   }
 
   delete(postId: number): Observable<CustomResponse<any>> {
     return this.http.delete<CustomResponse<any>>(
-      this.config.contentServiceUrl + '/posts/' + postId
+      this.env.contentServiceUrl + '/posts/' + postId
     )
   }
 
@@ -52,7 +52,7 @@ export class PostService {
       page,
     }
     return this.http.get<PaginatedResponse<Post[]>>(
-      this.config.contentServiceUrl + '/posts',
+      this.env.contentServiceUrl + '/posts',
       {params}
     )
   }
@@ -73,7 +73,7 @@ export class PostService {
     }
 
     return this.http.get<PaginatedResponse<Post[]>>(
-      this.config.contentServiceUrl + '/posts/search',
+      this.env.contentServiceUrl + '/posts/search',
       {params}
     )
   }

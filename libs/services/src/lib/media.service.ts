@@ -24,7 +24,7 @@ import {
 export class MediaService {
   constructor(
     private http: HttpClient,
-    @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
+    @Inject(ENVIRONMENT_CONFIG) private env: EnvironmentConfig
   ) {}
 
   getMedia(pageSize = 10, page = 1, query = ''): Observable<PaginatedResponse<Media[]>> {
@@ -34,33 +34,33 @@ export class MediaService {
       page,
     }
     return this.http.get<PaginatedResponse<Media[]>>(
-      this.config.storageServiceUrl + '/media',
+      this.env.storageServiceUrl + '/media',
       {params}
     )
   }
 
   getMediaById(id: number | string): Observable<CustomResponse<Media>> {
     return this.http.get<CustomResponse<Media>>(
-      this.config.storageServiceUrl + '/media/' + id
+      this.env.storageServiceUrl + '/media/' + id
     )
   }
 
   getMediaTags(id: number): Observable<CustomResponse<ID3Tags>> {
     return this.http.get<CustomResponse<ID3Tags>>(
-      this.config.storageServiceUrl + '/media/' + id + '/id3'
+      this.env.storageServiceUrl + '/media/' + id + '/id3'
     )
   }
 
   updateMediaTags(id: number, tags: ID3Tags): Observable<CustomResponse<ID3Tags>> {
     return this.http.patch<CustomResponse<ID3Tags>>(
-      this.config.storageServiceUrl + '/media/' + id + '/id3',
+      this.env.storageServiceUrl + '/media/' + id + '/id3',
       tags
     )
   }
 
   getMediaCover(id: number): Observable<any> {
     return this.http.get<any>(
-      this.config.storageServiceUrl + '/media/' + id + '/id3/picture'
+      this.env.storageServiceUrl + '/media/' + id + '/id3/picture'
     )
   }
 
@@ -72,7 +72,7 @@ export class MediaService {
     }
     formData.append('data', JSON.stringify(meta))
 
-    return this.http.post(this.config.storageServiceUrl + '/media', formData, {
+    return this.http.post(this.env.storageServiceUrl + '/media', formData, {
       reportProgress: true,
       observe: 'events',
     })
@@ -97,20 +97,20 @@ export class MediaService {
     }
     formData.append('data', JSON.stringify(uploadMetaData))
     return this.http.post<CustomResponse<Media>>(
-      this.config.storageServiceUrl + '/media',
+      this.env.storageServiceUrl + '/media',
       formData
     )
   }
 
   deleteMedia(id: number): Observable<CustomResponse<Media>> {
     return this.http.delete<CustomResponse<Media>>(
-      this.config.storageServiceUrl + '/media/' + id
+      this.env.storageServiceUrl + '/media/' + id
     )
   }
 
   updateMedia(id: number, media: UpdateMediaPayload): Observable<CustomResponse<Media>> {
     return this.http.patch<CustomResponse<Media>>(
-      this.config.storageServiceUrl + '/media/' + id,
+      this.env.storageServiceUrl + '/media/' + id,
       media
     )
   }

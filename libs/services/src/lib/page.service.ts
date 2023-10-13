@@ -15,12 +15,12 @@ import {
 export class PageService {
   constructor(
     private http: HttpClient,
-    @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
+    @Inject(ENVIRONMENT_CONFIG) private env: EnvironmentConfig
   ) {}
 
   read(key: string): Observable<CustomResponse<Content>> {
     return this.http.get<CustomResponse<Content>>(
-      this.config.contentServiceUrl + '/content/byKey/' + key
+      this.env.contentServiceUrl + '/content/byKey/' + key
     )
   }
 }

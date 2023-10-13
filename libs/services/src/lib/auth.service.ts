@@ -18,7 +18,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private localStorageService: LocalStorageService,
-    @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
+    @Inject(ENVIRONMENT_CONFIG) private env: EnvironmentConfig
   ) {}
 
   /**
@@ -83,7 +83,7 @@ export class AuthService {
     password: string
   ): Observable<CustomResponse<LoginResponseDTO>> {
     return this.http.post<CustomResponse<LoginResponseDTO>>(
-      `${this.config.authServiceUrl}/auth/login`,
+      `${this.env.authServiceUrl}/auth/login`,
       {
         identifier,
         password,
@@ -99,7 +99,7 @@ export class AuthService {
    */
   register(email: string, password: string): Observable<CustomResponse<void>> {
     return this.http.post<CustomResponse<void>>(
-      `${this.config.authServiceUrl}/auth/register`,
+      `${this.env.authServiceUrl}/auth/register`,
       {
         email,
         password,
@@ -114,7 +114,7 @@ export class AuthService {
    */
   requestResetPassword(email: string): Observable<CustomResponse<void>> {
     return this.http.post<CustomResponse<void>>(
-      `${this.config.authServiceUrl}/auth/reset-password/request`,
+      `${this.env.authServiceUrl}/auth/reset-password/request`,
       {email}
     )
   }
@@ -127,7 +127,7 @@ export class AuthService {
    */
   resetPassword(password: string, token: string): Observable<CustomResponse<void>> {
     return this.http.post<CustomResponse<void>>(
-      `${this.config.authServiceUrl}/auth/reset-password/reset`,
+      `${this.env.authServiceUrl}/auth/reset-password/reset`,
       {
         password,
         token,
@@ -142,7 +142,7 @@ export class AuthService {
    */
   checkUsernameAvailability(username: string) {
     return this.http.get<CustomResponse<any>>(
-      `${this.config.authServiceUrl}/users/check/username/` + username
+      `${this.env.authServiceUrl}/users/check/username/` + username
     )
   }
 
@@ -150,7 +150,7 @@ export class AuthService {
    * Get all the current user's profile information
    */
   getMe(): Observable<CustomResponse<User>> {
-    return this.http.get<CustomResponse<User>>(`${this.config.authServiceUrl}/users/me`)
+    return this.http.get<CustomResponse<User>>(`${this.env.authServiceUrl}/users/me`)
   }
 
   /**
@@ -161,14 +161,11 @@ export class AuthService {
     last_name: string,
     username: string
   ): Observable<CustomResponse<void>> {
-    return this.http.patch<CustomResponse<void>>(
-      `${this.config.authServiceUrl}/users/me`,
-      {
-        username,
-        first_name,
-        last_name,
-      }
-    )
+    return this.http.patch<CustomResponse<void>>(`${this.env.authServiceUrl}/users/me`, {
+      username,
+      first_name,
+      last_name,
+    })
   }
 
   /**

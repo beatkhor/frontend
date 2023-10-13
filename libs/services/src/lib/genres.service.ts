@@ -15,18 +15,16 @@ import {
 export class GenresService {
   constructor(
     private http: HttpClient,
-    @Inject(ENVIRONMENT_CONFIG) private config: EnvironmentConfig
+    @Inject(ENVIRONMENT_CONFIG) private env: EnvironmentConfig
   ) {}
 
   read(): Observable<CustomResponse<Genre[]>> {
-    return this.http.get<CustomResponse<Genre[]>>(
-      this.config.contentServiceUrl + '/genres'
-    )
+    return this.http.get<CustomResponse<Genre[]>>(this.env.contentServiceUrl + '/genres')
   }
 
   create(genres: Genre): Observable<CustomResponse<Genre>> {
     return this.http.post<CustomResponse<Genre>>(
-      this.config.contentServiceUrl + '/genres',
+      this.env.contentServiceUrl + '/genres',
       genres
     )
   }
@@ -34,14 +32,14 @@ export class GenresService {
   edit(id: number, genres: Genre): Observable<CustomResponse<Genre>> {
     genres.id = undefined as any
     return this.http.patch<CustomResponse<Genre>>(
-      this.config.contentServiceUrl + '/genres/' + id,
+      this.env.contentServiceUrl + '/genres/' + id,
       genres
     )
   }
 
   delete(id: number): Observable<CustomResponse<Genre>> {
     return this.http.delete<CustomResponse<Genre>>(
-      this.config.contentServiceUrl + '/genres/' + id
+      this.env.contentServiceUrl + '/genres/' + id
     )
   }
 }
