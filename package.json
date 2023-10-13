@@ -1,6 +1,6 @@
 {
   "name": "@beatkhor/source",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "license": "MIT",
   "scripts": {
     "start": "npm run bk:serve:en",
