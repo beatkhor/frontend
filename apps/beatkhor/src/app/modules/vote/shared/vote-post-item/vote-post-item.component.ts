@@ -5,8 +5,8 @@ import {CustomErrorHandler} from '@workspace/services/error-handler.service'
 import {VoteService} from '@workspace/services/review.service'
 import {UtilsService} from '@workspace/services/utils.service'
 
-import {Post, Picture, Audio} from '@workspace/models'
 import {SEOService} from '@workspace/services/seo.service'
+import {Post, Picture, Audio} from '@workspace/models'
 
 @Component({
   selector: 'bk-vote-post-item',
