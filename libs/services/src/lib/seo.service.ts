@@ -56,4 +56,12 @@ export class SEOService {
   setTitle(title: string): void {
     this.titleService.setTitle(title)
   }
+
+  /**
+   * Builds a seo friendly alt for track images
+   * @returns image alt string
+   */
+  buildTrackImageAlt(artist: string, title: string): string {
+    return `${artist} - ${title} ${this.env.seo.trackImageAltSuffix}`
+  }
 }

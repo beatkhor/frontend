@@ -6,6 +6,7 @@ import {VoteService} from '@workspace/services/review.service'
 import {UtilsService} from '@workspace/services/utils.service'
 
 import {Post, Picture, Audio} from '@workspace/models'
+import {SEOService} from '@workspace/services/seo.service'
 
 @Component({
   selector: 'bk-vote-post-item',
@@ -19,11 +20,15 @@ export class VotePostItemComponent implements OnInit {
   artist = ''
   alt = ''
 
-  constructor(private voteService: VoteService, private errHandler: CustomErrorHandler) {}
+  constructor(
+    private seoService: SEOService,
+    private voteService: VoteService,
+    private errHandler: CustomErrorHandler
+  ) {}
 
   ngOnInit(): void {
-    this.alt = 'alt'
-    this.artist = UtilsService.getArtistName(this.post)
+    this.artist = UtilsService.getPostArtistName(this.post)
+    this.alt = this.seoService.buildTrackImageAlt(this.artist, this.post.post_meta.title)
   }
 
   get picture(): Picture | undefined {

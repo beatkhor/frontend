@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core'
 
-import {PostService} from '@workspace/services/post.service'
 import {UtilsService} from '@workspace/services/utils.service'
+import {SEOService} from '@workspace/services/seo.service'
 import {Picture, Post} from '@workspace/models'
 
 @Component({
@@ -44,12 +44,15 @@ export class PostTileComponent implements OnInit {
   artist = ''
   alt = ''
 
-  constructor(private postService: PostService) {}
+  constructor(private seoService: SEOService) {}
 
   ngOnInit(): void {
     if (this.post) {
-      this.alt = 'alt'
-      this.artist = UtilsService.getArtistName(this.post)
+      this.artist = UtilsService.getPostArtistName(this.post)
+      this.alt = this.seoService.buildTrackImageAlt(
+        this.artist,
+        this.post.post_meta.title
+      )
     }
   }
 

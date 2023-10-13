@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
@@ -1174,6 +1174,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/environments/environment.production.ts</context>
           <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1072812314931339535" datatype="html">
+        <source> cover art</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/environments/environment.production.ts</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7947857706283898348" datatype="html">

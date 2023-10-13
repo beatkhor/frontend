@@ -42,12 +42,20 @@ export class UtilsService {
     return text
   }
 
-  static getArtistName(post: Post) {
+  static getPostArtistName(post: Post) {
     if (post.post_meta.overridden_artist_name) {
       return post.post_meta.overridden_artist_name
     }
 
-    return post.user?.first_name + ' ' + post.user?.last_name
+    if (post.user?.first_name || post.user?.last_name) {
+      return (post.user?.first_name ?? '') + ' ' + (post.user?.last_name ?? '')
+    }
+
+    if (post.user?.username) {
+      return post.user?.username
+    }
+
+    return 'Unknown'
   }
 
   static secondsToMinutesAndSeconds(seconds: number) {

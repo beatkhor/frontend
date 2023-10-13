@@ -1,8 +1,7 @@
 import {Component, Inject, Input, LOCALE_ID, OnInit} from '@angular/core'
 
 import {UtilsService} from '@workspace/services/utils.service'
-import {PostService} from '@workspace/services/post.service'
-
+import {SEOService} from '@workspace/services/seo.service'
 import {Picture, Post, Audio} from '@workspace/models'
 
 @Component({
@@ -15,13 +14,13 @@ export class PostComponent implements OnInit {
   alt = ''
 
   constructor(
-    private postService: PostService,
+    private seoService: SEOService,
     @Inject(LOCALE_ID) public localeId: string
   ) {}
 
   ngOnInit(): void {
-    this.alt = 'alt'
-    this.artist = UtilsService.getArtistName(this.post)
+    this.artist = UtilsService.getPostArtistName(this.post)
+    this.alt = this.seoService.buildTrackImageAlt(this.artist, this.post.post_meta.title)
   }
 
   get picture(): Picture | undefined {

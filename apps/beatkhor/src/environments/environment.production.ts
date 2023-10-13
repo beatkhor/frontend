@@ -12,5 +12,6 @@ export const environment: EnvironmentConfig = {
   seo: {
     title: $localize`Beatkhor`,
     titleSeparator: ' | ',
+    trackImageAltSuffix: $localize` cover art`,
   },
 }

@@ -3,6 +3,7 @@ import {InjectionToken} from '@angular/core'
 export interface SEOEnvironmentConfig {
   title: string
   titleSeparator: string
+  trackImageAltSuffix: string
 }
 
 export interface EnvironmentConfig {

@@ -110,6 +110,14 @@
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1072812314931339535" datatype="html">
+        <source> cover art</source>
+        <target> تصویر جلد</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/environments/environment.production.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="1718075194214098612" datatype="html">
         <source>Beatkhor [Next]</source>
         <target>بیتخور (آزمایشی)</target>
