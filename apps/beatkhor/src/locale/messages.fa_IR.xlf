@@ -111,8 +111,16 @@
         </context-group>
       </trans-unit>
       <trans-unit id="1072812314931339535" datatype="html">
-        <source> cover art</source>
-        <target> تصویر جلد</target>
+        <source>cover art</source>
+        <target>تصویر جلد</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/environments/environment.production.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6323120838457065892" datatype="html">
+        <source>cover art</source>
+        <target>تصویر جلد</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/environments/environment.production.ts</context>
           <context context-type="linenumber">15</context>
