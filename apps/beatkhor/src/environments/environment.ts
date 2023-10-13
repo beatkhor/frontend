@@ -9,4 +9,8 @@ export const environment: EnvironmentConfig = {
   storageServiceUrl: 'https://next.beatkhor.com/api/storage',
   uploaderServiceUrl: 'https://next.beatkhor.com/api/tusd/files/',
   messages,
+  seo: {
+    title: 'Next',
+    titleSeparator: ' | ',
+  },
 }

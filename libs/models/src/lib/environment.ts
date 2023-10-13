@@ -1,5 +1,10 @@
 import {InjectionToken} from '@angular/core'
 
+export interface SEOEnvironmentConfig {
+  title: string
+  titleSeparator: string
+}
+
 export interface EnvironmentConfig {
   production: boolean
   authServiceUrl: string
@@ -8,6 +13,7 @@ export interface EnvironmentConfig {
   storageServiceUrl: string
   uploaderServiceUrl: string
   messages: {[key: string]: string}
+  seo: SEOEnvironmentConfig
 }
 
 export const ENVIRONMENT_CONFIG = new InjectionToken<EnvironmentConfig>(

@@ -3,8 +3,9 @@ import {RouterModule} from '@angular/router'
 import {CommonModule} from '@angular/common'
 import {NgModule} from '@angular/core'
 
-import {AuthService} from '@workspace/services/auth.service'
 import {LocalStorageService} from '@workspace/services/local-storage.service'
+import {AuthService} from '@workspace/services/auth.service'
+import {SEOService} from '@workspace/services/seo.service'
 
 import {WrapperComponent} from './components/wrapper'
 import {FooterComponent} from './components/footer'
@@ -20,6 +21,7 @@ import {SharedModule} from '@shared/shared.module'
   declarations: [NavbarComponent, WrapperComponent, FooterComponent],
   imports: [SharedModule, CommonModule, HttpClientModule, RouterModule],
   providers: [
+    SEOService,
     AuthService,
     LocalStorageService,
     {

@@ -9,4 +9,8 @@ export const environment: EnvironmentConfig = {
   storageServiceUrl: 'https://www.beatkhor.com/api/storage',
   uploaderServiceUrl: 'https://www.beatkhor.com/api/tusd/files/',
   messages,
+  seo: {
+    title: 'Beatkhor',
+    titleSeparator: ' | ',
+  },
 }
