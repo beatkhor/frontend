@@ -1,9 +1,11 @@
-import {Component, OnDestroy, OnInit} from '@angular/core'
+import {Component, Inject, LOCALE_ID, OnDestroy, OnInit} from '@angular/core'
 import {Subscription, lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '@workspace/services/error-handler.service'
 import {UtilsService} from '@workspace/services/utils.service'
 import {PostService} from '@workspace/services/post.service'
+import {SEOService} from '@workspace/services/seo.service'
+import {environment} from '@environments/environment'
 import {Post, PostFilters} from '@workspace/models'
 
 @Component({
@@ -22,7 +24,12 @@ export class BrowseViewComponent implements OnInit, OnDestroy {
   pageSize = 6 * 5
   demoArr = Array(this.pageSize)
 
-  constructor(private postService: PostService, private errHandler: CustomErrorHandler) {}
+  constructor(
+    private seoService: SEOService,
+    private postService: PostService,
+    private errHandler: CustomErrorHandler,
+    @Inject(LOCALE_ID) public localeId: string
+  ) {}
 
   ngOnInit(): void {
     this.handleScroll()
@@ -55,11 +62,21 @@ export class BrowseViewComponent implements OnInit, OnDestroy {
       this.posts = response.result
       this.page = response.page
       this.totalPages = Math.ceil(response.total / response.page_size)
+      this.buildTitle()
       this.loading = false
     } catch (error: any) {
       this.loading = false
       this.errHandler.handle(error)
     }
+  }
+
+  private buildTitle() {
+    const separator = this.localeId === 'fa' ? 'و ' : ', '
+    const genresString = this.filters.genres?.map(g => g.title).join(separator)
+    const title = $localize`Browse ` + genresString + $localize` beats`
+    this.seoService.setTitle(
+      title + environment.seo.titleSeparator + environment.seo.title
+    )
   }
 
   async loadMore() {

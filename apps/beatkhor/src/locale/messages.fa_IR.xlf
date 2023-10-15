@@ -1539,6 +1539,22 @@
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="8969873428556752971" datatype="html">
+        <source>Browse </source>
+        <target>جستجوی بیت </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-view.component.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5032929606946036129" datatype="html">
+        <source> beats</source>
+        <target> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-view.component.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
