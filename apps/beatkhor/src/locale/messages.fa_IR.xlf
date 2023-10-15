@@ -128,7 +128,7 @@
       </trans-unit>
       <trans-unit id="1718075194214098612" datatype="html">
         <source>Beatkhor [Next]</source>
-        <target>بیتخور</target>
+        <target>بیت‌خور</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/environments/environment.production.ts</context>
           <context context-type="linenumber">13</context>
