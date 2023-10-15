@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core'
 import {forkJoin, lastValueFrom} from 'rxjs'
 
 import {PostService} from '@workspace/services/post.service'
+import {SEOService} from '@workspace/services/seo.service'
 import {CallbackEvents, Post} from '@workspace/models'
 
 @Component({
@@ -24,10 +25,14 @@ export class IndexViewComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private seoService: SEOService,
     private postService: PostService
   ) {}
 
   ngOnInit(): void {
+    this.seoService.setDescription(
+      $localize`Beatkhor is a community based platform to discover, publish and download free beats. Start browsing or upload your beat right now!`
+    )
     this.notice = this.route.snapshot.queryParamMap.get('notice')
     this.getData()
   }

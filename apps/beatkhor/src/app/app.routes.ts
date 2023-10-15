@@ -27,13 +27,19 @@ export const appRoutes: Route[] = [
       {
         path: 'browse',
         loadChildren: () => import('./modules/browse').then(m => m.BrowseModule),
-        data: {title: $localize`Browse`} as RouteData,
+        data: {
+          title: $localize`Browse`,
+          description: $localize`Explore hundreds of high-quality beats with various genres and unique attributes on Beatkhor. Find the perfect sound for your music production and projects.`,
+        } as RouteData,
       },
       {
         path: 'upload',
         canActivate: [AuthGuard],
         loadChildren: () => import('./modules/upload').then(m => m.UploadModule),
-        data: {title: $localize`Upload`} as RouteData,
+        data: {
+          title: $localize`Upload`,
+          description: $localize`Share your creativity with the world! Upload your new beats to Beatkhor and showcase your music to a global audience. Connect with fellow artists and producers. Start sharing your musical journey today.`,
+        } as RouteData,
       },
       {
         path: 'page',
@@ -43,7 +49,10 @@ export const appRoutes: Route[] = [
         path: 'vote',
         canActivate: [AuthGuard],
         loadChildren: () => import('./modules/vote').then(m => m.VoteModule),
-        data: {title: $localize`Review tracks`} as RouteData,
+        data: {
+          title: $localize`Review tracks`,
+          description: $localize`Discover and influence the future of music! Review and vote on beats at Beatkhor. Your feedback matters – help decide which beats get published and shape the sound of tomorrow.`,
+        } as RouteData,
       },
     ],
   },
