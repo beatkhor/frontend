@@ -128,7 +128,7 @@
       </trans-unit>
       <trans-unit id="1718075194214098612" datatype="html">
         <source>Beatkhor [Next]</source>
-        <target>بیتخور (آزمایشی)</target>
+        <target>بیتخور</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/environments/environment.production.ts</context>
           <context context-type="linenumber">13</context>
@@ -1460,6 +1460,7 @@
       </trans-unit>
       <trans-unit id="8857368264075027703" datatype="html">
         <source>Explore hundreds of high-quality beats with various genres and unique attributes on Beatkhor. Find the perfect sound for your music production and projects.</source>
+        <target>بین صد‌ها بیت با کیفیت با ژانر‌های مختلف و ویژگی‌های منحصر به فرد جستجو کنید. بهترین صدای ممکن را برای پروژه موسیقی خود پیدا کنید. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/app.routes.ts</context>
           <context context-type="linenumber">32</context>
@@ -1468,6 +1469,7 @@
       <trans-unit id="7637133726619408664" datatype="html">
         <source>Share your creativity with the world! Upload your new beats to Beatkhor and showcase your music to a global audience. Connect with fellow artists and producers. Start sharing your
           musical journey today.</source>
+        <target>خلاقیت خود را با جهان به اشتراک بگذارید. بیت‌های جدید خود را در بیت‌خور آپلود کنید و موسیقی خود را به شنوندگان جهانی ارائه دهید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/app.routes.ts</context>
           <context context-type="linenumber">41</context>
@@ -1475,6 +1477,7 @@
       </trans-unit>
       <trans-unit id="3272211043368969919" datatype="html">
         <source>Discover and influence the future of music! Review and vote on beats at Beatkhor. Your feedback matters – help decide which beats get published and shape the sound of tomorrow.</source>
+        <target>در آینده‌ی موسیقی نقش داشته باشید! بیت‌های بیت‌خور را بررسی کرده و رای دهید. نظر شما برای ما اهمیت دارد. کمک کنید تا تصمیم بگیریم چه بیت هایی منتشر می‌شوند.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/app.routes.ts</context>
           <context context-type="linenumber">54</context>
@@ -1482,6 +1485,7 @@
       </trans-unit>
       <trans-unit id="4767947880455998741" datatype="html">
         <source>Sign into your beatkhor account and start publishing your beats today. Have fun listening and sharing new beats.</source>
+        <target>وارد حساب کاربری خود در بیت‌خور شوید و شروع به انتشار بیت‌های خود کنید. از شنیدن و به اشتراک گذاری بیت‌های جدید لذت ببرید. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/auth-routing.module.ts</context>
           <context context-type="linenumber">25</context>
@@ -1489,6 +1493,7 @@
       </trans-unit>
       <trans-unit id="5963321195735052348" datatype="html">
         <source>Create a beatkhor account quickly with only using your email and start publishing your beats today. Have fun listening and sharing new beats.</source>
+        <target>با استفاده از ایمیل، حساب کاربری جدید خود را در بیت‌خور بسازید و شروع به انتشار بیت‌های خود کنید. از شنیدن و به اشتراک گذاری بیت‌های جدید لذت ببرید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/auth-routing.module.ts</context>
           <context context-type="linenumber">34</context>
@@ -1496,6 +1501,7 @@
       </trans-unit>
       <trans-unit id="588063473811168098" datatype="html">
         <source>Add more information to your profile and choose a nick name for yourself</source>
+        <target>اطلاعات پروفایل خود را کامل کنید و یک لقب برای خود انتخاب کنید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/auth-routing.module.ts</context>
           <context context-type="linenumber">43</context>
@@ -1503,6 +1509,7 @@
       </trans-unit>
       <trans-unit id="919850326320028961" datatype="html">
         <source>Don&apos;t worry if you have forgotten your password. Just enter your email and receive the instruction for choosing a new password</source>
+        <target>اگر رمز عبور خود را فراموش کرده‌اید نگران نباشید. کافیست ایمیل خود را وارد کنید تا دستورالعمل ساخت یک رمز عبور جدید را دریافت کنید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/auth-routing.module.ts</context>
           <context context-type="linenumber">51</context>
@@ -1510,6 +1517,7 @@
       </trans-unit>
       <trans-unit id="5252309543272320444" datatype="html">
         <source>Now it&apos;s time to choose a new password, make sure you keep it in somewhere safe</source>
+        <target>حالا زمان انتخاب یک رمز عبور جدید است. مطمئن شوید که آن را در جایی مطمئن نگهداری می‌کنید.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/auth-routing.module.ts</context>
           <context context-type="linenumber">59</context>
@@ -1517,6 +1525,7 @@
       </trans-unit>
       <trans-unit id="7600025987900726890" datatype="html">
         <source>Beatkhor | Discover and publish beats!</source>
+        <target>بیت‌خور | دانلود و جستجوی بیت جدید</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/index/index-view/index-view.component.ts</context>
           <context context-type="linenumber">33</context>
@@ -1524,6 +1533,7 @@
       </trans-unit>
       <trans-unit id="4441718076459764670" datatype="html">
         <source>Beatkhor is a community based platform to discover, publish and download free beats. Start browsing or upload your beat right now!</source>
+        <target> بیت‌خور یک پلتفرم مبتنی بر جامعه است که به شما امکان می‌دهد بیت‌های رایگان را کشف، منتشر و دانلود کنید. همین الان شروع به جستجو یا آپلود بیت‌های خود کنید! </target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/index/index-view/index-view.component.ts</context>
           <context context-type="linenumber">34</context>

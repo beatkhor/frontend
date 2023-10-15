@@ -1,11 +1,12 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core'
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser'
 import {ActivatedRoute} from '@angular/router'
-import {lastValueFrom} from 'rxjs'
+import {forkJoin, lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '@workspace/services/error-handler.service'
 import {PageService} from '@workspace/services/page.service'
 import {SEOService} from '@workspace/services/seo.service'
+import {environment} from '@environments/environment'
 
 @Component({
   selector: 'bk-pages-view',
@@ -33,14 +34,21 @@ export class PageViewComponent implements OnInit {
   private async loadPage(pageKey: string) {
     try {
       this.loading = true
-      const result = await lastValueFrom(this.pageService.read(pageKey + this.localeId))
-      this.loading = false
-      this.content = this.sanitizer.bypassSecurityTrustHtml(result.result.value ?? '')
 
-      const descriptionResult = await lastValueFrom(
-        this.pageService.read(pageKey + 'description-' + this.localeId)
+      const req$ = forkJoin([
+        this.pageService.read(pageKey + this.localeId),
+        this.pageService.read(pageKey + 'description-' + this.localeId),
+        this.pageService.read(pageKey + 'title-' + this.localeId),
+      ])
+
+      const result = await lastValueFrom(req$)
+      this.loading = false
+      this.content = this.sanitizer.bypassSecurityTrustHtml(result[0].result.value ?? '')
+      this.seoService.setDescription(result[1].result.value ?? '')
+      const title = [result[2].result.value ?? '', environment.seo.title].join(
+        environment.seo.titleSeparator
       )
-      this.seoService.setDescription(descriptionResult?.result?.value ?? '')
+      this.seoService.setTitle(title)
     } catch (error: any) {
       this.loading = false
       this.errHandler.handle(error)
