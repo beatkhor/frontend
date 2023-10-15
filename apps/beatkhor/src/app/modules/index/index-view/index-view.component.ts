@@ -30,6 +30,7 @@ export class IndexViewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.seoService.setTitle($localize`Beatkhor | Discover and publish beats!`)
     this.seoService.setDescription(
       $localize`Beatkhor is a community based platform to discover, publish and download free beats. Start browsing or upload your beat right now!`
     )
