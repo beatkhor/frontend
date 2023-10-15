@@ -40,7 +40,7 @@ export class PageViewComponent implements OnInit {
       const descriptionResult = await lastValueFrom(
         this.pageService.read(pageKey + 'description-' + this.localeId)
       )
-      this.seoService.setDescription(descriptionResult?.result?.value || '')
+      this.seoService.setDescription(descriptionResult?.result?.value ?? '')
     } catch (error: any) {
       this.loading = false
       this.errHandler.handle(error)
