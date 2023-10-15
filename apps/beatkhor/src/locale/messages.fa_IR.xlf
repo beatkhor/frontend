@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="787163983066183218" datatype="html">
         <source>Browse</source>
-        <target>جستجو</target>
+        <target>جستجوی بیت</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/app.routes.ts</context>
           <context context-type="linenumber">30</context>
