@@ -71,8 +71,10 @@ export class BrowseViewComponent implements OnInit, OnDestroy {
   }
 
   private buildTitle() {
-    const separator = this.localeId === 'fa' ? 'و ' : ', '
-    const genresString = this.filters.genres?.map(g => g.title).join(separator)
+    const separator = this.localeId === 'fa' ? ' و ' : ', '
+    const genresString = this.filters.genres
+      ?.map(g => (this.localeId === 'fa' ? g.title_fa : g.title))
+      .join(separator)
     const title = $localize`Browse ` + genresString + $localize` beats`
     this.seoService.setTitle(
       title + environment.seo.titleSeparator + environment.seo.title

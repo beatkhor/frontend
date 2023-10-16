@@ -40,7 +40,7 @@
         i18n-placeholder="@@genreFilterPlaceholder"
       >
         <mat-option *ngFor="let genre of genres" [value]="genre">
-          {{ genre.title }}
+          {{ localeId === 'fa' ? genre.title_fa : genre.title }}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -60,7 +60,7 @@
         i18n-placeholder="@@tagFilterPlaceholder"
       >
         <mat-option *ngFor="let tag of tags" [value]="tag">
-          {{ tag.title }}
+          {{ localeId === 'fa' ? tag.title_fa : tag.title }}
         </mat-option>
       </mat-select>
     </mat-form-field>

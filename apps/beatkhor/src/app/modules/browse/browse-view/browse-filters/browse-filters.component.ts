@@ -1,5 +1,13 @@
 import {Subject, Subscription, debounceTime, forkJoin, lastValueFrom} from 'rxjs'
-import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core'
+import {
+  Inject,
+  OnInit,
+  Output,
+  Component,
+  LOCALE_ID,
+  OnDestroy,
+  EventEmitter,
+} from '@angular/core'
 import {ActivatedRoute, Router} from '@angular/router'
 
 import {GenresService} from '@workspace/services/genres.service'
@@ -29,7 +37,8 @@ export class FiltersComponent implements OnInit, OnDestroy {
     private router: Router,
     private route: ActivatedRoute,
     private tagsService: TagsService,
-    private genreService: GenresService
+    private genreService: GenresService,
+    @Inject(LOCALE_ID) public localeId: string
   ) {}
 
   ngOnInit(): void {
