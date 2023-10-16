@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Inject, LOCALE_ID, Output} from '@angular/core'
 import {MatDialog} from '@angular/material/dialog'
 import {Router} from '@angular/router'
+import {environment} from '@environments/environment'
 
 import {ConfirmDialogComponent} from '@shared/dialogs/confirm-dialog'
 import {AuthService} from '@workspace/services/auth.service'
@@ -28,9 +29,7 @@ export class NavbarComponent {
   }
 
   get languageUrl() {
-    return this.localeId === 'fa'
-      ? 'https://www.beatkhor.com'
-      : 'https://www.beatkhor.com/fa/'
+    return this.localeId === 'fa' ? environment.siteUrl : environment.siteUrl + '/fa/'
   }
 
   onMenu(): void {
