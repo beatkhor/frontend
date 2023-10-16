@@ -3,6 +3,7 @@ import {messages} from './messages'
 
 export const environment: EnvironmentConfig = {
   production: false,
+  siteUrl: 'https://next.beatkhor.com',
   storageKeyPrefix: 'bk',
   authServiceUrl: 'https://next.beatkhor.com/api/auth',
   contentServiceUrl: 'https://next.beatkhor.com/api/content',
@@ -13,5 +14,13 @@ export const environment: EnvironmentConfig = {
     title: $localize`Beatkhor [Next]`,
     titleSeparator: ' | ',
     trackImageAltSuffix: $localize`cover art`,
+    openGraph: {
+      image: {
+        src: '/assets/seo/og-logo-1200x1200.png',
+        width: 1200,
+        height: 1200,
+        type: 'image/png',
+      },
+    },
   },
 }

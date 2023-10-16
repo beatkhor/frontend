@@ -36,6 +36,8 @@ export class IndexViewComponent implements OnInit {
     )
     this.notice = this.route.snapshot.queryParamMap.get('notice')
     this.getData()
+
+    this.seoService.setSchema(this.seoService.buildOrgSchema())
   }
 
   private async getData() {

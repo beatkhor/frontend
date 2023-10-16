@@ -1,13 +1,24 @@
 import {InjectionToken} from '@angular/core'
 
+export interface OpenGraphOptions {
+  image: {
+    src: string
+    width: number
+    height: number
+    type: string
+  }
+}
+
 export interface SEOEnvironmentConfig {
   title: string
   titleSeparator: string
   trackImageAltSuffix: string
+  openGraph: OpenGraphOptions
 }
 
 export interface EnvironmentConfig {
   production: boolean
+  siteUrl: string
   authServiceUrl: string
   storageKeyPrefix: string
   contentServiceUrl: string
