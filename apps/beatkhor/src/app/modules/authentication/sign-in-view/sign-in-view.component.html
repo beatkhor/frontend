@@ -49,7 +49,7 @@
     </a>
 
     <div class="my-5 text-sm text-neutral-300">
-      <p class="my-2">
+      <p class="my-2" *ngIf="signUpEnabled">
         <span i18n="@@signUpHelper">Don't have a account yet? </span>
         <a class="text-primary-500" routerLink="/authentication/signup">
           <span i18n="@@signUpNow">sign up now!</span>

@@ -12,6 +12,7 @@ import {AuthService} from '@workspace/services/auth.service'
 })
 export class SignInViewComponent {
   isLoading = false
+  signUpEnabled = false
   form!: FormGroup
 
   constructor(

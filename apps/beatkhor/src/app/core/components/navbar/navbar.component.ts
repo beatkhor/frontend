@@ -27,6 +27,12 @@ export class NavbarComponent {
     return this.authService.getUser()
   }
 
+  get languageUrl() {
+    return this.localeId === 'fa'
+      ? 'https://www.beatkhor.com'
+      : 'https://www.beatkhor.com/fa/'
+  }
+
   onMenu(): void {
     this.menu.emit()
   }

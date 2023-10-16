@@ -37,19 +37,8 @@
       >
         <span i18n="@@signIn">Sign in</span>
       </a>
-      <a
-        *ngIf="localeId !== 'fa'"
-        routerLink="/authentication/signup"
-        class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
-      >
-        <span i18n="@@getStarted">Get Started</span>
-      </a>
 
-      <a
-        *ngIf="localeId === 'fa'"
-        href="https://www.beatkhor.com"
-        class="px-2 py-4 hover:bg-neutral-700 ease-in duration-100"
-      >
+      <a [href]="languageUrl" class="px-2 py-4 hover:bg-neutral-700 ease-in duration-100">
         <mat-icon class="text-neutral-400 text-xl relative top-[-2px]">language</mat-icon>
       </a>
     </div>
