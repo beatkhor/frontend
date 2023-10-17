@@ -14,6 +14,7 @@ export const environment: EnvironmentConfig = {
     title: $localize`Beatkhor [Next]`,
     titleSeparator: ' | ',
     trackImageAltSuffix: $localize`cover art`,
+    email: 'support@beatkhor.com',
     openGraph: {
       image: {
         src: '/assets/seo/og-logo-1200x1200.png',

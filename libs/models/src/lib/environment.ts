@@ -14,6 +14,7 @@ export interface SEOEnvironmentConfig {
   titleSeparator: string
   trackImageAltSuffix: string
   openGraph: OpenGraphOptions
+  email: string
 }
 
 export interface EnvironmentConfig {

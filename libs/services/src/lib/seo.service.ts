@@ -8,54 +8,76 @@ import {DOCUMENT} from '@angular/common'
 export class SEOService {
   scriptType = 'application/json+ld'
 
+  orgSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    url: this.env.siteUrl,
+    name: this.env.seo.title,
+    logo: this.env.siteUrl + this.env.seo.openGraph.image.src,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: this.env.seo.email,
+      contactType: 'Customer service',
+    },
+  }
+
   constructor(
     private meta: Meta,
     private titleService: Title,
     @Inject(DOCUMENT) private dom: Document,
     @Inject(ENVIRONMENT_CONFIG) private env: EnvironmentConfig
   ) {
+    this.meta.addTag({
+      property: 'theme-color',
+      content: '#ffc107',
+    })
     this.meta.updateTag({
       property: 'og:site_name',
       content: this.env.seo.title,
     })
+    this.meta.updateTag({
+      property: 'twitter:card',
+      content: 'summary',
+    })
   }
 
   updateMeta(metadata: MetaTags) {
-    // Update all tags and remove them if they don't exists
+    this.setTitle(metadata.title)
+    this.setDescription(metadata.description)
+    this.setRobots(metadata.noIndex)
+    this.setKeywords(metadata.keywords)
+
+    if (metadata.image) {
+      this.setImage(this.env.siteUrl + metadata.image.src, metadata.image.type)
+    } else {
+      this.removeImage()
+    }
+
+    if (metadata.canonicalUrl) {
+      this.setCanonicalUrl()
+    } else {
+      this.removeCanonicalUrl()
+    }
+
+    if (metadata.schema) {
+      this.setSchema(metadata.schema)
+    } else {
+      this.removeSchema()
+    }
   }
 
-  /**
-   * Updates the title of the page
-   * @param title title of the page
-   */
   setTitle(title: string): void {
     this.titleService.setTitle(title)
     this.meta.updateTag({
       property: 'og:title',
       content: title,
     })
-  }
-
-  /**
-   * Updates the open graph image of the page
-   * @param src source of the image
-   * @param type type of the image
-   */
-  setImage(src: string, type?: string) {
-    this.meta.addTag({
-      property: 'og:image',
-      content: src,
-    })
     this.meta.updateTag({
-      property: 'og:image:type',
-      content: type ?? 'jpeg',
+      property: 'twitter:title',
+      content: title,
     })
   }
 
-  /**
-   * Updates the description of the page
-   * @param description description of the page
-   */
   setDescription(description: string): void {
     this.meta.updateTag({
       name: 'description',
@@ -65,23 +87,66 @@ export class SEOService {
       property: 'og:description',
       content: description,
     })
+    this.meta.updateTag({
+      property: 'twitter:description',
+      content: description,
+    })
   }
 
-  /**
-   * Updates the page schema
-   * @param schema page schema
-   */
+  setRobots(noIndex: boolean) {
+    this.meta.updateTag({
+      name: 'robots',
+      content: noIndex ? 'noindex' : 'index, follow',
+    })
+  }
+
+  setKeywords(keywords: string) {
+    this.meta.updateTag({
+      name: 'keywords',
+      content: keywords,
+    })
+  }
+
+  setImage(src: string, type?: string) {
+    this.meta.updateTag({
+      property: 'og:image',
+      content: src,
+    })
+    this.meta.updateTag({
+      property: 'og:image:type',
+      content: type ?? 'jpeg',
+    })
+    this.meta.updateTag({
+      property: 'twitter:image',
+      content: src,
+    })
+  }
+
+  removeImage() {
+    this.meta.removeTag('og:image')
+    this.meta.removeTag('og:image:type')
+    this.meta.removeTag('twitter:image')
+  }
+
   setSchema(schema: any) {
-    this.removeStructuredData()
+    this.removeSchema()
     this.insertSchema(schema)
   }
 
-  setCanonicalURL(url?: string) {
+  setCanonicalUrl(url?: string) {
+    this.removeCanonicalUrl()
     let canURL = !url ? this.dom.URL : url
     let link: HTMLLinkElement = this.dom.createElement('link')
     link.setAttribute('rel', 'canonical')
     this.dom.head.appendChild(link)
     link.setAttribute('href', canURL)
+  }
+
+  removeCanonicalUrl() {
+    const element = this.dom.head.querySelector('link[rel="canonical"]')
+    if (element) {
+      element.remove()
+    }
   }
 
   /**
@@ -90,21 +155,6 @@ export class SEOService {
    */
   buildTrackImageAlt(artist: string, title: string): string {
     return `${artist} - ${title} ${this.env.seo.trackImageAltSuffix}`
-  }
-
-  buildOrgSchema() {
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      url: this.env.siteUrl,
-      name: this.env.seo.title,
-      logo: this.env.siteUrl + this.env.seo.openGraph.image.src,
-      contactPoint: {
-        '@type': 'ContactPoint',
-        email: 'support@beatkhor.com',
-        contactType: 'Customer service',
-      },
-    }
   }
 
   private insertSchema(schema: Record<string, any>, className = 'structured-data'): void {
@@ -124,7 +174,7 @@ export class SEOService {
     }
   }
 
-  private removeStructuredData(): void {
+  removeSchema(): void {
     const els: any[] = []
     ;['structured-data', 'structured-data-org'].forEach(c => {
       els.push(...Array.from(this.dom.head.getElementsByClassName(c)))
