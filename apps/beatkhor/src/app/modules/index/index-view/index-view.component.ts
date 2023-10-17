@@ -30,14 +30,9 @@ export class IndexViewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.seoService.setTitle($localize`Beatkhor | Discover and publish beats!`)
-    this.seoService.setDescription(
-      $localize`Beatkhor is a community based platform to discover, publish and download free beats. Start browsing or upload your beat right now!`
-    )
     this.notice = this.route.snapshot.queryParamMap.get('notice')
     this.getData()
-
-    this.seoService.setSchema(this.seoService.buildOrgSchema())
+    this.setupSEO()
   }
 
   private async getData() {
@@ -67,6 +62,13 @@ export class IndexViewComponent implements OnInit {
     } catch (error) {
       this.loading = false
     }
+  }
+
+  private setupSEO() {
+    this.seoService.setTitle($localize`Beatkhor | Discover and publish beats!`)
+    this.seoService.setDescription(
+      $localize`Beatkhor is a community based platform to discover, publish and download free beats. Start browsing or upload your beat right now!`
+    )
   }
 
   onCloseNotice() {
