@@ -1,16 +1,17 @@
 import {ActivatedRoute, NavigationExtras, Router} from '@angular/router'
-import {Component, OnInit} from '@angular/core'
+import {Component, OnDestroy, OnInit} from '@angular/core'
 import {forkJoin, lastValueFrom} from 'rxjs'
 
 import {PostService} from '@workspace/services/post.service'
 import {SEOService} from '@workspace/services/seo.service'
 import {CallbackEvents, Post} from '@workspace/models'
+import {environment} from '@environments/environment'
 
 @Component({
   selector: 'bk-index-view',
   templateUrl: './index-view.component.html',
 })
-export class IndexViewComponent implements OnInit {
+export class IndexViewComponent implements OnInit, OnDestroy {
   readonly callbackEvents = CallbackEvents
 
   latestRecommendedPost: Post[] = []
@@ -65,10 +66,14 @@ export class IndexViewComponent implements OnInit {
   }
 
   private setupSEO() {
-    this.seoService.setTitle($localize`Beatkhor | Discover and publish beats!`)
-    this.seoService.setDescription(
-      $localize`Beatkhor is a community based platform to discover, publish and download free beats. Start browsing or upload your beat right now!`
-    )
+    this.seoService.updateMeta({
+      title: $localize`Beatkhor | Discover and publish beats!`,
+      description: $localize`Beatkhor is a community based platform to discover, publish and download free beats. Start browsing or upload your beat right now!`,
+      keywords: $localize`Hip-Hop Beats, Trap Beats, Download Beats, Free Beats, Production Music, Royalty-Free Beats, Beat Catalog`,
+      noIndex: !environment.production,
+      image: environment.seo.openGraph.image,
+      schema: this.seoService.orgSchema,
+    })
   }
 
   onCloseNotice() {
@@ -78,5 +83,10 @@ export class IndexViewComponent implements OnInit {
       queryParamsHandling: 'merge',
     }
     this.router.navigate([], navigationExtras)
+  }
+
+  ngOnDestroy(): void {
+    this.seoService.removeImage()
+    this.seoService.removeSchema()
   }
 }
