@@ -6,6 +6,8 @@ import {lastValueFrom} from 'rxjs'
 import {CustomErrorHandler} from '@workspace/services/error-handler.service'
 import {CustomValidators} from '@workspace/services/validators.service'
 import {AuthService} from '@workspace/services/auth.service'
+import {SEOService} from '@workspace/services/seo.service'
+import {environment} from '@environments/environment'
 import {CallbackEvents} from '@workspace/models'
 
 @Component({
@@ -22,6 +24,7 @@ export class ResetViewComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private route: ActivatedRoute,
+    private seoService: SEOService,
     private authService: AuthService,
     private errHandler: CustomErrorHandler
   ) {
@@ -30,12 +33,21 @@ export class ResetViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.token = this.route.snapshot.queryParamMap.get('token')
-    console.log(this.token)
     if (!this.token) {
       this.router.navigate(['/callback'], {
         queryParams: {event: CallbackEvents.ResetPasswordVerificationFailed},
       })
     }
+    this.setupSEO()
+  }
+
+  private setupSEO() {
+    this.seoService.updateMeta({
+      title: $localize`Reset password`,
+      description: $localize`Now it's time to choose a new password, make sure you keep it in somewhere safe`,
+      noIndex: !environment.production,
+      image: environment.seo.openGraph.image,
+    })
   }
 
   private createForm(): void {

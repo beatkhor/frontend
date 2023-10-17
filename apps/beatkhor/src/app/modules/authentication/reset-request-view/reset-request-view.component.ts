@@ -37,7 +37,10 @@ export class ResetRequestViewComponent implements OnInit {
 
   private setupSEO() {
     this.seoService.updateMeta({
-      title: $localize`Password recovery`,
+      title:
+        $localize`Password recovery` +
+        environment.seo.titleSeparator +
+        environment.seo.title,
       description: $localize`Don't worry if you have forgotten your password. Just enter your email and receive the instruction for choosing a new password`,
       noIndex: !environment.production,
       image: environment.seo.openGraph.image,

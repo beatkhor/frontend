@@ -40,7 +40,7 @@ export class SignInViewComponent implements OnInit {
 
   private setupSEO() {
     this.seoService.updateMeta({
-      title: $localize`Sign in`,
+      title: $localize`Sign in` + environment.seo.titleSeparator + environment.seo.title,
       description: $localize`Sign into your beatkhor account and start publishing your beats today. Have fun listening and sharing new beats.`,
       noIndex: !environment.production,
       image: environment.seo.openGraph.image,
