@@ -1,23 +1,26 @@
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
-import {Component} from '@angular/core'
+import {Component, OnInit} from '@angular/core'
 import {Router} from '@angular/router'
 import {lastValueFrom} from 'rxjs'
 
 import {CustomErrorHandler} from '@workspace/services/error-handler.service'
 import {AuthService} from '@workspace/services/auth.service'
+import {SEOService} from '@workspace/services/seo.service'
+import {environment} from '@environments/environment'
 
 @Component({
   selector: 'bk-sign-in-view',
   templateUrl: './sign-in-view.component.html',
 })
-export class SignInViewComponent {
-  isLoading = false
+export class SignInViewComponent implements OnInit {
   signUpEnabled = false
+  isLoading = false
   form!: FormGroup
 
   constructor(
     private router: Router,
     private fb: FormBuilder,
+    private seoService: SEOService,
     private authService: AuthService,
     private errHandler: CustomErrorHandler
   ) {
@@ -28,6 +31,20 @@ export class SignInViewComponent {
     this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
+    })
+  }
+
+  ngOnInit(): void {
+    this.setupSEO()
+  }
+
+  private setupSEO() {
+    this.seoService.updateMeta({
+      title: $localize`Sign in`,
+      description: $localize`Sign into your beatkhor account and start publishing your beats today. Have fun listening and sharing new beats.`,
+      noIndex: !environment.production,
+      image: environment.seo.openGraph.image,
+      keywords: $localize`Login Portal, Sign In, Log In, Beatkhor Account, Member Login`,
     })
   }
 

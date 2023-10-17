@@ -45,7 +45,12 @@ export class SEOService {
     this.setTitle(metadata.title)
     this.setDescription(metadata.description)
     this.setRobots(metadata.noIndex)
-    this.setKeywords(metadata.keywords)
+
+    if (metadata.keywords) {
+      this.setKeywords(metadata.keywords)
+    } else {
+      this.removeKeywords()
+    }
 
     if (metadata.image) {
       this.setImage(this.env.siteUrl + metadata.image.src, metadata.image.type)
@@ -107,6 +112,10 @@ export class SEOService {
     })
   }
 
+  removeKeywords() {
+    this.meta.removeTag('property="keywords"')
+  }
+
   setImage(src: string, type?: string) {
     this.meta.updateTag({
       property: 'og:image',
@@ -123,9 +132,9 @@ export class SEOService {
   }
 
   removeImage() {
-    this.meta.removeTag('og:image')
-    this.meta.removeTag('og:image:type')
-    this.meta.removeTag('twitter:image')
+    this.meta.removeTag('property="og:image"')
+    this.meta.removeTag('property="og:image:type"')
+    this.meta.removeTag('property="twitter:image"')
   }
 
   setSchema(schema: any) {

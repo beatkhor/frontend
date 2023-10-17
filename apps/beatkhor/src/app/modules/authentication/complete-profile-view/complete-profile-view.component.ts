@@ -1,17 +1,19 @@
 import {Subject, debounceTime, lastValueFrom, takeUntil} from 'rxjs'
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
-import {Component, OnDestroy} from '@angular/core'
+import {Component, OnDestroy, OnInit} from '@angular/core'
 import {Router} from '@angular/router'
 
 import {CustomErrorHandler} from '@workspace/services/error-handler.service'
 import {CustomValidators} from '@workspace/services/validators.service'
 import {AuthService} from '@workspace/services/auth.service'
+import {SEOService} from '@workspace/services/seo.service'
+import {environment} from '@environments/environment'
 
 @Component({
   selector: 'bk-complete-profile-view',
   templateUrl: './complete-profile-view.component.html',
 })
-export class CompleteProfileViewComponent implements OnDestroy {
+export class CompleteProfileViewComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>()
   isUsernameAvailable = false
   usernameLoading = false
@@ -22,6 +24,7 @@ export class CompleteProfileViewComponent implements OnDestroy {
   constructor(
     private router: Router,
     private fb: FormBuilder,
+    private seoService: SEOService,
     private authService: AuthService,
     private errHandler: CustomErrorHandler
   ) {
@@ -42,6 +45,19 @@ export class CompleteProfileViewComponent implements OnDestroy {
     })
 
     this.handleUsernameChanges()
+  }
+
+  ngOnInit(): void {
+    this.setupSEO()
+  }
+
+  private setupSEO() {
+    this.seoService.updateMeta({
+      title: $localize`Setup your profile`,
+      description: $localize`Add more information to your profile and choose a nick name for yourself`,
+      noIndex: !environment.production,
+      image: environment.seo.openGraph.image,
+    })
   }
 
   private handleUsernameChanges(): void {
