@@ -58,6 +58,82 @@ export class UtilsService {
     return 'Unknown'
   }
 
+  static getPostTitle(post: Post, localeId = 'en-US'): string {
+    let title = ''
+    const firstGenre = post.genres[0]
+
+    if (localeId === 'fa') {
+      const genreName = firstGenre?.title_fa ?? ''
+      title =
+        'بیت ' +
+        genreName +
+        ' با آهنگسازی ' +
+        UtilsService.getPostArtistName(post) +
+        ' به نام ' +
+        post.post_meta.title
+    } else {
+      const genreName = firstGenre?.title ?? ''
+      title =
+        genreName +
+        ' beat produced by ' +
+        UtilsService.getPostArtistName(post) +
+        ' called ' +
+        post.post_meta.title
+    }
+
+    return title
+  }
+
+  static getPostDescription(post: Post, localeId = 'en-US') {
+    let description = ''
+    const firstGenre = post.genres[0]
+
+    if (localeId === 'fa') {
+      description +=
+        `بیت‌های با کیفیت ${UtilsService.getPostArtistName(
+          post
+        )} را بشنوید و لذت ببرید. بیت ${
+          post.post_meta.title
+        } را امروز دانلود کرده و در پروژه موسیقی خود استفاده کنید. بهترین گزینه برای اهنگ‌ ` +
+        firstGenre.title_fa
+    } else {
+      description += `Explore the mesmerizing beats of ${UtilsService.getPostArtistName(
+        post
+      )}. Download the enchanting '${
+        post.post_meta.title
+      }' today and infuse your project with musical magic. `
+      if (firstGenre) {
+        description += `Perfect for ` + firstGenre.title + ' songs.'
+      }
+    }
+
+    return description
+  }
+
+  static getPostKeywords(post: Post, localeId = 'en-US'): string {
+    const keywords: string[] = []
+
+    if (post.genres.length) {
+      keywords.push(
+        ...post.genres.map(g => {
+          return (localeId === 'fa' ? g.title_fa : g.title) ?? ''
+        })
+      )
+    }
+
+    keywords.push(...[post.post_meta.title, UtilsService.getPostArtistName(post)])
+
+    if (post.tags.length) {
+      keywords.push(
+        ...post.tags.map(t => {
+          return (localeId === 'fa' ? t.title_fa : t.title) ?? ''
+        })
+      )
+    }
+
+    return keywords.join(', ')
+  }
+
   static secondsToMinutesAndSeconds(seconds: number) {
     const minutes = Math.floor(seconds / 60)
     const remainingSeconds = seconds % 60

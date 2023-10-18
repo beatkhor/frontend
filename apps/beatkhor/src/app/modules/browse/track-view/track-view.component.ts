@@ -1,9 +1,12 @@
-import {Component, OnDestroy, OnInit} from '@angular/core'
+import {Component, Inject, LOCALE_ID, OnDestroy, OnInit} from '@angular/core'
 import {Subject, lastValueFrom, takeUntil} from 'rxjs'
 import {ActivatedRoute} from '@angular/router'
 
 import {CustomErrorHandler} from '@workspace/services/error-handler.service'
+import {UtilsService} from '@workspace/services/utils.service'
 import {PostService} from '@workspace/services/post.service'
+import {SEOService} from '@workspace/services/seo.service'
+import {environment} from '@environments/environment'
 import {Post} from '@workspace/models'
 
 @Component({
@@ -22,8 +25,10 @@ export class TrackViewComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
+    private seoService: SEOService,
     private postService: PostService,
-    private errHandler: CustomErrorHandler
+    private errHandler: CustomErrorHandler,
+    @Inject(LOCALE_ID) public localeId: string
   ) {}
 
   ngOnInit(): void {
@@ -38,6 +43,7 @@ export class TrackViewComponent implements OnInit, OnDestroy {
       const req = this.postService.readByLink(postLink)
       const result = await lastValueFrom(req)
       this.post = result.result
+      this.setupSEO()
 
       if (this.post.genres.length) {
         this.getRelatedPosts(this.post.genres[0].slug)
@@ -50,6 +56,19 @@ export class TrackViewComponent implements OnInit, OnDestroy {
       console.log(error)
       this.errHandler.handle(error)
     }
+  }
+
+  setupSEO() {
+    const title = UtilsService.getPostTitle(this.post, this.localeId)
+    const description = UtilsService.getPostDescription(this.post, this.localeId)
+    const keywords = UtilsService.getPostKeywords(this.post, this.localeId)
+    this.seoService.updateMeta({
+      title: title + environment.seo.titleSeparator + environment.seo.title,
+      description,
+      noIndex: !environment.production,
+      image: environment.seo.openGraph.image,
+      keywords,
+    })
   }
 
   private async getRelatedPosts(genreSlug?: string) {

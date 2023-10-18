@@ -62,7 +62,7 @@ export class BrowseViewComponent implements OnInit, OnDestroy {
       this.posts = response.result
       this.page = response.page
       this.totalPages = Math.ceil(response.total / response.page_size)
-      this.buildTitle()
+      this.setupSEO()
       this.loading = false
     } catch (error: any) {
       this.loading = false
@@ -70,12 +70,27 @@ export class BrowseViewComponent implements OnInit, OnDestroy {
     }
   }
 
-  private buildTitle() {
+  private setupSEO() {
     const separator = this.localeId === 'fa' ? ' و ' : ', '
     const genresString = this.filters.genres
       ?.map(g => (this.localeId === 'fa' ? g.title_fa : g.title))
       .join(separator)
-    const title = $localize`Browse ` + genresString + $localize` beats`
+
+    const tagsString = this.filters.tags
+      ?.map(t => (this.localeId === 'fa' ? t.title_fa : t.title))
+      .join(separator)
+
+    const extras = genresString?.length ? genresString : tagsString
+    const title = $localize`Browse ` + extras + $localize` beats`
+
+    this.seoService.updateMeta({
+      title: title + environment.seo.titleSeparator + environment.seo.title,
+      description: $localize`Discover a diverse collection of beats from talented artists across genres. Filter by genre, mood, tempo, and more to find the perfect beat for your creative project. Explore our curated selection today`,
+      noIndex: !environment.production,
+      image: environment.seo.openGraph.image,
+      keywords: $localize`Search for Beats, Browse Beats Catalog, Genre-Specific Beats, Royalty-Free Beats, Find the Perfect Beat, Musical Discovery, Music Instrumentals`,
+    })
+
     this.seoService.setTitle(
       title + environment.seo.titleSeparator + environment.seo.title
     )

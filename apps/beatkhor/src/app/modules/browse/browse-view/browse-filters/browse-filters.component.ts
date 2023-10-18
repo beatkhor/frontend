@@ -109,7 +109,7 @@ export class FiltersComponent implements OnInit, OnDestroy {
 
     this.filtersChange.emit({
       genres: this.selectedGenres,
-      tags: this.selectedGenres,
+      tags: this.selectedTags,
       query: this.query,
     })
   }
