@@ -1557,7 +1557,7 @@
       </trans-unit>
       <trans-unit id="3073098280053101440" datatype="html">
         <source>Hip-Hop Beats, Trap Beats, Download Beats, Free Beats, Production Music, Royalty-Free Beats, Beat Catalog</source>
-        <target>بیت هیپ‌هاپ، بیت ترپ، دانلود بیت، بیت رایگان، تنظیم موسیقی، کاتالوگ بیت</target>
+        <target>بیت هیپ‌هاپ, بیت ترپ, دانلود بیت, بیت رایگان, تنظیم موسیقی, کاتالوگ بیت</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/index/index-view/index-view.component.ts</context>
           <context context-type="linenumber">72</context>
@@ -1566,7 +1566,7 @@
       <trans-unit id="7131912599672472551" datatype="html">
         <source>Discover a diverse collection of beats from talented artists across genres. Filter by genre, mood, tempo, and more to find the perfect beat for your creative project. Explore our
           curated selection today</source>
-        <target>کاتالوگ صد‌ها بیت متنوع ساخته توسط اهنگسازان در ژانر‌ها، ویژگی‌ها و سرعت‌های مختلف. بهترین بیت را برای پروژه‌ی موسیقی خلاقانه‌ی خود انتخاب کنید. همین امروز بیت مناسب خود را پیدا کنید!</target>
+        <target>کاتالوگ صد‌ها بیت متنوع ساخته توسط اهنگسازان در ژانر‌ها, ویژگی‌ها و سرعت‌های مختلف. بهترین بیت را برای پروژه‌ی موسیقی خلاقانه‌ی خود انتخاب کنید. همین امروز بیت مناسب خود را پیدا کنید!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-view.component.ts</context>
           <context context-type="linenumber">88</context>
@@ -1574,7 +1574,7 @@
       </trans-unit>
       <trans-unit id="4268451661701501585" datatype="html">
         <source>Search for Beats, Browse Beats Catalog, Genre-Specific Beats, Royalty-Free Beats, Find the Perfect Beat, Musical Discovery, Music Instrumentals</source>
-        <target>جستجوی بیت، کشف بیت، آرشیو بیت، بیت در انواع ژانرها، بیت رایگان، بهترین بیت را پیدا کنید، بیت اینسترومنتال</target>
+        <target>جستجوی بیت, کشف بیت, آرشیو بیت, بیت در انواع ژانرها, بیت رایگان, بهترین بیت را پیدا کنید, بیت اینسترومنتال</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/browse/browse-view/browse-view.component.ts</context>
           <context context-type="linenumber">91</context>
@@ -1582,7 +1582,7 @@
       </trans-unit>
       <trans-unit id="5129053269974512274" datatype="html">
         <source>Beatkhor Account, Password Reset, Forgot Password, Password Recovery, Recover Access</source>
-        <target>حساب کاربری بیت‌خور، بازیابی رمز عبور، فراموشی رمز عبور، بازیابی دسترسی</target>
+        <target>حساب کاربری بیت‌خور, بازیابی رمز عبور, فراموشی رمز عبور, بازیابی دسترسی</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/reset-request-view/reset-request-view.component.ts</context>
           <context context-type="linenumber">47</context>
@@ -1590,7 +1590,7 @@
       </trans-unit>
       <trans-unit id="7442216259107576498" datatype="html">
         <source>Login Portal, Sign In, Log In, Beatkhor Account, Member Login</source>
-        <target>پرتال ورود، ورود، حساب کاربری بیت‌خور، ورود اعضا</target>
+        <target>پرتال ورود, ورود, حساب کاربری بیت‌خور, ورود اعضا</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-in-view/sign-in-view.component.ts</context>
           <context context-type="linenumber">47</context>
@@ -1598,7 +1598,7 @@
       </trans-unit>
       <trans-unit id="447993499761023290" datatype="html">
         <source>Beatkhor Account, Portal, Sign Up, Account Creation, Become a Member</source>
-        <target>حساب کاربری بیت‌خور، پرتال، ثبت نام، نام نویسی، ساخت حساب کاربری، عضو شدن</target>
+        <target>حساب کاربری بیت‌خور, پرتال, ثبت نام, نام نویسی, ساخت حساب کاربری, عضو شدن</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/authentication/sign-up-view/sign-up-view.component.ts</context>
           <context context-type="linenumber">49</context>
