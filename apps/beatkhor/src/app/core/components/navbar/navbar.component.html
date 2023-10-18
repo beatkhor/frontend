@@ -1,0 +1,69 @@
+<div class="fixed inset-x-0 top-0 h-14 border-b border-neutral-800 bg-neutral-900 z-50">
+  <div class="container mx-auto h-full flex items-stretch justify-between px-5">
+    <div class="flex items-center text-neutral-200">
+      <div class="flex">
+        <div class="block lg:hidden mr-2">
+          <button mat-icon-button (click)="onMenu()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+
+        <a routerLink="/" class="flex items-center brand">
+          <img class="w-6 mr-4 logo" src="assets/images/logo-dark.svg" alt="Beatkhor" />
+          <strong class="text-lg" i18n="@@beatkhor">Beatkhor</strong>
+        </a>
+
+        <div class="hidden lg:flex items-center h-full ml-12 nav-menu">
+          <a
+            routerLink="/browse"
+            class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
+          >
+            <span i18n="@@browse">Browse</span>
+          </a>
+          <a
+            routerLink="/page/about"
+            class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
+          >
+            <span i18n="@@about">About</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!isLoggedIn; else userActions" class="hidden sm:flex text-neutral-300">
+      <a
+        routerLink="/authentication"
+        class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
+      >
+        <span i18n="@@signIn">Sign in</span>
+      </a>
+
+      <a [href]="languageUrl" class="px-2 py-4 hover:bg-neutral-700 ease-in duration-100">
+        <mat-icon class="text-neutral-400 text-xl relative top-[-2px]">language</mat-icon>
+      </a>
+    </div>
+
+    <ng-template #userActions>
+      <div class="flex">
+        <button
+          class="px-4 py-4 hover:bg-neutral-700 ease-in duration-100"
+          [matMenuTriggerFor]="userActionsMenu"
+        >
+          <mat-icon class="text-neutral-200">person</mat-icon>
+          <mat-icon class="text-neutral-200">arrow_drop_down</mat-icon>
+        </button>
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+<mat-menu #userActionsMenu="matMenu">
+  <a mat-menu-item routerLink="/upload">
+    <mat-icon>upload</mat-icon>
+    <span i18n="@@upload">Upload</span>
+  </a>
+  <button mat-menu-item (click)="onLogout()">
+    <mat-icon>logout</mat-icon>
+    <span i18n="@@signOut">Sign out</span>
+  </button>
+</mat-menu>

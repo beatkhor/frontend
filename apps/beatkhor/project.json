@@ -3,6 +3,15 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "bk",
+  "i18n": {
+    "sourceLocale": "en-US",
+    "locales": {
+      "fa": {
+        "translation": "apps/beatkhor/src/locale/messages.fa_IR.xlf",
+        "baseHref": "/fa/"
+      }
+    }
+  },
   "sourceRoot": "apps/beatkhor/src",
   "tags": [],
   "targets": {
@@ -13,7 +22,7 @@
         "outputPath": "dist/apps/beatkhor",
         "index": "apps/beatkhor/src/index.html",
         "main": "apps/beatkhor/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": ["zone.js", "apps/beatkhor/src/polyfills.ts"],
         "tsConfig": "apps/beatkhor/tsconfig.app.json",
         "assets": ["apps/beatkhor/src/favicon.ico", "apps/beatkhor/src/assets"],
         "styles": ["apps/beatkhor/src/styles.scss"],
@@ -30,8 +39,8 @@
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "1.5mb",
+              "maximumError": "2mb"
             },
             {
               "type": "anyComponentStyle",
@@ -39,7 +48,8 @@
               "maximumError": "4kb"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "localize": true
         },
         "development": {
           "buildOptimizer": false,
@@ -47,7 +57,19 @@
           "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
+          "namedChunks": true,
+          "localize": true
+        },
+        "en": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
           "namedChunks": true
+        },
+        "fa": {
+          "localize": ["fa"]
         }
       },
       "defaultConfiguration": "production"
@@ -60,6 +82,12 @@
         },
         "development": {
           "browserTarget": "beatkhor:build:development"
+        },
+        "en": {
+          "browserTarget": "beatkhor:build:en"
+        },
+        "fa": {
+          "browserTarget": "beatkhor:build:en,fa"
         }
       },
       "defaultConfiguration": "development"
@@ -67,7 +95,8 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "beatkhor:build"
+        "browserTarget": "beatkhor:build",
+        "outputPath": "apps/beatkhor/src/locale"
       }
     },
     "lint": {

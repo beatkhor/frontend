@@ -1,0 +1,81 @@
+<div class="min-h-screen flex items-center justify-center">
+  <form
+    *ngIf="!done"
+    [formGroup]="form"
+    (submit)="onSubmit()"
+    class="flex flex-col w-96 py-4 mx-6"
+  >
+    <h1 i18n="@@resetPassword" class="text-2xl font-semibold my-2">Reset password</h1>
+
+    <p i18n="@@resetPasswordPrompt" class="py-4">
+      Now you can choose a brand new password for your beatkhor account.
+    </p>
+
+    <mat-form-field class="my-3" appearance="fill">
+      <mat-label i18n="@@newPassword">New password</mat-label>
+      <input matInput type="password" name="password" formControlName="password" />
+      <mat-icon matSuffix>lock</mat-icon>
+      <mat-hint i18n="@@newPasswordHint">
+        A password should include at least 6 characters.
+      </mat-hint>
+      <mat-error i18n="@@newPasswordError">Please enter at least 6 characters!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="my-3" appearance="fill">
+      <mat-label i18n="@@confirmPassword">Confirm password</mat-label>
+      <input
+        matInput
+        type="password"
+        name="confirmPassword"
+        formControlName="confirmPassword"
+      />
+      <mat-icon matSuffix>lock</mat-icon>
+      <mat-hint i18n="@@confirmPasswordHint">
+        Please type your password again to confirm
+      </mat-hint>
+
+      <mat-error *ngIf="form.get('confirmPassword')?.hasError('mismatch')">
+        <span i18n="@@confirmPasswordMismatchError">
+          The passwords do not match together
+        </span>
+      </mat-error>
+
+      <mat-error *ngIf="form.get('confirmPassword')?.hasError('required')">
+        <span i18n="@@confirmPasswordRequiredError">Please re-enter your password</span>
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-flat-button class="my-3 mt-5" color="primary" type="submit">
+      <span i18n="@@pleaseWait" *ngIf="isLoading">Please wait...</span>
+      <span i18n="@@resetPasswordCTA" *ngIf="!isLoading">Reset password</span>
+    </button>
+
+    <a mat-stroked-button color="primary" type="button" routerLink="/">
+      <span i18n="@@homePage">Home page</span>
+    </a>
+  </form>
+
+  <div *ngIf="done" class="flex flex-col w-96 py-4 mx-6">
+    <h1 i18n="@@resetDoneTitle" class="text-2xl font-semibold my-2">
+      Your password is changed
+    </h1>
+
+    <p i18n="@@resetDonePrompt" class="py-4">
+      Perfect! We changed your password. Go ahead and sign in using your new password.
+    </p>
+
+    <a
+      class="my-3"
+      type="button"
+      mat-flat-button
+      color="primary"
+      routerLink="/authentication/signin"
+    >
+      <span i18n="@@signIn">Sign in</span>
+    </a>
+
+    <a mat-stroked-button color="primary" type="button" routerLink="/">
+      <span i18n="@@goBack">Go back</span>
+    </a>
+  </div>
+</div>

@@ -1,26 +1,27 @@
-import { messages } from "./messages";
+import {EnvironmentConfig} from '@workspace/models'
+import {messages} from './messages'
 
-export const environment = {
+export const environment: EnvironmentConfig = {
   production: true,
-  storageKeyPrefix: "bk",
-  siteURL: "https://www.beatkhor.com",
-  authServiceURL: "https://www.beatkhor.com/api/auth",
-  contentServiceURL: "https://www.beatkhor.com/api/content",
-  storageServiceURL: "https://www.beatkhor.com/api/storage",
+  storageKeyPrefix: 'bk',
+  siteUrl: 'https://www.beatkhor.com',
+  authServiceUrl: 'https://www.beatkhor.com/api/auth',
+  contentServiceUrl: 'https://www.beatkhor.com/api/content',
+  storageServiceUrl: 'https://www.beatkhor.com/api/storage',
+  uploaderServiceUrl: 'https://www.beatkhor.com/api/tusd/files/',
   messages,
   seo: {
-    siteName: "Beatkhor",
-    siteTitle: "Discover and publish beats!",
-    siteDescription:
-      "Beatkhor is a community based platform to discover, publish and download beats. Start browsing or upload your beat right now!",
-    keywords: ["beat", "download", "free beat", "publish beat"],
+    title: $localize`Beatkhor`,
+    titleSeparator: ' | ',
+    trackImageAltSuffix: $localize`cover art`,
+    email: 'support@beatkhor.com',
     openGraph: {
       image: {
-        image: "/assets/seo/logo-1200x1200.png",
+        src: '/assets/seo/og-logo-1200x1200.png',
         width: 1200,
         height: 1200,
-        type: "image/png",
+        type: 'image/png',
       },
     },
   },
-};
+}

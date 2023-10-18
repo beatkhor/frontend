@@ -1,0 +1,34 @@
+<div class="flex items-center">
+  <ng-container *ngIf="localeId === 'fa'; else customPlayer">
+    <audio controls preload="none" [src]="src"></audio>
+  </ng-container>
+
+  <ng-template #customPlayer>
+    <button mat-fab color="primary" (click)="onToggle()">
+      <mat-icon *ngIf="!playing">play_arrow</mat-icon>
+      <mat-icon *ngIf="playing">pause</mat-icon>
+    </button>
+    <button mat-icon-button class="mr-4" (click)="onStop()">
+      <mat-icon>stop</mat-icon>
+    </button>
+
+    <mat-slider
+      [min]="0"
+      [step]="step"
+      [disabled]="!ready"
+      [max]="sliderMax"
+      class="white-slider flex-grow"
+    >
+      <input
+        matSliderThumb
+        (dragEnd)="onDragEnd($event)"
+        [(ngModel)]="progress"
+        #slider
+      />
+    </mat-slider>
+
+    <span class="text-neutral-300 ml-3 w-14 text-center">{{ timeStamp }}</span>
+
+    <audio #player class="hidden" preload="none" [src]="src"></audio>
+  </ng-template>
+</div>

@@ -1,0 +1,84 @@
+<div class="min-h-screen flex items-center justify-center">
+  <form
+    *ngIf="!done"
+    [formGroup]="form"
+    (submit)="onSubmit()"
+    class="flex flex-col w-96 py-4 mx-6"
+  >
+    <h1 i18n="@@resetRequestTitle" class="text-2xl font-semibold my-2">
+      Password recovery
+    </h1>
+
+    <p i18n="@@resetRequestPrompt" class="py-4">
+      No worries! Just enter your email to reset your account password. We will send you
+      an email with the link to choose a new password.
+    </p>
+
+    <mat-form-field class="my-3" appearance="fill">
+      <mat-label i18n="@@email">Email</mat-label>
+      <input
+        matInput
+        type="text"
+        name="email"
+        spellcheck="false"
+        formControlName="email"
+      />
+      <mat-icon matSuffix>mail</mat-icon>
+      <mat-hint i18n="@@resetRequestEmailHint">
+        Enter your email to receive the instructions
+      </mat-hint>
+
+      <mat-error *ngIf="form.get('email')?.hasError('required')">
+        <span i18n="@@emailRequiredError">Please enter your email!</span>
+      </mat-error>
+
+      <mat-error *ngIf="form.get('email')?.hasError('email')">
+        <span i18n="@@emailInvalidError">Please enter a valid email!</span>
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-flat-button class="my-3 mt-5" color="primary" type="submit">
+      <span i18n="@@pleaseWait" *ngIf="isLoading">Please wait...</span>
+      <span i18n="@@resetRequestCTA" *ngIf="!isLoading">Recover my password</span>
+    </button>
+
+    <a
+      type="button"
+      color="primary"
+      mat-stroked-button
+      routerLink="/authentication/signin"
+    >
+      <span i18n="@@signIn">Sign in</span>
+    </a>
+  </form>
+
+  <div *ngIf="done" class="flex flex-col w-96 py-4 mx-6">
+    <h1 i18n="@@resetRequestDoneTitle" class="text-2xl font-semibold my-2">
+      Check Your Email
+    </h1>
+
+    <p i18n="@@resetRequestDonePrompt1" class="py-4">
+      Perfect! We just sent you an email that contains the instructions for choosing a new
+      password.
+    </p>
+
+    <p i18n="@@resetRequestDonePrompt2" class="py-4 text-sm text-neutral-300">
+      You will not receive an email if you don't already have an account connected to this
+      email
+    </p>
+
+    <a
+      class="my-3"
+      type="button"
+      color="primary"
+      mat-flat-button
+      routerLink="/authentication/signin"
+    >
+      <span i18n="@@signIn">Sign in</span>
+    </a>
+
+    <a mat-stroked-button color="primary" type="button" routerLink="/">
+      <span i18n="@@goBack">Go back</span>
+    </a>
+  </div>
+</div>

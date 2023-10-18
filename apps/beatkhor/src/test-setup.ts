@@ -4,5 +4,6 @@ globalThis.ngJest = {
     errorOnUnknownElements: true,
     errorOnUnknownProperties: true,
   },
-};
-import 'jest-preset-angular/setup-jest';
+}
+import 'jest-preset-angular/setup-jest'
+import '@angular/localize/init'

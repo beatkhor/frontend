@@ -1,0 +1,68 @@
+<div class="flex flex-col lg:flex-row">
+  <div class="flex justify-stretch flex-1">
+    <mat-form-field appearance="outline" class="flex-1">
+      <input
+        matInput
+        type="text"
+        id="search"
+        name="search"
+        [(ngModel)]="query"
+        [disabled]="loading"
+        placeholder="Browse tracks..."
+        i18n-placeholder="@@searchBoxPlaceHolder"
+        (ngModelChange)="queryChanges$.next($event)"
+      />
+      <mat-icon class="ml-1" matPrefix>search</mat-icon>
+
+      <button
+        matSuffix
+        *ngIf="query"
+        mat-icon-button
+        (click)="this.query = ''; emitChanges()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div class="flex flex-col md:flex-row">
+    <mat-form-field appearance="outline" class="flex-1 mr-0 md:mr-0 md:ml-5 lg:mx-5">
+      <mat-label>
+        <span i18n="@@genreFilterLabel" class="md:hidden">Choose genres</span>
+        <span i18n="@@genres" class="hidden md:inline">Genres</span>
+      </mat-label>
+      <mat-select
+        multiple
+        [disabled]="loading"
+        [(ngModel)]="selectedGenres"
+        (ngModelChange)="emitChanges()"
+        placeholder="Choose a genre"
+        i18n-placeholder="@@genreFilterPlaceholder"
+      >
+        <mat-option *ngFor="let genre of genres" [value]="genre">
+          {{ localeId === 'fa' ? genre.title_fa : genre.title }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="flex-1">
+      <mat-label>
+        <span i18n="@@tagFilterLabel" class="md:hidden">Choose tags</span>
+        <span i18n="@@tags" class="hidden md:inline">Tags</span>
+      </mat-label>
+      <mat-select
+        multiple
+        [disabled]="loading"
+        i18n-placeholder=""
+        [(ngModel)]="selectedTags"
+        (ngModelChange)="emitChanges()"
+        placeholder="Choose a tag"
+        i18n-placeholder="@@tagFilterPlaceholder"
+      >
+        <mat-option *ngFor="let tag of tags" [value]="tag">
+          {{ localeId === 'fa' ? tag.title_fa : tag.title }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>

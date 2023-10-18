@@ -9,7 +9,21 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@environments/*": ["apps/beatkhor/src/environments/*"]
+      "@environments/*": [
+        "apps/beatkhor/src/environments/*"
+      ],
+      "@shared/*": [
+        "apps/beatkhor/src/app/shared/*"
+      ],
+      "@workspace/services/*": [
+        "apps/beatkhor/src/app/core/services/*"
+      ],
+      "@workspace/models": [
+        "libs/models/src/index.ts"
+      ],
+      "@workspace/services/*": [
+        "libs/services/src/lib/*",
+      ],
     }
   },
   "files": [],

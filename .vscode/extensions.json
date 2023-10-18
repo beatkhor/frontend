@@ -1,7 +1,9 @@
 {
-	"recommendations": [
-		"esbenp.prettier-vscode",
-		"angular.ng-template",
-		"bradlc.vscode-tailwindcss"
-	],
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "angular.ng-template",
+    "bradlc.vscode-tailwindcss",
+    "firsttris.vscode-jest-runner",
+    "dbaeumer.vscode-eslint"
+  ]
 }

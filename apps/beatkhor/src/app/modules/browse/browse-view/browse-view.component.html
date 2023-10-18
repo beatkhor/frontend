@@ -1,0 +1,25 @@
+<main class="container mx-auto px-6 pb-6 pt-5 sm:pt-10">
+  <bk-browse-filters (filtersChange)="onFiltersChange($event)"></bk-browse-filters>
+
+  <bk-post-grid>
+    <ng-container *ngIf="!loading">
+      <ng-container *ngFor="let p of posts">
+        <a [routerLink]="p | postLink">
+          <bk-post-tile [post]="p"></bk-post-tile>
+        </a>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <bk-post-tile *ngFor="let d of demoArr"></bk-post-tile>
+    </ng-container>
+  </bk-post-grid>
+
+  <div *ngIf="page < totalPages" class="flex items-center py-6">
+    <div class="h-[1px] bg-neutral-800 flex-grow"></div>
+    <button mat-stroked-button [disabled]="loadingMore" (click)="loadMore()">
+      <span *ngIf="!loadingMore" i18n="@@loadMore">Load more</span>
+      <span *ngIf="loadingMore" i18n="@@pleaseWait">Please wait...</span>
+    </button>
+    <div class="h-[1px] bg-neutral-800 flex-grow"></div>
+  </div>
+</main>

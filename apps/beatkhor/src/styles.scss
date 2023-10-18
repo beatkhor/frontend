@@ -2,155 +2,282 @@
 @use '@angular/material' as mat;
 
 @tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 /** Define angular material color palettes and create the theme  *****************/
 $primary-palette: (
-    50 : #ffffea,
-    100 : #fffbc5,
-    200 : #fff885,
-    300 : #ffee46,
-    400 : #ffdf1b,
-    500 : #ffc107,
-    600 : #e29400,
-    700 : #bb6902,
-    800 : #985108,
-    900 : #7c420b,
-    A100 : #ffffff,
-    A200 : #fffaf2,
-    A400 : #ffe4bf,
-    A700 : #ffd9a6,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #000000,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
+  50: #ffffea,
+  100: #fffbc5,
+  200: #fff885,
+  300: #ffee46,
+  400: #ffdf1b,
+  500: #ffc107,
+  600: #e29400,
+  700: #bb6902,
+  800: #985108,
+  900: #7c420b,
+  A100: #ffffff,
+  A200: #fffaf2,
+  A400: #ffe4bf,
+  A700: #ffd9a6,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
 );
 
 $accent-palette: (
-    50 : #f4f6f7,
-    100 : #e2e8eb,
-    200 : #c8d4d9,
-    300 : #a2b6be,
-    400 : #74909c,
-    500 : #607d8b,
-    600 : #4d616d,
-    700 : #42515c,
-    800 : #3c474e,
-    900 : #353d44,
-    A100 : #abe1ff,
-    A200 : #78ceff,
-    A400 : #45bcff,
-    A700 : #2bb3ff,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
+  50: #f4f6f7,
+  100: #e2e8eb,
+  200: #c8d4d9,
+  300: #a2b6be,
+  400: #74909c,
+  500: #607d8b,
+  600: #4d616d,
+  700: #42515c,
+  800: #3c474e,
+  900: #353d44,
+  A100: #abe1ff,
+  A200: #78ceff,
+  A400: #45bcff,
+  A700: #2bb3ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
 );
 
 $red-palette: (
-    50 : #fef3f2,
-    100 : #ffe3e1,
-    200 : #ffccc8,
-    300 : #ffa8a2,
-    400 : #fc776d,
-    500 : #f44336,
-    600 : #e22d20,
-    700 : #be2217,
-    800 : #9d2017,
-    900 : #82211a,
-    A100 : #ffffff,
-    A200 : #ffe9e9,
-    A400 : #ffb8b6,
-    A700 : #ff9f9c,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
+  50: #fef3f2,
+  100: #ffe3e1,
+  200: #ffccc8,
+  300: #ffa8a2,
+  400: #fc776d,
+  500: #f44336,
+  600: #e22d20,
+  700: #be2217,
+  800: #9d2017,
+  900: #82211a,
+  A100: #ffffff,
+  A200: #ffe9e9,
+  A400: #ffb8b6,
+  A700: #ff9f9c,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
 );
 
 @include mat.core();
 $beatkhor-primary: mat.define-palette($primary-palette);
 $beatkhor-accent: mat.define-palette($accent-palette, A200, A100, A400);
-$beatkhor-warn: mat.define-palette($red-palette);
+$beatkhor-warn: mat.define-palette($red-palette, 400);
 
 $beatkhor-dark-typography: mat.define-typography-config(
-    $font-family: 'Fira Sans',
+  $font-family: 'Fira Sans',
 );
-$beatkhor-dark-theme: mat.define-dark-theme((
-  color: (
-    primary: $beatkhor-primary,
-    accent: $beatkhor-accent,
-    warn: $beatkhor-warn,
-  ),
-  typography: $beatkhor-dark-typography,
-));
+
+$beatkhor-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $beatkhor-primary,
+      accent: $beatkhor-accent,
+      warn: $beatkhor-warn,
+    ),
+    typography: $beatkhor-dark-typography,
+  )
+);
 
 /** Global necessary styles ************************************************/
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 body {
-    margin: 0;
-    overflow: none;
-    font-family: 'Fira Sans', sans-serif;
+  margin: 0;
+  overflow: none;
+  font-size: 15.5px;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .dark {
-    @include mat.all-component-themes($beatkhor-dark-theme);
+  @include mat.all-component-themes($beatkhor-dark-theme);
 
-    overflow: none;
-    @apply bg-neutral-900 text-neutral-50 overscroll-contain;
-    
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:focus,
-    input:-webkit-autofill:active {
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: #ffffff;
-        transition: background-color 5000s ease-in-out 0s;
-        box-shadow: inset 0 0 20px 20px #23232305;
+  overflow: none;
+  @apply bg-neutral-900 text-neutral-50 overscroll-contain;
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #23232305;
+  }
+}
+
+.white-slider .mdc-slider__track {
+  background-color: rgba(255, 255, 255, 0.103);
+  height: 2px !important;
+
+  &--inactive {
+    background-color: rgba(255, 255, 255, 0.117) !important;
+    height: 2px !important;
+  }
+}
+
+.white-slider .mdc-slider__thumb-knob {
+  width: 3px;
+  height: 3px;
+}
+
+mat-sidenav-content {
+  overflow-y: hidden !important;
+}
+
+.wrapper-nav-list {
+  padding-top: 0 !important;
+
+  .mat-mdc-list-item {
+    height: 48px !important;
+  }
+
+  .mdc-list-item__content {
+    padding: 8px 0;
+    .mdc-list-item__primary-text {
+      display: flex;
+      align-items: center;
     }
+  }
+}
+
+.mdc-notched-outline__notch {
+  border-right: none;
+  border-left: none !important;
+}
+
+bk-browse-view
+  .mdc-text-field:not(.mdc-text-field--invalid):not(.mdc-text-field--focused):not(
+    .mdc-text-field--disabled
+  ) {
+  .mdc-notched-outline > * {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+}
+
+html[dir='rtl'] body {
+  font-family: 'Vazirmatn', sans-serif !important;
+
+  .mdc-button,
+  .mat-mdc-select,
+  .mdc-floating-label,
+  .mat-mdc-dialog-title,
+  .mat-mdc-menu-item-text,
+  .mat-mdc-dialog-content,
+  .mat-mdc-snack-bar-label,
+  .mat-mdc-form-field-hint,
+  .mat-mdc-form-field-input-control,
+  .mat-mdc-form-field-error,
+  .mdc-list-item__primary-text,
+  .mat-mdc-list-item-unscoped-content {
+    font-family: 'Vazirmatn', sans-serif !important;
+  }
+
+  .logo {
+    margin-left: 16px;
+    margin-right: unset;
+  }
+
+  .nav-menu {
+    margin-right: 32px;
+  }
+
+  .custom-wrapper {
+    direction: ltr;
+  }
+
+  .custom-inner-wrapper {
+    direction: rtl;
+  }
+
+  .post-grid-header h2 {
+    margin-right: 0;
+    margin-left: 24px;
+  }
+
+  .mdc-dialog__actions,
+  bk-post-grid,
+  bk-track-post {
+    direction: ltr;
+  }
+
+  .post-content {
+    direction: rtl;
+
+    > div {
+      padding-right: 0;
+    }
+
+    audio {
+      width: 100%;
+    }
+  }
+
+  bk-header {
+    > div {
+      margin-top: 68px;
+      margin-bottom: 48px;
+    }
+  }
+
+  .post-footer {
+    > div {
+      margin-left: 16px;
+      margin-right: 0;
+    }
+  }
 }

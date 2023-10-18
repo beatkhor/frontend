@@ -1,10 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core'
 
 @Component({
-  selector: 'beatkhor-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'bk-root',
+  template: `<router-outlet></router-outlet>`,
 })
-export class AppComponent {
-  title = 'beatkhor';
-}
+export class AppComponent {}
