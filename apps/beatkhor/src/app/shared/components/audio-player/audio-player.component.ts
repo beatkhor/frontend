@@ -32,8 +32,10 @@ export class AudioPlayerComponent implements AfterViewInit, OnDestroy {
   constructor(@Inject(LOCALE_ID) public localeId: string) {}
 
   ngAfterViewInit(): void {
-    this.player.nativeElement.ontimeupdate = this.onCurrentTimeChange.bind(this)
-    this.player.nativeElement.addEventListener('canplay', this.onAudioReady.bind(this))
+    if (this.player) {
+      this.player.nativeElement.ontimeupdate = this.onCurrentTimeChange.bind(this)
+      this.player.nativeElement.addEventListener('canplay', this.onAudioReady.bind(this))
+    }
   }
 
   onToggle(): void {
