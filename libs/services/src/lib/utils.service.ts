@@ -89,13 +89,14 @@ export class UtilsService {
     const firstGenre = post.genres[0]
 
     if (localeId === 'fa') {
-      description +=
-        `بیت‌های با کیفیت ${UtilsService.getPostArtistName(
-          post
-        )} را بشنوید و لذت ببرید. بیت ${
-          post.post_meta.title
-        } را امروز دانلود کرده و در پروژه موسیقی خود استفاده کنید. بهترین گزینه برای اهنگ‌ ` +
-        firstGenre.title_fa
+      description += `بیت‌های با کیفیت ${UtilsService.getPostArtistName(
+        post
+      )} را بشنوید و لذت ببرید. بیت ${
+        post.post_meta.title
+      } را امروز دانلود کرده و در پروژه موسیقی خود استفاده کنید. `
+      if (firstGenre) {
+        description = +`بهترین گزینه برای اهنگ‌ ` + (firstGenre?.title_fa ?? '')
+      }
     } else {
       description += `Explore the mesmerizing beats of ${UtilsService.getPostArtistName(
         post
