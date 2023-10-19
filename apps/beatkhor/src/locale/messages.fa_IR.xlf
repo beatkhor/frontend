@@ -1525,7 +1525,7 @@
       </trans-unit>
       <trans-unit id="7600025987900726890" datatype="html">
         <source>Beatkhor | Discover and publish beats!</source>
-        <target>بیت‌خور | دانلود و جستجوی بیت جدید</target>
+        <target>بیت‌خور | دانلود و جستجوی بیت رایگان</target>
         <context-group purpose="location">
           <context context-type="sourcefile">apps/beatkhor/src/app/modules/index/index-view/index-view.component.ts</context>
           <context context-type="linenumber">33</context>
