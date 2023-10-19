@@ -1,4 +1,4 @@
-name: Development Pipeline
+name: Production Pipeline
 
 env:
   REGISTRY: ghcr.io
